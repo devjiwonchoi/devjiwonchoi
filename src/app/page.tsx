@@ -44,10 +44,11 @@ export default function Home() {
           Dependencies
         </h1>
         <p className="text-neutral-300 text-sm sm:text-base">
-          I&apos;m personally into BJJ, practicing in a gym called &quot;John
-          Frankl Sinsa&quot;, the first BJJ gym opened in Korea where I am
-          currently residing. Also, a beginner in chess, feel free to add me on
-          chess.com by{' '}
+          I&apos;m personally into <span className="text-neutral-50">BJJ</span>,
+          practicing in a gym called &quot;John Frankl Sinsa&quot;, the first
+          BJJ gym opened in Korea where I am currently residing. Also, a
+          beginner in <span className="text-neutral-50">chess</span>, feel free
+          to add me on chess.com by{' '}
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"

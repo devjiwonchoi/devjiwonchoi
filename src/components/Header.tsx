@@ -6,7 +6,7 @@ export function Header() {
     <header className="sm:mb-6">
       <div className="flex justify-between p-6">
         <Link href="/">
-          <span className="text-neutral-200 text-lg font-extralight hover:text-[#fff] transition ease-in-out delay-100 sm:text-2xl">
+          <span className="text-neutral-200 text-lg font-extralight hover:text-[#fff] transition ease-in-out delay-150 sm:text-2xl">
             @devjiwonchoi
           </span>
         </Link>
@@ -22,7 +22,7 @@ export function Header() {
               alt="GitHub Logo"
               width={30}
               height={30}
-              className="opacity-80 hover:opacity-100 transition ease-in-out delay-100"
+              className="opacity-80 hover:opacity-100 transition ease-in-out delay-150"
             />
           </Link>
           <Link
@@ -35,7 +35,7 @@ export function Header() {
               alt="Gmail Logo"
               width={30}
               height={30}
-              className="opacity-80 hover:opacity-100 transition ease-in-out delay-100 filter brightness-0 invert"
+              className="opacity-80 hover:opacity-100 transition ease-in-out delay-150 filter brightness-0 invert"
             />
           </Link>
         </div>
