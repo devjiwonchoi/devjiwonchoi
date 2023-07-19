@@ -5,6 +5,48 @@ import '@/styles/global.css'
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
+  authors: [{ name: 'Jiwon Choi', url: 'https://devjiwonchoi.com' }],
+  publisher: 'Jiwon Choi',
+  metadataBase: new URL('https://devjiwonchoi.com'),
+  openGraph: {
+    title: 'Jiwon Choi',
+    description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
+    url: 'https://devjiwonchoi.com',
+    siteName: 'Jiwon Choi',
+    type: 'website',
+    images: [
+      {
+        url: 'https://devjiwonchoi.com/me-profile.png',
+        width: 800,
+        height: 600,
+        alt: 'Jiwon Choi',
+      },
+    ],
+    locale: 'en_US',
+  },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  keywords: [
+    'Jiwon Choi',
+    'devjiwonchoi',
+    'developer',
+    'DevOps',
+    'Next.js',
+    'React',
+    'JavaScript',
+    'TypeScript',
+  ],
 }
 
 export default function RootLayout({
