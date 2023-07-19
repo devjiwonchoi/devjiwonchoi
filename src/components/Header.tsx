@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="sm:mb-6">
+    <header className="mb-6 sm:mb-8">
       <div className="flex justify-between p-6">
         <Link href="/">
           <span className="text-neutral-200 text-lg font-extralight hover:text-[#fff] transition ease-in-out delay-150 sm:text-2xl">
@@ -20,9 +20,9 @@ export function Header() {
             <Image
               src="/github-mark-white.svg"
               alt="GitHub Logo"
-              width={30}
-              height={30}
-              className="opacity-80 hover:opacity-100 transition ease-in-out delay-150"
+              width={0}
+              height={0}
+              className="w-7 h-7 opacity-80 hover:opacity-100 transition ease-in-out delay-150"
             />
           </Link>
           <Link
@@ -33,9 +33,9 @@ export function Header() {
             <Image
               src="/gmail-2020.svg"
               alt="Gmail Logo"
-              width={30}
-              height={30}
-              className="opacity-80 hover:opacity-100 transition ease-in-out delay-150 filter brightness-0 invert"
+              width={0}
+              height={0}
+              className="w-7 h-7 opacity-80 hover:opacity-100 transition ease-in-out delay-150 filter brightness-0 invert"
             />
           </Link>
         </div>
