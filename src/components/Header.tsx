@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-6 sm:mb-8">
+    <header className="mb-4 sm:mb-8">
       <div className="flex justify-between p-6">
         <Link href="/">
           <span className="text-neutral-200 text-lg font-extralight hover:text-[#fff] transition ease-in-out delay-150 sm:text-2xl">

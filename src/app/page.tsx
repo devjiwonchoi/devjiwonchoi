@@ -5,14 +5,14 @@ export default function Home() {
     <main className="p-6 mb-auto">
       <section>
         <article className="mb-6">
-          <h1 className="text-neutral-200 text-2xl mb-4 sm:text-3xl sm:mb-6">
+          <h1 className="text-neutral-200 text-3xl mb-6 sm:text-4xl">
             Persona
           </h1>
-          <blockquote className="text-neutral-400 italic border-l-2 border-solid border-neutral-500 pl-2.5 mb-4">
+          <blockquote className="text-neutral-400 italic border-l-2 border-solid border-neutral-500 pl-2.5 mb-6">
             &quot;Don&apos;t let the comment speak for your code.&quot; - Jiwon
             Choi
           </blockquote>
-          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl sm:mb-4">
+          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl">
             Efficiency-Driven Developer
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base">
@@ -34,7 +34,7 @@ export default function Home() {
           </p>
         </article>
         <article className="mb-6">
-          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl sm:mb-4">
+          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl">
             Goal & Interests
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base">
@@ -52,7 +52,7 @@ export default function Home() {
           </p>
         </article>
         <article className="mb-6">
-          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl sm:mb-4">
+          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl">
             Dependencies
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base">
@@ -72,11 +72,11 @@ export default function Home() {
           </p>
         </article>
         <article>
-          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl sm:mb-4">
+          <h2 className="text-neutral-200 text-xl mb-4 sm:text-2xl">
             Contributions
           </h2>
           <ul>
-            <li className="text-neutral-200 text-sm sm:text-base sm:mb-4">
+            <li className="text-neutral-200 text-sm sm:text-base mb-2 sm:mb-4">
               - Next.js:{' '}
               <Link
                 href="https://github.com/vercel/next.js/pull/51104"
@@ -93,7 +93,7 @@ export default function Home() {
                 #51148
               </Link>
             </li>
-            <li className="text-neutral-200 text-sm sm:text-base sm:mb-4">
+            <li className="text-neutral-200 text-sm sm:text-base mb-2 sm:mb-4">
               - TypeScript:{' '}
               <Link
                 href="https://github.com/microsoft/TypeScript/pull/54871"
@@ -103,7 +103,7 @@ export default function Home() {
                 #54871
               </Link>
             </li>
-            <li className="text-neutral-200 text-sm sm:text-base sm:mb-4">
+            <li className="text-neutral-200 text-sm sm:text-base mb-2 sm:mb-4">
               - Bunchee:{' '}
               <Link
                 href="https://github.com/huozhi/bunchee/pull/229"
