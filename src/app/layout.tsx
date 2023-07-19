@@ -10,18 +10,18 @@ export const metadata: Metadata = {
     width: 'device-width',
     initialScale: 1,
   },
-  authors: [{ name: 'Jiwon Choi', url: 'https://devjiwonchoi.com' }],
+  authors: [{ name: 'Jiwon Choi', url: 'https://devjiwonchoi.codes' }],
   publisher: 'Jiwon Choi',
-  metadataBase: new URL('https://devjiwonchoi.com'),
+  metadataBase: new URL('https://devjiwonchoi.codes'),
   openGraph: {
     title: 'Jiwon Choi',
     description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
-    url: 'https://devjiwonchoi.com',
+    url: 'https://devjiwonchoi.codes',
     siteName: 'Jiwon Choi',
     type: 'website',
     images: [
       {
-        url: 'https://devjiwonchoi.com/me-profile.png',
+        url: 'https://devjiwonchoi.codes/me-profile.png',
         width: 800,
         height: 600,
         alt: 'Jiwon Choi',
