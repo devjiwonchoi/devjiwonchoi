@@ -6,6 +6,10 @@ import '@/styles/global.css'
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
   authors: [{ name: 'Jiwon Choi', url: 'https://devjiwonchoi.com' }],
   publisher: 'Jiwon Choi',
   metadataBase: new URL('https://devjiwonchoi.com'),
