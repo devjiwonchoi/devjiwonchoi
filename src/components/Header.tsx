@@ -3,12 +3,16 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-4 sm:mb-8">
-      <div className="flex justify-between p-6">
+    <header>
+      <section className="flex justify-between p-6">
         <Link href="/">
-          <span className="text-neutral-200 text-lg font-extralight hover:text-[#fff] transition ease-in-out delay-150 sm:text-2xl">
-            @devjiwonchoi
-          </span>
+          <Image
+            src="/me-logo.svg"
+            alt="devjiwonchoi Logo"
+            width={0}
+            height={0}
+            className="w-8 opacity-80 hover:opacity-100 transition ease-in-out delay-150"
+          />
         </Link>
         <div className="flex items-center space-x-4">
           <Link
@@ -39,7 +43,7 @@ export function Header() {
             />
           </Link>
         </div>
-      </div>
+      </section>
     </header>
   )
 }

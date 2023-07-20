@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
-import { Header, Footer } from '@/components'
+import { Header, Footer, NavBar, ProfileCard } from '@/components'
 import '@/styles/global.css'
 
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
-  description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
+  description:
+    'Code Minimalist as DevOps Developer - Efficiency-Driven Development',
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -15,15 +16,16 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://devjiwonchoi.codes'),
   openGraph: {
     title: 'Jiwon Choi',
-    description: "Hi! I'm Jiwon Choi, a code minimalist based in Seoul, Korea.",
+    description:
+      'Code Minimalist as DevOps Developer - Efficiency-Driven Development',
     url: 'https://devjiwonchoi.codes',
     siteName: 'Jiwon Choi',
     type: 'website',
     images: [
       {
-        url: 'https://devjiwonchoi.codes/me-profile.png',
-        width: 800,
-        height: 600,
+        url: 'https://devjiwonchoi.codes/me-logo.png',
+        width: 400,
+        height: 300,
         alt: 'Jiwon Choi',
       },
     ],
@@ -66,6 +68,9 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
+
+        <ProfileCard />
+        <NavBar />
         {children}
         <Footer />
         <Analytics />

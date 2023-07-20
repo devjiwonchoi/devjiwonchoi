@@ -5,9 +5,6 @@ export default function Home() {
     <main className="p-6 mb-auto">
       <section>
         <article className="mb-6">
-          <h1 className="text-neutral-200 text-3xl mb-6 sm:text-4xl">
-            Persona
-          </h1>
           <blockquote className="text-neutral-400 italic border-l-2 border-solid border-neutral-500 pl-2.5 mb-6">
             &quot;Don&apos;t let the comment speak for your code.&quot; - Jiwon
             Choi
