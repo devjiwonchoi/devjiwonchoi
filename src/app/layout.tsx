@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://devjiwonchoi.codes/me-logo.png',
-        width: 400,
-        height: 300,
+        url: 'https://devjiwonchoi.codes/me-logo800x600.png',
+        width: 800,
+        height: 600,
         alt: 'Jiwon Choi',
       },
     ],
@@ -45,7 +45,8 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    'Jiwon Choi',
+    'Jiwon',
+    'Choi',
     'devjiwonchoi',
     'developer',
     'DevOps',
