@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
-import { Header, Footer, NavBar, ProfileCard } from '@/components'
+import { ProfileCard } from '@/components'
+import { Header, Footer, NavBar } from '@/layouts'
 import '@/styles/global.css'
 
 export const metadata: Metadata = {

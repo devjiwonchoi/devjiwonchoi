@@ -4,8 +4,8 @@ import { contribs } from '@/lib/contribs'
 export default function Contribs() {
   return (
     <main className="p-6 mb-auto">
-      <article className="space-y-8">
-        <h2 className="text-neutral-100 text-xl mb-4 sm:text-2xl">
+      <article className="space-y-6">
+        <h2 className="mb-4 text-neutral-100 text-2xl tracking-tight font-bold sm:text-3xl">
           Contributions (Pulls)
         </h2>
         {contribs.map(({ projectName, projectHref, pulls }) => (
