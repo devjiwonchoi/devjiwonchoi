@@ -5,12 +5,15 @@ export default function Bio() {
     <main className="p-6 mb-auto">
       <article className="mb-6">
         <h2 className="mb-4 text-neutral-200 text-2xl tracking-tight font-bold sm:text-3xl">
-          DevLife
+          Biography
         </h2>
         <blockquote className="text-neutral-400 italic border-l-2 border-solid border-neutral-500 pl-2.5 mb-6">
           &quot;Don&apos;t let the comment speak for your code.&quot; - Jiwon
           Choi
         </blockquote>
+        <h3 className="mb-4 text-neutral-200 text-xl tracking-tight font-bold sm:text-2xl">
+          DevLife
+        </h3>
         <p className="text-neutral-300 text-base sm:text-base">
           I enjoy to{' '}
           <strong className="text-neutral-50">
@@ -27,9 +30,9 @@ export default function Bio() {
         </p>
       </article>
       <article className="mb-6">
-        <h2 className="mb-4 text-neutral-200 text-2xl tracking-tight font-bold sm:text-3xl">
+        <h3 className="mb-4 text-neutral-200 text-xl tracking-tight font-bold sm:text-2xl">
           Goal & Interests
-        </h2>
+        </h3>
         <p className="text-neutral-300 text-base sm:text-base">
           I believe that{' '}
           <strong className="text-neutral-50">
@@ -43,9 +46,9 @@ export default function Bio() {
         </p>
       </article>
       <article className="mb-6">
-        <h2 className="mb-4 text-neutral-200 text-2xl tracking-tight font-bold sm:text-3xl">
+        <h3 className="mb-4 text-neutral-200 text-xl tracking-tight font-bold sm:text-2xl">
           Dependencies
-        </h2>
+        </h3>
         <p className="text-neutral-300 text-base sm:text-base">
           Apart from coding, I actively contribute in Next.js -{' '}
           <Link

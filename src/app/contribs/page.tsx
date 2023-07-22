@@ -22,6 +22,7 @@ export default function Contribs() {
                     key={pullNum}
                     href={pullHref}
                     className="hover:text-neutral-50"
+                    target="_blank"
                   >
                     #{pullNum}
                   </Link>
