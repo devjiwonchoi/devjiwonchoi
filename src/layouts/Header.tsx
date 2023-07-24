@@ -29,7 +29,7 @@ export function Header() {
           />
         </Link>
         <Link
-          href="mailto:devjeanmarlon@gmail.com"
+          href="mailto:devjiwonchoi@gmail.com"
           aria-label="devjiwonchoi's Gmail Address"
           className="inline-block"
         >

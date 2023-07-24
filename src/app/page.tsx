@@ -50,7 +50,7 @@ export default function Bio() {
           Dependencies
         </h3>
         <p className="text-neutral-300 text-base sm:text-base">
-          Apart from coding, I actively contribute in Next.js -{' '}
+          Apart from coding, I actively contribute to Next.js -{' '}
           <Link
             href="https://github.com/vercel/next.js/discussions"
             target="_blank"
