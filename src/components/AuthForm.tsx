@@ -13,13 +13,7 @@ export function AuthForm() {
       </h3>
       <button
         type="button"
-        className="flex items-center justify-center py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent w-full hover:bg-neutral-800 transition ease-in-out duration-150"
-      >
-        Personal Email
-      </button>
-      <button
-        type="button"
-        className="flex items-center py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent w-full hover:bg-neutral-800 transition ease-in-out duration-150"
+        className="flex justify-center w-2/3 sm:w-1/2 py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent hover:bg-neutral-800 transition ease-in-out duration-150"
         onClick={() => verifyEmail('github')}
       >
         <Image
@@ -33,7 +27,7 @@ export function AuthForm() {
       </button>
       <button
         type="button"
-        className="flex items-center py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent w-full hover:bg-neutral-800 transition ease-in-out duration-150"
+        className="flex justify-center w-2/3 sm:w-1/2 py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent hover:bg-neutral-800 transition ease-in-out duration-150"
         onClick={() => verifyEmail('google')}
       >
         <Image
