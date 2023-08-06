@@ -1,4 +1,5 @@
 'use client'
+import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
 
 export function RequestForm({ email }: { email: string }) {
@@ -72,12 +73,7 @@ export function RequestForm({ email }: { email: string }) {
             placeholder="Leave a comment..."
           ></textarea>
         </div>
-        <button
-          type="submit"
-          className="py-3 px-5 text-sm font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent sm:w-fit hover:bg-neutral-800 transition ease-in-out duration-150"
-        >
-          Send Message
-        </button>
+        <SubmitButton />
       </form>
     </>
   )
