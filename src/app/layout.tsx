@@ -70,7 +70,6 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-
         <ProfileCard />
         <NavBar />
         {children}

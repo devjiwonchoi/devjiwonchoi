@@ -6,6 +6,7 @@ export function NavBar() {
       <ul className="flex justify-center space-x-4">
         {[
           ['Bio', '/'],
+          ['Blog', '/blog'],
           ['Contribs', '/contributions'],
           ['Certs', '/certifications'],
           ['Req', '/request'],
@@ -14,7 +15,7 @@ export function NavBar() {
             <Link
               href={url}
               className={
-                title === 'Certs'
+                title === 'Blog' || title === 'Certs' || title === 'Req'
                   ? 'text-neutral-500 font-medium line-through pointer-events-none'
                   : 'text-neutral-200  font-medium hover:underline hover:text-neutral-50'
               }
