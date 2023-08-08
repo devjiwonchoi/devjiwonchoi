@@ -15,7 +15,7 @@ export function NavBar() {
             <Link
               href={url}
               className={
-                title === 'Blog' || title === 'Certs' || title === 'Req'
+                title === 'Certs' || title === 'Req'
                   ? 'text-neutral-500 font-medium line-through pointer-events-none'
                   : 'text-neutral-200  font-medium hover:underline hover:text-neutral-50'
               }
