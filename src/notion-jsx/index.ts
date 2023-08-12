@@ -48,11 +48,36 @@ function renderElement({
   return createElement(type, props, children)
 }
 
+type NotionJSXOption = {
+  [key: string]: {
+    className?: string
+    style?: {
+      [key: string]: string
+    }
+  }
+}
+
+const notionJSXOption: NotionJSXOption = {
+  h1: {
+    className: 'text-neutral-100 text-4xl font-bold',
+  },
+  h2: {
+    className: 'text-neutral-200 text-3xl font-bold',
+  },
+  h3: {
+    className: 'text-neutral-200 text-2xl font-bold',
+  },
+  p: {
+    className: 'text-neutral-300 text-base',
+  },
+}
+
 export function renderPage(pageData: any) {
   const results = initResults(pageData)
   const page = results.map((block: any) => {
     return renderElement({
       type: block.type,
+      props: notionJSXOption[block.type],
       children: block.content,
     })
   })
