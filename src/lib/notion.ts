@@ -33,3 +33,13 @@ export const getPostsInfo = (data: any) => {
     { nextCursor: postData[postData.length - 1].id },
   ]
 }
+
+export const refinePosts = (data: any) => {
+  return data
+    .flat()
+    .flatMap((obj: any) => obj.posts || [])
+    .filter(
+      (post: any, index: number, self: any) =>
+        index === self.findIndex((p: any) => p.id === post.id)
+    )
+}

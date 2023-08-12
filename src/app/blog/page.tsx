@@ -3,15 +3,15 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import useSWRInfinite from 'swr/infinite'
 import { BlogPostSkeletonLoader } from '@/components/Loader/BlogPostSkeletonLoader'
-import { NOTION_BLOG_PAGE_SIZE } from '@/lib/notion'
+import { NOTION_BLOG_PAGE_SIZE, refinePosts } from '@/lib/notion'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const getKey = (pageIndex: number, previousPageData: any) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
-  if (pageIndex === 0) return `/api/blog/posts`
+  if (pageIndex === 0) return `/api/blog`
   const nextCursor = previousPageData[1].nextCursor
   // return `/api/blog/posts?pageIndex=${pageIndex + 1}`
-  return `/api/blog/posts?nextCursor=${nextCursor}`
+  return `/api/blog?nextCursor=${nextCursor}`
 }
 
 const EmptyPosts = () => {
@@ -52,12 +52,7 @@ export default function Blog() {
 
   if (isLoading) return <BlogPostSkeletonLoader />
   if (!data) return <EmptyPosts />
-  const posts = data
-    .flat()
-    .flatMap((obj) => obj.posts || [])
-    .filter(
-      (post, index, self) => index === self.findIndex((p) => p.id === post.id)
-    )
+  const posts = refinePosts(data)
 
   return (
     <main className="p-6 mb-auto">
