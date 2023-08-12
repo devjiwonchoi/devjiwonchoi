@@ -6,5 +6,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/certs'],
+  matcher: ['/blog', '/blog/:path*', '/certifications', '/request'],
 }
