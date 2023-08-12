@@ -1,8 +1,14 @@
 import { NextResponse, type NextRequest } from 'next/server'
+import { notionClient } from '@/lib'
 
 export async function GET(
   request: NextRequest,
-  { params: { postId } }: { params: { postId: string[] } }
+  { params: { slug } }: { params: { slug: string } }
 ) {
-  return NextResponse.json({ postId })
+  const blockId = slug.split('-').pop() || ''
+  const response = await notionClient.blocks.children.list({
+    block_id: blockId,
+  })
+
+  return NextResponse.json({ ...response })
 }

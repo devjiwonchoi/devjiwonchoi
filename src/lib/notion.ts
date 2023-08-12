@@ -6,35 +6,38 @@ export const notionClient = new Client({
   auth: process.env.NOTION_TOKEN
 })
 
-export const getPostsInfo = (data: any) => {
+export function generateSlug(title: string, id: string): string {
+  return title.toLowerCase().replace(/ /g, '-') + '-' + id.replace(/-/g, '')
+}
+
+export function getPostsInfo(data: any) {
   const postData = data.map((postData: any) => {
     const postProperties = postData.properties
 
     const id = postData.id
     const title = postProperties.Page.title[0].text.content
     const categories = postProperties.Category.multi_select
-    const slug = postProperties.Slug.rich_text[0].text.content
-    const updatedAt = new Date(postProperties.Date.last_edited_time).toLocaleDateString('en-US', {
+    const slug = generateSlug(title, id)
+    const updatedAt = new Date(
+      postProperties.Date.last_edited_time
+    ).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
     })
 
-    return ({
+    return {
       id: id,
       title: title,
       categories: categories,
       slug: slug,
-      updatedAt: updatedAt
-    })
+      updatedAt: updatedAt,
+    }
   })
-  return [
-    { posts: postData },
-    { nextCursor: postData[postData.length - 1].id },
-  ]
+  return [{ posts: postData }, { nextCursor: postData[postData.length - 1].id }]
 }
 
-export const refinePosts = (data: any) => {
+export function refinePosts(data: any) {
   return data
     .flat()
     .flatMap((obj: any) => obj.posts || [])

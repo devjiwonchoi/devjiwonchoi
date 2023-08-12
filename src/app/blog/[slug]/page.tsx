@@ -1,9 +1,23 @@
 import { refinePosts } from '@/lib/notion'
+import NotionPage from '@/notion-jsx/NotionPage'
 
-export default function BlogPost() {
+async function getPost(slug: string) {
+  const response = await fetch(`${process.env.API_URL}/blog/${slug}`)
+  const data = await response.json()
+  return data
+}
+
+export default async function BlogPost({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const post = await getPost(params.slug)
+
   return (
     <main className="p-6 mb-auto">
       <h1 className="text-3xl font-bold">Blog Post</h1>
+      <NotionPage pageData={post} />
     </main>
   )
 }
