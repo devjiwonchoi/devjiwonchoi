@@ -1,17 +1,13 @@
-'use client'
-import { useSession } from 'next-auth/react'
+import { getServerSession } from 'next-auth/next'
 import { AuthForm, RequestForm } from '@/components'
+import { authOptions } from '@/lib'
 
-export default function Request() {
-  const { data: session, status } = useSession()
-  const { email } = session?.user || {}
+export default async function Request() {
+  const session = await getServerSession(authOptions)
+
   return (
     <main className="p-6 mb-auto">
-      {status === 'authenticated' && email ? (
-        <RequestForm email={email} />
-      ) : (
-        <AuthForm />
-      )}
+      {session ? <RequestForm email={session.user?.email} /> : <AuthForm />}
     </main>
   )
 }

@@ -2,7 +2,7 @@
 import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
 
-export function RequestForm({ email }: { email: string }) {
+export function RequestForm({ email }: { email?: string | null }) {
   const handleSubmit = async (formData: FormData) => {
     const { email, subject, text } = Object.fromEntries(formData)
     try {
