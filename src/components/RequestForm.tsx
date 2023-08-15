@@ -1,9 +1,9 @@
-'use client'
 import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
 
 export function RequestForm({ email }: { email?: string | null }) {
   const handleSubmit = async (formData: FormData) => {
+    'use server'
     const { email, subject, text } = Object.fromEntries(formData)
     try {
       const response = await sendEmailToMe(
