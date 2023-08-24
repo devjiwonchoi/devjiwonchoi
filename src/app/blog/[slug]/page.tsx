@@ -1,22 +1,21 @@
+import { NotionAPI } from 'notion-client'
+import NotionPage from '@/components/NotionPage'
 import { refinePosts } from '@/lib/notion'
-import NotionPage from '@/notion-jsx/NotionPage'
-
-async function getPost(slug: string) {
-  const response = await fetch(`${process.env.API_URL}/blog/${slug}`)
-  const data = await response.json()
-  return data
-}
+import 'react-notion-x/src/styles.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
 export default async function BlogPost({
   params,
 }: {
   params: { slug: string }
 }) {
-  const post = await getPost(params.slug)
+  const notion = new NotionAPI()
+  const blockId = params.slug.split('-').pop() ?? ''
+  const recordMap = await notion.getPage(blockId)
 
   return (
     <main className="p-6 mb-auto">
-      <NotionPage pageData={post} />
+      <NotionPage recordMap={recordMap} />
     </main>
   )
 }
