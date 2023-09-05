@@ -33,8 +33,8 @@ dependencies:
     specifier: ^6.16.0
     version: 6.16.0(@babel/runtime@7.22.6)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.2)
   swr:
-    specifier: ^2.2.0
-    version: 2.2.0(react@18.2.0)
+    specifier: ^2.2.2
+    version: 2.2.2(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -3561,11 +3561,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /swr@2.2.0(react@18.2.0):
-    resolution: {integrity: sha512-AjqHOv2lAhkuUdIiBu9xbuettzAzWXmCEcLONNKJRba87WAefz8Ca9d6ds/SzrPc235n1IxWYdhJ2zF3MNUaoQ==}
+  /swr@2.2.2(react@18.2.0):
+    resolution: {integrity: sha512-CbR41AoMD4TQBQw9ic3GTXspgfM9Y8Mdhb5Ob4uIKXhWqnRLItwA5fpGvB7SmSw3+zEjb0PdhiEumtUvYoQ+bQ==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
+      client-only: 0.0.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
