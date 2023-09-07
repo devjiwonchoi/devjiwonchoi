@@ -7,7 +7,7 @@ export function NavBar() {
         {[
           ['Bio', '/'],
           ['Blog', '/blog'],
-          ['Contribs', '/contributions'],
+          // ['Contribs', '/contributions'],
           // ['Certs', '/certifications'],
           ['Req', '/request'],
         ].map(([title, url]) => (
