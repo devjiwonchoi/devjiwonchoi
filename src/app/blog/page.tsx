@@ -10,7 +10,6 @@ const getKey = (pageIndex: number, previousPageData: any) => {
   if (previousPageData && !previousPageData.length) return null // reached the end
   if (pageIndex === 0) return `/api/blog`
   const nextCursor = previousPageData[1].nextCursor
-  // return `/api/blog/posts?pageIndex=${pageIndex + 1}`
   return `/api/blog?nextCursor=${nextCursor}`
 }
 
@@ -26,11 +25,10 @@ const EmptyPosts = () => {
 }
 
 export default function Blog() {
-  const { data, isLoading, isValidating, size, setSize } = useSWRInfinite(
-    getKey,
-    fetcher,
-    { revalidateOnFocus: false, keepPreviousData: true }
-  )
+  const { data, isLoading, size, setSize } = useSWRInfinite(getKey, fetcher, {
+    revalidateOnFocus: false,
+    keepPreviousData: true,
+  })
   const isLoadingMore =
     isLoading || (size > 0 && data && typeof data[size - 1] === 'undefined')
   const isEmpty = data?.[0]?.length === 0
