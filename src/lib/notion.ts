@@ -3,7 +3,7 @@ import { Client } from '@notionhq/client'
 export const NOTION_BLOG_PAGE_SIZE = 7
 
 export const notionClient = new Client({
-  auth: process.env.NOTION_TOKEN
+  auth: process.env.NOTION_TOKEN,
 })
 
 export function generateSlug(title: string, id: string): string {
@@ -19,7 +19,7 @@ export function getPostsInfo(data: any) {
     const categories = postProperties.Category.multi_select
     const slug = generateSlug(title, id)
     const updatedAt = new Date(
-      postProperties.Date.last_edited_time
+      postProperties.Date.last_edited_time,
     ).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
@@ -43,6 +43,6 @@ export function refinePosts(data: any) {
     .flatMap((obj: any) => obj.posts || [])
     .filter(
       (post: any, index: number, self: any) =>
-        index === self.findIndex((p: any) => p.id === post.id)
+        index === self.findIndex((p: any) => p.id === post.id),
     )
 }

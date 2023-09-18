@@ -8,12 +8,12 @@ export function AuthForm() {
   }
   return (
     <section className="flex flex-col items-center space-y-2">
-      <h3 className="mb-4 text-neutral-200 text-xl tracking-tight font-medium sm:text-2xl">
+      <h3 className="mb-4 text-xl font-medium tracking-tight text-neutral-200 sm:text-2xl">
         Verify Email
       </h3>
       <button
         type="button"
-        className="flex justify-center w-2/3 sm:w-1/2 py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent hover:bg-neutral-800 transition ease-in-out duration-150"
+        className="flex w-2/3 justify-center border border-neutral-200 bg-transparent px-5 py-3 text-center text-base font-medium text-neutral-200 transition duration-150 ease-in-out hover:bg-neutral-800 sm:w-1/2"
         onClick={() => verifyEmail('github')}
       >
         <Image
@@ -21,13 +21,13 @@ export function AuthForm() {
           alt="GitHub Logo"
           width={0}
           height={0}
-          className="w-6 h-6 mr-2"
+          className="mr-2 h-6 w-6"
         />
         GitHub Account
       </button>
       <button
         type="button"
-        className="flex justify-center w-2/3 sm:w-1/2 py-3 px-5 text-base font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent hover:bg-neutral-800 transition ease-in-out duration-150"
+        className="flex w-2/3 justify-center border border-neutral-200 bg-transparent px-5 py-3 text-center text-base font-medium text-neutral-200 transition duration-150 ease-in-out hover:bg-neutral-800 sm:w-1/2"
         onClick={() => verifyEmail('google')}
       >
         <Image
@@ -35,7 +35,7 @@ export function AuthForm() {
           alt="Gmail Logo"
           width={0}
           height={0}
-          className="w-6 h-6 mr-2 filter brightness-0 invert"
+          className="mr-2 h-6 w-6 brightness-0 invert filter"
         />
         Gmail Account
       </button>

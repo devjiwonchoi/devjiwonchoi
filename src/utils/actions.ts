@@ -4,7 +4,7 @@ import nodemailer, { Transporter } from 'nodemailer'
 export async function sendEmailToMe(
   email: string,
   subject: string,
-  message: string
+  message: string,
 ) {
   const transporter: Transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -26,13 +26,25 @@ export async function sendEmailToMe(
   try {
     const info = await transporter.sendMail(mailOption)
     if (info.accepted.length > 0) {
-      return { message: 'Email sent successfully!', response: info.response, status: 'ACCEPTED' }
+      return {
+        message: 'Email sent successfully!',
+        response: info.response,
+        status: 'ACCEPTED',
+      }
     }
     if (info.pending.length > 0) {
-      return { message: 'Email pending', response: info.response, status: 'PENDING' }
+      return {
+        message: 'Email pending',
+        response: info.response,
+        status: 'PENDING',
+      }
     }
     if (info.rejected.length > 0) {
-      return { message: 'Email rejected', response: info.response, status: 'REJECTED' }
+      return {
+        message: 'Email rejected',
+        response: info.response,
+        status: 'REJECTED',
+      }
     }
   } catch (error) {
     console.error(error)

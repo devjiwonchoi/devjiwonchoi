@@ -6,7 +6,7 @@ export function SubmitButton() {
   return (
     <button
       type="submit"
-      className="py-3 px-5 text-sm font-medium text-center text-neutral-200 border border-neutral-200 bg-transparent sm:w-fit hover:bg-neutral-800 transition ease-in-out duration-150"
+      className="border border-neutral-200 bg-transparent px-5 py-3 text-center text-sm font-medium text-neutral-200 transition duration-150 ease-in-out hover:bg-neutral-800 sm:w-fit"
       disabled={pending}
     >
       {pending ? 'Sending Message...' : 'Send Message'}

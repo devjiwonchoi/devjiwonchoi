@@ -15,11 +15,11 @@ const getKey = (pageIndex: number, previousPageData: any) => {
 
 const EmptyPosts = () => {
   return (
-    <main className="p-6 mb-auto">
-      <h2 className="mb-4 text-neutral-200 text-2xl tracking-tight font-bold sm:text-3xl">
+    <main className="mb-auto p-6">
+      <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
         Blog
       </h2>
-      <p className="text-neutral-400 text-lg sm:text-xl">No Posts Found.</p>
+      <p className="text-lg text-neutral-400 sm:text-xl">No Posts Found.</p>
     </main>
   )
 }
@@ -53,14 +53,14 @@ export default function Blog() {
   const posts = refinePosts(data)
 
   return (
-    <main className="p-6 mb-auto">
-      <h2 className="mb-4 text-neutral-200 text-2xl tracking-tight font-bold sm:text-3xl">
+    <main className="mb-auto p-6">
+      <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
         Blog
       </h2>
       {posts.map((post: any) => (
         <article
           key={post.id}
-          className="p-6 mb-2 bg-neutral-900 hover:bg-neutral-800"
+          className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
         >
           <Link href={`/blog/${post.slug}`}>
             <h3 className="text-xl font-bold text-neutral-300">{post.title}</h3>
@@ -69,7 +69,7 @@ export default function Blog() {
           {post.categories?.map((category: any) => (
             <span
               key={category.id}
-              className="inline-block px-2 py-1 mt-2 mr-2 text-xs font-medium text-neutral-100 bg-neutral-700 rounded"
+              className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
             >
               {category.name}
             </span>
@@ -77,16 +77,16 @@ export default function Blog() {
         </article>
       ))}
       {isLoadingMore && (
-        <div className="text-center p-4">
-          <div className="inline-block h-8 w-8 animate-spin mx-auto rounded-full border-4 border-solid border-r-neutral-400 border-neutral-500 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
+        <div className="p-4 text-center">
+          <div className="mx-auto inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-neutral-500 border-r-neutral-400 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
         </div>
       )}
       {isReachingEnd && (
         <div className="p-4">
-          <p className="mb-2 text-base sm:text-lg text-neutral-400 text-center tracking-wide">
+          <p className="mb-2 text-center text-base tracking-wide text-neutral-400 sm:text-lg">
             You&apos;ve reached the end of the posts! 🎉
           </p>
-          <p className="text-sm sm:text-base text-neutral-400 text-center tracking-wide">
+          <p className="text-center text-sm tracking-wide text-neutral-400 sm:text-base">
             Click here to view my blog on Medium →{' '}
             <Link
               href="https://devjiwonchoi.medium.com/"
