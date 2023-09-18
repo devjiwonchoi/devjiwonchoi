@@ -14,7 +14,7 @@ export function NavBar() {
           <li key={title}>
             <Link
               href={url}
-              className="text-neutral-200  font-medium hover:underline hover:text-neutral-50"
+              className="font-medium  text-neutral-200 hover:text-neutral-50 hover:underline"
             >
               {title}
             </Link>

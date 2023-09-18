@@ -9,7 +9,7 @@ export function RequestForm({ email }: { email?: string | null }) {
       const response = await sendEmailToMe(
         email as string,
         subject as string,
-        text as string
+        text as string,
       )
       if (response) {
         alert(response.message)
@@ -21,14 +21,14 @@ export function RequestForm({ email }: { email?: string | null }) {
 
   return (
     <>
-      <h2 className="mb-6 text-neutral-100 text-2xl tracking-tight font-bold sm:text-3xl">
+      <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
         Request
       </h2>
-      <form action={handleSubmit} className="space-y-8 content-center">
+      <form action={handleSubmit} className="content-center space-y-8">
         <div>
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-neutral-300"
+            className="mb-2 block text-sm font-medium text-neutral-300"
           >
             Your email
           </label>
@@ -36,7 +36,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             type="email"
             id="email"
             name="email"
-            className="appearance-none focus:outline-none shadow-sm bg-transparent border-b border-neutral-200 text-neutral-200 text-sm block w-full p-2.5"
+            className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             defaultValue={email ?? ''}
             placeholder="example@gmail.com"
             required
@@ -45,7 +45,7 @@ export function RequestForm({ email }: { email?: string | null }) {
         <div>
           <label
             htmlFor="subject"
-            className="block mb-2 text-sm font-medium text-neutral-300"
+            className="mb-2 block text-sm font-medium text-neutral-300"
           >
             Subject
           </label>
@@ -53,7 +53,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             type="text"
             id="subject"
             name="subject"
-            className="appearance-none focus:outline-none shadow-sm bg-transparent border-b border-neutral-200 text-neutral-200 text-sm block w-full p-2.5"
+            className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             placeholder="Let me know how I can help you"
             required
           />
@@ -61,7 +61,7 @@ export function RequestForm({ email }: { email?: string | null }) {
         <div className="sm:col-span-2">
           <label
             htmlFor="text"
-            className="block mb-4 text-sm font-medium text-neutral-300"
+            className="mb-4 block text-sm font-medium text-neutral-300"
           >
             Your message
           </label>
@@ -69,7 +69,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             id="text"
             name="text"
             rows={6}
-            className="appearance-none focus:outline-none bg-transparent block p-2.5 w-full text-sm text-neutral-200 shadow-sm border border-neutral-200"
+            className="block w-full appearance-none border border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             placeholder="Leave a comment..."
           ></textarea>
         </div>

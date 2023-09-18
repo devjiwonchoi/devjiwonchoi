@@ -10,7 +10,7 @@ export function Header() {
           alt="devjiwonchoi Logo"
           width={0}
           height={0}
-          className="w-8 opacity-80 hover:opacity-100 transition ease-in-out delay-150"
+          className="w-8 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
         />
       </Link>
       <div className="flex items-center space-x-4">
@@ -25,7 +25,7 @@ export function Header() {
             alt="GitHub Logo"
             width={0}
             height={0}
-            className="w-7 h-7 opacity-80 hover:opacity-100 transition ease-in-out delay-150"
+            className="h-7 w-7 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
         <Link
@@ -38,7 +38,7 @@ export function Header() {
             alt="Gmail Logo"
             width={0}
             height={0}
-            className="w-7 h-7 opacity-80 hover:opacity-100 transition ease-in-out delay-150 filter brightness-0 invert"
+            className="h-7 w-7 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
       </div>

@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-neutral-950">
       <body
-        className="container flex flex-col mx-auto h-screen max-w-4xl"
+        className="container mx-auto flex h-screen max-w-4xl flex-col"
         suppressHydrationWarning={true}
       >
         <Header />

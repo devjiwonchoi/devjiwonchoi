@@ -14,7 +14,7 @@ export default async function BlogPost({
   const recordMap = await notion.getPage(blockId)
 
   return (
-    <main className="p-6 mb-auto">
+    <main className="mb-auto p-6">
       <NotionPage recordMap={recordMap} />
     </main>
   )

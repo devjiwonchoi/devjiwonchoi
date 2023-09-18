@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.notion-text, .notion-h-title, .notion-list, .notion-callout-text, .notion-table-of-contents-item-body {
+.notion-text,
+.notion-h-title,
+.notion-list,
+.notion-callout-text,
+.notion-table-of-contents-item-body {
   color: #d4d4d4;
 }

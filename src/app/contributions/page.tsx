@@ -3,20 +3,20 @@ import { contribs } from '@/lib/contribs'
 
 export default function Contribs() {
   return (
-    <main className="p-6 mb-auto">
+    <main className="mb-auto p-6">
       <article className="space-y-6">
-        <h2 className="mb-4 text-neutral-100 text-2xl tracking-tight font-bold sm:text-3xl">
+        <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
           Contributions (Pulls)
         </h2>
         {contribs.map(({ projectName, projectHref, pulls }) => (
           <ul key={projectName}>
-            <li className="text-neutral-200 text-lg mb-2 sm:text-xl">
+            <li className="mb-2 text-lg text-neutral-200 sm:text-xl">
               <Link href={projectHref} target="_blank">
                 {projectName}
               </Link>
             </li>
             <ul>
-              <li className="text-neutral-300 text-base space-x-2">
+              <li className="space-x-2 text-base text-neutral-300">
                 {pulls.map(({ pullNum, pullHref }) => (
                   <Link
                     key={pullNum}
