@@ -58,7 +58,15 @@ export default function Bio() {
           >
             Discussions
           </Link>
-          , and I also enjoy BJJ and chess.
+          , and I also enjoy BJJ and{' '}
+          <Link
+            href="https://www.chess.com/member/devjiwonchoi"
+            target="_blank"
+            className="underline hover:text-neutral-50"
+          >
+            chess
+          </Link>
+          .
         </p>
       </article>
     </main>
