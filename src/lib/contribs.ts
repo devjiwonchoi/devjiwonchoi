@@ -1,3 +1,4 @@
+// TODO: Modify to call GitHub API
 export const contribs = [
   {
     projectName: 'Next.js',
