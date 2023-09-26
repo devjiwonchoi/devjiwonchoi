@@ -3,7 +3,6 @@ import { Analytics } from '@vercel/analytics/react'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/layouts'
 import '@/styles/global.css'
-import { Console } from '@/utils/browser-console'
 
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
@@ -72,7 +71,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <Analytics />
-        <Console />
       </body>
     </html>
   )

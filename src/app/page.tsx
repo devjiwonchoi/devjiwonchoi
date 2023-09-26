@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Console } from '@/utils/browser-console'
 
 export default function Bio() {
   return (
@@ -69,6 +70,7 @@ export default function Bio() {
           .
         </p>
       </article>
+      <Console />
     </main>
   )
 }
