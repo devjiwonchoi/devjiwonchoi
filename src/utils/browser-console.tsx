@@ -1,9 +1,9 @@
 'use client'
 export const Console = () => {
   const str =
-    'Hi Dev!\n Thanks for visiting my website.\n' +
-    'Check out my fancy stat card here:\n' +
-    'https://answered.vercel.app/api?username=devjiwonchoi'
+    'Hi Dev! Thanks for visiting my website.\n' +
+    'Check out this website source on GitHub:\n' +
+    'https://github.com/devjiwonchoi/devjiwonchoi.codes'
   console.log(str)
   return null
 }
