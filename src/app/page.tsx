@@ -51,6 +51,17 @@ export default function Bio() {
           Dependencies
         </h3>
         <p className="text-base text-neutral-300 sm:text-base">
+          I am an{' '}
+          <Link
+            href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
+            target="_blank"
+            className="underline hover:text-neutral-50"
+          >
+            AWS Certified Developer - Associate
+          </Link>
+          .
+        </p>
+        <p className="text-base text-neutral-300 sm:text-base">
           Apart from coding, I actively contribute to Next.js -{' '}
           <Link
             href="https://github.com/vercel/next.js/discussions"
