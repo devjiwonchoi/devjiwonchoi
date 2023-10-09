@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { contribs } from '@/lib/contribs'
+
+export const metadata: Metadata = {
+  title: 'Contributions | Jiwon Choi',
+  description: "Jiwon Choi's contributions to open source projects",
+}
 
 export default function Contribs() {
   return (
