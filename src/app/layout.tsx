@@ -7,27 +7,21 @@ import '@/styles/global.css'
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description:
-    'Code Minimalist as DevOps Developer - Efficiency-Driven Development',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  authors: [{ name: 'Jiwon Choi', url: 'https://devjiwonchoi.codes' }],
-  publisher: 'Jiwon Choi',
+    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
   metadataBase: new URL('https://devjiwonchoi.codes'),
   openGraph: {
     title: 'Jiwon Choi',
     description:
-      'Code Minimalist as DevOps Developer - Efficiency-Driven Development',
-    url: 'https://devjiwonchoi.codes',
+      'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
+    url: '/',
     siteName: 'Jiwon Choi',
     type: 'website',
     images: [
       {
-        url: 'https://devjiwonchoi.codes/me-logo800x600.png',
+        url: '/me-logo800x600.png',
         width: 800,
         height: 600,
-        alt: 'Jiwon Choi',
+        alt: 'devjiwonchoi logo',
       },
     ],
     locale: 'en_US',
@@ -41,16 +35,13 @@ export const metadata: Metadata = {
     },
   },
   keywords: [
-    'devjiwonchoi',
-    'devjiwonchoi.codes',
     'Jiwon Choi',
     'Jiwon',
     'Choi',
-    'Next.js',
-    'Vercel',
-    'portfolio',
-    'blog',
-    'tech blog',
+    'devjiwonchoi',
+    'devjiwonchoi.codes',
+    'DevOps',
+    'Developer',
   ],
 }
 
