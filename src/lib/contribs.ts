@@ -98,60 +98,60 @@ export const contribs = [
       },
     ],
   },
-  {
-    projectName: 'Vite.js - Docs Korean',
-    projectHref: 'https://github.com/vitejs/docs-ko',
-    pulls: [
-      {
-        pullNum: '644',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/644',
-      },
-      {
-        pullNum: '645',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/645',
-      },
-      {
-        pullNum: '646',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/646',
-      },
-      {
-        pullNum: '647',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/647',
-      },
-      {
-        pullNum: '648',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/648',
-      },
-      {
-        pullNum: '649',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/649',
-      },
-      {
-        pullNum: '651',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/651',
-      },
-      {
-        pullNum: '652',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/652',
-      },
-      {
-        pullNum: '653',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/653',
-      },
-      {
-        pullNum: '654',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/654',
-      },
-      {
-        pullNum: '655',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/655',
-      },
-      {
-        pullNum: '656',
-        pullHref: 'https://github.com/vitejs/docs-ko/pull/656',
-      },
-    ],
-  },
+  // {
+  //   projectName: 'Vite.js - Docs Korean',
+  //   projectHref: 'https://github.com/vitejs/docs-ko',
+  //   pulls: [
+  //     {
+  //       pullNum: '644',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/644',
+  //     },
+  //     {
+  //       pullNum: '645',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/645',
+  //     },
+  //     {
+  //       pullNum: '646',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/646',
+  //     },
+  //     {
+  //       pullNum: '647',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/647',
+  //     },
+  //     {
+  //       pullNum: '648',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/648',
+  //     },
+  //     {
+  //       pullNum: '649',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/649',
+  //     },
+  //     {
+  //       pullNum: '651',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/651',
+  //     },
+  //     {
+  //       pullNum: '652',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/652',
+  //     },
+  //     {
+  //       pullNum: '653',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/653',
+  //     },
+  //     {
+  //       pullNum: '654',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/654',
+  //     },
+  //     {
+  //       pullNum: '655',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/655',
+  //     },
+  //     {
+  //       pullNum: '656',
+  //       pullHref: 'https://github.com/vitejs/docs-ko/pull/656',
+  //     },
+  //   ],
+  // },
   {
     projectName: 'Lichess-API',
     projectHref: 'https://github.com/lichess-org/api',
