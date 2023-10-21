@@ -12,7 +12,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.13",
     "@vercel/analytics": "^1.1.1",
-    "next": "^13.5.6",
+    "next": "canary",
     "next-auth": "^4.24.3",
     "nodemailer": "^6.9.6",
     "notion-client": "^6.16.0",
@@ -29,7 +29,7 @@
     "autoprefixer": "^10.4.16",
     "encoding": "^0.1.13",
     "eslint": "^8.52.0",
-    "eslint-config-next": "^13.5.6",
+    "eslint-config-next": "canary",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
