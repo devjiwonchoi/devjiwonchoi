@@ -60,7 +60,7 @@ devDependencies:
     version: 8.52.0
   eslint-config-next:
     specifier: canary
-    version: 13.5.7-canary.32(eslint@8.52.0)(typescript@5.2.2)
+    version: 13.5.7-canary.37(eslint@8.52.0)(typescript@5.2.2)
   postcss:
     specifier: ^8.4.31
     version: 8.4.31
@@ -203,8 +203,8 @@ packages:
     resolution: {integrity: sha512-s6RTGTWJt94UwfnqMGMD1/k8TRZppKSR8Jcl4xfhshJZmjPjuQpO31319HjUThW5rmFAlYkJt0i7XQ8EZQHYIA==}
     dev: false
 
-  /@next/eslint-plugin-next@13.5.7-canary.32:
-    resolution: {integrity: sha512-O+TPqFH0BdZXnsdNo/7GMYqo+MefS+tGqnEdbfBu5xMx3MdHzvBYHebML0/wsHg7H30Mc6FtlBPUBE9tpDIZuA==}
+  /@next/eslint-plugin-next@13.5.7-canary.37:
+    resolution: {integrity: sha512-mxkX3gnwEXBV3SvaQumo8i/1OVhpvuqJ1MwfDA3dU5MziMt1RIdVq6Qhq0VZKnsjCMHa4gcxsYAtEKx4vh9JSQ==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -401,12 +401,6 @@ packages:
     dependencies:
       '@types/node': 20.8.9
       form-data: 4.0.0
-    dev: false
-
-  /@types/node@20.8.8:
-    resolution: {integrity: sha512-YRsdVxq6OaLfmR9Hy816IMp33xOBjfyOgUd77ehqg96CFywxAPbDbXvAsuN2KVg2HOT8Eh6uAfU+l4WffwPVrQ==}
-    dependencies:
-      undici-types: 5.25.3
     dev: false
 
   /@types/node@20.8.9:
@@ -1295,8 +1289,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /eslint-config-next@13.5.7-canary.32(eslint@8.52.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-vy+Ybetsyz2dfZNkCq2s/eaRgtdlOk1fBK0/8VzoT2PI8TNjcmIxdPXYFd6AFL5UGZtXxk0Jt3gYuCtu2KfYoA==}
+  /eslint-config-next@13.5.7-canary.37(eslint@8.52.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-Fl1fXHaIuAO9vlZw4Z6Zg8wWy8XaHpmmYkfGfJ16zsAB5VV+twbgLBGGrswJx7Xmf6tKeDhBzwi2ddTqpmd7lg==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -1304,7 +1298,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.5.7-canary.32
+      '@next/eslint-plugin-next': 13.5.7-canary.37
       '@rushstack/eslint-patch': 1.5.1
       '@typescript-eslint/parser': 6.8.0(eslint@8.52.0)(typescript@5.2.2)
       eslint: 8.52.0
@@ -2178,7 +2172,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.8.8
+      '@types/node': 20.8.9
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false
@@ -3781,10 +3775,6 @@ packages:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
     dev: true
-
-  /undici-types@5.25.3:
-    resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
-    dev: false
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
