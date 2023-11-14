@@ -1,12 +1,12 @@
 {
-  "name": "devjiwonchoi.codes",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
+    "dev": "next dev --turbo",
+    "build": "next build",
     "start": "next start",
-    "lint": "turbo lint",
+    "lint": "next lint",
     "lint-fix": "prettier --write ."
   },
   "dependencies": {
