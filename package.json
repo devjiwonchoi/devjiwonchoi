@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
+    "dev": "turbo dev",
+    "build": "turbo build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "turbo lint",
     "lint-fix": "prettier --write ."
   },
   "dependencies": {

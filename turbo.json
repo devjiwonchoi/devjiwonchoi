@@ -7,6 +7,10 @@
         "!.next/cache/**"
       ]
     },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "lint": {}
   }
 }
