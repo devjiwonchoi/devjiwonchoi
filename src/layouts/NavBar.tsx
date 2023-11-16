@@ -10,7 +10,7 @@ export function NavBar() {
           ['Contribs', '/contributions'],
           // ['Certs', '/certifications'],
           // ['Proj', '/projects'],
-          ['Req', '/request'],
+          // ['Req', '/request'],
         ].map(([title, url]) => (
           <li key={title}>
             <Link
