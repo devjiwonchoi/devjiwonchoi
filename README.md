@@ -1,6 +1,4 @@
-# [devjiwonchoi.codes](https://devjiwonchoi.codes)
-
-> Portfolio website built with Next.js
+# [jiwonchoi.dev](https://jiwonchoi.dev)
 
 ## Dependencies
 
