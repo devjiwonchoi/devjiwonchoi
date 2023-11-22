@@ -1,8 +1,28 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/react'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/layouts'
 import '@/styles/global.css'
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className={`${GeistSans.variable} bg-neutral-950`}>
+      <body className="jwc-body" suppressHydrationWarning={true}>
+        <Header />
+        <ProfileCard />
+        {/* <NavBar /> */}
+        {children}
+        <Footer />
+        <Analytics />
+      </body>
+    </html>
+  )
+}
 
 export const metadata: Metadata = {
   title: 'Jiwon Choi',
@@ -43,26 +63,4 @@ export const metadata: Metadata = {
     'DevOps',
     'Developer',
   ],
-}
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en" className="bg-neutral-950">
-      <body
-        className="container mx-auto flex h-screen max-w-4xl flex-col"
-        suppressHydrationWarning={true}
-      >
-        <Header />
-        <ProfileCard />
-        <NavBar />
-        {children}
-        <Footer />
-        <Analytics />
-      </body>
-    </html>
-  )
 }

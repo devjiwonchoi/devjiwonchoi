@@ -6,8 +6,8 @@ export function NavBar() {
       <ul className="flex justify-center space-x-4">
         {[
           ['Bio', '/'],
-          ['Blog', '/blog'],
-          ['Contribs', '/contributions'],
+          // ['Blog', '/blog'],
+          // ['Contribs', '/contributions'],
           // ['Certs', '/certifications'],
           // ['Proj', '/projects'],
           // ['Req', '/request'],
