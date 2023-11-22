@@ -13,7 +13,7 @@
     "@notionhq/client": "^2.2.13",
     "@vercel/analytics": "^1.1.1",
     "geist": "^1.1.0",
-    "next": "canary",
+    "next": "^14.0.3",
     "next-auth": "^4.24.4",
     "nodemailer": "^6.9.7",
     "notion-client": "^6.16.0",
@@ -30,7 +30,7 @@
     "autoprefixer": "^10.4.16",
     "encoding": "^0.1.13",
     "eslint": "^8.52.0",
-    "eslint-config-next": "canary",
+    "eslint-config-next": "^14.0.3",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
@@ -40,6 +40,7 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
+    "jsxSingleQuote": false,
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
