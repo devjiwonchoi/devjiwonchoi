@@ -44,7 +44,7 @@ export default function Bio() {
           <Link
             href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
             target="_blank"
-            className="hover:jwc-strong underline"
+            className="underline hover:text-neutral-50"
           >
             AWS Certified Developer - Associate
           </Link>
@@ -55,7 +55,7 @@ export default function Bio() {
           <Link
             href="https://github.com/vercel/next.js/discussions"
             target="_blank"
-            className="hover:jwc-strong underline"
+            className="underline hover:text-neutral-50"
           >
             Discussions
           </Link>
@@ -63,7 +63,7 @@ export default function Bio() {
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
-            className="hover:jwc-strong underline"
+            className="underline hover:text-neutral-50"
           >
             chess
           </Link>
