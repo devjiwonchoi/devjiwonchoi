@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://devjiwonchoi.codes/sitemap.xml',
+    sitemap: 'https://jiwonchoi.dev/sitemap.xml',
   }
 }
