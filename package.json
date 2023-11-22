@@ -12,6 +12,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.13",
     "@vercel/analytics": "^1.1.1",
+    "geist": "^1.1.0",
     "next": "canary",
     "next-auth": "^4.24.4",
     "nodemailer": "^6.9.7",
