@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth/next'
 import { AuthForm, RequestForm } from '@/components'
-import { authOptions } from '@/lib'
+import { authOptions } from '@/utils'
 
 export const metadata: Metadata = {
   title: 'Request | Jiwon Choi',

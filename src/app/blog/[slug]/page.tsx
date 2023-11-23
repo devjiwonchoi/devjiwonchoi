@@ -1,6 +1,6 @@
 import { NotionAPI } from 'notion-client'
 import NotionPage from '@/components/NotionPage'
-import { refinePosts } from '@/lib/notion'
+import { refinePosts } from '@/utils/notion'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 

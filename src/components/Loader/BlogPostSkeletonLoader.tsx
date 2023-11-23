@@ -1,4 +1,4 @@
-import { NOTION_BLOG_PAGE_SIZE } from '@/lib/notion'
+import { NOTION_BLOG_PAGE_SIZE } from '@/utils/notion'
 
 const BlogPostSkeleton = () => {
   return (
