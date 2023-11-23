@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml .",
-    "test:e2e": "pnpm playwright test"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
