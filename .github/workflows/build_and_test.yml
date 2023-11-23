@@ -34,5 +34,3 @@ jobs:
         run: pnpm test:e2e
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
-
-
