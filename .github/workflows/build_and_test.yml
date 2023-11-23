@@ -1,4 +1,4 @@
-name: E2E Tests
+name: build-and-test
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
       - '**/*.md'
 
 jobs:
-  tests_e2e:
-    name: Run end-to-end tests
+  playwright-e2e:
+    name: playwright-e2e
     runs-on: ubuntu-latest
 
     strategy:
@@ -37,6 +37,12 @@ jobs:
 
       - name: Install playwright browsers
         run: pnpm playwright install --with-deps
+
+      - name: Build
+        run: pnpm build
+
+      - name: Start Next.js
+        run: pnpm start -p 3000
 
       - name: Run tests
         run: pnpm test:e2e
