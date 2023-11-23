@@ -1,5 +1,5 @@
 {
-  "name": "devjiwonchoi.codes",
+  "name": "jiwonchoi.dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write ."
+    "lint-fix": "prettier --write !pnpm-lock.yaml ."
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
@@ -28,7 +28,6 @@
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
-    "encoding": "^0.1.13",
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.3",
     "postcss": "^8.4.31",
