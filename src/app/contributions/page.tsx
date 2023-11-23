@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { contribs } from '@/lib/contribs'
+import { contribs } from '@/utils/contribs'
 
 export const metadata: Metadata = {
   title: 'Contributions | Jiwon Choi',

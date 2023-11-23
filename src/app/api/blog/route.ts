@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { getPostsInfo, notionClient } from '@/lib'
+import { getPostsInfo, notionClient } from '@/utils'
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams

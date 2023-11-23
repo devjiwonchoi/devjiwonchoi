@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import useSWRInfinite from 'swr/infinite'
 import { BlogPostSkeletonLoader } from '@/components/Loader/BlogPostSkeletonLoader'
-import { NOTION_BLOG_PAGE_SIZE, refinePosts } from '@/lib/notion'
+import { NOTION_BLOG_PAGE_SIZE, refinePosts } from '@/utils/notion'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const getKey = (pageIndex: number, previousPageData: any) => {
