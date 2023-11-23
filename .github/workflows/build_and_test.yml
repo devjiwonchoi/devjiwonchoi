@@ -1,16 +1,12 @@
 name: build-and-test
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    paths-ignore:
-      - '**/*.md'
+  deployment_status:
 
 jobs:
-  playwright-e2e:
-    name: playwright-e2e
+  e2e-playwright:
+    name: e2e-playwright
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
 
     strategy:
@@ -38,11 +34,9 @@ jobs:
       - name: Install playwright browsers
         run: pnpm playwright install --with-deps
 
-      - name: Build
-        run: pnpm build
-
-      - name: Start Next.js
-        run: pnpm start -p 3000
-
       - name: Run tests
         run: pnpm test:e2e
+        env:
+          BASE_URL: ${{ github.event.deployment_status.environment_url }}
+
+
