@@ -19,3 +19,13 @@ export default async function BlogPost({
     </main>
   )
 }
+
+export async function generateStaticParams() {
+  const response = await fetch(`${process.env.API_URL}/blog`)
+  const data = await response.json()
+  const posts = refinePosts(data)
+
+  return posts.map((post: any) => ({
+    slug: post.slug,
+  }))
+}
