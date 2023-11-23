@@ -53,10 +53,8 @@ export default function Blog() {
   const posts = refinePosts(data)
 
   return (
-    <main className="mb-auto p-6">
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
-        Blog
-      </h2>
+    <main className="jwc-main">
+      <h2 className="jwc-h2">Blog</h2>
       {posts.map((post: any) => (
         <article
           key={post.id}

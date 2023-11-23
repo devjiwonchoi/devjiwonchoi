@@ -15,7 +15,7 @@ export default function RootLayout({
       <body className="jwc-body" suppressHydrationWarning={true}>
         <Header />
         <ProfileCard />
-        {/* <NavBar /> */}
+        <NavBar />
         {children}
         <Footer />
         <Analytics />
