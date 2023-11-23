@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description:
     'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
-  metadataBase: new URL('https://devjiwonchoi.codes'),
+  metadataBase: new URL('https://jiwonchoi.dev'),
   openGraph: {
     title: 'Jiwon Choi',
     description:
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     'Jiwon',
     'Choi',
     'devjiwonchoi',
-    'devjiwonchoi.codes',
+    'jiwonchoi.dev',
     'DevOps',
     'Developer',
   ],
