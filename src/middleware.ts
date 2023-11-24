@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { i18n } from './dictionaries/i18n'
 
 export function middleware({ url, nextUrl: { pathname } }: NextRequest) {
+  console.log(pathname)
   const { langs, defaultLang } = i18n
   const hasLang = langs.some((lang) => pathname.startsWith(`/${lang}`))
   if (hasLang) return NextResponse.next()

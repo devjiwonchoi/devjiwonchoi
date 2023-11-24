@@ -5,7 +5,7 @@ import { getDictionary } from '@/dictionaries/i18n'
 import { authOptions } from '@/utils'
 
 export const metadata: Metadata = {
-  title: 'Request | Jiwon Choi',
+  title: 'Request',
   description: 'Send a work request, question, or comment to Jiwon Choi',
 }
 
