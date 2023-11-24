@@ -50,26 +50,15 @@ export default function Bio() {
           Dependencies
         </h3>
         <p className="text-base text-neutral-300 sm:text-base">
-          I am an{' '}
+          Apart from coding, I enjoy playing{' '}
           <Link
-            href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
+            href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            AWS Certified Developer - Associate
-          </Link>
-          .
-        </p>
-        <p className="text-base text-neutral-300 sm:text-base">
-          Apart from coding, I actively contribute to Next.js -{' '}
-          <Link
-            href="https://github.com/vercel/next.js/discussions"
-            target="_blank"
-            className="underline hover:text-neutral-50"
-          >
-            Discussions
-          </Link>
-          , and I also enjoy BJJ and{' '}
+            BJJ
+          </Link>{' '}
+          and{' '}
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
@@ -79,6 +68,32 @@ export default function Bio() {
           </Link>
           .
         </p>
+      </article>
+      <article>
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
+          Certifications & Awards
+        </h3>
+        <ul className="list-inside list-disc text-neutral-300">
+          <li>
+            <Link
+              href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
+              target="_blank"
+              className="underline hover:text-neutral-50"
+            >
+              AWS Certified Developer - Associate
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://en.wikipedia.org/wiki/Commendation_Medal"
+              target="_blank"
+              className="underline hover:text-neutral-50"
+            >
+              US Army Commendation Medal
+            </Link>{' '}
+            x 2
+          </li>
+        </ul>
       </article>
     </main>
   )
