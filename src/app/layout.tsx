@@ -10,7 +10,7 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jiwonchoi.dev'),
+  metadataBase: new URL('https://www.jiwonchoi.dev'),
   alternates: {
     canonical: '/',
     languages: {
