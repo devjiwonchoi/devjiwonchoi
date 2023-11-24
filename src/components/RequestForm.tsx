@@ -3,7 +3,7 @@ import { sendEmailToMe } from '@/utils'
 
 export function RequestForm({
   email,
-  dictionary,
+  dictionary: { req, common },
 }: {
   dictionary: typeof import('@/dictionaries/en.json')
   email?: string | null
@@ -26,7 +26,7 @@ export function RequestForm({
   return (
     <>
       <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
-        Request
+        {req.req_form.h2}
       </h2>
       <form action={handleSubmit} className="content-center space-y-8">
         <div>
@@ -34,7 +34,7 @@ export function RequestForm({
             htmlFor="email"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            Your email
+            {req.req_form.label_1}
           </label>
           <input
             type="email"
@@ -51,7 +51,7 @@ export function RequestForm({
             htmlFor="subject"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            Subject
+            {req.req_form.label_2}
           </label>
           <input
             type="text"
@@ -67,7 +67,7 @@ export function RequestForm({
             htmlFor="text"
             className="mb-4 block text-sm font-medium text-neutral-300"
           >
-            Your message
+            {req.req_form.label_3}
           </label>
           <textarea
             id="text"

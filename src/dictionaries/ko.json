@@ -17,6 +17,19 @@
     "p_6": "Apart from coding, I enjoy playing ",
     "h3_4": "Certifications & Awards"
   },
+  "req": {
+    "req_form": {
+      "h2": "Request",
+      "label_1": "Your email",
+      "label_2": "Subject",
+      "label_3": "Your message"
+    },
+    "auth_form": {
+      "h3": "Verify Email",
+      "button_1": "GitHub Account",
+      "button_2": "Gmail Account"
+    }
+  },
   "common": {
     "nextjs": "Next.js",
     "typescript": "TypeScript",
