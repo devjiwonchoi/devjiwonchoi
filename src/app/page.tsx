@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export default function Bio() {
@@ -91,7 +92,7 @@ export default function Bio() {
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            chess
+            Chess
           </Link>
           .
         </p>
@@ -124,4 +125,21 @@ export default function Bio() {
       </article>
     </main>
   )
+}
+
+export const metadata: Metadata = {
+  description:
+    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
+  openGraph: {
+    url: '/',
+  },
+  keywords: [
+    'Jiwon Choi',
+    'Jiwon',
+    'Choi',
+    'devjiwonchoi',
+    'jiwonchoi.dev',
+    'DevOps',
+    'Developer',
+  ],
 }
