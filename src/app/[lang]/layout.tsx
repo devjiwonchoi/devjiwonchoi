@@ -7,11 +7,13 @@ import { getDictionary } from '@/dictionaries/i18n'
 
 export default function LangRootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode
+  params: { lang: string }
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} bg-neutral-950`}>
+    <html lang={lang} className={`${GeistSans.variable} bg-neutral-950`}>
       <body
         className="container mx-auto flex h-screen max-w-4xl flex-col"
         suppressHydrationWarning={true}
