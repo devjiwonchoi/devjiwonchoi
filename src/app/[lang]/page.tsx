@@ -1,7 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 
-export default function Bio() {
+export default function Bio({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
+  // ['en-US', 'en;q=0.9'] -> 'en-US'
+  const primaryLang = headers().get('Accept-Language')?.split(',')[0]
+  const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
+  //TODO: if !isPrimaryLang, suggest to redirect to primaryLang
   return (
     <main className="mb-auto p-6">
       <article className="mb-6">
@@ -125,6 +134,15 @@ export default function Bio() {
       </article>
     </main>
   )
+}
+
+function validateLang(primaryLang: string, lang: string) {
+  if (primaryLang.includes('-')) {
+    // ko-KR -> ko; zh-CN -> zh
+    primaryLang = primaryLang.split('-')[0]
+  }
+
+  return primaryLang === lang
 }
 
 export const metadata: Metadata = {
