@@ -1,75 +1,145 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export default function Bio() {
   return (
-    <main className="jwc-main">
-      <article className="jwc-article">
-        <h2 className="jwc-h2">Biography</h2>
-        <blockquote className="jwc-blockquote">
+    <main className="mb-auto p-6">
+      <article className="mb-6">
+        <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
+          Biography
+        </h2>
+        <blockquote className="mb-6 border-l-2 border-solid border-neutral-500 pl-2.5 italic text-neutral-400">
           &quot;Don&apos;t let the comment speak for your code.&quot; - Jiwon
           Choi
         </blockquote>
-        <h3 className="jwc-h3">DevLife</h3>
-        <p className="jwc-p">
-          I enjoy to{' '}
-          <strong className="jwc-strong">
-            automate, document, and minimalize
-          </strong>{' '}
-          the development process, focusing on the essentials.
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
+          DevLife
+        </h3>
+        <p className="text-base text-neutral-200 sm:text-base">
+          I am a software developer who loves to{' '}
+          <strong className="text-neutral-50">
+            automate, simplify, and troubleshoot.
+          </strong>
         </p>
-        <p className="jwc-p">
-          I write my code to be{' '}
-          <strong className="jwc-strong">self-explanatory and precise</strong>,
-          minimizing the need for extensive comments.
-        </p>
-      </article>
-      <article className="jwc-article">
-        <h3 className="jwc-h3">Goal & Interests</h3>
-        <p className="jwc-p">
-          I believe that{' '}
-          <strong className="jwc-strong">
-            saving time and effort for developers
-          </strong>{' '}
-          will eventually make the world a bit better place to live.
-        </p>
-        <p className="jwc-p">
-          This is why I chose DevOps, and for the same reason I am interested in
-          compilers.
-        </p>
-      </article>
-      <article className="jwc-article">
-        <h3 className="jwc-h3">Dependencies</h3>
-        <p className="jwc-p">
-          I am an{' '}
+        <p className="text-base text-neutral-200 sm:text-base">
+          My current concentration is contributing to open-source projects such
+          as{' '}
           <Link
-            href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
+            href="https://github.com/vercel/next.js"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            AWS Certified Developer - Associate
+            Next.js
+          </Link>
+          ,{' '}
+          <Link
+            href="https://github.com/microsoft/TypeScript"
+            target="_blank"
+            className="underline hover:text-neutral-50"
+          >
+            TypeScript
+          </Link>
+          , and{' '}
+          <Link
+            href="https://github.com/huozhi/bunchee"
+            target="_blank"
+            className="underline hover:text-neutral-50"
+          >
+            Bunchee
           </Link>
           .
         </p>
-        <p className="jwc-p">
-          Apart from coding, I actively contribute to Next.js -{' '}
+      </article>
+      <article className="mb-6">
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
+          Ambition
+        </h3>
+        <p className="text-base text-neutral-200 sm:text-base">
+          I believe that{' '}
+          <strong className="text-neutral-50">
+            saving time for developers and end users
+          </strong>{' '}
+          is the key to the success of the product.
+        </p>
+        <p className="text-base text-neutral-200 sm:text-base">
+          In the near future, I will become a software engineer who feels
+          confident in writing time-saving codes.
+        </p>
+        <p className="text-base text-neutral-200 sm:text-base">
+          I will be one of the leading engineers who can{' '}
+          <strong className="text-neutral-50">
+            inspire people and positively influence
+          </strong>{' '}
+          others.
+        </p>
+      </article>
+      <article className="mb-6">
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
+          Dependencies
+        </h3>
+        <p className="text-base text-neutral-200 sm:text-base">
+          Apart from coding, I enjoy playing{' '}
           <Link
-            href="https://github.com/vercel/next.js/discussions"
+            href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            Discussions
-          </Link>
-          , and I also enjoy BJJ and{' '}
+            BJJ
+          </Link>{' '}
+          and{' '}
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            chess
+            Chess
           </Link>
           .
         </p>
       </article>
+      <article>
+        <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
+          Certifications & Awards
+        </h3>
+        <ul className="list-inside list-disc text-neutral-200">
+          <li>
+            <Link
+              href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
+              target="_blank"
+              className="underline hover:text-neutral-50"
+            >
+              AWS Certified Developer - Associate
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://en.wikipedia.org/wiki/Commendation_Medal"
+              target="_blank"
+              className="underline hover:text-neutral-50"
+            >
+              US Army Commendation Medal
+            </Link>{' '}
+            x 2
+          </li>
+        </ul>
+      </article>
     </main>
   )
+}
+
+export const metadata: Metadata = {
+  description:
+    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
+  openGraph: {
+    url: '/',
+  },
+  keywords: [
+    'Jiwon Choi',
+    'Jiwon',
+    'Choi',
+    'devjiwonchoi',
+    'jiwonchoi.dev',
+    'DevOps',
+    'Developer',
+  ],
 }

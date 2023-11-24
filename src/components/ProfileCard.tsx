@@ -14,7 +14,7 @@ export function ProfileCard() {
         Jiwon Choi
       </h1>
       <p className="uppercase tracking-widest text-neutral-50">
-        DevOps Developer
+        DevOps / Software
       </p>
     </section>
   )

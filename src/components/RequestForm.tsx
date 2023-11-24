@@ -11,9 +11,7 @@ export function RequestForm({ email }: { email?: string | null }) {
         subject as string,
         text as string,
       )
-      if (response) {
-        alert(response.message)
-      }
+      return response
     } catch (error) {
       console.error(error)
     }

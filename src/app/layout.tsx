@@ -12,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} bg-neutral-950`}>
-      <body className="jwc-body" suppressHydrationWarning={true}>
+      <body
+        className="container mx-auto flex h-screen max-w-4xl flex-col"
+        suppressHydrationWarning={true}
+      >
         <Header />
         <ProfileCard />
         <NavBar />
@@ -25,17 +28,19 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  title: 'Jiwon Choi',
-  description:
-    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
   metadataBase: new URL('https://jiwonchoi.dev'),
+  title: {
+    default: 'Jiwon Choi',
+    template: '%s | Jiwon Choi',
+  },
   openGraph: {
-    title: 'Jiwon Choi',
-    description:
-      'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
-    url: '/',
-    siteName: 'Jiwon Choi',
+    title: {
+      default: 'Jiwon Choi',
+      template: '%s | Jiwon Choi',
+    },
     type: 'website',
+    siteName: 'Jiwon Choi',
+    // TODO: for blogs and projects, set their main image
     images: [
       {
         url: '/me-logo800x600.png',
@@ -44,7 +49,9 @@ export const metadata: Metadata = {
         alt: 'devjiwonchoi logo',
       },
     ],
-    locale: 'en_US',
+  },
+  twitter: {
+    creator: '@devjiwonchoi',
   },
   robots: {
     index: true,
@@ -54,13 +61,6 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  keywords: [
-    'Jiwon Choi',
-    'Jiwon',
-    'Choi',
-    'devjiwonchoi',
-    'jiwonchoi.dev',
-    'DevOps',
-    'Developer',
-  ],
+  // TODO: add canonical url for i18n
+  // TODO: viewport for dark mode
 }
