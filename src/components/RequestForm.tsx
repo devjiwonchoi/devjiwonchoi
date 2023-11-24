@@ -26,7 +26,7 @@ export function RequestForm({
   return (
     <>
       <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
-        {req.req_form.h2}
+        {req.reqForm.h2}
       </h2>
       <form action={handleSubmit} className="content-center space-y-8">
         <div>
@@ -34,7 +34,7 @@ export function RequestForm({
             htmlFor="email"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            {req.req_form.label_1}
+            {req.reqForm.label_1}
           </label>
           <input
             type="email"
@@ -51,7 +51,7 @@ export function RequestForm({
             htmlFor="subject"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            {req.req_form.label_2}
+            {req.reqForm.label_2}
           </label>
           <input
             type="text"
@@ -67,7 +67,7 @@ export function RequestForm({
             htmlFor="text"
             className="mb-4 block text-sm font-medium text-neutral-300"
           >
-            {req.req_form.label_3}
+            {req.reqForm.label_3}
           </label>
           <textarea
             id="text"

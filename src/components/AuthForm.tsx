@@ -13,7 +13,7 @@ export function AuthForm({
   return (
     <section className="flex flex-col items-center space-y-2">
       <h3 className="mb-4 text-xl font-medium tracking-tight text-neutral-200 sm:text-2xl">
-        {req.auth_form.h3}
+        {req.authForm.h3}
       </h3>
       <button
         type="button"
@@ -27,7 +27,7 @@ export function AuthForm({
           height={0}
           className="mr-2 h-6 w-6"
         />
-        {req.auth_form.button_1}
+        {req.authForm.button_1}
       </button>
       <button
         type="button"
@@ -41,7 +41,7 @@ export function AuthForm({
           height={0}
           className="mr-2 h-6 w-6 brightness-0 invert filter"
         />
-        {req.auth_form.button_2}
+        {req.authForm.button_2}
       </button>
     </section>
   )
