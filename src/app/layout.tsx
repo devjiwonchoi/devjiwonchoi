@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   twitter: {
     creator: '@devjiwonchoi',
   },
-  openGraph: {
-    type: 'website',
-  },
   robots: {
     index: true,
     follow: true,

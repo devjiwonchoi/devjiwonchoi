@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
 import { getDictionary } from '@/dictionaries/i18n'
@@ -136,19 +136,25 @@ function validateLang(primaryLang: string, lang: string) {
   return primaryLang === lang
 }
 
-export const metadata: Metadata = {
-  description:
-    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
-  openGraph: {
-    url: '/',
+export async function generateMetadata(
+  {
+    params: { lang },
+  }: {
+    params: { lang: string }
   },
-  keywords: [
-    'Jiwon Choi',
-    'Jiwon',
-    'Choi',
-    'devjiwonchoi',
-    'jiwonchoi.dev',
-    'DevOps',
-    'Developer',
-  ],
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const {
+    bio: { metadata },
+  } = await getDictionary(lang)
+  const { openGraph, keywords } = await parent
+
+  return {
+    description: metadata.description,
+    openGraph: {
+      ...openGraph,
+      url: metadata.openGraph.url,
+    },
+    keywords: keywords?.concat(metadata.keywords) ?? metadata.keywords,
+  }
 }

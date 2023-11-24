@@ -3,7 +3,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/react'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/components/layouts'
-import { getDictionary, i18n } from '@/dictionaries/i18n'
+import { getDictionary } from '@/dictionaries/i18n'
 
 export default function LangRootLayout({
   children,
@@ -40,6 +40,7 @@ export async function generateMetadata({
       template: metadata.title.template,
     },
     openGraph: {
+      type: 'website',
       locale: metadata.locale,
       siteName: metadata.openGraph.siteName,
       images: [
@@ -51,5 +52,6 @@ export async function generateMetadata({
         },
       ],
     },
+    keywords: ['Jiwon Choi', 'devjiwonchoi', 'jiwonchoi.dev'],
   }
 }

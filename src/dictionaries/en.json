@@ -15,7 +15,25 @@
     "strong_3": "inspire people and positively influence others.",
     "h3_3": "Dependencies",
     "p_6": "Apart from coding, I enjoy playing ",
-    "h3_4": "Certifications & Awards"
+    "h3_4": "Certifications & Awards",
+    "metadata": {
+      "description": "Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development",
+      "openGraph": {
+        "url": "/"
+      },
+      "keywords": [
+        "portfolio",
+        "biography",
+        "DevOps",
+        "Software",
+        "Developer",
+        "Engineer",
+        "AWS",
+        "Next.js",
+        "TypeScript",
+        "Bunchee"
+      ]
+    }
   },
   "req": {
     "reqForm": {
