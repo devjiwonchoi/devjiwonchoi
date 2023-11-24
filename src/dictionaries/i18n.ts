@@ -9,3 +9,8 @@ const dictionaries: {
 }
 
 export const getDictionary = async (lang: string) => dictionaries[lang]()
+
+export const i18n = {
+  defaultLang: 'en',
+  langs: ['ko', 'zh'],
+}
