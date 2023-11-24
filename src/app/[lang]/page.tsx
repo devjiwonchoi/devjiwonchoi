@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
+import { getDictionary } from '@/dictionaries/i18n'
 
-export default function Bio({
+export default async function Bio({
   params: { lang },
 }: {
   params: { lang: string }
@@ -11,34 +12,32 @@ export default function Bio({
   const primaryLang = headers().get('Accept-Language')?.split(',')[0]
   const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
   //TODO: if !isPrimaryLang, suggest to redirect to primaryLang
+
+  const dictionary = await getDictionary(lang)
   return (
     <main className="mb-auto p-6">
       <article className="mb-6">
         <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
-          Biography
+          {dictionary.bio.h2}
         </h2>
         <blockquote className="mb-6 border-l-2 border-solid border-neutral-500 pl-2.5 italic text-neutral-400">
-          &quot;Don&apos;t let the comment speak for your code.&quot; - Jiwon
-          Choi
+          &quot;{dictionary.bio.quote}&quot;
         </blockquote>
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          DevLife
+          {dictionary.bio.h3_1}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          I am a software developer who loves to{' '}
-          <strong className="text-neutral-50">
-            automate, simplify, and troubleshoot.
-          </strong>
+          {dictionary.bio.p_1}
+          <strong className="text-neutral-50">{dictionary.bio.strong_1}</strong>
         </p>
         <p className="text-base text-neutral-200 sm:text-base">
-          My current concentration is contributing to open-source projects such
-          as{' '}
+          {dictionary.bio.p_2}
           <Link
             href="https://github.com/vercel/next.js"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            Next.js
+            {dictionary.common.nextjs}
           </Link>
           ,{' '}
           <Link
@@ -46,69 +45,63 @@ export default function Bio({
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            TypeScript
+            {dictionary.common.typescript}
           </Link>
-          , and{' '}
+          , {dictionary.common.and}{' '}
           <Link
             href="https://github.com/huozhi/bunchee"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            Bunchee
+            {dictionary.common.bunchee}
           </Link>
           .
         </p>
       </article>
       <article className="mb-6">
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          Ambition
+          {dictionary.bio.h3_2}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          I believe that{' '}
-          <strong className="text-neutral-50">
-            saving time for developers and end users
-          </strong>{' '}
-          is the key to the success of the product.
+          {dictionary.bio.p_3_1}
+          <strong className="text-neutral-50">{dictionary.bio.strong_2}</strong>
+          {dictionary.bio.p_3_2}
         </p>
         <p className="text-base text-neutral-200 sm:text-base">
-          In the near future, I will become a software engineer who feels
-          confident in writing time-saving codes.
+          {dictionary.bio.p_4}
         </p>
         <p className="text-base text-neutral-200 sm:text-base">
-          I will be one of the leading engineers who can{' '}
-          <strong className="text-neutral-50">
-            inspire people and positively influence
-          </strong>{' '}
-          others.
+          {dictionary.bio.p_5_1}
+          <strong className="text-neutral-50">{dictionary.bio.strong_3}</strong>
         </p>
       </article>
       <article className="mb-6">
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          Dependencies
+          {dictionary.bio.h3_3}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          Apart from coding, I enjoy playing{' '}
+          {dictionary.bio.p_6}
           <Link
             href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            BJJ
+            {dictionary.common.bjj}
           </Link>{' '}
-          and{' '}
+          {dictionary.common.and}{' '}
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            Chess
+            {dictionary.common.chess}
           </Link>
           .
         </p>
       </article>
       <article>
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          Certifications & Awards
+          {dictionary.bio.h3_4}
         </h3>
         <ul className="list-inside list-disc text-neutral-200">
           <li>
@@ -117,7 +110,7 @@ export default function Bio({
               target="_blank"
               className="underline hover:text-neutral-50"
             >
-              AWS Certified Developer - Associate
+              {dictionary.common.aws_cert_dev}
             </Link>
           </li>
           <li>
@@ -126,7 +119,7 @@ export default function Bio({
               target="_blank"
               className="underline hover:text-neutral-50"
             >
-              US Army Commendation Medal
+              {dictionary.common.arcom}
             </Link>{' '}
             x 2
           </li>
