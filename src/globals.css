@@ -9,39 +9,3 @@
 .notion-table-of-contents-item-body {
   color: #d4d4d4;
 }
-
-.jwc-body {
-  @apply container mx-auto flex h-screen max-w-4xl flex-col;
-}
-
-.jwc-main {
-  @apply mb-auto p-6;
-}
-
-.jwc-article {
-  @apply mb-6;
-}
-
-.jwc-h1 {
-  @apply mb-4 text-4xl font-bold text-neutral-100;
-}
-
-.jwc-h2 {
-  @apply mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl;
-}
-
-.jwc-h3 {
-  @apply mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl;
-}
-
-.jwc-p {
-  @apply text-base text-neutral-300 sm:text-base;
-}
-
-.jwc-strong {
-  @apply text-neutral-50;
-}
-
-.jwc-blockquote {
-  @apply mb-6 border-l-2 border-solid border-neutral-500 pl-2.5 italic text-neutral-400;
-}

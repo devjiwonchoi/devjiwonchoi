@@ -12,7 +12,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} bg-neutral-950`}>
-      <body className="jwc-body" suppressHydrationWarning={true}>
+      <body
+        className="container mx-auto flex h-screen max-w-4xl flex-col"
+        suppressHydrationWarning={true}
+      >
         <Header />
         <ProfileCard />
         <NavBar />
