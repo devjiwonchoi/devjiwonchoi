@@ -18,13 +18,13 @@
     "h3_4": "Certifications & Awards"
   },
   "req": {
-    "req_form": {
+    "reqForm": {
       "h2": "Request",
       "label_1": "Your email",
       "label_2": "Subject",
       "label_3": "Your message"
     },
-    "auth_form": {
+    "authForm": {
       "h3": "Verify Email",
       "button_1": "GitHub Account",
       "button_2": "Gmail Account"
@@ -37,7 +37,22 @@
     "and": "and",
     "bjj": "BJJ",
     "chess": "Chess",
-    "aws_cert_dev": "AWS Certified Developer - Associate",
+    "awsCertDev": "AWS Certified Developer - Associate",
     "arcom": "US Army Commendation Medal"
+  },
+  "metadata": {
+    "locale": "en-US",
+    "title": {
+      "default": "Jiwon Choi",
+      "template": "%s | Jiwon Choi"
+    },
+    "openGraph": {
+      "siteName": "Jiwon Choi",
+      "images": [
+        {
+          "alt": "devjiwonchoi logo"
+        }
+      ]
+    }
   }
 }

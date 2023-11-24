@@ -108,7 +108,7 @@ export default async function Bio({
               target="_blank"
               className="underline hover:text-neutral-50"
             >
-              {common.aws_cert_dev}
+              {common.awsCertDev}
             </Link>
           </li>
           <li>
