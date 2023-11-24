@@ -2,7 +2,11 @@
 import Image from 'next/image'
 import { signIn } from 'next-auth/react'
 
-export function AuthForm() {
+export function AuthForm({
+  dictionary,
+}: {
+  dictionary: typeof import('@/dictionaries/en.json')
+}) {
   const verifyEmail = (provider: string) => {
     signIn(provider)
   }

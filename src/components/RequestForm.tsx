@@ -1,7 +1,13 @@
 import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
 
-export function RequestForm({ email }: { email?: string | null }) {
+export function RequestForm({
+  email,
+  dictionary,
+}: {
+  dictionary: typeof import('@/dictionaries/en.json')
+  email?: string | null
+}) {
   const handleSubmit = async (formData: FormData) => {
     'use server'
     const { email, subject, text } = Object.fromEntries(formData)

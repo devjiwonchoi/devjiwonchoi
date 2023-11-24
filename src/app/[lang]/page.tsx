@@ -10,34 +10,34 @@ export default async function Bio({
 }) {
   // ['en-US', 'en;q=0.9'] -> 'en-US'
   const primaryLang = headers().get('Accept-Language')?.split(',')[0]
-  const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
   //TODO: if !isPrimaryLang, suggest to redirect to primaryLang
+  const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
 
-  const dictionary = await getDictionary(lang)
+  const { bio, common } = await getDictionary(lang)
   return (
     <main className="mb-auto p-6">
       <article className="mb-6">
         <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
-          {dictionary.bio.h2}
+          {bio.h2}
         </h2>
         <blockquote className="mb-6 border-l-2 border-solid border-neutral-500 pl-2.5 italic text-neutral-400">
-          &quot;{dictionary.bio.quote}&quot;
+          &quot;{bio.quote}&quot;
         </blockquote>
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          {dictionary.bio.h3_1}
+          {bio.h3_1}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_1}
-          <strong className="text-neutral-50">{dictionary.bio.strong_1}</strong>
+          {bio.p_1}
+          <strong className="text-neutral-50">{bio.strong_1}</strong>
         </p>
         <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_2}
+          {bio.p_2}
           <Link
             href="https://github.com/vercel/next.js"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            {dictionary.common.nextjs}
+            {common.nextjs}
           </Link>
           ,{' '}
           <Link
@@ -45,63 +45,61 @@ export default async function Bio({
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            {dictionary.common.typescript}
+            {common.typescript}
           </Link>
-          , {dictionary.common.and}{' '}
+          , {common.and}{' '}
           <Link
             href="https://github.com/huozhi/bunchee"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            {dictionary.common.bunchee}
+            {common.bunchee}
           </Link>
           .
         </p>
       </article>
       <article className="mb-6">
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          {dictionary.bio.h3_2}
+          {bio.h3_2}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_3_1}
-          <strong className="text-neutral-50">{dictionary.bio.strong_2}</strong>
-          {dictionary.bio.p_3_2}
+          {bio.p_3_1}
+          <strong className="text-neutral-50">{bio.strong_2}</strong>
+          {bio.p_3_2}
         </p>
+        <p className="text-base text-neutral-200 sm:text-base">{bio.p_4}</p>
         <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_4}
-        </p>
-        <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_5_1}
-          <strong className="text-neutral-50">{dictionary.bio.strong_3}</strong>
+          {bio.p_5_1}
+          <strong className="text-neutral-50">{bio.strong_3}</strong>
         </p>
       </article>
       <article className="mb-6">
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          {dictionary.bio.h3_3}
+          {bio.h3_3}
         </h3>
         <p className="text-base text-neutral-200 sm:text-base">
-          {dictionary.bio.p_6}
+          {bio.p_6}
           <Link
             href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            {dictionary.common.bjj}
+            {common.bjj}
           </Link>{' '}
-          {dictionary.common.and}{' '}
+          {common.and}{' '}
           <Link
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
             className="underline hover:text-neutral-50"
           >
-            {dictionary.common.chess}
+            {common.chess}
           </Link>
           .
         </p>
       </article>
       <article>
         <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-200 sm:text-2xl">
-          {dictionary.bio.h3_4}
+          {bio.h3_4}
         </h3>
         <ul className="list-inside list-disc text-neutral-200">
           <li>
@@ -110,7 +108,7 @@ export default async function Bio({
               target="_blank"
               className="underline hover:text-neutral-50"
             >
-              {dictionary.common.aws_cert_dev}
+              {common.aws_cert_dev}
             </Link>
           </li>
           <li>
@@ -119,7 +117,7 @@ export default async function Bio({
               target="_blank"
               className="underline hover:text-neutral-50"
             >
-              {dictionary.common.arcom}
+              {common.arcom}
             </Link>{' '}
             x 2
           </li>
