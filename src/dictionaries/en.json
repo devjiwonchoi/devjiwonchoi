@@ -35,6 +35,9 @@
       ]
     }
   },
+  "blog": {
+    "h2": "Blog"
+  },
   "req": {
     "reqForm": {
       "h2": "Request",
