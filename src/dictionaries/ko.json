@@ -37,15 +37,19 @@
   },
   "req": {
     "reqForm": {
-      "h2": "Request",
-      "label_1": "Your email",
-      "label_2": "Subject",
-      "label_3": "Your message"
+      "h2": "문의 / 제안",
+      "label_1": "이메일",
+      "label_2": "제목",
+      "input_1": "무엇을 도와 드릴까요?",
+      "label_3": "내용",
+      "input_2": "내용을 입력 해주세요.",
+      "button_default": "이메일 보내기",
+      "button_pending": "이메일 보내는 중..."
     },
     "authForm": {
-      "h3": "Verify Email",
-      "button_1": "GitHub Account",
-      "button_2": "Gmail Account"
+      "h3": "이메일 인증 부탁 드립니다.",
+      "button_1": "GitHub 계정",
+      "button_2": "Gmail 계정"
     }
   },
   "common": {

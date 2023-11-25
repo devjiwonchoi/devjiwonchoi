@@ -40,7 +40,11 @@
       "h2": "Request",
       "label_1": "Your email",
       "label_2": "Subject",
-      "label_3": "Your message"
+      "input_1": "Let me know how I can help you",
+      "label_3": "Your message",
+      "input_2": "Leave a comment...",
+      "button_default": "Send Message",
+      "button_pending": "Sending Message..."
     },
     "authForm": {
       "h3": "Verify Email",

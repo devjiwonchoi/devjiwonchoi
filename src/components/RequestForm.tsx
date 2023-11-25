@@ -3,7 +3,7 @@ import { sendEmailToMe } from '@/utils'
 
 export function RequestForm({
   email,
-  dictionary: { req, common },
+  dictionary: { req },
 }: {
   dictionary: typeof import('@/dictionaries/en.json')
   email?: string | null
@@ -58,7 +58,7 @@ export function RequestForm({
             id="subject"
             name="subject"
             className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
-            placeholder="Let me know how I can help you"
+            placeholder={req.reqForm.input_1}
             required
           />
         </div>
@@ -74,10 +74,13 @@ export function RequestForm({
             name="text"
             rows={6}
             className="block w-full appearance-none border border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
-            placeholder="Leave a comment..."
-          ></textarea>
+            placeholder={req.reqForm.input_2}
+          />
         </div>
-        <SubmitButton />
+        <SubmitButton
+          defaultText={req.reqForm.button_default}
+          pendingText={req.reqForm.button_pending}
+        />
       </form>
     </>
   )
