@@ -1,7 +1,13 @@
 import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
 
-export function RequestForm({ email }: { email?: string | null }) {
+export function RequestForm({
+  email,
+  dictionary: { req, common },
+}: {
+  dictionary: typeof import('@/dictionaries/en.json')
+  email?: string | null
+}) {
   const handleSubmit = async (formData: FormData) => {
     'use server'
     const { email, subject, text } = Object.fromEntries(formData)
@@ -11,9 +17,7 @@ export function RequestForm({ email }: { email?: string | null }) {
         subject as string,
         text as string,
       )
-      if (response) {
-        alert(response.message)
-      }
+      return response
     } catch (error) {
       console.error(error)
     }
@@ -22,7 +26,7 @@ export function RequestForm({ email }: { email?: string | null }) {
   return (
     <>
       <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
-        Request
+        {req.reqForm.h2}
       </h2>
       <form action={handleSubmit} className="content-center space-y-8">
         <div>
@@ -30,7 +34,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             htmlFor="email"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            Your email
+            {req.reqForm.label_1}
           </label>
           <input
             type="email"
@@ -47,7 +51,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             htmlFor="subject"
             className="mb-2 block text-sm font-medium text-neutral-300"
           >
-            Subject
+            {req.reqForm.label_2}
           </label>
           <input
             type="text"
@@ -63,7 +67,7 @@ export function RequestForm({ email }: { email?: string | null }) {
             htmlFor="text"
             className="mb-4 block text-sm font-medium text-neutral-300"
           >
-            Your message
+            {req.reqForm.label_3}
           </label>
           <textarea
             id="text"

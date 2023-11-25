@@ -1,8 +1,4 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { Analytics } from '@vercel/analytics/react'
-import { ProfileCard } from '@/components'
-import { Header, Footer, NavBar } from '@/components/layouts'
 import '@/globals.css'
 
 export default function RootLayout({
@@ -10,41 +6,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={`${GeistSans.variable} bg-neutral-950`}>
-      <body className="jwc-body" suppressHydrationWarning={true}>
-        <Header />
-        <ProfileCard />
-        {/* <NavBar /> */}
-        {children}
-        <Footer />
-        <Analytics />
-      </body>
-    </html>
-  )
+  return <>{children}</>
 }
 
 export const metadata: Metadata = {
-  title: 'Jiwon Choi',
-  description:
-    'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
-  metadataBase: new URL('https://devjiwonchoi.codes'),
-  openGraph: {
-    title: 'Jiwon Choi',
-    description:
-      'Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development',
-    url: '/',
-    siteName: 'Jiwon Choi',
-    type: 'website',
-    images: [
-      {
-        url: '/me-logo800x600.png',
-        width: 800,
-        height: 600,
-        alt: 'devjiwonchoi logo',
-      },
-    ],
-    locale: 'en_US',
+  metadataBase: new URL('https://www.jiwonchoi.dev'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+      'ko-KR': '/ko',
+      'zh-CN': '/zh',
+      en: '/',
+      ko: '/ko',
+      zh: '/zh',
+    },
+  },
+  twitter: {
+    creator: '@devjiwonchoi',
   },
   robots: {
     index: true,
@@ -54,13 +33,5 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
-  keywords: [
-    'Jiwon Choi',
-    'Jiwon',
-    'Choi',
-    'devjiwonchoi',
-    'devjiwonchoi.codes',
-    'DevOps',
-    'Developer',
-  ],
+  // TODO: viewport for dark mode
 }

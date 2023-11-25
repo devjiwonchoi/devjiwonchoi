@@ -1,0 +1,76 @@
+{
+  "bio": {
+    "h2": "Biography",
+    "quote": "Don't let the comment speak for your code. - Jiwon Choi",
+    "h3_1": "DevLife",
+    "p_1": "I am a software developer who loves to ",
+    "strong_1": "automate, simplify, and troubleshoot.",
+    "p_2": "My current concentration is contributing to open-source projects such as ",
+    "h3_2": "Ambition",
+    "p_3_1": "I believe that ",
+    "strong_2": "saving time for developers and end users ",
+    "p_3_2": "is the key to the success of the product.",
+    "p_4": "In the near future, I will become a software engineer who feels confident in writing time-saving codes.",
+    "p_5_1": "I will be one of the leading engineers who can ",
+    "strong_3": "inspire people and positively influence others.",
+    "h3_3": "Dependencies",
+    "p_6": "Apart from coding, I enjoy playing ",
+    "h3_4": "Certifications & Awards",
+    "metadata": {
+      "description": "Code Minimalist as a DevOps Developer. Focusing on Efficiency Driven Development",
+      "openGraph": {
+        "url": "/"
+      },
+      "keywords": [
+        "portfolio",
+        "biography",
+        "DevOps",
+        "Software",
+        "Developer",
+        "Engineer",
+        "AWS",
+        "Next.js",
+        "TypeScript",
+        "Bunchee"
+      ]
+    }
+  },
+  "req": {
+    "reqForm": {
+      "h2": "Request",
+      "label_1": "Your email",
+      "label_2": "Subject",
+      "label_3": "Your message"
+    },
+    "authForm": {
+      "h3": "Verify Email",
+      "button_1": "GitHub Account",
+      "button_2": "Gmail Account"
+    }
+  },
+  "common": {
+    "nextjs": "Next.js",
+    "typescript": "TypeScript",
+    "bunchee": "Bunchee",
+    "and": "and",
+    "bjj": "BJJ",
+    "chess": "Chess",
+    "awsCertDev": "AWS Certified Developer - Associate",
+    "arcom": "US Army Commendation Medal"
+  },
+  "metadata": {
+    "locale": "en-US",
+    "title": {
+      "default": "Jiwon Choi",
+      "template": "%s | Jiwon Choi"
+    },
+    "openGraph": {
+      "siteName": "Jiwon Choi",
+      "images": [
+        {
+          "alt": "devjiwonchoi logo"
+        }
+      ]
+    }
+  }
+}

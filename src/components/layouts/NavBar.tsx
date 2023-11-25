@@ -6,14 +6,14 @@ export function NavBar() {
       <ul className="flex justify-center space-x-4">
         {[
           ['Bio', '/'],
-          // ['Blog', '/blog'],
+          ['Blog', '/blog'],
           // ['Proj', '/projects'],
-          // ['Req', '/request'],
+          ['Req', '/request'],
         ].map(([title, url]) => (
           <li key={title}>
             <Link
               href={url}
-              className="font-medium  text-neutral-200 hover:text-neutral-50 hover:underline"
+              className="font-medium text-neutral-200 hover:text-neutral-50 hover:underline"
             >
               {title}
             </Link>
