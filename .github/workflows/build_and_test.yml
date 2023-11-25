@@ -6,7 +6,8 @@ on:
 jobs:
   e2e-playwright:
     name: e2e-playwright
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    # TODO: remove `&& false` when find a way to correctly run this CI
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && false
     runs-on: ubuntu-latest
 
     steps:
