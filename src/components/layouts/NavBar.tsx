@@ -5,15 +5,18 @@ export function NavBar({
 }: {
   dict: typeof import('@/dictionaries/en.json')
 }) {
-  const lang = metadata.locale.split('-')[0]
+  // const lang = metadata.locale.split('-')[0]
+  const lang =
+    metadata.locale === 'en-US' ? '/' : `/${metadata.locale.split('-')[0]}/`
+
   return (
     <nav className="p-6">
       <ul className="flex justify-center space-x-4">
         {[
-          [nav.bio, `/${lang}`],
-          [nav.blog, `/${lang}/blog`],
-          // nav.proj, `/${lang}/projects`],
-          [nav.req, `/${lang}/request`],
+          [nav.bio, `${lang}`],
+          [nav.blog, `${lang}blog`],
+          // nav.proj, `${lang}projects`],
+          [nav.req, `${lang}request`],
         ].map(([title, url]) => (
           <li key={title}>
             <Link
