@@ -4,11 +4,6 @@ import { AuthForm, RequestForm } from '@/components'
 import { getDictionary } from '@/dictionaries/i18n'
 import { authOptions } from '@/utils'
 
-export const metadata: Metadata = {
-  title: 'Request',
-  description: 'Send a work request, question, or comment to Jiwon Choi',
-}
-
 export default async function Request({
   params: { lang },
 }: {
@@ -26,4 +21,18 @@ export default async function Request({
       )}
     </main>
   )
+}
+
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string }
+}): Promise<Metadata> {
+  const {
+    req: { title, description },
+  } = await getDictionary(lang)
+  return {
+    title,
+    description,
+  }
 }

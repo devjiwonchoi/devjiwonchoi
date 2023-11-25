@@ -39,6 +39,8 @@
     "h2": "Blog"
   },
   "req": {
+    "title": "Request",
+    "description": "Contact me for any questions, suggestions or requests.",
     "reqForm": {
       "h2": "Request",
       "label_1": "Your email",
