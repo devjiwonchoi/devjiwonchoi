@@ -33,3 +33,5 @@ test.describe('Blog - (en-US)', () => {
     ).toBe('Build an OpenAI ChatBot within 10 minutes with Vercel AI & Next.js')
   })
 })
+
+// TODO: add blog
