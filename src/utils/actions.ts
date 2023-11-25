@@ -20,7 +20,7 @@ export async function sendEmailToMe(
     from: email,
     to: 'devjiwonchoi@gmail.com',
     subject: subject,
-    text: 'Sent from jiwonchoi.dev:\n\n' + message,
+    text: `Sent from jiwonchoi.dev:\nemail:${email}\n\n` + message,
   }
 
   try {
