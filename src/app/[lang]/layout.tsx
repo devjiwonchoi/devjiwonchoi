@@ -19,7 +19,7 @@ export default async function LangRootLayout({
         className="container mx-auto flex h-screen max-w-4xl flex-col"
         suppressHydrationWarning={true}
       >
-        <Header />
+        <Header dict={dictionary} />
         <ProfileCard dict={dictionary} />
         <NavBar dict={dictionary} />
         {children}

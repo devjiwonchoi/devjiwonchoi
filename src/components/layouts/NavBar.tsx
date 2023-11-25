@@ -1,13 +1,14 @@
 import Link from 'next/link'
 
 export function NavBar({
-  dict: { nav, metadata },
+  dict: {
+    nav,
+    metadata: { locale },
+  },
 }: {
   dict: typeof import('@/dictionaries/en.json')
 }) {
-  // const lang = metadata.locale.split('-')[0]
-  const lang =
-    metadata.locale === 'en-US' ? '/' : `/${metadata.locale.split('-')[0]}/`
+  const lang = locale === 'en-US' ? '/' : `/${locale.split('-')[0]}/`
 
   return (
     <nav className="p-6">

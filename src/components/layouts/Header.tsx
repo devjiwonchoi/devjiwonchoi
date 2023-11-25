@@ -1,10 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function Header() {
+export function Header({
+  dict: {
+    metadata: { locale },
+  },
+}: {
+  dict: typeof import('@/dictionaries/en.json')
+}) {
+  const lang = locale === 'en-US' ? '/' : `/${locale.split('-')[0]}`
+
   return (
     <header className="flex justify-between p-6">
-      <Link href="/">
+      <Link href={`${lang}`}>
         <Image
           src="/me-logo.svg"
           alt="devjiwonchoi Logo"
