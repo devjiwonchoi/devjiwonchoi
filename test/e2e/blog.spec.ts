@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('i18n en-US', () => {
+test.describe('Blog - (en-US)', () => {
   test.use({ locale: 'en-US' })
 
   test('should display English contents', async ({ page }) => {
