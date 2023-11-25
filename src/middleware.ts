@@ -10,10 +10,10 @@ export function middleware({ url, nextUrl: { pathname } }: NextRequest) {
   // TODO: refactor this
   // pathname: '/en' -> '/'; '/en/a' -> '/a'
   if (curPathname.startsWith(`/${defaultLang}`)) {
-    const pathnameWithoutDefaultLangRegex = new RegExp(`^/${defaultLang}(.*)`)
+    const pathnameWithoutDefaultLangRegex = new RegExp(`^/${defaultLang}(/|$)`)
     const pathnameWithoutDefaultLang = curPathname.replace(
       pathnameWithoutDefaultLangRegex,
-      '$1',
+      '/',
     )
     return NextResponse.redirect(new URL(pathnameWithoutDefaultLang, curURL))
   }
