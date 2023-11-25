@@ -52,6 +52,15 @@
       "button_2": "Gmail Account"
     }
   },
+  "nav": {
+    "bio": "Bio",
+    "blog": "Blog",
+    "req": "Req"
+  },
+  "profileCard": {
+    "h1": "Jiwon Choi",
+    "p": "DevOps / Software"
+  },
   "common": {
     "nextjs": "Next.js",
     "typescript": "TypeScript",

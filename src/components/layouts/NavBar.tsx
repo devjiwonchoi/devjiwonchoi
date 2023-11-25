@@ -1,14 +1,18 @@
 import Link from 'next/link'
 
-export function NavBar() {
+export function NavBar({
+  dict: { nav },
+}: {
+  dict: typeof import('@/dictionaries/en.json')
+}) {
   return (
     <nav className="p-6">
       <ul className="flex justify-center space-x-4">
         {[
-          ['Bio', '/'],
-          ['Blog', '/blog'],
-          // ['Proj', '/projects'],
-          ['Req', '/request'],
+          [nav.bio, '/'],
+          [nav.blog, '/blog'],
+          // nav.proj, '/projects'],
+          [nav.req, '/request'],
         ].map(([title, url]) => (
           <li key={title}>
             <Link
