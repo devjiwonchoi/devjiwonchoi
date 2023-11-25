@@ -5,13 +5,14 @@ import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/components/layouts'
 import { getDictionary } from '@/dictionaries/i18n'
 
-export default function LangRootLayout({
+export default async function LangRootLayout({
   children,
   params: { lang },
 }: {
   children: React.ReactNode
   params: { lang: string }
 }) {
+  const dictionary = await getDictionary(lang)
   return (
     <html lang={lang} className={`${GeistSans.variable} bg-neutral-950`}>
       <body
@@ -19,8 +20,8 @@ export default function LangRootLayout({
         suppressHydrationWarning={true}
       >
         <Header />
-        <ProfileCard />
-        <NavBar />
+        <ProfileCard dict={dictionary} />
+        <NavBar dict={dictionary} />
         {children}
         <Footer />
         <Analytics />

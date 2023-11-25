@@ -18,3 +18,14 @@ test.describe('Req - (en-US)', () => {
 
   // TODO: find a way to verify next-auth during test if this is recommended
 })
+
+test.describe('Req - (ko-KR)', () => {
+  test.use({ locale: 'ko-KR' })
+
+  test('should display Korean contents', async ({ page }) => {
+    await page.goto('/ko/request')
+    expect(await page.title()).toBe('문의 | 최지원')
+    expect(await page.textContent('h3')).toBe('이메일 인증')
+    expect(await page.textContent('button')).toContain('계정')
+  })
+})

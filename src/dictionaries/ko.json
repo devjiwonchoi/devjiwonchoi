@@ -1,0 +1,94 @@
+{
+  "bio": {
+    "h2": "자기소개",
+    "quote": "주석이 당신의 코드를 대변하게 두지 마세요. - 최지원",
+    "h3_1": "개발인생",
+    "p_1": "저는 소프트웨어 개발자로써 ",
+    "strong_1": "자동화, 단순화, 그리고 문제 해결을 좋아합니다.",
+    "p_2": "저는 현재 오픈소스 프로젝트들에 기여 하는데 집중하고 있습니다. 예를 들어 ",
+    "h3_2": "나의 야망",
+    "p_3_1": "저는 ",
+    "strong_2": "개발자와 사용자의 시간을 줄이는 것이 ",
+    "p_3_2": "서비스의 핵심 성공 요인이라고 믿습니다.",
+    "p_4": "가까운 미래에, 저는 시간을 아끼는 코드를 구상하고, 작성 하는 것에 자신있는 소프트웨어 엔지니어가 될겁니다.",
+    "p_5_1": "저는 개발 생태계를 이끌어가는 엔지니어 중 하나가 되어 ",
+    "strong_3": "사람들에게 동기부여가 되고 선한 영향력을 전할겁니다.",
+    "h3_3": "의존성",
+    "p_6": "컴퓨터 앞이 아니라면, 제가 즐겨 하는건 주로 ",
+    "h3_4": "자격증 및 수상 경력",
+    "metadata": {
+      "description": "코드 미니멀리스트. 효율 주도 개발을 지향 합니다.",
+      "openGraph": {
+        "url": "/"
+      },
+      "keywords": [
+        "포트폴리오",
+        "자기소개",
+        "데브옵스",
+        "소프트웨어",
+        "개발자",
+        "엔지니어",
+        "AWS",
+        "Next.js",
+        "TypeScript",
+        "Bunchee"
+      ]
+    }
+  },
+  "blog": {
+    "h2": "블로그"
+  },
+  "req": {
+    "title": "문의",
+    "description": "질문, 제안 또는 요청 사항이 있으면 연락 주세요.",
+    "reqForm": {
+      "h2": "문의 / 제안",
+      "label_1": "이메일",
+      "label_2": "제목",
+      "input_1": "무엇을 도와 드릴까요?",
+      "label_3": "내용",
+      "input_2": "내용을 입력 해주세요.",
+      "button_default": "이메일 보내기",
+      "button_pending": "이메일 보내는 중..."
+    },
+    "authForm": {
+      "h3": "이메일 인증",
+      "button_1": "GitHub 계정",
+      "button_2": "Gmail 계정"
+    }
+  },
+  "nav": {
+    "bio": "소개",
+    "blog": "블로그",
+    "req": "문의"
+  },
+  "profileCard": {
+    "h1": "최지원",
+    "p": "데브옵스 / 소프트웨어"
+  },
+  "common": {
+    "nextjs": "Next.js",
+    "typescript": "TypeScript",
+    "bunchee": "Bunchee",
+    "and": "그리고",
+    "bjj": "주짓수",
+    "chess": "체스",
+    "awsCertDev": "AWS Certified Developer - Associate",
+    "arcom": "US Army Commendation Medal"
+  },
+  "metadata": {
+    "locale": "ko-KR",
+    "title": {
+      "default": "최지원",
+      "template": "%s | 최지원"
+    },
+    "openGraph": {
+      "siteName": "최지원",
+      "images": [
+        {
+          "alt": "devjiwonchoi 로고"
+        }
+      ]
+    }
+  }
+}

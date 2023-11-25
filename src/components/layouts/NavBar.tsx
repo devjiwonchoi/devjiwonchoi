@@ -1,14 +1,19 @@
 import Link from 'next/link'
 
-export function NavBar() {
+export function NavBar({
+  dict: { nav, metadata },
+}: {
+  dict: typeof import('@/dictionaries/en.json')
+}) {
+  const lang = metadata.locale.split('-')[0]
   return (
     <nav className="p-6">
       <ul className="flex justify-center space-x-4">
         {[
-          ['Bio', '/'],
-          ['Blog', '/blog'],
-          // ['Proj', '/projects'],
-          ['Req', '/request'],
+          [nav.bio, `/${lang}`],
+          [nav.blog, `/${lang}/blog`],
+          // nav.proj, `/${lang}/projects`],
+          [nav.req, `/${lang}/request`],
         ].map(([title, url]) => (
           <li key={title}>
             <Link
