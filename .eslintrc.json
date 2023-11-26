@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "./node_modules/@vercel/style-guide/eslint/browser",
+    "./node_modules/@vercel/style-guide/eslint/react",
+    "./node_modules/@vercel/style-guide/eslint/next"
+  ]
 }
