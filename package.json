@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write !pnpm-lock.yaml .",
+    "lint-fix": "prettier --write !pnpm-lock.yaml . && next lint --fix",
     "test:e2e": "playwright test",
     "test:codegen": "playwright codegen localhost:3000"
   },
