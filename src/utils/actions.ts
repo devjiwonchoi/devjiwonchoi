@@ -19,8 +19,8 @@ export async function sendEmailToMe(
   const mailOption = {
     from: email,
     to: 'devjiwonchoi@gmail.com',
-    subject: subject,
-    text: `Sent from jiwonchoi.dev:\nemail:${email}\n\n` + message,
+    subject,
+    text: `Sent from jiwonchoi.dev:\nemail:${email}\n\n${message}`,
   }
 
   try {
@@ -47,8 +47,8 @@ export async function sendEmailToMe(
       }
     }
   } catch (error) {
-    console.error(error)
+    if (error instanceof Error) {
+      throw new Error(`${error.name} ${error.message}`)
+    }
   }
-
-  return
 }

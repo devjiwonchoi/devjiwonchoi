@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
-import { headers } from 'next/headers'
+// import { headers } from 'next/headers'
 import { getDictionary } from '@/utils/i18n'
 
 export default async function Bio({
@@ -9,9 +9,9 @@ export default async function Bio({
   params: { lang: string }
 }) {
   // ['en-US', 'en;q=0.9'] -> 'en-US'
-  const primaryLang = headers().get('Accept-Language')?.split(',')[0]
+  // const primaryLang = headers().get('Accept-Language')?.split(',')[0]
   //TODO: if !isPrimaryLang, suggest to redirect to primaryLang
-  const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
+  // const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
 
   const { bio, common } = await getDictionary(lang)
   return (
@@ -33,25 +33,25 @@ export default async function Bio({
         <p className="text-base text-neutral-200 sm:text-base">
           {bio.p_2}
           <Link
+            className="underline hover:text-neutral-50"
             href="https://github.com/vercel/next.js"
             target="_blank"
-            className="underline hover:text-neutral-50"
           >
             {common.nextjs}
           </Link>
           ,{' '}
           <Link
+            className="underline hover:text-neutral-50"
             href="https://github.com/microsoft/TypeScript"
             target="_blank"
-            className="underline hover:text-neutral-50"
           >
             {common.typescript}
           </Link>
           , {common.and}{' '}
           <Link
+            className="underline hover:text-neutral-50"
             href="https://github.com/huozhi/bunchee"
             target="_blank"
-            className="underline hover:text-neutral-50"
           >
             {common.bunchee}
           </Link>
@@ -80,17 +80,17 @@ export default async function Bio({
         <p className="text-base text-neutral-200 sm:text-base">
           {bio.p_6}
           <Link
+            className="underline hover:text-neutral-50"
             href="https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
             target="_blank"
-            className="underline hover:text-neutral-50"
           >
             {common.bjj}
           </Link>{' '}
           {common.and}{' '}
           <Link
+            className="underline hover:text-neutral-50"
             href="https://www.chess.com/member/devjiwonchoi"
             target="_blank"
-            className="underline hover:text-neutral-50"
           >
             {common.chess}
           </Link>
@@ -104,18 +104,18 @@ export default async function Bio({
         <ul className="list-inside list-disc text-neutral-200">
           <li>
             <Link
+              className="underline hover:text-neutral-50"
               href="https://www.credly.com/badges/acf8b0bc-2952-4ee1-ac3b-7ab91478ddbb"
               target="_blank"
-              className="underline hover:text-neutral-50"
             >
               {common.awsCertDev}
             </Link>
           </li>
           <li>
             <Link
+              className="underline hover:text-neutral-50"
               href="https://en.wikipedia.org/wiki/Commendation_Medal"
               target="_blank"
-              className="underline hover:text-neutral-50"
             >
               {common.arcom}
             </Link>{' '}
@@ -127,14 +127,15 @@ export default async function Bio({
   )
 }
 
-function validateLang(primaryLang: string, lang: string) {
-  if (primaryLang.includes('-')) {
-    // ko-KR -> ko; zh-CN -> zh
-    primaryLang = primaryLang.split('-')[0]
-  }
+// function validateLang(primaryLang: string, lang: string) {
+//   let locale = primaryLang
+//   if (primaryLang.includes('-')) {
+//     // ko-KR -> ko; zh-CN -> zh
+//     locale = primaryLang.split('-')[0]
+//   }
 
-  return primaryLang === lang
-}
+//   return locale === lang
+// }
 
 export async function generateMetadata(
   {

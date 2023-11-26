@@ -15,7 +15,7 @@ export default async function Request({
   return (
     <main className="mb-auto p-6">
       {session ? (
-        <RequestForm email={session.user?.email} dictionary={dictionary} />
+        <RequestForm dictionary={dictionary} email={session.user?.email} />
       ) : (
         <AuthForm dictionary={dictionary} />
       )}

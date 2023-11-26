@@ -21,8 +21,8 @@ export function NavBar({
         ].map(([title, url]) => (
           <li key={title}>
             <Link
-              href={url}
               className="font-medium text-neutral-200 hover:text-neutral-50 hover:underline"
+              href={url}
             >
               {title}
             </Link>
