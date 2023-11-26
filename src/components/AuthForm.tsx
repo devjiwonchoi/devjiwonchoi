@@ -16,30 +16,30 @@ export function AuthForm({
         {req.authForm.h3}
       </h3>
       <button
-        type="button"
         className="flex w-2/3 justify-center border border-neutral-200 bg-transparent px-5 py-3 text-center text-base font-medium text-neutral-200 transition duration-150 ease-in-out hover:bg-neutral-800 sm:w-1/2"
         onClick={() => verifyEmail('github')}
+        type="button"
       >
         <Image
-          src="/github-mark-white.svg"
           alt="GitHub Logo"
-          width={0}
-          height={0}
           className="mr-2 h-6 w-6"
+          height={0}
+          src="/github-mark-white.svg"
+          width={0}
         />
         {req.authForm.button_1}
       </button>
       <button
-        type="button"
         className="flex w-2/3 justify-center border border-neutral-200 bg-transparent px-5 py-3 text-center text-base font-medium text-neutral-200 transition duration-150 ease-in-out hover:bg-neutral-800 sm:w-1/2"
         onClick={() => verifyEmail('google')}
+        type="button"
       >
         <Image
-          src="/gmail-2020.svg"
           alt="Gmail Logo"
-          width={0}
-          height={0}
           className="mr-2 h-6 w-6 brightness-0 invert filter"
+          height={0}
+          src="/gmail-2020.svg"
+          width={0}
         />
         {req.authForm.button_2}
       </button>

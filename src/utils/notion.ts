@@ -7,7 +7,7 @@ export const notionClient = new Client({
 })
 
 export function generateSlug(title: string, id: string): string {
-  return title.toLowerCase().replace(/ /g, '-') + '-' + id.replace(/-/g, '')
+  return `${title.toLowerCase().replace(/ /g, '-')  }-${  id.replace(/-/g, '')}`
 }
 
 export function getPostsInfo(data: any) {
@@ -27,11 +27,11 @@ export function getPostsInfo(data: any) {
     })
 
     return {
-      id: id,
-      title: title,
-      categories: categories,
-      slug: slug,
-      updatedAt: updatedAt,
+      id,
+      title,
+      categories,
+      slug,
+      updatedAt,
     }
   })
   return [{ posts: postData }, { nextCursor: postData[postData.length - 1].id }]
