@@ -76,10 +76,13 @@ export default function Blog() {
           ))}
         </article>
       ))}
-      {isLoadingMore ? <div className="p-4 text-center">
+      {isLoadingMore ? (
+        <div className="p-4 text-center">
           <div className="mx-auto inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-neutral-500 border-r-neutral-400 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
-        </div> : null}
-      {isReachingEnd ? <div className="p-4">
+        </div>
+      ) : null}
+      {isReachingEnd ? (
+        <div className="p-4">
           <p className="mb-2 text-center text-base tracking-wide text-neutral-400 sm:text-lg">
             You&apos;ve reached the end of the posts! 🎉
           </p>
@@ -93,7 +96,8 @@ export default function Blog() {
               devjiwonchoi.medium.com
             </Link>
           </p>
-        </div> : null}
+        </div>
+      ) : null}
     </main>
   )
 }

@@ -20,7 +20,7 @@ export async function sendEmailToMe(
     from: email,
     to: 'devjiwonchoi@gmail.com',
     subject,
-    text: `Sent from jiwonchoi.dev:\nemail:${email}\n\n${  message}`,
+    text: `Sent from jiwonchoi.dev:\nemail:${email}\n\n${message}`,
   }
 
   try {
@@ -51,6 +51,4 @@ export async function sendEmailToMe(
       throw new Error(`${error.name} ${error.message}`)
     }
   }
-
-  
 }
