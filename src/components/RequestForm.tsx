@@ -1,5 +1,5 @@
-import { SubmitButton } from './Buttons/SubmitButton'
 import { sendEmailToMe } from '@/utils'
+import { SubmitButton } from './Buttons/SubmitButton'
 
 export function RequestForm({
   email,
@@ -31,50 +31,50 @@ export function RequestForm({
       <form action={handleSubmit} className="content-center space-y-8">
         <div>
           <label
-            htmlFor="email"
             className="mb-2 block text-sm font-medium text-neutral-300"
+            htmlFor="email"
           >
             {req.reqForm.label_1}
           </label>
           <input
-            type="email"
-            id="email"
-            name="email"
             className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             defaultValue={email ?? ''}
+            id="email"
+            name="email"
             placeholder="example@gmail.com"
             required
+            type="email"
           />
         </div>
         <div>
           <label
-            htmlFor="subject"
             className="mb-2 block text-sm font-medium text-neutral-300"
+            htmlFor="subject"
           >
             {req.reqForm.label_2}
           </label>
           <input
-            type="text"
+            className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             id="subject"
             name="subject"
-            className="block w-full appearance-none border-b border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             placeholder={req.reqForm.input_1}
             required
+            type="text"
           />
         </div>
         <div className="sm:col-span-2">
           <label
-            htmlFor="text"
             className="mb-4 block text-sm font-medium text-neutral-300"
+            htmlFor="text"
           >
             {req.reqForm.label_3}
           </label>
           <textarea
+            className="block w-full appearance-none border border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             id="text"
             name="text"
-            rows={6}
-            className="block w-full appearance-none border border-neutral-200 bg-transparent p-2.5 text-sm text-neutral-200 shadow-sm focus:outline-none"
             placeholder={req.reqForm.input_2}
+            rows={6}
           />
         </div>
         <SubmitButton

@@ -1,5 +1,5 @@
 'use client'
-export const Console = () => {
+export function Console() {
   const str =
     'Hi Dev! 👋🏻\n' +
     'Check out this website source on GitHub:\n' +

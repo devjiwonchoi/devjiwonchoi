@@ -15,8 +15,8 @@ const Collection = dynamic(() =>
 export default function NotionPage({ recordMap }: { recordMap: any }) {
   return (
     <NotionRenderer
-      recordMap={recordMap}
       components={{ Code, Collection, nextImage: Image, nextLink: Link }}
+      recordMap={recordMap}
     />
   )
 }
