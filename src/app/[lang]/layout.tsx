@@ -58,3 +58,7 @@ export async function generateMetadata({
     keywords: ['Jiwon Choi', 'devjiwonchoi', 'jiwonchoi.dev'],
   }
 }
+
+export async function generateStaticParams() {
+  return [{ lang: 'ko' }, { lang: 'zh' }]
+}
