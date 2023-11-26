@@ -29,5 +29,7 @@ export function middleware({ url, nextUrl: { pathname } }: NextRequest) {
 
 // TODO: find a better way to skip route from public directory
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|.*.ico$|.*.svg$|.*.png$).*)'],
+  matcher: [
+    '/((?!api|_next/static|_next/image|.*.ico$|.*.svg$|.*.png$|sitemap|robots).*)',
+  ],
 }
