@@ -19,7 +19,9 @@ export function RequestForm({
       )
       return response
     } catch (error) {
-      console.error(error)
+      if (error instanceof Error) {
+        throw new Error(`${error.name} ${error.message}`)
+      }
     }
   }
 

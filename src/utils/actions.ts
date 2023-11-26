@@ -47,7 +47,9 @@ export async function sendEmailToMe(
       }
     }
   } catch (error) {
-    console.error(error)
+    if (error instanceof Error) {
+      throw new Error(`${error.name} ${error.message}`)
+    }
   }
 
   

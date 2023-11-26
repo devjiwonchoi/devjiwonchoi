@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
-import { headers } from 'next/headers'
+// import { headers } from 'next/headers'
 import { getDictionary } from '@/utils/i18n'
 
 export default async function Bio({
@@ -9,9 +9,9 @@ export default async function Bio({
   params: { lang: string }
 }) {
   // ['en-US', 'en;q=0.9'] -> 'en-US'
-  const primaryLang = headers().get('Accept-Language')?.split(',')[0]
+  // const primaryLang = headers().get('Accept-Language')?.split(',')[0]
   //TODO: if !isPrimaryLang, suggest to redirect to primaryLang
-  const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
+  // const isPrimaryLang = primaryLang ? validateLang(primaryLang, lang) : false
 
   const { bio, common } = await getDictionary(lang)
   return (
@@ -127,14 +127,15 @@ export default async function Bio({
   )
 }
 
-function validateLang(primaryLang: string, lang: string) {
-  if (primaryLang.includes('-')) {
-    // ko-KR -> ko; zh-CN -> zh
-    primaryLang = primaryLang.split('-')[0]
-  }
+// function validateLang(primaryLang: string, lang: string) {
+//   let locale = primaryLang
+//   if (primaryLang.includes('-')) {
+//     // ko-KR -> ko; zh-CN -> zh
+//     locale = primaryLang.split('-')[0]
+//   }
 
-  return primaryLang === lang
-}
+//   return locale === lang
+// }
 
 export async function generateMetadata(
   {
