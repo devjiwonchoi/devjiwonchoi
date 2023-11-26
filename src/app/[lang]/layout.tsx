@@ -60,5 +60,5 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'ko' }, { lang: 'zh' }]
+  return [{ lang: 'en' }, { lang: 'ko' }]
 }
