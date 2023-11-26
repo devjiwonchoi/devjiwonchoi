@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth/next'
 import { AuthForm, RequestForm } from '@/components'
-import { getDictionary } from '@/dictionaries/i18n'
+import { getDictionary } from '@/utils/i18n'
 import { authOptions } from '@/utils'
 
 export default async function Request({

@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
-import { getDictionary } from '@/dictionaries/i18n'
+import { getDictionary } from '@/utils/i18n'
 
 export default async function Bio({
   params: { lang },

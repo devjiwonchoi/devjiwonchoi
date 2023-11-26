@@ -3,7 +3,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/react'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/components/layouts'
-import { getDictionary } from '@/dictionaries/i18n'
+import { getDictionary } from '@/utils/i18n'
 
 export default async function LangRootLayout({
   children,
