@@ -60,5 +60,6 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'ko' }]
+  // TODO: find way for '/' not '/en'
+  return [{ lang: 'ko' }]
 }

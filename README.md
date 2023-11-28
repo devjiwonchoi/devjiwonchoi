@@ -20,7 +20,7 @@ My portfolio built with all you can expect from Vercel.
 
 ### Dashboard
 
-- [ ] **Development**: [Vercel CLI](https://vercel.com/cli)
+- [x] **Development**: [Vercel CLI](https://vercel.com/cli)
 - [x] **Deployment**: [Vercel](https://vercel.com)
 - [ ] **Database**: [Vercel Postgres](https://vercel.com/storage/postgres)
 - [ ] **Blob Storage**: [Vercel Blob](https://vercel.com/storage/blob)
