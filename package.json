@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write !pnpm-lock.yaml .",
+    "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "test:e2e": "playwright test",
     "test:codegen": "playwright codegen localhost:3000"
   },
@@ -30,6 +30,7 @@
     "@types/nodemailer": "^6.4.13",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
+    "@vercel/style-guide": "^5.1.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.3",

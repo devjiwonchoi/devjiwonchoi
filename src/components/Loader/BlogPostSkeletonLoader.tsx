@@ -1,15 +1,15 @@
 import { NOTION_BLOG_PAGE_SIZE } from '@/utils/notion'
 
-const BlogPostSkeleton = () => {
+function BlogPostSkeleton() {
   return (
     <div className="mb-2 border border-neutral-800 p-6">
       <div className="animate-pulse space-y-2">
-        <div className="h-6 rounded bg-neutral-800"></div>
-        <div className="h-4 w-1/6 rounded bg-neutral-800"></div>
+        <div className="h-6 rounded bg-neutral-800" />
+        <div className="h-4 w-1/6 rounded bg-neutral-800" />
         <div className="flex space-x-2">
-          <div className="h-5 w-10 rounded bg-neutral-800"></div>
-          <div className="h-5 w-10 rounded bg-neutral-800"></div>
-          <div className="h-5 w-10 rounded bg-neutral-800"></div>
+          <div className="h-5 w-10 rounded bg-neutral-800" />
+          <div className="h-5 w-10 rounded bg-neutral-800" />
+          <div className="h-5 w-10 rounded bg-neutral-800" />
         </div>
       </div>
     </div>

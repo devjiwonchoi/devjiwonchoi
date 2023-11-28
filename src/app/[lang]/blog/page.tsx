@@ -13,7 +13,7 @@ const getKey = (pageIndex: number, previousPageData: any) => {
   return `/api/blog?nextCursor=${nextCursor}`
 }
 
-const EmptyPosts = () => {
+function EmptyPosts() {
   return (
     <main className="mb-auto p-6">
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
@@ -59,8 +59,8 @@ export default function Blog() {
       </h2>
       {posts.map((post: any) => (
         <article
-          key={post.id}
           className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
+          key={post.id}
         >
           <Link href={`/blog/${post.slug}`}>
             <h3 className="text-xl font-bold text-neutral-300">{post.title}</h3>
@@ -68,20 +68,20 @@ export default function Blog() {
           </Link>
           {post.categories?.map((category: any) => (
             <span
-              key={category.id}
               className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
+              key={category.id}
             >
               {category.name}
             </span>
           ))}
         </article>
       ))}
-      {isLoadingMore && (
+      {isLoadingMore ? (
         <div className="p-4 text-center">
-          <div className="mx-auto inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-neutral-500 border-r-neutral-400 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"></div>
+          <div className="mx-auto inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-neutral-500 border-r-neutral-400 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
         </div>
-      )}
-      {isReachingEnd && (
+      ) : null}
+      {isReachingEnd ? (
         <div className="p-4">
           <p className="mb-2 text-center text-base tracking-wide text-neutral-400 sm:text-lg">
             You&apos;ve reached the end of the posts! 🎉
@@ -89,15 +89,15 @@ export default function Blog() {
           <p className="text-center text-sm tracking-wide text-neutral-400 sm:text-base">
             Click here to view my blog on Medium →{' '}
             <Link
+              className="text-neutral-100 hover:text-neutral-200"
               href="https://devjiwonchoi.medium.com/"
               target="_blank"
-              className="text-neutral-100 hover:text-neutral-200"
             >
               devjiwonchoi.medium.com
             </Link>
           </p>
         </div>
-      )}
+      ) : null}
     </main>
   )
 }

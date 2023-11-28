@@ -14,10 +14,10 @@ export default async function LangRootLayout({
 }) {
   const dictionary = await getDictionary(lang)
   return (
-    <html lang={lang} className={`${GeistSans.variable} bg-neutral-950`}>
+    <html className={`${GeistSans.variable} bg-neutral-950`} lang={lang}>
       <body
         className="container mx-auto flex h-screen max-w-4xl flex-col"
-        suppressHydrationWarning={true}
+        suppressHydrationWarning
       >
         <Header dict={dictionary} />
         <ProfileCard dict={dictionary} />
