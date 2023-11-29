@@ -1,14 +1,3 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "./node_modules/@vercel/style-guide/eslint/browser",
-    "./node_modules/@vercel/style-guide/eslint/react",
-    "./node_modules/@vercel/style-guide/eslint/next"
-  ],
-  "rules": {
-    "unicorn/filename-case": "off",
-    "import/no-default-export": "off",
-    "import/no-unresolved": "off",
-    "no-undef": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
