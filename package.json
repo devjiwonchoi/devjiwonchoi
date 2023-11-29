@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "test:e2e": "playwright test",
-    "test:codegen": "playwright codegen localhost:3000"
+    "test:codegen": "playwright codegen localhost:4000"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
