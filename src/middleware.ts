@@ -6,8 +6,10 @@ function rewriteToDefaultLang(pathname: string, url: string) {
 }
 
 export function middleware({ url, nextUrl: { pathname } }: NextRequest) {
-  const defaultRoutes = ['/', '/blog', '/request']
-  const isDefaultRoute = defaultRoutes.includes(pathname)
+  const defaultRoutes = ['/blog', '/request']
+  const isDefaultRoute =
+    pathname === '/' ||
+    defaultRoutes.some((route) => pathname.startsWith(route))
   if (isDefaultRoute) {
     return rewriteToDefaultLang(pathname, url)
   }
