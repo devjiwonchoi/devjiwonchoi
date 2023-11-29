@@ -8,9 +8,12 @@ const dictionaries: {
   zh: () => import('../dictionaries/en.json').then((module) => module.default),
 }
 
-export const getDictionary = async (lang: string) => dictionaries[lang]()
+export const getDictionary = async (lang: string) =>
+  i18n.langs.includes(lang)
+    ? dictionaries[lang]()
+    : dictionaries[i18n.defaultLang]()
 
 export const i18n = {
   defaultLang: 'en',
-  langs: ['ko', 'zh'],
+  langs: ['en', 'ko', 'zh'],
 }

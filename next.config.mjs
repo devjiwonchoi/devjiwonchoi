@@ -15,26 +15,6 @@ const config = {
       },
     ]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/',
-        destination: '/en',
-      },
-      {
-        source: '/blog',
-        destination: '/en/blog',
-      },
-      {
-        source: '/blog/:slug',
-        destination: '/en/blog/:slug',
-      },
-      {
-        source: '/request',
-        destination: '/en/request',
-      },
-    ]
-  },
 }
 
 export default config

@@ -17,8 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://www.jiwonchoi.dev/request',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ]
 }

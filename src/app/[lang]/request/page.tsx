@@ -14,6 +14,7 @@ export default async function Request({
 
   return (
     <main className="mb-auto p-6">
+      {/* TODO: Convert them to parallel routes */}
       {session ? (
         <RequestForm dictionary={dictionary} email={session.user?.email} />
       ) : (

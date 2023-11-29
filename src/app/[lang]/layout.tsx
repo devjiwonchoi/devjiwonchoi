@@ -3,7 +3,7 @@ import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/react'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/components/layouts'
-import { getDictionary } from '@/utils/i18n'
+import { getDictionary, i18n } from '@/utils/i18n'
 
 export default async function LangRootLayout({
   children,
@@ -60,6 +60,5 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  // TODO: find way for '/' not '/en'
-  return [{ lang: 'ko' }]
+  return i18n.langs.map((lang) => ({ lang }))
 }
