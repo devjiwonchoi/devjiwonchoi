@@ -15,7 +15,6 @@ My portfolio built with all you can expect from Vercel.
 - [ ] **V0**: [Vercel V0](https://v0.dev)
 - [ ] **DevEx**: [Turbopack](https://turbo.build/pack/docs)
 - [ ] **Documentation**: [MDX](https://mdxjs.com)
-- [x] **Style Guide**: [Vercel Style Guide](https://github.com/vercel/style-guide)
 - [x] **Font**: [Geist](https://vercel.com/font)
 
 ### Dashboard
