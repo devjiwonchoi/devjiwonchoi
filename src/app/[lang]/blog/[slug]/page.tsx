@@ -1,31 +1,14 @@
-import { NotionAPI } from 'notion-client'
-import NotionPage from '@/components/NotionPage'
-import { refinePosts } from '@/utils/notion'
-import 'react-notion-x/src/styles.css'
-import 'prismjs/themes/prism-tomorrow.css'
+import { MDXRemote, compileMDX } from 'next-mdx-remote/rsc'
 
 export default async function BlogPost({
   params: { slug },
 }: {
   params: { slug: string }
 }) {
-  const notion = new NotionAPI()
-  const blockId = slug.split('-').pop() ?? ''
-  const recordMap = await notion.getPage(blockId)
-
-  return (
-    <main className="mb-auto p-6">
-      <NotionPage recordMap={recordMap} />
-    </main>
-  )
+  return <main className="mb-auto p-6"></main>
 }
 
 // TODO: canonical url
-export async function generateStaticParams() {
-  const response = await fetch(`${process.env.API_URL}/blog`)
-  const data = await response.json()
-  const posts = refinePosts(data)
-  return posts.map((post: any) => ({
-    slug: post.slug,
-  }))
-}
+export async function generateStaticParams() {}
+
+export async function generateMetadata() {}
