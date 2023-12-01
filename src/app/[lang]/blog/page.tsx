@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 import useSWRInfinite from 'swr/infinite'
-import { BlogPostSkeletonLoader } from '@/components/Loader/BlogPostSkeletonLoader'
+import { BlogPostSkeletonLoader } from '@/components/loaders/BlogPostSkeletonLoader'
 import { refinePosts } from '@/utils/notion'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
