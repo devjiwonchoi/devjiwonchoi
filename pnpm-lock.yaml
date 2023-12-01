@@ -11,6 +11,9 @@ dependencies:
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
+  '@vercel/speed-insights':
+    specifier: ^0.0.6
+    version: 0.0.6
   geist:
     specifier: ^1.1.0
     version: 1.1.0(next@14.0.3)
@@ -803,6 +806,11 @@ packages:
   /@vercel/ruby@2.0.3:
     resolution: {integrity: sha512-INZjBvBxQlANvj7LvHeXtfjpU+ZtwGL45vyys5+hI594MokpkrKdzUaTuK4kUX+KsEJUR7Xule5JiS89fW77BA==}
     dev: true
+
+  /@vercel/speed-insights@0.0.6:
+    resolution: {integrity: sha512-vHtktTVxLJw4bVIIPHqePlmpSEQvLGnn5pxi7dZNaxqocPwpQnfw15K4F8xPMWI1oAZ0rBBBRwo9cW8VnX9lbw==}
+    requiresBuild: true
+    dev: false
 
   /@vercel/static-build@2.0.12:
     resolution: {integrity: sha512-7X7fhkdoxOInbjvXcswiv7AtAj9a1A/DojJuHh8iDNBMOti/umNSjEp1Orzm7sr7qmLEuSAcZrGoBa8R5jVKEQ==}
