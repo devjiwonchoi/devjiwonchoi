@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import useSWRInfinite from 'swr/infinite'
 import { BlogPostSkeletonLoader } from '@/components/Loader/BlogPostSkeletonLoader'
-import { NOTION_BLOG_PAGE_SIZE, refinePosts } from '@/utils/notion'
+import { refinePosts } from '@/utils/notion'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 const getKey = (pageIndex: number, previousPageData: any) => {
@@ -24,7 +24,11 @@ function EmptyPosts() {
   )
 }
 
-export default function Blog() {
+export default function Blog({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
   const { data, isLoading, size, setSize } = useSWRInfinite(getKey, fetcher, {
     revalidateOnFocus: false,
     keepPreviousData: true,
@@ -33,8 +37,7 @@ export default function Blog() {
     isLoading || (size > 0 && data && typeof data[size - 1] === 'undefined')
   const isEmpty = data?.[0]?.length === 0
   const isReachingEnd =
-    isEmpty ||
-    (data && data[data.length - 1]?.[0]?.posts?.length < NOTION_BLOG_PAGE_SIZE)
+    isEmpty || (data && data[data.length - 1]?.[0]?.posts?.length < 10)
 
   useEffect(() => {
     const handleSetSizeByScroll = () => {
@@ -64,14 +67,20 @@ export default function Blog() {
         >
           <Link href={`/blog/${post.slug}`}>
             <h3 className="text-xl font-bold text-neutral-300">{post.title}</h3>
-            <p className="text-sm text-neutral-400">{post.updatedAt}</p>
+            <p className="text-sm text-neutral-400">
+              {new Date(post.updated_at).toLocaleDateString(lang, {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </p>
           </Link>
-          {post.categories?.map((category: any) => (
+          {post.tags.map((tag: any) => (
             <span
               className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
-              key={category.id}
+              key={tag.id}
             >
-              {category.name}
+              {tag}
             </span>
           ))}
         </article>

@@ -6,11 +6,10 @@ export default async function BlogPost({
   params: { slug: string }
 }) {
   const source = await fetch('http://localhost:3000/api/blog')
-  const { docs } = await source.json()
-
+  const { posts } = await source.json()
   return (
     <main className="mb-auto p-6">
-      <MDXRemote source={docs} />
+      {<MDXRemote source={posts[0].content} />}
     </main>
   )
 }
@@ -19,8 +18,9 @@ export default async function BlogPost({
 
 export async function generateMetadata() {
   const res = await fetch('http://localhost:3000/api/blog')
-  const { source } = await res.json()
-  const { frontmatter } = await compileMDX<{ title: string }>({
+  const { posts } = await res.json()
+  const source = posts[0].content
+  const { frontmatter, content } = await compileMDX<{ title: string }>({
     source,
     options: { parseFrontmatter: true },
   })
