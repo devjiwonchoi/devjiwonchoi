@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ProfileCard } from '@/components'
 import { Header, Footer, NavBar } from '@/components/layouts'
 import { getDictionary, i18n } from '@/utils/i18n'
@@ -25,6 +26,7 @@ export default async function LangRootLayout({
         {children}
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
