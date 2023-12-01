@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^1.40.0
     version: 1.40.0
   '@types/node':
-    specifier: ^20.8.10
-    version: 20.8.10
+    specifier: ^20.10.1
+    version: 20.10.1
   '@types/nodemailer':
     specifier: ^6.4.13
     version: 6.4.13
@@ -479,7 +479,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.3
       '@types/keyv': 3.1.4
-      '@types/node': 20.8.10
+      '@types/node': 20.10.1
       '@types/responselike': 1.0.2
     dev: false
 
@@ -519,13 +519,13 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.10.1
     dev: false
 
   /@types/node-fetch@2.6.7:
     resolution: {integrity: sha512-lX17GZVpJ/fuCjguZ5b3TjEbSENxmEk1B2z02yoXSK9WMEWRivhdSY73wWMn6bpcCDAOh6qAdktpKHIlkDk2lg==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.10.1
       form-data: 4.0.0
     dev: false
 
@@ -533,15 +533,21 @@ packages:
     resolution: {integrity: sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==}
     dev: true
 
+  /@types/node@20.10.1:
+    resolution: {integrity: sha512-T2qwhjWwGH81vUEx4EXmBKsTJRXFXNZTL4v0gi01+zyBmCwzE6TyHszqX01m+QHTEq+EZNo13NeJIdEqf+Myrg==}
+    dependencies:
+      undici-types: 5.26.5
+
   /@types/node@20.8.10:
     resolution: {integrity: sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==}
     dependencies:
       undici-types: 5.26.5
+    dev: false
 
   /@types/nodemailer@6.4.13:
     resolution: {integrity: sha512-889Vq/77eEpidCwh52sVWpbnqQmIwL8yVBekNbrztVEaWKOCRH3Eq6hjIJh1jwsGDEAJEH0RR+YhpH9mfELLKA==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.10.1
     dev: true
 
   /@types/prop-types@15.7.9:
@@ -563,7 +569,7 @@ packages:
   /@types/responselike@1.0.2:
     resolution: {integrity: sha512-/4YQT5Kp6HxUDb4yhRkm0bJ7TbjvTddqX7PZ5hz6qV3pxSo72f/6YPRo+Mu2DU307tm9IioO69l7uAwn5XNcFA==}
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.10.1
     dev: false
 
   /@types/scheduler@0.16.5:
