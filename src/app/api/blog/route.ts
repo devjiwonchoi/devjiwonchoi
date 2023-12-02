@@ -1,7 +1,8 @@
-import { NextResponse, type NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import { sql } from '@vercel/postgres'
 
-export async function GET(request: NextRequest) {
-  const { rows } = await sql`SELECT * FROM blogs`
+export async function GET() {
+  const { rows } =
+    await sql`SELECT id, slug, title, tags, views, read_time, created_at FROM blogs`
   return NextResponse.json({ posts: rows })
 }

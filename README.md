@@ -42,13 +42,12 @@ My portfolio built with all you can expect from Vercel.
 ```sql
 CREATE TABLE blogs (
   id SERIAL PRIMARY KEY,
+  slug VARCHAR(255) UNIQUE NOT NULL,
   title VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
-  slug VARCHAR(255) NOT NULL,
-  tags TEXT[] NOT NULL,
-  content TEXT NOT NULL,
-  views INT NOT NULL DEFAULT 0,
-  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-  updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+  tags VARCHAR(255) NOT NULL,
+  source TEXT NOT NULL,
+  views INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
 )
 ```

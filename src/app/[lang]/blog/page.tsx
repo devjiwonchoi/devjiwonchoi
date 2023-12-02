@@ -68,14 +68,18 @@ export default function Blog({
           <Link href={`/blog/${post.slug}`}>
             <h3 className="text-xl font-bold text-neutral-300">{post.title}</h3>
             <p className="text-sm text-neutral-400">
-              {new Date(post.updated_at).toLocaleDateString(lang, {
+              {new Date(post.created_at).toLocaleDateString(lang, {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
               })}
             </p>
+            {/* style this */}
+            <p className="text-sm text-neutral-400">
+              {post.views} views • {post.read_time} min read
+            </p>
           </Link>
-          {post.tags.map((tag: any) => (
+          {post.tags.split(',').map((tag: any) => (
             <span
               className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
               key={tag.id}
