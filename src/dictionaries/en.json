@@ -36,6 +36,8 @@
     }
   },
   "blog": {
+    "title": "Blog",
+    "description": "My blog posts about my thoughts and troubleshoots on software development.",
     "h2": "Blog"
   },
   "req": {

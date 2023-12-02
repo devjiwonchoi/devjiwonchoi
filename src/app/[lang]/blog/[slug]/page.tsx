@@ -34,7 +34,12 @@ export default async function BlogPost({
   )
 }
 
-// export async function generateStaticParams() {}
+export async function generateStaticParams() {
+  const res = await fetch(`${process.env.API_URL}/blog`)
+  const { posts } = await res.json()
+
+  return posts.map((post: { slug: string }) => ({ slug: post.slug }))
+}
 
 export async function generateMetadata({
   params: { slug },
@@ -43,8 +48,15 @@ export async function generateMetadata({
 }) {
   const res = await fetch(`${process.env.API_URL}/blog/${slug}`)
   const { post } = await res.json()
-  const { frontmatter } = await compileMDX<{ title: string }>({
+  const { frontmatter } = await compileMDX<{
+    title: string
+    description: string
+  }>({
     source: post.source,
     options: { parseFrontmatter: true },
   })
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+  }
 }

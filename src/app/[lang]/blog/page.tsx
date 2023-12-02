@@ -5,25 +5,6 @@ import useSWRInfinite from 'swr/infinite'
 import { BlogPostSkeletonLoader } from '@/components/loaders/BlogPostSkeletonLoader'
 import { refinePosts } from '@/utils/notion'
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
-const getKey = (pageIndex: number, previousPageData: any) => {
-  if (previousPageData && !previousPageData.length) return null // reached the end
-  if (pageIndex === 0) return `/api/blog`
-  const nextCursor = previousPageData[1].nextCursor
-  return `/api/blog?nextCursor=${nextCursor}`
-}
-
-function EmptyPosts() {
-  return (
-    <main className="mb-auto p-6">
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
-        Blog
-      </h2>
-      <p className="text-lg text-neutral-400 sm:text-xl">No Posts Found.</p>
-    </main>
-  )
-}
-
 export default function Blog({
   params: { lang },
 }: {
@@ -111,6 +92,25 @@ export default function Blog({
           </p>
         </div>
       ) : null}
+    </main>
+  )
+}
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+const getKey = (pageIndex: number, previousPageData: any) => {
+  if (previousPageData && !previousPageData.length) return null // reached the end
+  if (pageIndex === 0) return `/api/blog`
+  const nextCursor = previousPageData[1].nextCursor
+  return `/api/blog?nextCursor=${nextCursor}`
+}
+
+function EmptyPosts() {
+  return (
+    <main className="mb-auto p-6">
+      <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
+        Blog
+      </h2>
+      <p className="text-lg text-neutral-400 sm:text-xl">No Posts Found.</p>
     </main>
   )
 }
