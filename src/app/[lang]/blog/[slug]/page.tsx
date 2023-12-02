@@ -1,4 +1,4 @@
-import { MDXRemote, compileMDX } from 'next-mdx-remote/rsc'
+import { compileMDX } from 'next-mdx-remote/rsc'
 import { components } from '@/utils/mdx-components'
 
 export default async function BlogPost({
@@ -21,14 +21,14 @@ export default async function BlogPost({
       <h1 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
         {frontmatter.title}
       </h1>
-      {post.tags.split(',').map((tag: string, index: number) => (
+      {/* {post.tags.split(',').map((tag: string, index: number) => (
         <span
           className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
           key={index}
         >
           {tag}
         </span>
-      ))}
+      ))} */}
       {content}
     </main>
   )

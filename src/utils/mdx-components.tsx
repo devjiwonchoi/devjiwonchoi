@@ -1,45 +1,48 @@
 import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
+import Image from 'next/image'
 import { GeistMono } from 'geist/font/mono'
 
 export const components: MDXComponents = {
-  h2: (props) => (
+  h2: ({ children }) => (
     <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-100 sm:text-3xl">
-      {props.children}
+      {children}
     </h2>
   ),
-  h3: (props) => (
+  h3: ({ children }) => (
     <h3 className="mb-4 text-xl font-bold tracking-tight text-neutral-100 sm:text-2xl">
-      {props.children}
+      {children}
     </h3>
   ),
-  p: (props) => (
-    <p className="mb-2 text-base text-neutral-100 sm:text-base">
-      {props.children}
-    </p>
+  p: ({ children }) => (
+    <p className="mb-2 text-base text-neutral-100 sm:text-base">{children}</p>
   ),
-  strong: (props) => (
-    <strong className="text-neutral-50">{props.children}</strong>
+  strong: ({ children }) => (
+    <strong className="text-neutral-50">{children}</strong>
   ),
-  blockquote: (props) => (
+  blockquote: ({ children }) => (
     <blockquote className="mb-4 text-base text-neutral-100 sm:text-base">
-      {props.children}
+      {children}
     </blockquote>
   ),
-  a: (props) => (
+  a: ({ children, href }) => (
     <Link
       className="underline hover:text-neutral-50"
-      href={props.href as string}
+      href={href as string}
       target="_blank"
     >
-      {props.children}
+      {children}
     </Link>
   ),
-  code: (props) => (
+  code: ({ children }) => (
     <code
       className={`${GeistMono.variable}   rounded bg-neutral-700 px-1 py-1 text-xs font-medium text-neutral-100`}
     >
-      {props.children}
+      {children}
     </code>
+  ),
+  img: ({ src, alt }) => (
+    // TODO: alter image, set width and height
+    <Image src={src as string} alt={alt as string} width={600} height={400} />
   ),
 }
