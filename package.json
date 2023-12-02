@@ -12,7 +12,6 @@
     "test:codegen": "playwright codegen localhost:4000"
   },
   "dependencies": {
-    "@next/mdx": "^14.0.3",
     "@vercel/analytics": "^1.1.1",
     "@vercel/postgres": "^0.5.1",
     "@vercel/speed-insights": "^0.0.6",
