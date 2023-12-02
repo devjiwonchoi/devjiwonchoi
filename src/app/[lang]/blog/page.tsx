@@ -55,7 +55,6 @@ export default function Blog({
                 day: 'numeric',
               })}
             </p>
-            {/* style this */}
             <p className="text-sm text-neutral-400">
               {post.views} views • {post.read_time} min read
             </p>
