@@ -47,6 +47,7 @@ CREATE TABLE blogs (
   tags VARCHAR(255) NOT NULL,
   source TEXT NOT NULL,
   views INT DEFAULT 0,
+  read_time INT DEFAULT 1,
   created_at TIMESTAMP DEFAULT NOW(),
   updated_at TIMESTAMP DEFAULT NOW()
 )
