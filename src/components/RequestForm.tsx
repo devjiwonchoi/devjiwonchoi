@@ -1,5 +1,5 @@
 import { sendEmailToMe } from '@/utils'
-import { SubmitButton } from './Buttons/SubmitButton'
+import { SubmitButton } from './buttons/SubmitButton'
 
 export function RequestForm({
   email,

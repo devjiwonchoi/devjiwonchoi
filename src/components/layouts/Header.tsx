@@ -16,9 +16,10 @@ export function Header({
         <Image
           alt="devjiwonchoi Logo"
           className="w-8 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
-          height={0}
           src="/me-logo.svg"
           width={0}
+          height={0}
+          priority
         />
       </Link>
       <div className="flex items-center space-x-4">

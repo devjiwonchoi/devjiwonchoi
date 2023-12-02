@@ -1,5 +1,3 @@
-import { NOTION_BLOG_PAGE_SIZE } from '@/utils/notion'
-
 function BlogPostSkeleton() {
   return (
     <div className="mb-2 border border-neutral-800 p-6">
@@ -22,7 +20,7 @@ export function BlogPostSkeletonLoader() {
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
         Blog
       </h2>
-      {Array.from({ length: NOTION_BLOG_PAGE_SIZE }, (_, i) => (
+      {Array.from({ length: 10 }, (_, i) => (
         <BlogPostSkeleton key={i} />
       ))}
     </main>

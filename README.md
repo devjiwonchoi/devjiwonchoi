@@ -36,3 +36,19 @@ My portfolio built with all you can expect from Vercel.
 - [x] **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - [x] **Lint**: [ESLint](https://eslint.org)
 - [x] **Format**: [Prettier](https://prettier.io)
+
+## Queries
+
+```sql
+CREATE TABLE blogs (
+  id SERIAL PRIMARY KEY,
+  slug VARCHAR(255) UNIQUE NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  tags VARCHAR(255) NOT NULL,
+  source TEXT NOT NULL,
+  views INT DEFAULT 0,
+  read_time INT DEFAULT 1,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+)
+```
