@@ -36,9 +36,9 @@ export default async function BlogPost({
 
 export async function generateStaticParams() {
   const res = await fetch(`${process.env.API_URL}/blog`)
-  const { posts } = await res.json()
+  const posts = await res.json()
 
-  return posts.map((post: { slug: string }) => ({ slug: post.slug }))
+  return posts[0].posts.map((post: { slug: string }) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({
