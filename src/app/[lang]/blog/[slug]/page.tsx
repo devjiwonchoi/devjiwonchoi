@@ -34,29 +34,29 @@ export default async function BlogPost({
   )
 }
 
-export async function generateStaticParams() {
-  const res = await fetch(`${process.env.API_URL}/blog`)
-  const { posts } = await res.json()
+// export async function generateStaticParams() {
+//   const res = await fetch(`${process.env.API_URL}/blog`)
+//   const posts = await res.json()
 
-  return posts.map((post: { slug: string }) => ({ slug: post.slug }))
-}
+//   return posts[0].posts.map((post: { slug: string }) => ({ slug: post.slug }))
+// }
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: { slug: string }
-}) {
-  const res = await fetch(`${process.env.API_URL}/blog/${slug}`)
-  const { post } = await res.json()
-  const { frontmatter } = await compileMDX<{
-    title: string
-    description: string
-  }>({
-    source: post.source,
-    options: { parseFrontmatter: true },
-  })
-  return {
-    title: frontmatter.title,
-    description: frontmatter.description,
-  }
-}
+// export async function generateMetadata({
+//   params: { slug },
+// }: {
+//   params: { slug: string }
+// }) {
+//   const res = await fetch(`${process.env.API_URL}/blog/${slug}`)
+//   const { post } = await res.json()
+//   const { frontmatter } = await compileMDX<{
+//     title: string
+//     description: string
+//   }>({
+//     source: post.source,
+//     options: { parseFrontmatter: true },
+//   })
+//   return {
+//     title: frontmatter.title,
+//     description: frontmatter.description,
+//   }
+// }
