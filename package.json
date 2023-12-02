@@ -15,7 +15,7 @@
     "@vercel/analytics": "^1.1.1",
     "@vercel/postgres": "^0.5.1",
     "@vercel/speed-insights": "^0.0.6",
-    "geist": "^1.1.0",
+    "geist": "^1.2.0",
     "next": "^14.0.3",
     "next-auth": "^4.24.5",
     "next-mdx-remote": "^4.4.1",
