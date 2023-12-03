@@ -9,7 +9,6 @@ export default async function BlogAdmin() {
   }
 
   const { posts } = await getPosts()
-  console.log(posts[0].created_at)
   return (
     <main className="mb-auto p-6">
       <article className="mb-6">
