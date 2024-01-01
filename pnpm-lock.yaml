@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.5.1
     version: 0.5.1
   '@vercel/speed-insights':
-    specifier: ^0.0.6
-    version: 0.0.6
+    specifier: ^1.0.2
+    version: 1.0.2
   geist:
     specifier: ^1.2.0
     version: 1.2.0(next@14.0.3)
@@ -822,8 +822,8 @@ packages:
     resolution: {integrity: sha512-INZjBvBxQlANvj7LvHeXtfjpU+ZtwGL45vyys5+hI594MokpkrKdzUaTuK4kUX+KsEJUR7Xule5JiS89fW77BA==}
     dev: true
 
-  /@vercel/speed-insights@0.0.6:
-    resolution: {integrity: sha512-vHtktTVxLJw4bVIIPHqePlmpSEQvLGnn5pxi7dZNaxqocPwpQnfw15K4F8xPMWI1oAZ0rBBBRwo9cW8VnX9lbw==}
+  /@vercel/speed-insights@1.0.2:
+    resolution: {integrity: sha512-y5HWeB6RmlyVYxJAMrjiDEz8qAIy2cit0fhBq+MD78WaUwQvuBnQlX4+5MuwVTWi46bV3klaRMq83u9zUy1KOg==}
     requiresBuild: true
     dev: false
 
