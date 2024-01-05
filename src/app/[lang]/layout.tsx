@@ -22,7 +22,7 @@ export default async function LangRootLayout({
       >
         <Header dict={dictionary} />
         <ProfileCard dict={dictionary} />
-        <NavBar dict={dictionary} />
+        {/* <NavBar dict={dictionary} /> */}
         {children}
         <Footer />
         <Analytics />
