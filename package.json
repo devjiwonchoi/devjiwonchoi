@@ -1,0 +1,23 @@
+{
+  "name": "jiwonchoi.dev",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build --debug",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "canary",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "canary",
+    "typescript": "^5.3.3"
+  }
+}
