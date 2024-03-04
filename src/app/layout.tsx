@@ -57,7 +57,7 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         <Header />
-        {/* <NavBar /> */}
+        <NavBar />
         {children}
         <Footer />
         <Analytics />
