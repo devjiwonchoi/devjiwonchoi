@@ -51,7 +51,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${GeistMono.className} bg-neutral-950`} lang="en_US">
+    <html className={`${GeistMono.className} bg-neutral-950`} lang="en">
       <body
         className="container mx-auto flex h-screen max-w-4xl flex-col"
         suppressHydrationWarning
