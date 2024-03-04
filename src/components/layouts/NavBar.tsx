@@ -17,9 +17,12 @@ export function NavBar() {
           <li key={title}>
             <Link
               className={clsx(
+                // by default, highlight and underline on hover
                 'font-medium hover:text-neutral-50 hover:underline',
                 {
+                  // for `::1`, tight font spacing
                   'tracking-tighter': url === '/',
+                  // highlight and underline the current page
                   'text-neutral-200': pathname !== url,
                   'text-neutral-50': pathname === url,
                   underline: pathname === url,
