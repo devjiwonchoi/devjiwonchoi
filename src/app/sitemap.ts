@@ -9,9 +9,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://www.jiwonchoi.dev/blog',
+      url: 'https://www.jiwonchoi.dev/bio',
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: 'https://www.jiwonchoi.dev/blog',
+      lastModified: new Date(),
+      changeFrequency: 'daily',
       priority: 0.8,
     },
     {
