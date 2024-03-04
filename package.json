@@ -45,11 +45,5 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "autoprefixer": {}
-    }
   }
 }
