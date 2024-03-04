@@ -14,6 +14,15 @@ dependencies:
   '@vercel/speed-insights':
     specifier: ^1.0.10
     version: 1.0.10(next@14.1.2-canary.3)(react@18.2.0)
+  '@xterm/addon-fit':
+    specifier: ^0.9.0
+    version: 0.9.0(@xterm/xterm@5.4.0)
+  '@xterm/addon-web-links':
+    specifier: ^0.10.0
+    version: 0.10.0(@xterm/xterm@5.4.0)
+  '@xterm/xterm':
+    specifier: ^5.4.0
+    version: 5.4.0
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
@@ -881,6 +890,26 @@ packages:
       json-schema-to-ts: 1.6.4
       ts-morph: 12.0.0
     dev: true
+
+  /@xterm/addon-fit@0.9.0(@xterm/xterm@5.4.0):
+    resolution: {integrity: sha512-hDlPPbTVPYyvwXu/asW8HbJkI/2RMi0cMaJnBZYVeJB0SWP2NeESMCNr+I7CvBlyI0sAxpxOg8Wk4OMkxBz9WA==}
+    peerDependencies:
+      '@xterm/xterm': ^5.0.0
+    dependencies:
+      '@xterm/xterm': 5.4.0
+    dev: false
+
+  /@xterm/addon-web-links@0.10.0(@xterm/xterm@5.4.0):
+    resolution: {integrity: sha512-QhrHCUr8w6ATGviyXwcAIM1qN3nD1hdxwMC8fsW7z/6aaQlb2nt7zmByJt4eOn7ZzrHOzczljqV5S2pkdQp2xw==}
+    peerDependencies:
+      '@xterm/xterm': ^5.0.0
+    dependencies:
+      '@xterm/xterm': 5.4.0
+    dev: false
+
+  /@xterm/xterm@5.4.0:
+    resolution: {integrity: sha512-GlyzcZZ7LJjhFevthHtikhiDIl8lnTSgol6eTM4aoSNLcuXu3OEhnbqdCVIjtIil3jjabf3gDtb1S8FGahsuEw==}
+    dev: false
 
   /abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
