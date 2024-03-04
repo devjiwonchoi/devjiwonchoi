@@ -3,19 +3,19 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://jiwonchoi.dev',
+      url: 'https://www.jiwonchoi.dev',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://jiwonchoi.dev/blog',
+      url: 'https://www.jiwonchoi.dev/blog',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://jiwonchoi.dev/request',
+      url: 'https://www.jiwonchoi.dev/projects',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
