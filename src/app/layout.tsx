@@ -1,37 +1,32 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { ProfileCard } from '@/components'
+import { Header, Footer, NavBar } from '@/components/layouts'
 import '@/globals.css'
 
-export default function RootLayout({
+export default async function LangRootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode
+  params: { lang: string }
 }) {
-  return <>{children}</>
-}
-
-export const metadata: Metadata = {
-  metadataBase: new URL('https://www.jiwonchoi.dev'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/',
-      'ko-KR': '/ko',
-      'zh-CN': '/zh',
-      en: '/',
-      ko: '/ko',
-      zh: '/zh',
-    },
-  },
-  twitter: {
-    creator: '@devjiwonchoi',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-  // TODO: viewport for dark mode
+  return (
+    <html className={`${GeistSans.variable} bg-neutral-950`} lang={lang}>
+      <body
+        className="container mx-auto flex h-screen max-w-4xl flex-col"
+        suppressHydrationWarning
+      >
+        <Header />
+        <ProfileCard />
+        <NavBar />
+        {children}
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  )
 }

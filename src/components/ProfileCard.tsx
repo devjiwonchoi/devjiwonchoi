@@ -1,10 +1,6 @@
 import Image from 'next/image'
 
-export function ProfileCard({
-  dict: { profileCard },
-}: {
-  dict: typeof import('@/dictionaries/en.json')
-}) {
+export function ProfileCard() {
   return (
     <section className="flex flex-col items-center p-6">
       <Image
@@ -15,10 +11,10 @@ export function ProfileCard({
         width={0}
       />
       <h1 className="mb-4 text-4xl font-bold text-neutral-50 sm:text-4xl">
-        {profileCard.h1}
+        Jiwon Choi
       </h1>
       <p className="uppercase tracking-widest text-neutral-50">
-        {profileCard.p}
+        software engineer
       </p>
     </section>
   )
