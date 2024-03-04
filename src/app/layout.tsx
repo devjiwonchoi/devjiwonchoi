@@ -2,8 +2,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font/mono'
 import { Header, Footer, NavBar } from '@/components/layouts'
-import '@/globals.css'
 import type { Metadata } from 'next'
+import '@/globals.css'
 
 const description =
   'Jiwon Choi is a software engineer concentrating on web, cloud, and developer experience. Active contributor of Next.js, Vercel, and other open-source projects.'
