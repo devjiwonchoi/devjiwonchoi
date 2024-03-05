@@ -7,13 +7,14 @@ import '@xterm/xterm/css/xterm.css'
 import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
 
 const XtermTerinalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
-  fontSize: 16,
+  fontSize: 14,
   fontFamily: 'Geist Mono, monospace',
-  // TODO: is this working?
+  // TOOD: does this work?
   macOptionIsMeta: true,
-  rows: 30,
+  cursorBlink: true,
+  rows: 25,
   tabStopWidth: 2,
-
+  lineHeight: 1.25,
   theme: {
     background: '#141414',
     cursor: '#fafafa',
@@ -33,28 +34,109 @@ export function Terminal() {
     terminal.loadAddon(webLinksAddon)
     fitAddon.fit()
 
+    const promptStr = 'guest@jiwonchoi.dev ~ % '
+    const promptStrLen = promptStr.length
+
+    const initPropmt = () => {
+      terminal.write(`\r${promptStr}`)
+    }
     const prompt = () => {
-      terminal.write('\r\n$ ')
+      terminal.write(`\r\n${promptStr}`)
+    }
+    const commands: Record<string, any> = {
+      clear: {
+        f: () => {
+          terminal.reset()
+          initPropmt()
+        },
+      },
+      help: {
+        f: () => {
+          terminal.writeln('\nAvailable commands:')
+          terminal.writeln('  clear - Clear the terminal screen')
+          terminal.writeln('  help - Show this help message')
+          prompt()
+        },
+      },
     }
 
-    prompt()
-
-    terminal.onKey((e: { key: string; domEvent: KeyboardEvent }) => {
-      const ev = e.domEvent
-      const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey
-
-      if (ev.code === 'Enter') {
-        return prompt()
+    function runCommand(text: string) {
+      const command = text.trim().split(' ')[0]
+      if (command.length > 0) {
+        terminal.writeln('')
+        if (command in commands) {
+          commands[command].f()
+          return
+        }
+        terminal.write(`zsh: command not found: ${command}`)
       }
+      prompt()
+    }
 
-      // Prevent deleting the prompt
-      // TODO: Fix this
-      if (ev.code === 'Backspace' && terminal.buffer.active.cursorX > 2) {
-        return terminal.write('\b \b')
-      }
+    // command history
+    const history: string[] = []
+    let historyIndex = 0
 
-      if (printable) {
-        return terminal.write(e.key)
+    initPropmt()
+    let command = ''
+    terminal.onData((e) => {
+      switch (e) {
+        case '\u0003': // Ctrl+C
+          terminal.write('^C')
+          prompt()
+          break
+        case '\r': // Enter
+          runCommand(command)
+          history.push(command)
+          historyIndex = history.length
+          command = ''
+          break
+        case '\u007F': // Backspace (DEL)
+          // Do not delete the prompt
+          if (terminal.buffer.active.cursorX > promptStrLen) {
+            terminal.write('\b \b')
+            if (command.length > 0) {
+              command = command.substr(0, command.length - 1)
+            }
+          }
+          break
+        // Left arrow
+        case '\u001b[D':
+          if (terminal.buffer.active.cursorX > promptStrLen) {
+            terminal.write('\u001b[D')
+          }
+          break
+        // Right arrow
+        case '\u001b[C':
+          if (command.length > terminal.buffer.active.cursorX - promptStrLen) {
+            terminal.write('\u001b[C')
+          }
+          break
+        // Up arrow
+        case '\u001b[A':
+          if (historyIndex > 0) {
+            historyIndex--
+            command = history[historyIndex]
+            terminal.write(`\r${promptStr}${command}`)
+          }
+          break
+        // Down arrow
+        case '\u001b[B':
+          if (historyIndex < history.length - 1) {
+            historyIndex++
+            command = history[historyIndex]
+            terminal.write(`\r${promptStr}${command}`)
+          }
+          break
+        default: // Print all other characters for demo
+          if (
+            (e >= String.fromCharCode(0x20) &&
+              e <= String.fromCharCode(0x7e)) ||
+            e >= '\u00a0'
+          ) {
+            command += e
+            terminal.write(e)
+          }
       }
     })
 
@@ -67,5 +149,9 @@ export function Terminal() {
     }
   }, [])
 
-  return <div ref={terminalRef} />
+  return (
+    <div className="flex justify-center">
+      <div ref={terminalRef} />
+    </div>
+  )
 }
