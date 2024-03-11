@@ -14,11 +14,11 @@ const XtermTerminalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
   // Not working, is bug in xterm.js
   // WebGL addon does fix this, but cannot test the inner contents.
   // cursorBlink: true,
-  rows: 25,
+  rows: 20,
   tabStopWidth: 2,
-  lineHeight: 1.25,
+  lineHeight: 1.5,
   theme: {
-    background: '#141414',
+    background: '#171717',
     cursor: '#fafafa',
     black: '#0a0a0a',
     white: '#fafafa',
@@ -261,7 +261,7 @@ export function Terminal() {
   }, [router])
 
   return (
-    <div className="flex justify-center">
+    <div className="hidden rounded bg-neutral-900 p-2 md:block">
       <div ref={terminalRef} />
     </div>
   )
