@@ -10,9 +10,10 @@ import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
 const XtermTerminalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
   fontSize: 14,
   fontFamily: 'Geist Mono, monospace',
-  // TODO: does this work?
   macOptionIsMeta: true,
-  cursorBlink: true,
+  // Not working, is bug in xterm.js
+  // WebGL addon does fix this, but cannot test the inner contents.
+  // cursorBlink: true,
   rows: 25,
   tabStopWidth: 2,
   lineHeight: 1.25,
