@@ -4,13 +4,13 @@ import { useEffect, useRef } from 'react'
 import { Terminal as XtermTerminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import { WebLinksAddon } from '@xterm/addon-web-links'
-import { WebglAddon } from '@xterm/addon-webgl'
 import '@xterm/xterm/css/xterm.css'
 import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
 
 const XtermTerminalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
   fontSize: 14,
   fontFamily: 'Geist Mono, monospace',
+  // TODO: does this work?
   macOptionIsMeta: true,
   cursorBlink: true,
   rows: 25,
@@ -222,13 +222,8 @@ export function Terminal() {
     const terminal = new XtermTerminal(XtermTerminalOptions)
     const fitAddon = new FitAddon()
     const webLinksAddon = new WebLinksAddon()
-    const webGLAddon = new WebglAddon()
-    webGLAddon.onContextLoss(() => {
-      webGLAddon.dispose()
-    })
     terminal.loadAddon(fitAddon)
     terminal.loadAddon(webLinksAddon)
-    terminal.loadAddon(webGLAddon)
     fitAddon.fit()
 
     const prompt = (lineBreak = true) => {
