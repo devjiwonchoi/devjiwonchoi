@@ -5,14 +5,8 @@ on:
 
 jobs:
   e2e-playwright:
-    timeout-minutes: 10
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
     container:
       image: mcr.microsoft.com/playwright:v1.42.1-jammy
 
@@ -34,6 +28,6 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Run tests
-        run: pnpm playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: pnpm playwright test
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
