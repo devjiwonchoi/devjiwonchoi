@@ -8,8 +8,3 @@ updates:
       - "devjiwonchoi"
     allow:
       - dependency-name: "next"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
