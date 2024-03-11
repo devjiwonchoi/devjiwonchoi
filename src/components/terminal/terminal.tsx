@@ -5,12 +5,13 @@ import { Terminal as XtermTerminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import { WebLinksAddon } from '@xterm/addon-web-links'
 import '@xterm/xterm/css/xterm.css'
+import { dirTree } from './constants'
 import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
 
-const XtermTerinalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
+const XtermTerminalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
   fontSize: 14,
   fontFamily: 'Geist Mono, monospace',
-  // TOOD: does this work?
+  // TODO: does this work?
   macOptionIsMeta: true,
   cursorBlink: true,
   rows: 25,
@@ -29,7 +30,7 @@ export function Terminal() {
   const terminalRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const terminal = new XtermTerminal(XtermTerinalOptions)
+    const terminal = new XtermTerminal(XtermTerminalOptions)
     const fitAddon = new FitAddon()
     const webLinksAddon = new WebLinksAddon()
     terminal.loadAddon(fitAddon)
@@ -40,22 +41,7 @@ export function Terminal() {
     const promptStr = (dir?: string) => `guest@jiwonchoi.dev ${dir ?? '~'} % `
     const promptStrLen = promptStr.length
 
-    const homeDir = [
-      'biography',
-      'blog',
-      'projects',
-      // 'README.md',
-      // 'resume.pdf',
-      'socials',
-    ]
-    const innerDirs: Record<string, string[]> = {
-      biography: ['index.html'],
-      // TODO: fetch blog posts
-      blog: ['index.html'],
-      // TODO: fetch projects
-      projects: ['index.html'],
-      socials: ['github.md', 'gmail.md', 'linkedin.md', 'twitter.md'],
-    }
+    let currentDirLevel = 0
     const helpMessage = [
       '',
       'Available commands:',
@@ -67,7 +53,7 @@ export function Terminal() {
       '  open     - Open a file or directory',
     ].join('\n\r')
 
-    const initPropmt = () => {
+    const initPrompt = () => {
       terminal.write(`\r${promptStr()}`)
     }
     const prompt = ({
@@ -81,7 +67,7 @@ export function Terminal() {
       clear: {
         f: () => {
           terminal.reset()
-          initPropmt()
+          initPrompt()
         },
       },
       help: {
@@ -93,11 +79,15 @@ export function Terminal() {
       ls: {
         f: () => {
           // show the list of files in the current directory
-          if (currentDir in innerDirs) {
-            terminal.write(innerDirs[currentDir].join('    '))
+          if (currentDir in dirTree) {
+            terminal.write(
+              dirTree[currentDir].files
+                .map((file: any) => file.name)
+                .join('    '),
+            )
             prompt()
           } else {
-            terminal.write(homeDir.join('    '))
+            terminal.write(Object.keys(dirTree).join('    '))
             prompt()
           }
         },
@@ -105,23 +95,30 @@ export function Terminal() {
       whoami: {
         f: () => {
           // TODO: cheer up the user
-          terminal.writeln('guest')
+          terminal.write('guest')
           prompt()
         },
       },
       cd: {
         f: (dir: string) => {
           // move to the given directory
-          if (dir in innerDirs) {
-            // innerDirs[dir]
+          if (dir in dirTree) {
             currentDir = dir
             prompt({ dir, lineBreak: false })
+          }
+          if (dir === '..') {
+            const dirArr = currentDir.split('/')
+            if (dirArr.length > 1) {
+              dirArr.pop()
+              currentDir = dirArr.join('/')
+              prompt({ dir: currentDir, lineBreak: false })
+            }
           }
         },
       },
       open: {
         f: (file: string) => {
-          if (innerDirs[currentDir].includes(file)) {
+          if (dirTree[currentDir].files.includes(file)) {
             router.push(`/${file === 'index.html' ? currentDir : file}`)
           }
         },
@@ -146,7 +143,7 @@ export function Terminal() {
     const history: string[] = []
     let historyIndex = 0
 
-    initPropmt()
+    initPrompt()
     let command = ''
     terminal.onData((e) => {
       switch (e) {
@@ -175,9 +172,9 @@ export function Terminal() {
           const lastWord = command.split(' ').pop()
 
           if (lastWord) {
-            let dir = homeDir
-            if (currentDir in innerDirs) {
-              dir = innerDirs[currentDir]
+            let dir = Object.keys(dirTree)
+            if (currentDir in dirTree) {
+              dir = dirTree[currentDir]
             }
 
             const matchingCommands = dir.filter((command) =>
