@@ -82,6 +82,7 @@ test.describe('terminal commands', () => {
 
   test('should have title as Jiwon Choi', async ({ page }) => {
     await page.goto('/')
+    await page.waitForTimeout(10000) // wait for 10 seconds for possible verification
     expect(await page.title()).toBe('Jiwon Choi')
   })
 })
