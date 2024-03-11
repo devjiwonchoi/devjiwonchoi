@@ -64,7 +64,7 @@ function registerOnData({
         // Do not delete the prompt
         if (terminal.buffer.active.cursorX > promptStr.length) {
           terminal.write('\b \b')
-          if (command.length > 0) {
+          if (command.length) {
             command = command.substring(0, command.length - 1)
           }
         }
