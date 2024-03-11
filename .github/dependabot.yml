@@ -1,7 +1,7 @@
 version: 2
 updates:
-  - name: "dog foods"
-    package-ecosystem: "npm"
+  # dog foods
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
@@ -16,8 +16,8 @@ updates:
       # - dependency-name: "eslint-config-next"
       # - dependency-name: "vercel"
 
-  - name: "regular deps"
-    package-ecosystem: "npm"
+  # regular deps
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "monthly"
