@@ -2,15 +2,33 @@ name: Playwright Tests
 
 on:
   deployment_status:
+
 jobs:
-  run-e2es:
+  e2e-playwright:
+    name: e2e-playwright
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
       - name: Install dependencies
-        run: npm ci && npx playwright install --with-deps
+        run: pnpm install --frozen-lockfile --prefer-offline
+
+      - name: Install playwright browsers
+        run: pnpm playwright install --with-deps
+
       - name: Run tests
-        run: npx playwright test
+        run: pnpm test:e2e
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
