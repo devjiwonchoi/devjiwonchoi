@@ -5,6 +5,8 @@
     "dev": "next dev --turbo",
     "build": "next build --debug",
     "start": "next start",
+    "test:e2e": "playwright test",
+    "test": "pnpm test:e2e",
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix"
   },
@@ -25,6 +27,7 @@
     "swr": "^2.2.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
     "@types/mdx": "^2.0.11",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
