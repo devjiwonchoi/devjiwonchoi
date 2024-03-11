@@ -1,22 +1,14 @@
 version: 2
 updates:
-  # dog foods
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "devjiwonchoi"
     allow:
-      # - dependency-name: "@vercel/analytics"
-      # - dependency-name: "@vercel/postgres"
-      # - dependency-name: "@vercel/speed-insights"
-      # - dependency-name: "geist"
       - dependency-name: "next"
-      # - dependency-name: "next-auth"
-      # - dependency-name: "swr"
-      # - dependency-name: "eslint-config-next"
-      # - dependency-name: "vercel"
 
-  # regular deps
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
