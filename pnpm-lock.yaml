@@ -20,6 +20,9 @@ dependencies:
   '@xterm/addon-web-links':
     specifier: ^0.10.0
     version: 0.10.0(@xterm/xterm@5.4.0)
+  '@xterm/addon-webgl':
+    specifier: ^0.17.0
+    version: 0.17.0(@xterm/xterm@5.4.0)
   '@xterm/xterm':
     specifier: ^5.4.0
     version: 5.4.0
@@ -912,6 +915,14 @@ packages:
 
   /@xterm/addon-web-links@0.10.0(@xterm/xterm@5.4.0):
     resolution: {integrity: sha512-QhrHCUr8w6ATGviyXwcAIM1qN3nD1hdxwMC8fsW7z/6aaQlb2nt7zmByJt4eOn7ZzrHOzczljqV5S2pkdQp2xw==}
+    peerDependencies:
+      '@xterm/xterm': ^5.0.0
+    dependencies:
+      '@xterm/xterm': 5.4.0
+    dev: false
+
+  /@xterm/addon-webgl@0.17.0(@xterm/xterm@5.4.0):
+    resolution: {integrity: sha512-KUH//EZCz7j1+IekW8sZzmcj/y9gOLf/HMcsWXjg0Xr5cT1lIBIIbbBlbf5kZ+XnA/8c1IuBm1vx+blzlfPk0g==}
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
