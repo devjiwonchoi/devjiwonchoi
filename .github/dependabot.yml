@@ -1,13 +1,13 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
-      timezone: "Asia/Seoul"
+      interval: 'daily'
+      timezone: 'Asia/Seoul'
       # KST 11:00 == UTC 02:00
       time: '11:00'
     reviewers:
-      - "devjiwonchoi"
+      - 'devjiwonchoi'
     allow:
-      - dependency-name: "next"
+      - dependency-name: 'next'
