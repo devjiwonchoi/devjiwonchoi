@@ -47,7 +47,7 @@ function registerOnData({
   command,
 }: {
   terminal: XtermTerminal
-  runCommand: (text: string) => void
+  runCommand: (input: string) => void
   prompt: (lineBreak?: boolean) => void
   history: string[]
   historyIndex: number
@@ -57,8 +57,12 @@ function registerOnData({
     switch (e) {
       case '\r': // Enter
         runCommand(command)
-        history.push(command)
-        historyIndex = history.length
+
+        if (command?.trim().length) {
+          history.push(command)
+          historyIndex = history.length
+        }
+
         command = ''
         break
       case '\u007F': // Backspace (DEL)
@@ -128,6 +132,16 @@ function registerOnData({
           historyIndex++
           command = history[historyIndex]
           terminal.write(`\r${promptStr}${command}`)
+          break
+        }
+
+        // last bottom down to be empty
+        if (historyIndex === history.length - 1) {
+          // clear the current command first
+          terminal.write(`\r${promptStr}${' '.repeat(command.length)}`)
+          historyIndex++
+          command = ''
+          terminal.write(`\r${promptStr}${command}`)
         }
         break
       default: // Print all other characters for demo
@@ -144,16 +158,16 @@ function registerOnData({
 
 function runCommand({
   terminal,
-  text,
+  input,
   prompt,
   commands,
 }: {
   terminal: XtermTerminal
-  text: string
+  input: string
   prompt: () => void
   commands: Record<string, any>
 }) {
-  const args = text.trim().split(' ')
+  const args = input.trim().split(' ')
   const command = args[0]
   const possiblyFile = args.slice(1)[0]
 
@@ -215,6 +229,21 @@ function getCommands({
   return commands
 }
 
+function welcome({
+  terminal,
+  prompt,
+  commands,
+}: {
+  terminal: XtermTerminal
+  prompt: (lineBreak?: boolean) => void
+  commands: Record<string, any>
+}) {
+  prompt(false)
+  terminal.write('help')
+  runCommand({ terminal, input: 'help', prompt, commands })
+  prompt(false)
+}
+
 export function Terminal() {
   const router = useRouter()
   const terminalRef = useRef<HTMLDivElement>(null)
@@ -242,17 +271,22 @@ export function Terminal() {
     let command = ''
 
     if (terminalRef.current) {
+      terminal.open(terminalRef.current)
+      terminal.focus()
+
+      welcome({ terminal, prompt, commands })
+      history.push('help')
+      historyIndex = history.length
+
       registerOnData({
         terminal,
-        runCommand: (text) => runCommand({ terminal, text, prompt, commands }),
+        runCommand: (input) =>
+          runCommand({ terminal, input, prompt, commands }),
         prompt,
         history,
         historyIndex,
         command,
       })
-      terminal.open(terminalRef.current)
-      terminal.focus()
-      prompt(false)
     }
 
     return () => {
