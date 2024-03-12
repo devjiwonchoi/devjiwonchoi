@@ -4,6 +4,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      timezone: "Asia/Seoul"
+      # KST 11:00 == UTC 02:00
+      time: '11:00'
     reviewers:
       - "devjiwonchoi"
     allow:
