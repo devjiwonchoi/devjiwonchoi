@@ -1,23 +1,35 @@
-name: lighthouse
+name: Lighthouse
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'pnpm-lock.yaml'
+  deployment_status:
+
 jobs:
-  lighthouse:
+  playwright:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18, 20]
     steps:
       - uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
       - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v4
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-      - run: pnpm install --frozen-lockfile --prefer-offline
-      - run: pnpm build
-      - run: npx lhci autorun
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+
+      - name: Run Lighthouse mobile audit
+        run: pnpm lhci:mobile
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Run Lighthouse desktop audit
+        run: pnpm lhci:desktop
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
