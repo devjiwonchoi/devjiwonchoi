@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.42.1-jammy
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
 
     steps:
       - uses: actions/checkout@v4
@@ -28,6 +33,6 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Run tests
-        run: pnpm playwright test
+        run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
