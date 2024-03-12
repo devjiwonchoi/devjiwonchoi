@@ -33,3 +33,4 @@ jobs:
         run: pnpm lhci:desktop
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          BASE_URL: ${{ github.event.deployment_status.environment_url }}
