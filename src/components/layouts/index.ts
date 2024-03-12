@@ -1,3 +1,3 @@
-export { Footer } from './Footer'
-export { Header } from './Header'
-export { NavBar } from './NavBar'
+export { Footer } from './footer'
+export { Header } from './header'
+export { NavBar } from './nav-bar'
