@@ -1,15 +1,21 @@
 import { test, expect } from '@playwright/test'
 import type { Page } from '@playwright/test'
 
+const welcomeRowCount = 8
+
 const testCases = [
   {
     name: 'help - should display available commands',
     command: 'help',
     // some steps for expect
     expected: async (page: Page) => {
-      await page.waitForSelector('.xterm-rows > div:nth-child(3) > span')
+      await page.waitForSelector(
+        `.xterm-rows > div:nth-child(${welcomeRowCount + 3}) > span`,
+      )
       expect(
-        await page.textContent('.xterm-rows > div:nth-child(3) > span'),
+        await page.textContent(
+          `.xterm-rows > div:nth-child(${welcomeRowCount + 3}) > span`,
+        ),
       ).toContain('Available Commands:')
     },
   },
@@ -18,9 +24,13 @@ const testCases = [
     command: 'ls',
     // some steps for expect
     expected: async (page: Page) => {
-      await page.waitForSelector('.xterm-rows > div:nth-child(2) > span')
+      await page.waitForSelector(
+        `.xterm-rows > div:nth-child(${welcomeRowCount + 2}) > span`,
+      )
       expect(
-        await page.textContent('.xterm-rows > div:nth-child(2) > span'),
+        await page.textContent(
+          `.xterm-rows > div:nth-child(${welcomeRowCount + 2}) > span`,
+        ),
       ).toContain('blog.php')
     },
   },
@@ -29,9 +39,13 @@ const testCases = [
     command: 'clear',
     // some steps for expect
     expected: async (page: Page) => {
-      await page.waitForSelector('.xterm-rows > div:nth-child(3)')
+      await page.waitForSelector(
+        `.xterm-rows > div:nth-child(${welcomeRowCount + 3})`,
+      )
       expect(
-        await page.textContent('.xterm-rows > div:nth-child(3)'),
+        await page.textContent(
+          `.xterm-rows > div:nth-child(${welcomeRowCount + 3})`,
+        ),
       ).not.toContain('blog.php')
     },
   },
