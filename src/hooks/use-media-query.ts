@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
  * ref: https://dev.to/justincy/4-patterns-for-responsive-props-in-react-39ak#responsive-props
  */
 // TODO: replace with applicable better approach
-export default function useMediaQuery(query: string) {
+export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false)
   useEffect(
     () => {
