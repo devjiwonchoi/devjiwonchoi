@@ -4,7 +4,7 @@ on:
   deployment_status:
 
 jobs:
-  e2e-playwright:
+  playwright:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     container:
@@ -12,8 +12,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
+        node-version: [18, 20]
+        shard-index: [1, 2, 3, 4]
+        shard-total: [4]
 
     steps:
       - uses: actions/checkout@v4
@@ -24,15 +25,16 @@ jobs:
         with:
           version: 8
 
-      - uses: actions/setup-node@v4
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Run tests
-        run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+        run: pnpm test:e2e --shard=${{ matrix.shard-index }}/${{ matrix.shard-total }}
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
