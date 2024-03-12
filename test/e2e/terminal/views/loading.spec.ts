@@ -4,7 +4,6 @@ test.describe('terminal - loading', () => {
   test('should render loading message', async ({ page }) => {
     await page.goto('/')
 
-    await page.waitForSelector('#loading-terminal')
     expect(await page.textContent('#loading-terminal')).toContain(
       'Initiating Terminal...',
     )
