@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      # UTC 02:00 == KST 11:00
+      time: '02:00'
     reviewers:
       - "devjiwonchoi"
     allow:
