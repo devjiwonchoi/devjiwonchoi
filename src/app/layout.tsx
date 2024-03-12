@@ -6,19 +6,19 @@ import type { Metadata } from 'next'
 import '@/globals.css'
 
 const description =
-  'Jiwon Choi is a software engineer concentrating on web, cloud, and developer experience. Active contributor of Next.js, Vercel, and other open-source projects.'
+  'Jiwon Choi is a software engineer concentrating on web, cloud, and experience, an active contributor to Next.js, Vercel, and other open-source software.'
 
 const keywords = [
   'Jiwon Choi',
-  'Vercel',
-  'Next.js',
-  'Software Engineer',
-  'Open Source',
-  'Web',
-  'Frontend',
-  'Cloud',
-  'Developer Experience',
-  'DevOps',
+  'software',
+  'engineer',
+  'vercel',
+  'next.js',
+  'open-source',
+  'web',
+  'frontend',
+  'cloud',
+  'experience',
 ]
 
 export const metadata: Metadata = {
