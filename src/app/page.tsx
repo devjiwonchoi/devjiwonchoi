@@ -9,6 +9,7 @@ const Terminal = dynamic(
     loading: () => (
       <div className="hidden h-[496px] rounded bg-neutral-900 p-2 md:block">
         <div
+          id="loading-terminal"
           style={{
             width: '674px',
             height: '24px',
