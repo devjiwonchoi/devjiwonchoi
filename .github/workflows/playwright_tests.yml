@@ -5,7 +5,8 @@ on:
 
 jobs:
   playwright:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    # run on preview only
+    if: github.event.deployment_status.environment == 'preview' && github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.42.1-jammy
