@@ -7,7 +7,7 @@ export function Header() {
         alt="Jiwon Choi Logo"
         className="h-20 w-20"
         height={0}
-        src="/me-logo.svg"
+        src="/images/me-logo.svg"
         width={0}
       />
       <h1 className="mb-4 text-4xl font-bold text-neutral-50 sm:text-4xl">

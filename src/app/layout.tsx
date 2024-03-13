@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: 'https://www.jiwonchoi.dev',
     images: [
       {
-        url: '/me-logo800x600.png',
+        url: '/images/me-logo800x600.png',
         width: 800,
         height: 600,
         alt: 'Jiwon Choi Logo',
