@@ -5,7 +5,7 @@ module.exports = {
         ? 'pnpm build && pnpm start'
         : null,
       url: [process.env.BASE_URL ?? 'http://localhost:3000'],
-      numberOfRuns: 1,
+      numberOfRuns: 3,
     },
     assert: {
       assertions: {
