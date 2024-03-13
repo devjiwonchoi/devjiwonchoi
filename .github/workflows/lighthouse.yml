@@ -1,10 +1,14 @@
 name: Lighthouse
 on:
-  deployment_status:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - 'pnpm-lock.yaml'
 
 jobs:
   lighthouse:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,4 +32,3 @@ jobs:
         run: pnpm lhci:desktop && pnpm lhci:mobile
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          BASE_URL: ${{ github.event.deployment_status.environment_url }}
