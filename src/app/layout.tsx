@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font/mono'
@@ -50,6 +51,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Only add these when hosted on Vercel-
+  // since SpeedInsights throw 404 looking for _vercel/scripts,
+  // it affects lighthouse CI scores
+  // See https://vercel.com/docs/edge-network/headers#x-vercel-signature
+  const isVercelHosted = headers().has('x-vercel-signature')
   return (
     <html className={`${GeistMono.className} bg-neutral-950`} lang="en">
       <body className="container mx-auto flex h-screen max-w-4xl flex-col">
@@ -57,8 +63,12 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        <Analytics />
-        <SpeedInsights />
+        {isVercelHosted && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   )
