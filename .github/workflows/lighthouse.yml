@@ -24,13 +24,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Run Lighthouse mobile audit
-        run: pnpm lhci:mobile
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
-      - name: Run Lighthouse desktop audit
-        run: pnpm lhci:desktop
+      - name: Run Lighthouse audits
+        run: pnpm lhci:desktop && pnpm lhci:mobile
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           BASE_URL: ${{ github.event.deployment_status.environment_url }}

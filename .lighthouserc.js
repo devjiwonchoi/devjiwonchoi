@@ -1,6 +1,9 @@
 module.exports = {
   ci: {
     collect: {
+      startServerCommand: !process.env.BASE_URL
+        ? 'pnpm build && pnpm start'
+        : null,
       url: [process.env.BASE_URL ?? 'http://localhost:3000'],
       numberOfRuns: 1,
     },
