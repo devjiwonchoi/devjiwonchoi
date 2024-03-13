@@ -1,3 +1,4 @@
+import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font/mono'
@@ -50,6 +51,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const isHTTPS = headers().get('x-forwarded-proto') === 'https'
   return (
     <html className={`${GeistMono.className} bg-neutral-950`} lang="en">
       <body className="container mx-auto flex h-screen max-w-4xl flex-col">
@@ -57,8 +59,12 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        <Analytics />
-        <SpeedInsights />
+        {isHTTPS && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   )
