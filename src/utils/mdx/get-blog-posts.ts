@@ -37,9 +37,8 @@ export type BlogPost = {
   title: string
 }
 
-const cwd = join(__dirname, '..', '..', '..')
-export const blogDocsDir = join(cwd, 'src', 'docs', 'blog')
-export const blogDocsJson = join(blogDocsDir, 'posts.json')
+export const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
+export const outputDir = join(process.cwd(), '.vercel', 'output')
 
 export function getBlogPosts(): BlogPost[] {
   const dirents = readdirSync(blogDocsDir, { withFileTypes: true })
