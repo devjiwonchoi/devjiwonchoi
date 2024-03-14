@@ -1,14 +1,10 @@
 import Link from 'next/link'
-import { getBlogPosts, type BlogPost } from '@/utils/mdx/get-blog-posts'
+import postsJson from '@/docs/blog/posts.json' with { type: 'json' }
+import type { BlogPost } from '@/utils/mdx/get-blog-posts'
 
 export default async function Blog() {
-  let posts: BlogPost[]
-  try {
-    posts = (await import('@/docs/blog/blog.json')).default
-  } catch {
-    posts = getBlogPosts()
-  }
-
+  // static
+  const posts: BlogPost[] = postsJson
   return (
     <main className="mb-auto p-6">
       {posts.map(({ id, date, readTime, slug, tags, title }) => {

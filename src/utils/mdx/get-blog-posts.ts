@@ -38,7 +38,8 @@ export type BlogPost = {
 }
 
 // since we run this in build time, we can use process.cwd()
-export const blogDocsDir = join(process.cwd(), 'docs', 'blog')
+export const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
+export const blogDocsJson = join(blogDocsDir, 'posts.json')
 
 export function getBlogPosts(): BlogPost[] {
   const dirents = readdirSync(blogDocsDir, { withFileTypes: true })
