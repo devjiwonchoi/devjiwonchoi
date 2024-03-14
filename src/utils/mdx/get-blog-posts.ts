@@ -13,7 +13,7 @@ function parseFilenameToPost(filename: string): BlogPost {
   const id = resources[0] // n
   const date = resources[1] // yyyy-mm-dd
   const tags: string[] = resources[2].split(',') // [tag1, tag2, tag3]
-  const readTime = resources[3] // n
+  const readTime = resources[3] // m
   const slug = resources[4] // this-is-slug
 
   const title = slugToTitle(slug)
@@ -37,8 +37,8 @@ export type BlogPost = {
   title: string
 }
 
-// since we run this in build time, we can use process.cwd()
-export const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
+const cwd = join(__dirname, '..', '..', '..')
+export const blogDocsDir = join(cwd, 'src', 'docs', 'blog')
 export const blogDocsJson = join(blogDocsDir, 'posts.json')
 
 export function getBlogPosts(): BlogPost[] {
