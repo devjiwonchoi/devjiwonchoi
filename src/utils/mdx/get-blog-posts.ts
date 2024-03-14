@@ -7,17 +7,19 @@ function slugToTitle(slug: string) {
   return slug.replaceAll('-', ' ').replace('_', '.')
 }
 
-function parseFilenameToPosts(filename: string) {
+function parseFilenameToPost(filename: string): BlogPost {
   // filename = `yyyy-mm-dd.tag1,tag2,tag3.this-is-slug.mdx`
   const resources: string[] = filename.split('.')
-  const date = resources[0] // yyyy-mm-dd
-  const tags: string[] = resources[1].split(',') // [tag1, tag2, tag3]
-  const readTime = resources[2] // n
-  const slug = resources[3] // this-is-slug
+  const id = resources[0] // n
+  const date = resources[1] // yyyy-mm-dd
+  const tags: string[] = resources[2].split(',') // [tag1, tag2, tag3]
+  const readTime = resources[3] // n
+  const slug = resources[4] // this-is-slug
 
   const title = slugToTitle(slug)
 
   return {
+    id,
     date,
     tags,
     readTime,
@@ -26,10 +28,20 @@ function parseFilenameToPosts(filename: string) {
   }
 }
 
-export function getBlogPosts() {
-  // since we run this in build time, we can use process.cwd()
-  const dir = join(process.cwd(), 'docs', 'blog')
-  const dirents = readdirSync(dir, { withFileTypes: true })
+export type BlogPost = {
+  id: string
+  date: string
+  tags: string[]
+  readTime: string
+  slug: string
+  title: string
+}
+
+// since we run this in build time, we can use process.cwd()
+export const blogDocsDir = join(process.cwd(), 'docs', 'blog')
+
+export function getBlogPosts(): BlogPost[] {
+  const dirents = readdirSync(blogDocsDir, { withFileTypes: true })
   const posts = dirents.map((dirent) => {
     if (!dirent.isFile()) return
 
@@ -37,8 +49,8 @@ export function getBlogPosts() {
     const ext = extname(direntName)
     if (ext !== '.mdx') return
 
-    return parseFilenameToPosts(direntName)
+    return parseFilenameToPost(direntName)
   })
 
-  return posts.filter(Boolean)
+  return posts.filter(Boolean) as BlogPost[]
 }
