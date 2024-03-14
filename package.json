@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
-    "@vercel/postgres": "^0.5.1",
     "@vercel/speed-insights": "^1.0.10",
     "@xterm/addon-fit": "^0.9.0",
     "@xterm/addon-web-links": "^0.10.0",
@@ -25,11 +24,9 @@
     "clsx": "^2.1.0",
     "geist": "^1.2.2",
     "next": "canary",
-    "next-auth": "^4.24.6",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "swr": "^2.2.5"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@lhci/cli": "^0.13.0",
@@ -42,12 +39,12 @@
     "autoprefixer": "^10.4.18",
     "eslint": "^8.57.0",
     "eslint-config-next": "canary",
+    "gray-matter": "^4.0.3",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3",
-    "vercel": "^32.7.2"
+    "typescript": "^5.3.3"
   },
   "prettier": {
     "semi": false,
