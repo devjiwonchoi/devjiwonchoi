@@ -3,10 +3,10 @@ import { extname, join } from 'path'
 import matter from 'gray-matter'
 import type { BlogPost } from '@/utils/types'
 
-const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
+const blogDocsDir = join(process.cwd(), 'docs', 'blog')
 const outputDir = join(process.cwd(), '.vercel', 'output')
 
-async function protoBlog() {
+;(async function setUpBlogPosts() {
   const dirents = await readdir(blogDocsDir, { withFileTypes: true })
   await mkdir(outputDir, { recursive: true })
 
@@ -34,6 +34,4 @@ async function protoBlog() {
   const posts = (await Promise.all(postJobs)).filter(Boolean) as BlogPost[]
   const json = JSON.stringify(posts)
   await writeFile(`${outputDir}/posts.json`, json)
-}
-
-protoBlog()
+})()

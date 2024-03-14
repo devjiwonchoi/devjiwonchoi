@@ -12,7 +12,7 @@
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "lhci:mobile": "lhci autorun",
     "lhci:desktop": "lhci autorun --collect.settings.preset=desktop",
-    "setup-mdx:blog": "node -r @swc-node/register ./scripts/blog/setup-blog-posts.ts",
+    "setup-mdx:blog": "node -r @swc-node/register ./scripts/setup-blog-posts.ts",
     "setup-mdx": "pnpm setup-mdx:blog"
   },
   "dependencies": {

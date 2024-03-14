@@ -8,15 +8,13 @@ export default function Blog() {
   return (
     <main className="mb-auto p-6">
       {posts.map(({ id, date, readTime, slug, tags, title }) => {
-        // dots (which converted to '_') are replaced to '-' here
-        const betterSEOSlug = slug.toLowerCase().replaceAll('_', '-')
         return (
           <article
             className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
             key={id}
           >
             {/* add id at the end to quick-find the post */}
-            <Link href={`/blog/${betterSEOSlug}-${id}`}>
+            <Link href={`/blog/${slug}`}>
               <h3 className="text-xl font-bold tracking-tighter text-neutral-300">
                 {title}
               </h3>
