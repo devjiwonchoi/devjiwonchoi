@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import type { BlogPost } from '@/utils/mdx/get-blog-posts'
+import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
   params: { slug },
