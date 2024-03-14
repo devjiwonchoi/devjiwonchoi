@@ -1,5 +1,8 @@
 import { readdirSync } from 'fs'
+import { readdir, readFile, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
+import { compileMDX } from 'next-mdx-remote/rsc'
+import { components } from './components'
 
 function slugToTitle(slug: string) {
   // replace all '-' with ' '
@@ -33,8 +36,9 @@ export type BlogPost = {
   date: string
   tags: string[]
   readTime: string
-  slug: string
   title: string
+  slug: string
+  content?: string
 }
 
 export const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
@@ -53,4 +57,37 @@ export function getBlogPosts(): BlogPost[] {
   })
 
   return posts.filter(Boolean) as BlogPost[]
+}
+
+// mission: get all blog posts, and return as posts and post-id
+// - go through all files in blog directory
+// - if is .mdx, readfile
+// - parse frontmatter and content
+// - save to posts and post-id
+
+export async function protoBlog() {
+  const dirents = await readdir(blogDocsDir, { withFileTypes: true })
+  const postJobs = dirents.map(async (dirent) => {
+    if (!dirent.isFile()) return
+
+    const direntName = dirent.name
+    const ext = extname(direntName)
+    if (ext !== '.mdx') return
+
+    const source = await readFile(join(dirent.path, direntName), 'utf-8')
+    const { frontmatter, content } = await compileMDX<BlogPost>({
+      source,
+      components,
+      options: { parseFrontmatter: true },
+    })
+
+    const json = JSON.stringify({ ...frontmatter, content })
+    await writeFile(`${outputDir}/post-${frontmatter.id}.json`, json)
+
+    return { ...frontmatter } as BlogPost
+  })
+
+  const posts = (await Promise.all(postJobs)).filter(Boolean) as BlogPost[]
+  const json = JSON.stringify(posts)
+  await writeFile(`${outputDir}/posts.json`, json)
 }

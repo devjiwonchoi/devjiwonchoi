@@ -2,7 +2,7 @@ import Link from 'next/link'
 import postsJson from '.vercel/output/posts.json' with { type: 'json' }
 import type { BlogPost } from '@/utils/mdx/get-blog-posts'
 
-export default async function Blog() {
+export default function Blog() {
   // static
   const posts: BlogPost[] = postsJson
   return (
