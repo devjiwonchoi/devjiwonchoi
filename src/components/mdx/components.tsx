@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { GeistMono } from 'geist/font/mono'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import type { MDXComponents } from 'mdx/types'
-import { highlight } from 'sugar-high'
 import React from 'react'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { highlight } from 'sugar-high'
+import type { MDXComponents } from 'mdx/types'
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   let headers = data.headers.map((header, index) => (
@@ -158,6 +157,9 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
+  p: (props: { children: React.ReactNode }) => (
+    <p className="mb-4" {...props} />
+  ),
   Image: RoundedImage,
   a: CustomLink,
   Callout,

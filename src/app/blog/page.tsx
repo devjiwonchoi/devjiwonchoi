@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import postsJson from '.vercel/output/posts.json' with { type: 'json' }
-import type { BlogPost } from '@/utils/types'
 import { getPosts } from 'scripts/setup-blog-posts'
+import type { BlogPost } from '@/utils/types'
 
 export default async function Blog() {
   const isDev = process.env.NODE_ENV === 'development'
   const posts: BlogPost[] = isDev ? await getPosts() : postsJson
   return (
-    <main className="mb-auto p-6">
+    <>
       {posts.map(({ id, date, readTime, slug, tags, title }) => {
         return (
           <article
@@ -36,6 +36,14 @@ export default async function Blog() {
           </article>
         )
       })}
-    </main>
+    </>
   )
+}
+
+const description =
+  'Compilation of troubleshoots, solutions, and endeavors to structure thoughts across various topics by Jiwon Choi.'
+
+export const metadata = {
+  title: 'Jiwon Choi | Blog',
+  description,
 }

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx/components'
+import type { Metadata, ResolvingMetadata } from 'next'
 import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
@@ -26,13 +27,31 @@ export default async function BlogPost({
     notFound()
   }
   return (
-    <main className="mb-auto p-6">
-      <h1 className="title max-w-[650px] text-2xl font-medium tracking-tighter">
-        {title}
-      </h1>
+    <>
+      <h1 className="title text-2xl font-medium tracking-tighter">{title}</h1>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={source} />
       </article>
-    </main>
+    </>
   )
+}
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string }
+}) {
+  const id = slug.split('-').pop()
+  if (!id || isNaN(parseInt(id))) {
+    throw new Error('Invalid Blog Post ID')
+  }
+
+  const { title, description }: BlogPost = await import(
+    `.vercel/output/post-${id}.json`
+  )
+
+  return {
+    title,
+    description,
+  }
 }
