@@ -1,9 +1,10 @@
 export type BlogPost = {
   id: string
-  date: string
-  tags: string[]
-  readTime: number
-  title: string
   slug: string
+  title: string
+  tags: string[]
+  date: string
+  readTime: number
+  description?: string
   content?: string
 }

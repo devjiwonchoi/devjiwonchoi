@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import { CustomMDX } from '@/components/mdx/components'
+import type { Metadata, ResolvingMetadata } from 'next'
 import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
@@ -17,7 +19,39 @@ export default async function BlogPost({
   // const post = await import(`${outputDir}/post-${id}.json`, assert: { type: 'json' })
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
-  const post: BlogPost = await import(`.vercel/output/post-${id}.json`)
+  const { title, tags, date, readTime, content }: BlogPost = await import(
+    `.vercel/output/post-${id}.json`
+  )
+  const source = content
+  if (!source) {
+    notFound()
+  }
+  return (
+    <>
+      <h1 className="title text-2xl font-medium tracking-tighter">{title}</h1>
+      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+        <CustomMDX source={source} />
+      </article>
+    </>
+  )
+}
 
-  return <main className="mb-auto p-6"></main>
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string }
+}) {
+  const id = slug.split('-').pop()
+  if (!id || isNaN(parseInt(id))) {
+    throw new Error('Invalid Blog Post ID')
+  }
+
+  const { title, description }: BlogPost = await import(
+    `.vercel/output/post-${id}.json`
+  )
+
+  return {
+    title,
+    description,
+  }
 }

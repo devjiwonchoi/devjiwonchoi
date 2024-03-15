@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
-import { useMediaQuery } from '@/hooks/use-media-query'
+import { useMediaQuery } from '@/utils/hooks/use-media-query'
 
 const Terminal = dynamic(
   async () => (await import('@/components/terminal')).Terminal,

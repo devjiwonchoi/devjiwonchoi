@@ -2,7 +2,7 @@
   "name": "jiwonchoi.dev",
   "version": "0.0.0",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build-only": "next build",
     "build": "pnpm setup-mdx && next build",
     "start": "next start",
@@ -12,7 +12,7 @@
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "lhci:mobile": "lhci autorun",
     "lhci:desktop": "lhci autorun --collect.settings.preset=desktop",
-    "setup-mdx:blog": "node -r @swc-node/register ./scripts/blog/setup-blog-posts.ts",
+    "setup-mdx:blog": "node -r @swc-node/register ./scripts/setup-blog-posts.ts",
     "setup-mdx": "pnpm setup-mdx:blog"
   },
   "dependencies": {
@@ -27,7 +27,8 @@
     "next-auth": "^4.24.7",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sugar-high": "^0.6.0"
   },
   "devDependencies": {
     "@lhci/cli": "^0.13.0",
