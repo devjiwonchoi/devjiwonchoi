@@ -43,3 +43,6 @@ test-results/
 
 # lighthouse
 .lighthouseci/
+
+# MDX output
+_mdx-*

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx/components'
-import type { Metadata, ResolvingMetadata } from 'next'
+import { _mdxPrefix } from 'scripts/setup-blog-posts'
 import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
@@ -20,7 +20,7 @@ export default async function BlogPost({
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
   const { title, tags, date, readTime, content }: BlogPost = await import(
-    `.vercel/output/post-${id}.json`
+    `public/${_mdxPrefix}post-${id}.json`
   )
   const source = content
   if (!source) {
@@ -47,7 +47,7 @@ export async function generateMetadata({
   }
 
   const { title, description }: BlogPost = await import(
-    `.vercel/output/post-${id}.json`
+    `public/${_mdxPrefix}post-${id}.json`
   )
 
   return {

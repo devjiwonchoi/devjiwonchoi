@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import postsJson from '.vercel/output/posts.json' with { type: 'json' }
+import postsJson from 'public/_mdx-posts.json' with { type: 'json' }
 import { getPosts } from 'scripts/setup-blog-posts'
 import type { BlogPost } from '@/utils/types'
 
