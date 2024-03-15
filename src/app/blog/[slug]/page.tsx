@@ -20,7 +20,7 @@ export default async function BlogPost({
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
   const { title, tags, date, readTime, content }: BlogPost = (
-    await import(`../../../../public/${_mdxPrefix}post-${id}.json`)
+    await import(`../../../../${_mdxPrefix}post-${id}.json`)
   ).default
   const source = content
   if (!source) {
@@ -47,7 +47,7 @@ export async function generateMetadata({
   }
 
   const { title, description }: BlogPost = (
-    await import(`../../../../public/${_mdxPrefix}post-${id}.json`)
+    await import(`../../../../${_mdxPrefix}post-${id}.json`)
   ).default
 
   return {
