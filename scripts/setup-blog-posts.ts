@@ -68,8 +68,13 @@ async function setUpBlogPosts() {
 }
 
 export async function getPosts() {
-  await setUpBlogPosts()
-  return (await import(`.vercel/output/posts.json`)).default as BlogPost[]
+  try {
+    await setUpBlogPosts()
+  } catch (error) {
+    throw new Error(error as string)
+  } finally {
+    return (await import(`.vercel/output/posts.json`)).default as BlogPost[]
+  }
 }
 
 setUpBlogPosts()
