@@ -1,7 +1,8 @@
-import type { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
 import Image from 'next/image'
 import { GeistMono } from 'geist/font/mono'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import type { MDXComponents } from 'mdx/types'
 
 export const components: MDXComponents = {
   h2: ({ children }) => (
@@ -36,7 +37,7 @@ export const components: MDXComponents = {
   ),
   code: ({ children }) => (
     <code
-      className={`${GeistMono.variable}   rounded bg-neutral-700 px-1 py-1 text-xs font-medium text-neutral-100`}
+      className={`${GeistMono.variable} rounded bg-neutral-700 px-1 py-1 text-xs font-medium text-neutral-100`}
     >
       {children}
     </code>
@@ -45,4 +46,8 @@ export const components: MDXComponents = {
     // TODO: alter image, set width and height
     <Image src={src as string} alt={alt as string} width={600} height={400} />
   ),
+}
+
+export function CustomMDX({ source }: { source: string }) {
+  return <MDXRemote source={source} components={components} />
 }

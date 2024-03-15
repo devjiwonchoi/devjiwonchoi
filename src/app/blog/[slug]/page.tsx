@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { CustomMDX } from '@/components/mdx/components'
 import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
@@ -18,6 +19,13 @@ export default async function BlogPost({
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
   const post: BlogPost = await import(`.vercel/output/post-${id}.json`)
-
-  return <main className="mb-auto p-6"></main>
+  const source = post.content
+  if (!source) {
+    notFound()
+  }
+  return (
+    <main className="mb-auto p-6">
+      <CustomMDX source={source} />
+    </main>
+  )
 }
