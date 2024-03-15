@@ -19,9 +19,9 @@ export default async function BlogPost({
   // const post = await import(`${outputDir}/post-${id}.json`, assert: { type: 'json' })
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
-  const { title, tags, date, readTime, content }: BlogPost = await import(
-    `public/${_mdxPrefix}post-${id}.json`
-  )
+  const { title, tags, date, readTime, content }: BlogPost = (
+    await import(`public/${_mdxPrefix}post-${id}.json`)
+  ).default
   const source = content
   if (!source) {
     notFound()
@@ -46,9 +46,9 @@ export async function generateMetadata({
     throw new Error('Invalid Blog Post ID')
   }
 
-  const { title, description }: BlogPost = await import(
-    `public/${_mdxPrefix}post-${id}.json`
-  )
+  const { title, description }: BlogPost = (
+    await import(`public/${_mdxPrefix}post-${id}.json`)
+  ).default
 
   return {
     title,

@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, rm, writeFile } from 'fs/promises'
+import { readdir, readFile, rm, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
 import matter from 'gray-matter'
 import type { BlogPost } from '@/utils/types'
