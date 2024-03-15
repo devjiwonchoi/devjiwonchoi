@@ -51,7 +51,7 @@ async function setUpBlogPosts() {
     await writeFile(`${outputDir}/${_mdxPrefix}post-${id}.json`, post)
 
     // Ensure the file names are consistent
-    const expectedDirentName = `${id}-${slug}${ext}`
+    const expectedDirentName = `${slug}${ext}`
     if (direntName !== expectedDirentName) {
       await rm(resolvedDirentPath)
       await writeFile(join(dirent.path, expectedDirentName), source)
