@@ -47,15 +47,15 @@ async function setUpBlogPosts() {
 
     // TODO: Investigate whether caching this is necessary
     // Write the post to .vercel/output as post-${id}.json
-    // const post = JSON.stringify({ ...frontmatter, id, slug, content, date })
-    // await writeFile(`${outputDir}/${_mdxPrefix}post-${id}.json`, post)
+    const post = JSON.stringify({ ...frontmatter, id, slug, content, date })
+    await writeFile(`${outputDir}/${_mdxPrefix}post-${id}.json`, post)
 
-    // // Ensure the file names are consistent
-    // const expectedDirentName = `${id}-${slug}${ext}`
-    // if (direntName !== expectedDirentName) {
-    //   await rm(resolvedDirentPath)
-    //   await writeFile(join(dirent.path, expectedDirentName), source)
-    // }
+    // Ensure the file names are consistent
+    const expectedDirentName = `${id}-${slug}${ext}`
+    if (direntName !== expectedDirentName) {
+      await rm(resolvedDirentPath)
+      await writeFile(join(dirent.path, expectedDirentName), source)
+    }
 
     return { ...frontmatter, id, slug, date } as BlogPost
   })

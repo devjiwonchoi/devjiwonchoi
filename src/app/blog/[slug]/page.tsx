@@ -1,3 +1,5 @@
+import { readFile } from 'fs/promises'
+import { join } from 'path'
 import { notFound } from 'next/navigation'
 import postsJson from 'public/_mdx-posts.json' with { type: 'json' }
 import { CustomMDX } from '@/components/mdx/components'
@@ -8,11 +10,13 @@ export default async function BlogPost({
 }: {
   params: { slug: string }
 }) {
-  const res = await fetch(`${process.env.API_URL}/blog/${slug}`)
-  if (!res.ok) {
-    throw new Error('Failed to fetch blog post')
-  }
-  const { title, content }: BlogPost = await res.json()
+  const id = slug.split('-').pop()
+  const { title, content }: BlogPost = JSON.parse(
+    await readFile(
+      join(process.cwd(), 'public', `_mdx-post-${id}.json`),
+      'utf-8',
+    ),
+  )
 
   if (!content) {
     notFound()
