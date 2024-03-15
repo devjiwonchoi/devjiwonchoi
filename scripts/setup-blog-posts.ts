@@ -36,8 +36,13 @@ export async function setUpBlogPosts() {
     const source = await readFile(resolvedDirentPath, 'utf-8')
     const { data: frontmatter, content } = matter(source)
 
-    const slug = direntName.replace(ext, '')
-    const id = slug.split('-').pop()
+    // Generate slug and id here
+    // Ensure id is number-formatted string
+    const id: string = frontmatter.id.toString()
+    if (!id || isNaN(parseInt(id))) return
+    const slug = `${slugify(frontmatter.title)}-${id}`
+
+    // frontmatter parses date as a Date object
     // See https://github.com/jonschlinkert/gray-matter/issues/62
     const date = new Date(frontmatter.date)?.toISOString()?.split('T')?.[0]
 
