@@ -18,14 +18,21 @@ export default async function BlogPost({
   // const post = await import(`${outputDir}/post-${id}.json`, assert: { type: 'json' })
   // This does not work:
   // const post = await import(`${outputDir}/post-${id}.json`, with: { type: 'json' })
-  const post: BlogPost = await import(`.vercel/output/post-${id}.json`)
-  const source = post.content
+  const { title, tags, date, readTime, content }: BlogPost = await import(
+    `.vercel/output/post-${id}.json`
+  )
+  const source = content
   if (!source) {
     notFound()
   }
   return (
     <main className="mb-auto p-6">
-      <CustomMDX source={source} />
+      <h1 className="title max-w-[650px] text-2xl font-medium tracking-tighter">
+        {title}
+      </h1>
+      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+        <CustomMDX source={source} />
+      </article>
     </main>
   )
 }

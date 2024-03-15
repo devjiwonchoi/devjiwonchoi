@@ -22,13 +22,15 @@ const outputDir = join(process.cwd(), '.vercel', 'output')
 
     const slug = direntName.replace(ext, '')
     const id = slug.split('-').pop()
+    // See https://github.com/jonschlinkert/gray-matter/issues/62
+    const date = new Date(frontmatter.date)?.toISOString()?.split('T')?.[0]
 
     if (!id || isNaN(parseInt(id))) return
 
-    const json = JSON.stringify({ id, slug, content, ...frontmatter })
+    const json = JSON.stringify({ ...frontmatter, id, slug, content, date })
     await writeFile(`${outputDir}/post-${id}.json`, json)
 
-    return { id, slug, ...frontmatter } as BlogPost
+    return { ...frontmatter, id, slug, date } as BlogPost
   })
 
   const posts = (await Promise.all(postJobs)).filter(Boolean) as BlogPost[]
