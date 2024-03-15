@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import postsJson from '.vercel/output/posts.json' with { type: 'json' }
 import type { BlogPost } from '@/utils/types'
+import { getPosts } from 'scripts/setup-blog-posts'
 
-export default function Blog() {
-  // static
-  const posts: BlogPost[] = postsJson
+export default async function Blog() {
+  const isDev = process.env.NODE_ENV === 'development'
+  const posts: BlogPost[] = isDev ? await getPosts() : postsJson
   return (
     <main className="mb-auto p-6">
       {posts.map(({ id, date, readTime, slug, tags, title }) => {

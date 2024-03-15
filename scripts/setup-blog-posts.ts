@@ -18,7 +18,7 @@ function slugify(str: string) {
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
-export async function setUpBlogPosts() {
+async function setUpBlogPosts() {
   // Read docs/blog directory
   const dirents = await readdir(blogDocsDir, { withFileTypes: true })
   // Create .vercel/output directory to ensure it exists
@@ -65,6 +65,11 @@ export async function setUpBlogPosts() {
     (await Promise.all(postJobs)).filter(Boolean) as BlogPost[],
   )
   await writeFile(`${outputDir}/posts.json`, posts)
+}
+
+export async function getPosts() {
+  await setUpBlogPosts()
+  return (await import(`.vercel/output/posts.json`)).default as BlogPost[]
 }
 
 setUpBlogPosts()
