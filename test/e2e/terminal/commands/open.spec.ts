@@ -4,7 +4,7 @@ test.describe('terminal commands - open', () => {
   test('should goto /bio', async ({ page }) => {
     await page.goto('/')
     await page.waitForSelector('.xterm-rows')
-    await page.keyboard.type('open biography.php')
+    await page.keyboard.type('open bio.php')
     await page.keyboard.press('Enter')
     await page.waitForURL('/bio')
     expect(page.url()).toContain('/bio')
