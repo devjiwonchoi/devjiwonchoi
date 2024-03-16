@@ -1,9 +1,69 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import githubLogo from 'public/images/github-mark-white.svg'
+import gmailLogo from 'public/images/gmail-2020.svg'
+import twitterLogo from 'public/images/x-logo.svg'
+import linkedinLogo from 'public/images/linkedin-logo.svg'
+
 export function Footer() {
   const thisYear = new Date().getUTCFullYear()
   return (
-    <footer className="p-6">
+    <footer className="flex justify-between p-6">
       <div className="text-sm tracking-tight text-neutral-400 sm:text-sm">
         © {thisYear} devjiwonchoi
+      </div>
+      <div className="flex items-center space-x-5">
+        {/* GitHub */}
+        <Link
+          href="https://github.com/devjiwonchoi"
+          target="_blank"
+          aria-label="Jiwon Choi's GitHub Profile"
+          className="inline-block"
+        >
+          <Image
+            src={githubLogo}
+            alt="GitHub Logo"
+            className="h-7 w-7 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
+          />
+        </Link>
+        {/* Gmail */}
+        <Link
+          href="mailto:devjiwonchoi@gmail.com"
+          aria-label="Jiwon Choi's Gmail Address"
+          className="inline-block"
+        >
+          <Image
+            src={gmailLogo}
+            alt="Gmail Logo"
+            className="h-7 w-7 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+          />
+        </Link>
+        {/* Twitter */}
+        <Link
+          href="https://twitter.com/devjiwonchoi"
+          target="_blank"
+          aria-label="Jiwon Choi's Twitter Profile"
+          className="inline-block"
+        >
+          <Image
+            src={twitterLogo}
+            alt="Twitter Logo"
+            className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+          />
+        </Link>
+        {/* LinkedIn */}
+        <Link
+          href="https://www.linkedin.com/in/devjiwonchoi"
+          target="_blank"
+          aria-label="Jiwon Choi's LinkedIn Profile"
+          className="inline-block"
+        >
+          <Image
+            src={linkedinLogo}
+            alt="LinkedIn Logo"
+            className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+          />
+        </Link>
       </div>
     </footer>
   )
