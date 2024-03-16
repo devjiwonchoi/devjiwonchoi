@@ -14,7 +14,7 @@ export default async function BlogPost({
     throw new Error('Invalid ID')
   }
 
-  const { title, content }: BlogPost = await getPost({ id })
+  const { title, content }: BlogPost = await getPost({ id, slug })
 
   if (!content) {
     notFound()
@@ -40,7 +40,7 @@ export async function generateMetadata({
     throw new Error('Invalid ID')
   }
 
-  const { title, description }: BlogPost = await getPost({ id })
+  const { title, description }: BlogPost = await getPost({ id, slug })
   return {
     title,
     description,
