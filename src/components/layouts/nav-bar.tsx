@@ -10,7 +10,7 @@ export function NavBar() {
       <ul className="flex justify-center space-x-6">
         {[
           ['::1', '/'],
-          ['bio', '/bio'],
+          // ['bio', '/bio'],
           ['proj', '/projects'],
           ['blog', '/blog'],
         ].map(([title, url]) => (
