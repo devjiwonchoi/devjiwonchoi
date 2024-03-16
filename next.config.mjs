@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    dangerouslyAllowSVG: true,
-  },
-}
+const nextConfig = {}
 
 export default nextConfig

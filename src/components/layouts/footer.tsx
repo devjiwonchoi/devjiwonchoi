@@ -1,5 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import githubLogo from 'public/images/github-mark-white.svg'
+import gmailLogo from 'public/images/gmail-2020.svg'
+import twitterLogo from 'public/images/x-logo.svg'
+import linkedinLogo from 'public/images/linkedin-logo.svg'
 
 export function Footer() {
   const thisYear = new Date().getUTCFullYear()
@@ -17,10 +21,8 @@ export function Footer() {
           className="inline-block"
         >
           <Image
-            src="/images/github-mark-white.svg"
+            src={githubLogo}
             alt="GitHub Logo"
-            width={28}
-            height={28}
             className="h-7 w-7 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
@@ -31,10 +33,8 @@ export function Footer() {
           className="inline-block"
         >
           <Image
-            src="/images/gmail-2020.svg"
+            src={gmailLogo}
             alt="Gmail Logo"
-            width={28}
-            height={28}
             className="h-7 w-7 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
@@ -46,10 +46,8 @@ export function Footer() {
           className="inline-block"
         >
           <Image
-            src="/images/x-logo.svg"
+            src={twitterLogo}
             alt="Twitter Logo"
-            width={28}
-            height={28}
             className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
@@ -61,10 +59,8 @@ export function Footer() {
           className="inline-block"
         >
           <Image
-            src="/images/linkedin-logo.svg"
+            src={linkedinLogo}
             alt="LinkedIn Logo"
-            width={28}
-            height={28}
             className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
           />
         </Link>
