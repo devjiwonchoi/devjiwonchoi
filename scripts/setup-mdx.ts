@@ -3,7 +3,7 @@ import { extname, join } from 'path'
 import matter from 'gray-matter'
 import type { BlogPost } from '@/utils/types'
 
-const blogDocsDir = join(process.cwd(), 'docs', 'blog')
+const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
 const outputDir = join(process.cwd(), 'public')
 export const _mdxPrefix = '_mdx-'
 

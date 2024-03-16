@@ -6,10 +6,10 @@ import { highlight } from 'sugar-high'
 import type { MDXComponents } from 'mdx/types'
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
-  let headers = data.headers.map((header, index) => (
+  const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ))
-  let rows = data.rows.map((row, index) => (
+  const rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
@@ -28,7 +28,7 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
 }
 
 function CustomLink(props: { href: string; children: React.ReactNode }) {
-  let href = props.href
+  const href = props.href
 
   if (href.startsWith('/')) {
     return (
@@ -113,7 +113,7 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
 }
 
 function Code({ children, ...props }: { children: string }) {
-  let codeHTML = highlight(children)
+  const codeHTML = highlight(children)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
@@ -130,7 +130,7 @@ function slugify(str: string | number) {
 
 function createHeading(level: number) {
   const Heading = ({ children }: { children: string }) => {
-    let slug = slugify(children)
+    const slug = slugify(children)
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -157,9 +157,6 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  p: (props: { children: React.ReactNode }) => (
-    <p className="mb-4" {...props} />
-  ),
   Image: RoundedImage,
   a: CustomLink,
   Callout,
