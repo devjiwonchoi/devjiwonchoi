@@ -30,7 +30,6 @@ test.describe('social logo links', () => {
     await page.waitForSelector('article')
     await page.click('article')
     await page.waitForSelector('h1')
-    await page.waitForTimeout(1000)
     const githubLogo = await page.waitForSelector('img[alt="GitHub Logo"]')
     const gmailLogo = await page.waitForSelector('img[alt="Gmail Logo"]')
     const twitterLogo = await page.waitForSelector('img[alt="Twitter Logo"]')
