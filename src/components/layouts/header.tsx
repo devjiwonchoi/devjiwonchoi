@@ -13,8 +13,8 @@ export function Header() {
       <h1 className="mb-4 text-4xl font-bold text-neutral-50 sm:text-4xl">
         Jiwon Choi
       </h1>
-      <h2 className="uppercase tracking-widest text-neutral-50">
-        software engineer
+      <h2 className="text-lg uppercase tracking-widest text-neutral-50">
+        Software Engineer
       </h2>
     </header>
   )
