@@ -40,8 +40,8 @@ test.describe('social logo links', () => {
     expect(linkedinLogo).toBeTruthy()
   })
 
-  test('should display Social Logo Links at /biography', async ({ page }) => {
-    await page.goto('/biography')
+  test('should display Social Logo Links at /bio', async ({ page }) => {
+    await page.goto('/bio')
     const githubLogo = await page.waitForSelector('img[alt="GitHub Logo"]')
     const gmailLogo = await page.waitForSelector('img[alt="Gmail Logo"]')
     const twitterLogo = await page.waitForSelector('img[alt="Twitter Logo"]')

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://www.jiwonchoi.dev/biography',
+      url: 'https://www.jiwonchoi.dev/bio',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

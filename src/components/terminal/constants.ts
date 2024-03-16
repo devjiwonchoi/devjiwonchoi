@@ -3,7 +3,7 @@ export const dirTree: Record<string, any> = {
     files: [
       {
         name: 'index.html',
-        url: '/biography',
+        url: '/bio',
       },
     ],
   },
