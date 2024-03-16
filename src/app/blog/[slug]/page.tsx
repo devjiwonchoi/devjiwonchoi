@@ -36,8 +36,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const res = await fetch(`${process.env.API_URL}/blog/${slug}`)
-  const { title, description }: BlogPost = await res.json()
+    const id = slug.split('-').pop()
+    const { title, description }: BlogPost = JSON.parse(
+      await readFile(
+        join(process.cwd(), 'public', `_mdx-post-${id}.json`),
+        'utf-8',
+      ),
+    )
 
   return {
     title,
