@@ -1,8 +1,8 @@
-import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
+import type { Config } from 'tailwindcss'
 
 const tailwindConfig: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/**/*.{ts,tsx,mdx}'],
   theme: {
     extend: {
       fontFamily: {
