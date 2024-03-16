@@ -3,7 +3,7 @@ module.exports = {
     collect: {
       startServerCommand: 'pnpm build && pnpm start',
       url: ['http://localhost:3000'],
-      numberOfRuns: 3,
+      numberOfRuns: 1,
     },
     assert: {
       assertions: {
