@@ -15,20 +15,22 @@ export default async function Blog() {
             className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
             key={id}
           >
-            {/* add id at the end to quick-find the post */}
             <Link href={`/blog/${slug}`}>
               <h3 className="text-xl font-bold tracking-tighter text-neutral-300">
                 {title}
               </h3>
-              <p className="text-sm text-neutral-400">{date}</p>
-              <p className="text-sm text-neutral-400">
-                {/* {views} views • {readTime} min read */}
-                {readTime} min read
-              </p>
+              <div className="flex space-x-2">
+                <p className="text-sm text-neutral-400">{date}</p>
+                <span className="text-sm text-neutral-400">•</span>
+                <p className="text-sm text-neutral-400">{readTime} min read</p>
+                <span className="text-sm text-neutral-400">•</span>
+                <Suspense
+                  fallback={<p className="text-sm text-neutral-400">0 views</p>}
+                >
+                  <Views id={id} />
+                </Suspense>
+              </div>
             </Link>
-            <Suspense fallback={<p className="text-sm text-neutral-400" />}>
-              <Views id={id} />
-            </Suspense>
             {tags.map((tag) => (
               <span
                 className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
@@ -53,7 +55,6 @@ export const metadata = {
 }
 
 async function Views({ id }: { id: string }) {
-  let views = await getViewsCount()
-
+  const views = await getViewsCount()
   return <ViewCounter allViews={views} id={id} />
 }
