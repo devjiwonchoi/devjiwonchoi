@@ -36,7 +36,7 @@ const helpMessage = [
   '  open   -  Open a file',
 ].join('\n\r')
 
-const files = ['bio.php', 'blog.php', 'projects.php']
+const files = ['blog.php', 'projects.php']
 
 function registerOnData({
   terminal,

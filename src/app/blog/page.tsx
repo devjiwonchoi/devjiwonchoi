@@ -11,12 +11,12 @@ export default async function Blog() {
     <>
       {posts.map(({ id, date, readTime, slug, tags, title }) => {
         return (
-          <article
+          <section
             className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
             key={id}
           >
             <Link href={`/blog/${slug}`}>
-              <h3 className="text-xl font-bold tracking-tighter text-neutral-300">
+              <h3 className="text-xl font-bold tracking-tight text-neutral-300">
                 {title}
               </h3>
               <div className="flex space-x-2">
@@ -39,7 +39,7 @@ export default async function Blog() {
                 {tag}
               </span>
             ))}
-          </article>
+          </section>
         )
       })}
     </>
@@ -50,7 +50,7 @@ const description =
   'Compilation of troubleshoots, solutions, and endeavors to structure thoughts across various topics by Jiwon Choi.'
 
 export const metadata = {
-  title: 'Jiwon Choi | Blog',
+  title: "Jiwon Choi's Blog",
   description,
 }
 

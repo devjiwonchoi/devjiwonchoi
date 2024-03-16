@@ -28,25 +28,27 @@ export default async function BlogPost({
   }
 
   return (
-    <>
-      <h1 className="title mb-2 text-2xl font-medium tracking-tighter">
-        {title}
-      </h1>
-      <div className="mb-4 flex space-x-2">
-        <p className="text-sm text-neutral-400">{date}</p>
-        <span className="text-sm text-neutral-400">•</span>
-        <p className="text-sm text-neutral-400">{readTime} min read</p>
-        <span className="text-sm text-neutral-400">•</span>
-        <Suspense
-          fallback={<p className="text-sm text-neutral-400">0 views</p>}
-        >
-          <Views id={id} />
-        </Suspense>
-      </div>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
+    <article>
+      <header>
+        <h1 className="title mb-2 text-2xl font-medium tracking-tighter">
+          {title}
+        </h1>
+        <section className="mb-4 flex space-x-2">
+          <p className="text-sm text-neutral-400">{date}</p>
+          <span className="text-sm text-neutral-400">•</span>
+          <p className="text-sm text-neutral-400">{readTime} min read</p>
+          <span className="text-sm text-neutral-400">•</span>
+          <Suspense
+            fallback={<p className="text-sm text-neutral-400">0 views</p>}
+          >
+            <Views id={id} />
+          </Suspense>
+        </section>
+      </header>
+      <section className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={content} />
-      </article>
-    </>
+      </section>
+    </article>
   )
 }
 
