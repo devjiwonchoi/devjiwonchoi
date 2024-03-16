@@ -1,7 +1,6 @@
 import { readFile } from 'fs/promises'
 import { join } from 'path'
 import { notFound } from 'next/navigation'
-import postsJson from 'public/_mdx-posts.json' with { type: 'json' }
 import { CustomMDX } from '@/components/mdx/components'
 import type { BlogPost } from '@/utils/types'
 
@@ -36,13 +35,13 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-    const id = slug.split('-').pop()
-    const { title, description }: BlogPost = JSON.parse(
-      await readFile(
-        join(process.cwd(), 'public', `_mdx-post-${id}.json`),
-        'utf-8',
-      ),
-    )
+  const id = slug.split('-').pop()
+  const { title, description }: BlogPost = JSON.parse(
+    await readFile(
+      join(process.cwd(), 'public', `_mdx-post-${id}.json`),
+      'utf-8',
+    ),
+  )
 
   return {
     title,
@@ -50,5 +49,9 @@ export async function generateMetadata({
   }
 }
 
-export const generateStaticParams = () =>
-  postsJson.map(({ slug }) => ({ slug }))
+export const generateStaticParams = async () =>
+  (
+    (await JSON.parse(
+      await readFile(join(process.cwd(), 'public', '_mdx-posts.json'), 'utf-8'),
+    )) as BlogPost[]
+  ).map(({ slug }) => ({ slug }))

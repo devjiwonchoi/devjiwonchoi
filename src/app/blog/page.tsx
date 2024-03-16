@@ -1,13 +1,9 @@
 import Link from 'next/link'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
-// import postsJson from 'public/_mdx-posts.json' with { type: 'json' }
-import { getPosts } from 'scripts/setup-mdx'
 import type { BlogPost } from '@/utils/types'
 
 export default async function Blog() {
-  const isDev = process.env.NODE_ENV === 'development'
-  // const posts: BlogPost[] = isDev ? await getPosts() : postsJson
   const posts: BlogPost[] = await JSON.parse(
     await readFile(join(process.cwd(), 'public', '_mdx-posts.json'), 'utf-8'),
   )
