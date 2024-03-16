@@ -50,7 +50,7 @@ const description =
   'Compilation of troubleshoots, solutions, and endeavors to structure thoughts across various topics by Jiwon Choi.'
 
 export const metadata = {
-  title: 'Jiwon Choi | Blog',
+  title: "Jiwon Choi's Blog",
   description,
 }
 
