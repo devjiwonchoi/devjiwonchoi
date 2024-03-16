@@ -60,10 +60,11 @@ export async function generateMetadata({
     throw new Error('Invalid ID')
   }
 
-  const { title, description }: BlogPost = await getPost({ id, slug })
+  const { title, description, tags }: BlogPost = await getPost({ id, slug })
   return {
     title,
     description,
+    keywords: tags,
   }
 }
 
