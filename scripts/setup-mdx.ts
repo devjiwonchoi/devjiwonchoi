@@ -1,10 +1,11 @@
-import { mkdir, readdir, readFile, rm, writeFile } from 'fs/promises'
+import { readdir, readFile, rm, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
 import matter from 'gray-matter'
 import type { BlogPost } from '@/utils/types'
 
 const blogDocsDir = join(process.cwd(), 'docs', 'blog')
-const outputDir = join(process.cwd(), '.vercel', 'output')
+const outputDir = join(process.cwd(), 'public')
+export const _mdxPrefix = '_mdx-'
 
 // ref: https://github.com/leerob/leerob.io
 function slugify(str: string) {
@@ -21,8 +22,6 @@ function slugify(str: string) {
 async function setUpBlogPosts() {
   // Read docs/blog directory
   const dirents = await readdir(blogDocsDir, { withFileTypes: true })
-  // Create .vercel/output directory to ensure it exists
-  await mkdir(outputDir, { recursive: true })
 
   const postJobs = dirents.map(async (dirent) => {
     // We are looking for a .mdx file
@@ -46,12 +45,13 @@ async function setUpBlogPosts() {
     // See https://github.com/jonschlinkert/gray-matter/issues/62
     const date = new Date(frontmatter.date)?.toISOString()?.split('T')?.[0]
 
+    // TODO: Investigate whether caching this is necessary
     // Write the post to .vercel/output as post-${id}.json
     const post = JSON.stringify({ ...frontmatter, id, slug, content, date })
-    await writeFile(`${outputDir}/post-${id}.json`, post)
+    await writeFile(`${outputDir}/${_mdxPrefix}post-${id}.json`, post)
 
     // Ensure the file names are consistent
-    const expectedDirentName = `${id}-${slug}${ext}`
+    const expectedDirentName = `${slug}${ext}`
     if (direntName !== expectedDirentName) {
       await rm(resolvedDirentPath)
       await writeFile(join(dirent.path, expectedDirentName), source)
@@ -64,7 +64,7 @@ async function setUpBlogPosts() {
   const posts = JSON.stringify(
     (await Promise.all(postJobs)).filter(Boolean) as BlogPost[],
   )
-  await writeFile(`${outputDir}/posts.json`, posts)
+  await writeFile(`${outputDir}/${_mdxPrefix}posts.json`, posts)
 }
 
 export async function getPosts() {
@@ -73,7 +73,8 @@ export async function getPosts() {
   } catch (error) {
     throw new Error(error as string)
   } finally {
-    return (await import(`.vercel/output/posts.json`)).default as BlogPost[]
+    return (await import(`public/${_mdxPrefix}posts.json`))
+      .default as BlogPost[]
   }
 }
 

@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "next dev",
-    "build-only": "next build",
-    "build": "pnpm setup-mdx && next build",
+    "build": "next build",
     "start": "next start",
     "test:e2e": "playwright test",
     "test": "pnpm test:e2e",
@@ -12,8 +11,8 @@
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "lhci:mobile": "lhci autorun",
     "lhci:desktop": "lhci autorun --collect.settings.preset=desktop",
-    "setup-mdx:blog": "node -r @swc-node/register ./scripts/setup-blog-posts.ts",
-    "setup-mdx": "pnpm setup-mdx:blog"
+    "prebuild": "pnpm setup-mdx",
+    "setup-mdx": "node -r @swc-node/register ./scripts/setup-mdx.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^1.2.2",
@@ -55,10 +54,6 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "engines": {
-    "node": ">=18.17.0",
-    "pnpm": "8.15.4"
   },
   "packageManager": "pnpm@8.15.4"
 }
