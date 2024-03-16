@@ -8,8 +8,8 @@ test.describe('logos - me-logo', () => {
     expect(image).toBeTruthy()
   })
 
-  test('should render me-logo at /biography', async ({ page }) => {
-    await page.goto('/biography')
+  test('should render me-logo at /bio', async ({ page }) => {
+    await page.goto('/bio')
 
     const image = await page.$('img[alt="Jiwon Choi Logo"]')
     expect(image).toBeTruthy()
