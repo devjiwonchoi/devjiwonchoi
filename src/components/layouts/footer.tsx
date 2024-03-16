@@ -8,8 +8,8 @@ import linkedinLogo from 'public/images/linkedin-logo.svg'
 export function Footer() {
   const thisYear = new Date().getUTCFullYear()
   return (
-    <footer className="flex justify-between p-6">
-      <div className="text-sm tracking-tight text-neutral-400 sm:text-sm">
+    <footer className="flex items-center justify-between p-6">
+      <div className="text-sm tracking-tight text-neutral-400">
         © {thisYear} devjiwonchoi
       </div>
       <div className="flex items-center space-x-5">
@@ -23,7 +23,7 @@ export function Footer() {
           <Image
             src={githubLogo}
             alt="GitHub Logo"
-            className="h-7 w-7 opacity-80 transition delay-150 ease-in-out hover:opacity-100"
+            className="h-6 w-6 opacity-80 transition delay-150 ease-in-out hover:opacity-100 md:h-7 md:w-7"
           />
         </Link>
         {/* Gmail */}
@@ -35,7 +35,7 @@ export function Footer() {
           <Image
             src={gmailLogo}
             alt="Gmail Logo"
-            className="h-7 w-7 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+            className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100 md:h-7 md:w-7"
           />
         </Link>
         {/* Twitter */}
@@ -48,7 +48,7 @@ export function Footer() {
           <Image
             src={twitterLogo}
             alt="Twitter Logo"
-            className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+            className="h-5 w-5 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100 md:h-6 md:w-6"
           />
         </Link>
         {/* LinkedIn */}
@@ -61,7 +61,7 @@ export function Footer() {
           <Image
             src={linkedinLogo}
             alt="LinkedIn Logo"
-            className="h-6 w-6 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100"
+            className="h-5 w-5 opacity-80 brightness-0 invert filter transition delay-150 ease-in-out hover:opacity-100 md:h-6 md:w-6"
           />
         </Link>
       </div>
