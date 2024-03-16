@@ -43,7 +43,7 @@ export default async function BlogPost({
           <Views id={id} />
         </Suspense>
       </div>
-      <article>
+      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={content} />
       </article>
     </>

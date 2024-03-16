@@ -6,7 +6,7 @@ import { slugify } from './utils'
 import { IS_DEV } from '../constants'
 import type { BlogPost } from '../types'
 
-const blogDocsDir = join(process.cwd(), 'docs', 'blog')
+const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
 export async function onDemandGetPosts() {
   const dirents = await readdir(blogDocsDir, { withFileTypes: true })
   const postJobs = dirents.map(async (dirent) => {

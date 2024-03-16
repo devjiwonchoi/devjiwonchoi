@@ -157,9 +157,6 @@ const components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  p: (props: { children: React.ReactNode }) => (
-    <p className="mb-2" {...props} />
-  ),
   Image: RoundedImage,
   a: CustomLink,
   Callout,
