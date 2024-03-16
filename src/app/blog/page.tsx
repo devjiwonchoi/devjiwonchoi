@@ -1,12 +1,9 @@
 import Link from 'next/link'
-import { readFile } from 'fs/promises'
-import { join } from 'path'
+import { getPosts } from '@/utils/mdx/get-posts'
 import type { BlogPost } from '@/utils/types'
 
 export default async function Blog() {
-  const posts: BlogPost[] = await JSON.parse(
-    await readFile(join(process.cwd(), 'public', '_mdx-posts.json'), 'utf-8'),
-  )
+  const posts: BlogPost[] = await getPosts()
   return (
     <>
       {posts.map(({ id, date, readTime, slug, tags, title }) => {
