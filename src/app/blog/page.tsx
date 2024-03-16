@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
+import { ViewCounter } from '@/components/mdx/view-counter'
 import { getPosts } from '@/utils/mdx/get-posts'
+import { getViewsCount } from '@/utils/mdx/get-views'
 import type { BlogPost } from '@/utils/types'
 
 export default async function Blog() {
@@ -23,6 +26,9 @@ export default async function Blog() {
                 {readTime} min read
               </p>
             </Link>
+            <Suspense fallback={<p className="text-sm text-neutral-400" />}>
+              <Views id={id} />
+            </Suspense>
             {tags.map((tag) => (
               <span
                 className="mr-2 mt-2 inline-block rounded bg-neutral-700 px-2 py-1 text-xs font-medium text-neutral-100"
@@ -44,4 +50,10 @@ const description =
 export const metadata = {
   title: 'Jiwon Choi | Blog',
   description,
+}
+
+async function Views({ id }: { id: string }) {
+  let views = await getViewsCount()
+
+  return <ViewCounter allViews={views} id={id} />
 }
