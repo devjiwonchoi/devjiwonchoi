@@ -13,9 +13,9 @@ export function Header() {
       <h1 className="mb-4 text-4xl font-bold text-neutral-50 sm:text-4xl">
         Jiwon Choi
       </h1>
-      <p className="uppercase tracking-widest text-neutral-50">
+      <h2 className="uppercase tracking-widest text-neutral-50">
         software engineer
-      </p>
+      </h2>
     </header>
   )
 }
