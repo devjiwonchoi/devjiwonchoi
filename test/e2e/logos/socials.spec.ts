@@ -27,8 +27,8 @@ test.describe('social logo links', () => {
 
   test('should display Social Logo Links at /blog/:slug', async ({ page }) => {
     await page.goto('/blog')
-    await page.waitForSelector('article')
-    await page.click('article')
+    await page.waitForSelector('section')
+    await page.click('section')
     await page.waitForSelector('h1')
     const githubLogo = await page.waitForSelector('img[alt="GitHub Logo"]')
     const gmailLogo = await page.waitForSelector('img[alt="Gmail Logo"]')

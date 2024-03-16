@@ -14,8 +14,8 @@ test.describe('blog - metadata', () => {
     page,
   }) => {
     await page.goto('/blog')
-    await page.waitForSelector('article')
-    await page.click('article')
+    await page.waitForSelector('section')
+    await page.click('section')
     await page.waitForSelector('h1')
 
     // wait 1s for description to change
