@@ -1,7 +1,7 @@
-import { readFile } from 'fs/promises'
-import { join } from 'path'
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx/components'
+import { getPost, getPosts } from '@/utils/mdx/get-posts'
+import { getIdFromSlug, isInvalidId } from '@/utils/mdx/utils'
 import type { BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
@@ -9,17 +9,17 @@ export default async function BlogPost({
 }: {
   params: { slug: string }
 }) {
-  const id = slug.split('-').pop()
-  const { title, content }: BlogPost = JSON.parse(
-    await readFile(
-      join(process.cwd(), 'public', `_mdx-post-${id}.json`),
-      'utf-8',
-    ),
-  )
+  const id = getIdFromSlug(slug)
+  if (!id || isInvalidId(id)) {
+    throw new Error('Invalid ID')
+  }
+
+  const { title, content }: BlogPost = await getPost({ id, slug })
 
   if (!content) {
     notFound()
   }
+
   return (
     <>
       <h1 className="title text-2xl font-medium tracking-tighter">{title}</h1>
@@ -35,14 +35,12 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }) {
-  const id = slug.split('-').pop()
-  const { title, description }: BlogPost = JSON.parse(
-    await readFile(
-      join(process.cwd(), 'public', `_mdx-post-${id}.json`),
-      'utf-8',
-    ),
-  )
+  const id = getIdFromSlug(slug)
+  if (!id || isInvalidId(id)) {
+    throw new Error('Invalid ID')
+  }
 
+  const { title, description }: BlogPost = await getPost({ id, slug })
   return {
     title,
     description,
@@ -50,8 +48,4 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () =>
-  (
-    (await JSON.parse(
-      await readFile(join(process.cwd(), 'public', '_mdx-posts.json'), 'utf-8'),
-    )) as BlogPost[]
-  ).map(({ slug }) => ({ slug }))
+  (await getPosts()).map(({ slug }) => ({ slug }))
