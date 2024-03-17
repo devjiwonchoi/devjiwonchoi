@@ -1,11 +1,10 @@
-import { readdir, readFile, rm, writeFile } from 'fs/promises'
+import { mkdir, readdir, readFile, rm, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
 import matter from 'gray-matter'
 import type { BlogPost } from '@/utils/types'
 
 const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
-const outputDir = join(process.cwd(), 'public')
-export const _mdxPrefix = '_mdx-'
+const outputDir = join(process.cwd(), 'public', 'mdx', 'blog')
 
 // ref: https://github.com/leerob/leerob.io
 function slugify(str: string) {
@@ -22,6 +21,7 @@ function slugify(str: string) {
 async function setUpBlogPosts() {
   // Read docs/blog directory
   const dirents = await readdir(blogDocsDir, { withFileTypes: true })
+  await mkdir(outputDir, { recursive: true })
 
   const postJobs = dirents.map(async (dirent) => {
     // We are looking for a .mdx file
@@ -48,7 +48,7 @@ async function setUpBlogPosts() {
     // TODO: Investigate whether caching this is necessary
     // Write the post to .vercel/output as post-${id}.json
     const post = JSON.stringify({ ...frontmatter, id, slug, content, date })
-    await writeFile(`${outputDir}/${_mdxPrefix}post-${id}.json`, post)
+    await writeFile(`${outputDir}/post-${id}.json`, post)
 
     // Ensure the file names are consistent
     const expectedDirentName = `${slug}${ext}`
@@ -64,18 +64,7 @@ async function setUpBlogPosts() {
   const posts = JSON.stringify(
     (await Promise.all(postJobs)).filter(Boolean) as BlogPost[],
   )
-  await writeFile(`${outputDir}/${_mdxPrefix}posts.json`, posts)
-}
-
-export async function getPosts() {
-  try {
-    await setUpBlogPosts()
-  } catch (error) {
-    throw new Error(error as string)
-  } finally {
-    return (await import(`public/${_mdxPrefix}posts.json`))
-      .default as BlogPost[]
-  }
+  await writeFile(`${outputDir}/posts.json`, posts)
 }
 
 setUpBlogPosts()

@@ -3,7 +3,7 @@ export const isInvalidId = (id: string) =>
 
 export const getIdFromSlug = (slug: string) => slug.split('-').pop()
 
- // ref: https://github.com/leerob/leerob.io
+// ref: https://github.com/leerob/leerob.io
 export function slugify(str: string) {
   return str
     .toString()

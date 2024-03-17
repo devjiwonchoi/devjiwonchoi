@@ -54,10 +54,13 @@ export async function onDemandGetPost(slug: string) {
 export const getPosts = async () =>
   IS_DEV
     ? onDemandGetPosts()
-    : ((await import(`../../../public/_mdx-posts.json`)).default as BlogPost[])
+    : ((await import(`../../../public/mdx/blog/posts.json`))
+        .default as BlogPost[])
 
 export const getPost = async ({ id, slug }: { id: string; slug: string }) =>
   IS_DEV
     ? onDemandGetPost(slug)
-    : ((await import(`../../../public/_mdx-post-${id}.json`))
+    : ((await import(`../../../public/mdx/blog/post-${id}.json`))
         .default as BlogPost)
+
+// mission: convert mdx to json and store in public/
