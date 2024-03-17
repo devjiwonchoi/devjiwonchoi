@@ -47,7 +47,7 @@ async function setUpBlogPosts() {
     // TODO: Investigate whether caching this is necessary
     // Write the post to .vercel/output as post-${id}.json
     const post = JSON.stringify({ ...frontmatter, id, slug, content, date })
-    await writeFile(`${outputDir}/post-${id}.json`, post)
+    await writeFile(`${outputDir}/${slug}.json`, post)
 
     // Ensure the file names are consistent
     const expectedDirentName = `${slug}${ext}`
@@ -61,7 +61,7 @@ async function setUpBlogPosts() {
 
   // All those posts to a single posts.json file without content
   const posts = JSON.stringify((await Promise.all(postJobs)).filter(Boolean))
-  await writeFile(`${outputDir}/posts.json`, posts)
+  await writeFile(`${outputDir}/index.json`, posts)
 }
 
 setUpBlogPosts()
