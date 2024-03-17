@@ -45,7 +45,7 @@ export default async function BlogPost({
           </Suspense>
         </section>
       </header>
-      <section className="prose prose-quoteless prose-neutral dark:prose-invert">
+      <section className="prose prose-neutral prose-quoteless dark:prose-invert">
         <CustomMDX source={content} />
       </section>
     </article>
