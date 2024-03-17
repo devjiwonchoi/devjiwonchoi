@@ -1,3 +1,6 @@
+import matter from 'gray-matter'
+import type { Blog } from '../types'
+
 export const isInvalidId = (id: string) =>
   isNaN(parseInt(id)) || parseInt(id) < 0
 
@@ -13,4 +16,25 @@ export function slugify(str: string) {
     .replace(/&/g, '-and-') // Replace & with 'and'
     .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
     .replace(/\-\-+/g, '-') // Replace multiple - with single -
+}
+
+export async function parseMDXToJSON({
+  source,
+  frontmatterOnly,
+}: {
+  source: string
+  frontmatterOnly?: boolean
+}): Promise<Blog> {
+  const { data: frontmatter, content } = matter(source)
+
+  const id: string = frontmatter.id.toString()
+  if (isInvalidId(id)) throw new Error(`Invalid ID: "${id}"`)
+
+  const slug = `${slugify(frontmatter.title)}-${id}`
+  const date = new Date(frontmatter.date)?.toISOString()?.split('T')?.[0]
+
+  if (frontmatterOnly) {
+    return { ...frontmatter, id, slug, date } as Blog
+  }
+  return { ...frontmatter, id, slug, date, content } as Blog
 }

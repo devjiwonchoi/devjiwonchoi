@@ -3,10 +3,10 @@ import { unstable_cache as cache } from 'next/cache'
 import { Suspense } from 'react'
 import { CustomMDX } from '@/components/mdx/components'
 import { ViewCounter } from '@/components/mdx/view-counter'
-import { getPost, getPosts } from '@/utils/mdx/get-posts'
+import { getDocs } from '@/utils/mdx/get-posts'
 import { incrementView, getViewsCount } from '@/utils/mdx/get-views'
 import { getIdFromSlug, isInvalidId } from '@/utils/mdx/utils'
-import type { BlogPost } from '@/utils/types'
+import type { Blog, BlogList } from '@/utils/types'
 
 export default async function BlogPost({
   params: { slug },
@@ -15,17 +15,13 @@ export default async function BlogPost({
 }) {
   const id = getIdFromSlug(slug)
   if (!id || isInvalidId(id)) {
-    throw new Error('Invalid ID')
+    throw new Error(`Invalid ID: "${id}"`)
   }
 
-  const { title, content, date, readTime }: BlogPost = await getPost({
-    id,
+  const { title, content, date, readTime }: Blog = (await getDocs({
+    type: 'blog',
     slug,
-  })
-
-  if (!content) {
-    notFound()
-  }
+  })) as Blog
 
   return (
     <article>
@@ -62,7 +58,10 @@ export async function generateMetadata({
     throw new Error('Invalid ID')
   }
 
-  const { title, description, tags }: BlogPost = await getPost({ id, slug })
+  const { title, description, tags } = (await getDocs({
+    type: 'blog',
+    slug,
+  })) as Blog
   return {
     title,
     description,
@@ -71,7 +70,7 @@ export async function generateMetadata({
 }
 
 export const generateStaticParams = async () =>
-  (await getPosts()).map(({ slug }) => ({ slug }))
+  ((await getDocs({ type: 'blog' })) as BlogList).map(({ slug }) => ({ slug }))
 
 const incrementViews = cache(incrementView)
 async function Views({ id }: { id: string }) {

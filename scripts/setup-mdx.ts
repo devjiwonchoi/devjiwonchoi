@@ -1,7 +1,6 @@
 import { mkdir, readdir, readFile, rm, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
 import matter from 'gray-matter'
-import type { BlogPost } from '@/utils/types'
 
 const blogDocsDir = join(process.cwd(), 'src', 'docs', 'blog')
 const outputDir = join(process.cwd(), 'public', 'mdx', 'blog')
@@ -57,13 +56,11 @@ async function setUpBlogPosts() {
       await writeFile(join(dirent.path, expectedDirentName), source)
     }
 
-    return { ...frontmatter, id, slug, date } as BlogPost
+    return { ...frontmatter, id, slug, date }
   })
 
   // All those posts to a single posts.json file without content
-  const posts = JSON.stringify(
-    (await Promise.all(postJobs)).filter(Boolean) as BlogPost[],
-  )
+  const posts = JSON.stringify((await Promise.all(postJobs)).filter(Boolean))
   await writeFile(`${outputDir}/posts.json`, posts)
 }
 
