@@ -1,9 +1,8 @@
-import { notFound } from 'next/navigation'
 import { unstable_cache as cache } from 'next/cache'
 import { Suspense } from 'react'
 import { CustomMDX } from '@/components/mdx/components'
 import { ViewCounter } from '@/components/mdx/view-counter'
-import { getDocs } from '@/utils/mdx/get-posts'
+import { getDocs } from '@/utils/mdx/get-docs'
 import { incrementView, getViewsCount } from '@/utils/mdx/get-views'
 import { getIdFromSlug, isInvalidId } from '@/utils/mdx/utils'
 import type { Blog, BlogList } from '@/utils/types'
@@ -18,7 +17,7 @@ export default async function BlogPost({
     throw new Error(`Invalid ID: "${id}"`)
   }
 
-  const { title, content, date, readTime }: Blog = (await getDocs({
+  const { title, content, date, readTime } = (await getDocs({
     type: 'blog',
     slug,
   })) as Blog

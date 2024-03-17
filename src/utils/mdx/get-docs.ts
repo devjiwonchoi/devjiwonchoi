@@ -9,7 +9,7 @@ export async function getDocs({
   type,
   slug,
 }: {
-  type: 'blog' | 'project'
+  type: 'blog' | 'projects'
   slug?: string
 }): Promise<Blog | BlogList> {
   if (IS_DEV) {

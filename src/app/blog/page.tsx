@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { ViewCounter } from '@/components/mdx/view-counter'
-import { getDocs } from '@/utils/mdx/get-posts'
+import { getDocs } from '@/utils/mdx/get-docs'
 import { getViewsCount } from '@/utils/mdx/get-views'
 import type { BlogList } from '@/utils/types'
 
