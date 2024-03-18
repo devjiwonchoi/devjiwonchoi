@@ -23,10 +23,10 @@ export default async function BlogPost({
   })) as Blog
 
   return (
-    <main className="mb-auto p-6">
+    <main className="mb-auto flex justify-center p-6">
       <article>
         <header>
-          <h1 className="title mb-2 text-2xl font-medium tracking-tighter">
+          <h1 className="title mb-2 text-2xl font-medium tracking-tighter md:text-3xl">
             {title}
           </h1>
           <section className="mb-4 flex space-x-2">
