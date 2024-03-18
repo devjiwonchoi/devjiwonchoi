@@ -35,4 +35,4 @@ jobs:
         run: pnpm lhci:desktop --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
 
       - name: Run Lighthouse Mobile audits
-        run: pnpm lhci --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
+        run: pnpm lhci:mobile --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"

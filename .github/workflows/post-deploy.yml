@@ -28,4 +28,4 @@ jobs:
         run: pnpm lhci:desktop --collect.url="https://www.jiwonchoi.dev"
 
       - name: Run Lighthouse Mobile audits
-        run: pnpm lhci --collect.url="https://www.jiwonchoi.dev"
+        run: pnpm lhci:mobile --collect.url="https://www.jiwonchoi.dev"
