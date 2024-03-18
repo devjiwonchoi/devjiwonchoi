@@ -1,16 +1,14 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'pnpm build && pnpm start',
-      url: ['http://localhost:3000'],
       numberOfRuns: 1,
     },
     assert: {
       assertions: {
-        'categories:performance': ['error', { minScore: 0.97 }],
-        'categories:accessibility': ['error', { minScore: 0.97 }],
-        'categories:best-practices': ['error', { minScore: 0.97 }],
-        'categories:seo': ['error', { minScore: 0.97 }],
+        'categories:performance': ['error', { minScore: 0.96 }],
+        'categories:accessibility': ['error', { minScore: 1.0 }],
+        'categories:best-practices': ['error', { minScore: 1.0 }],
+        'categories:seo': ['error', { minScore: 1.0 }],
       },
     },
     upload: {

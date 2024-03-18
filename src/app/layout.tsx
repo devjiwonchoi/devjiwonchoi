@@ -77,4 +77,3 @@ export const metadata: Metadata = {
     creator: '@devjiwonchoi',
   },
 }
-
