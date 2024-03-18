@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { ViewCounter } from '@/components/mdx/view-counter'
-import { getPosts } from '@/utils/mdx/get-posts'
+import { getDocs } from '@/utils/mdx/get-docs'
 import { getViewsCount } from '@/utils/mdx/get-views'
-import type { BlogPost } from '@/utils/types'
+import type { BlogList } from '@/utils/types'
 
 export default async function Blog() {
-  const posts: BlogPost[] = await getPosts()
+  const posts = (await getDocs({ type: 'blog' })) as BlogList
   return (
     <>
       {posts.map(({ id, date, readTime, slug, tags, title }) => {

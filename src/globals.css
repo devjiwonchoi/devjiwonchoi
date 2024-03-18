@@ -36,7 +36,7 @@ html {
 }
 
 .prose .anchor {
-  @apply absolute invisible no-underline;
+  @apply invisible absolute no-underline;
 
   margin-left: -1em;
   padding-right: 0.5em;
@@ -50,7 +50,7 @@ html {
 }
 
 .prose a {
-  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply decoration-neutral-400 decoration-[0.1em] underline-offset-2 transition-all dark:decoration-neutral-600;
 }
 
 .prose .anchor:after {
@@ -63,11 +63,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+  @apply overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-900 dark:bg-neutral-900;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply rounded-lg px-1 py-0.5;
 }
 
 .prose pre code {
