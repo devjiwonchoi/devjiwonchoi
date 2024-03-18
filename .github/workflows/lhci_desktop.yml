@@ -1,5 +1,6 @@
-name: Lighthouse
+name: Lighthouse CI Desktop
 on:
+  deployment_status:
   pull_request:
     branches: [main]
     paths:
@@ -11,7 +12,27 @@ env:
   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
 jobs:
-  lighthouse:
+  post-deployment:
+    if: github.event.deployment_status.environment == 'production' && github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2
+
+      - name: Use Node.js v18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+
+      - name: Run Lighthouse Desktop audits
+        run: pnpm lhci:desktop --collect.url="https://www.jiwonchoi.dev"
+  lhci:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -33,6 +54,3 @@ jobs:
 
       - name: Run Lighthouse Desktop audits
         run: pnpm lhci:desktop --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
-
-      - name: Run Lighthouse Mobile audits
-        run: pnpm lhci:mobile --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
