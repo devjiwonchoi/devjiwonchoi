@@ -23,27 +23,29 @@ export default async function BlogPost({
   })) as Blog
 
   return (
-    <article>
-      <header>
-        <h1 className="title mb-2 text-2xl font-medium tracking-tighter">
-          {title}
-        </h1>
-        <section className="mb-4 flex space-x-2">
-          <p className="text-sm text-neutral-400">{date}</p>
-          <span className="text-sm text-neutral-400">•</span>
-          <p className="text-sm text-neutral-400">{readTime} min read</p>
-          <span className="text-sm text-neutral-400">•</span>
-          <Suspense
-            fallback={<p className="text-sm text-neutral-400">0 views</p>}
-          >
-            <Views id={id} />
-          </Suspense>
+    <main className="mb-auto p-6">
+      <article>
+        <header>
+          <h1 className="title mb-2 text-2xl font-medium tracking-tighter">
+            {title}
+          </h1>
+          <section className="mb-4 flex space-x-2">
+            <p className="text-sm text-neutral-400">{date}</p>
+            <span className="text-sm text-neutral-400">•</span>
+            <p className="text-sm text-neutral-400">{readTime} min read</p>
+            <span className="text-sm text-neutral-400">•</span>
+            <Suspense
+              fallback={<p className="text-sm text-neutral-400">0 views</p>}
+            >
+              <Views id={id} />
+            </Suspense>
+          </section>
+        </header>
+        <section className="prose prose-neutral prose-quoteless dark:prose-invert">
+          <CustomMDX source={content} />
         </section>
-      </header>
-      <section className="prose prose-neutral prose-quoteless dark:prose-invert">
-        <CustomMDX source={content} />
-      </section>
-    </article>
+      </article>
+    </main>
   )
 }
 
