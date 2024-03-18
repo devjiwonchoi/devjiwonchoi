@@ -5,7 +5,7 @@ import { ViewCounter } from '@/components/mdx/view-counter'
 import { getDocs } from '@/utils/mdx/get-docs'
 import { incrementView, getViewsCount } from '@/utils/mdx/get-views'
 import { getIdFromSlug, isInvalidId } from '@/utils/mdx/utils'
-import type { Blog, BlogList } from '@/utils/types'
+import type { BlogList, BlogPost } from '@/utils/types'
 
 export default async function BlogPost({
   params: { slug },
@@ -20,7 +20,7 @@ export default async function BlogPost({
   const { title, content, date, readTime } = (await getDocs({
     type: 'blog',
     slug,
-  })) as Blog
+  })) as BlogPost
 
   return (
     <main className="mb-auto flex justify-center p-6">
@@ -62,7 +62,7 @@ export async function generateMetadata({
   const { title, description, tags } = (await getDocs({
     type: 'blog',
     slug,
-  })) as Blog
+  })) as BlogPost
   return {
     title,
     description,
