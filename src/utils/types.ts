@@ -1,12 +1,14 @@
-export type Blog = {
+export type MDXDocBase = {
   id: string
   slug: string
   title: string
   tags: string[]
   date: string
-  readTime: number
   description: string
   content: string
 }
-
-export type BlogList = Omit<Blog, 'content'>[]
+export type BlogPost = MDXDocBase & {
+  readTime: number
+}
+export type BlogListItem = Omit<BlogPost, 'content'>
+export type BlogList = BlogListItem[]

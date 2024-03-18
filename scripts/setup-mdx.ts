@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from 'fs/promises'
 import { extname, join } from 'path'
 import { parseMDXToJSON } from '@/utils/mdx/utils'
+import { BlogPost } from '@/utils/types'
 
 async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
   const docsDir = join(process.cwd(), 'src', 'docs', type)
@@ -17,7 +18,7 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
     // Read the file and parse as frontmatter and content
     const resolvedDirentPath = join(dirent.path, direntName)
     const source = await readFile(resolvedDirentPath, 'utf-8')
-    const { content, ...post } = await parseMDXToJSON({ source })
+    const { content, ...post } = (await parseMDXToJSON({ source })) as BlogPost
     await writeFile(
       `${outDir}/${post.slug}.json`,
       JSON.stringify({ ...post, content }),

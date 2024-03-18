@@ -1,5 +1,5 @@
 import matter from 'gray-matter'
-import type { Blog } from '../types'
+import type { BlogPost, BlogListItem } from '../types'
 
 export const isInvalidId = (id: string) =>
   isNaN(parseInt(id)) || parseInt(id) < 0
@@ -24,7 +24,7 @@ export async function parseMDXToJSON({
 }: {
   source: string
   frontmatterOnly?: boolean
-}): Promise<Blog> {
+}): Promise<BlogPost | BlogListItem> {
   const { data: frontmatter, content } = matter(source)
 
   const id: string = frontmatter.id.toString()
@@ -34,7 +34,7 @@ export async function parseMDXToJSON({
   const date = new Date(frontmatter.date)?.toISOString()?.split('T')?.[0]
 
   if (frontmatterOnly) {
-    return { ...frontmatter, id, slug, date } as Blog
+    return { ...frontmatter, id, slug, date } as BlogListItem
   }
-  return { ...frontmatter, id, slug, date, content } as Blog
+  return { ...frontmatter, id, slug, date, content } as BlogPost
 }

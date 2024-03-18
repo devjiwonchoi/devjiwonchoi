@@ -3,7 +3,7 @@ import { readdir, readFile } from 'fs/promises'
 import { extname, join } from 'path'
 import { parseMDXToJSON } from './utils'
 import { IS_DEV } from '../constants'
-import type { Blog, BlogList } from '../types'
+import type { BlogPost, BlogList } from '../types'
 
 export async function getDocs({
   type,
@@ -11,12 +11,12 @@ export async function getDocs({
 }: {
   type: 'blog' | 'projects'
   slug?: string
-}): Promise<Blog | BlogList> {
+}): Promise<BlogPost | BlogList> {
   if (IS_DEV) {
     const targetDir = join(process.cwd(), 'src', 'docs', type)
     if (slug) {
       const source = await readFile(join(targetDir, `${slug}.mdx`), 'utf-8')
-      return parseMDXToJSON({ source })
+      return parseMDXToJSON({ source }) as Promise<BlogPost>
     }
     return getOnDemandDocsList(targetDir)
   }
