@@ -16,3 +16,4 @@ updates:
       dog-food:
         patterns:
           - '@vercel/*'
+          - 'geist'
