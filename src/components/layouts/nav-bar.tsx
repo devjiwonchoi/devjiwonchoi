@@ -18,7 +18,7 @@ export function NavBar() {
             <Link
               className={clsx(
                 // by default, highlight and underline on hover
-                'font-medium hover:text-neutral-50 hover:underline',
+                'text-lg hover:text-neutral-50 hover:underline md:text-base',
                 {
                   // for `::1`, tight font spacing
                   'tracking-tighter': url === '/',
