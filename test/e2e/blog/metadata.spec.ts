@@ -19,7 +19,7 @@ test.describe('blog - metadata', () => {
     await page.waitForSelector('h1')
 
     // wait 1s for description to change
-    await page.waitForTimeout(1000)
+    await page.waitForTimeout(2000)
     const description = await page.getAttribute(
       'meta[name=description]',
       'content',
