@@ -8,6 +8,11 @@ updates:
       time: '11:00'
     reviewers:
       - 'devjiwonchoi'
+    allow:
+      - dependency-name: 'next'
+      - dependency-name: 'eslint-config-next'
+      - dependency-name: '@vercel/*'
+      - dependency-name: 'geist'
     groups:
       canary:
         patterns:
