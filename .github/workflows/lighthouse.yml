@@ -7,6 +7,9 @@ on:
       - 'docs/**'
       - 'pnpm-lock.yaml'
 
+env:
+  LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
@@ -28,7 +31,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Run Lighthouse audits
-        run: pnpm lhci:desktop && pnpm lhci:mobile
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: Run Lighthouse Desktop audits
+        run: pnpm lhci:desktop --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
+
+      - name: Run Lighthouse Mobile audits
+        run: pnpm lhci:mobile --collect.startServerCommand="pnpm build && pnpm start" --collect.url="http://localhost:3000"
