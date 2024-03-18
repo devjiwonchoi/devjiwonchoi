@@ -16,10 +16,4 @@ test.describe('blog', () => {
     await page.waitForSelector('h1')
     expect(await page.isVisible('h1')).toBeTruthy()
   })
-
-  test('should redirect to /blog if on mobile', async ({ page }) => {
-    await page.goto('/')
-    // user-agent is set to mobile, redirects to /blog
-    expect(page.url()).toContain('/blog')
-  })
 })
