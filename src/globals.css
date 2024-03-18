@@ -33,6 +33,11 @@
 
 html {
   min-width: 360px;
+  font-family: var(--font-geist-mono);
+}
+
+article {
+  font-family: var(--font-geist-sans);
 }
 
 .prose .anchor {

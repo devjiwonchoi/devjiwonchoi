@@ -8,10 +8,10 @@ import type { BlogList } from '@/utils/types'
 export default async function Blog() {
   const posts = (await getDocs({ type: 'blog' })) as BlogList
   return (
-    <>
+    <main className="mb-auto p-6">
       {posts.map(({ id, date, readTime, slug, tags, title }) => {
         return (
-          <section
+          <article
             className="mb-2 bg-neutral-900 p-6 hover:bg-neutral-800"
             key={id}
           >
@@ -39,10 +39,10 @@ export default async function Blog() {
                 {tag}
               </span>
             ))}
-          </section>
+          </article>
         )
       })}
-    </>
+    </main>
   )
 }
 
