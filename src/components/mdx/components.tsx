@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { GeistMono } from 'geist/font/mono'
 import React from 'react'
-import { MDXRemote } from 'remote-mdx'
+import { MDXRemote } from 'remote-mdx/rsc'
 import { highlight } from 'sugar-high'
 import type { MDXComponents } from 'mdx/types'
 
