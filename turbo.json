@@ -4,5 +4,6 @@
     "build": {
       "outputs": [".next/**", "!.next/cache/**"]
     }
-  }
+  },
+  "experimentalUI": true
 }

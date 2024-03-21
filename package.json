@@ -7,6 +7,7 @@
     "start": "next start",
     "test:e2e": "playwright test",
     "test": "pnpm test:e2e",
+    "tb": "turbo",
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
     "lhci:mobile": "lhci autorun",
@@ -47,6 +48,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.4.1",
+    "turbo": "canary",
     "typescript": "^5.4.2"
   },
   "prettier": {

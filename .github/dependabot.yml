@@ -11,6 +11,7 @@ updates:
     allow:
       - dependency-name: 'next'
       - dependency-name: 'eslint-config-next'
+      - dependency-name: 'turbo'
       - dependency-name: '@vercel/*'
       - dependency-name: 'geist'
     groups:
@@ -18,7 +19,8 @@ updates:
         patterns:
           - 'next'
           - 'eslint-config-next'
-      dog-food:
+          - 'turbo'
+      dog-foods:
         patterns:
           - '@vercel/*'
           - 'geist'
