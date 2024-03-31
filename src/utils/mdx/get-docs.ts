@@ -35,8 +35,7 @@ export async function getOnDemandDocsList(targetDir: string) {
     const ext = extname(direntName)
     if (ext !== '.mdx') return
 
-    const resolvedDirentPath = join(dirent.path, direntName)
-    const source = await readFile(resolvedDirentPath, 'utf-8')
+    const source = await readFile(dirent.path, 'utf-8')
     return parseMDXToJSON({ source, frontmatterOnly: true })
   })
 

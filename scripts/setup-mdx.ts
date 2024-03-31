@@ -16,8 +16,7 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
     if (!dirent.isFile() || ext !== '.mdx') return
 
     // Read the file and parse as frontmatter and content
-    const resolvedDirentPath = join(dirent.path, direntName)
-    const source = await readFile(resolvedDirentPath, 'utf-8')
+    const source = await readFile(dirent.path, 'utf-8')
     const { content, ...post } = (await parseMDXToJSON({ source })) as BlogPost
     await writeFile(
       `${outDir}/${post.slug}.json`,
@@ -27,7 +26,7 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
     const expectedDirentName = `${post.slug}${ext}`
     if (direntName !== expectedDirentName) {
       throw new Error(
-        `Expected ${resolvedDirentPath} to be named ${expectedDirentName}`,
+        `Expected ${dirent.path} to be named ${expectedDirentName}`,
       )
     }
 
