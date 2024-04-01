@@ -1,5 +1,5 @@
 import { mkdir, readdir, readFile, writeFile } from 'fs/promises'
-import { extname, join } from 'path'
+import { basename, extname, join } from 'path'
 import { parseMDXToJSON } from '@/utils/mdx/utils'
 import { BlogPost } from '@/utils/types'
 
@@ -11,12 +11,12 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
   await mkdir(outDir, { recursive: true })
 
   const postJobs = dirents.map(async (dirent) => {
-    const direntName = dirent.name
-    const ext = extname(direntName)
+    const direntPath = dirent.path
+    const ext = extname(direntPath)
     if (!dirent.isFile() || ext !== '.mdx') return
 
     // Read the file and parse as frontmatter and content
-    const source = await readFile(dirent.path, 'utf-8')
+    const source = await readFile(direntPath, 'utf-8')
     const { content, ...post } = (await parseMDXToJSON({ source })) as BlogPost
     await writeFile(
       `${outDir}/${post.slug}.json`,
@@ -24,9 +24,9 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
     )
 
     const expectedDirentName = `${post.slug}${ext}`
-    if (direntName !== expectedDirentName) {
+    if (basename(direntPath) !== expectedDirentName) {
       throw new Error(
-        `Expected ${dirent.path} to be named ${expectedDirentName}`,
+        `Expected ${direntPath} to be named ${expectedDirentName}`,
       )
     }
 
