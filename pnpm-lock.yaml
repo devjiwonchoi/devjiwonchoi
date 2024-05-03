@@ -42,8 +42,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   remote-mdx:
-    specifier: ^0.0.3
-    version: 0.0.3(react@18.2.0)
+    specifier: ^0.0.6
+    version: 0.0.6(react@18.2.0)
   sugar-high:
     specifier: ^0.6.0
     version: 0.6.0
@@ -4910,8 +4910,8 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /remote-mdx@0.0.3(react@18.2.0):
-    resolution: {integrity: sha512-UMKeGWioZgMOG9oXRxtzFNWCrn3FTSsCRWduV77/ZmN6/CU9IM/drVysoiGbQP8x1DyY6sFqodFen+sqt5RUjw==}
+  /remote-mdx@0.0.6(react@18.2.0):
+    resolution: {integrity: sha512-zKUCR19OSwObgC9Aep8uZgOC5zmJBT1laUaMU0yEJBszTwFBNOxAoK2L6MM9YV6MrL5KrlsA0L7xAqFN1Wuxhg==}
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.2.0)
