@@ -42,8 +42,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   remote-mdx:
-    specifier: ^0.0.3
-    version: 0.0.3(react@18.2.0)
+    specifier: ^0.0.7
+    version: 0.0.7(react-dom@18.2.0)(react@18.2.0)
   sugar-high:
     specifier: ^0.6.0
     version: 0.6.0
@@ -5139,15 +5139,19 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /remote-mdx@0.0.3(react@18.2.0):
-    resolution: {integrity: sha512-UMKeGWioZgMOG9oXRxtzFNWCrn3FTSsCRWduV77/ZmN6/CU9IM/drVysoiGbQP8x1DyY6sFqodFen+sqt5RUjw==}
+  /remote-mdx@0.0.7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-THL0MVnu1hIFx8VeyFRyRwrs0TdeDBm02Ka4ZFO6XIz0LMYQ00ZQePGwN4qgtGMBVjqyejbRH6fYMua6vVFedA==}
+    peerDependencies:
+      react: '>=16.x <=18.x'
+      react-dom: '>=16.x <=18.x'
     dependencies:
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
       vfile: 5.3.7
       vfile-matter: 3.0.1
     transitivePeerDependencies:
-      - react
       - supports-color
     dev: false
 
