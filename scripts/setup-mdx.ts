@@ -11,7 +11,7 @@ async function setupMDX({ type }: { type: 'blog' | 'projects' }) {
   await mkdir(outDir, { recursive: true })
 
   const postJobs = dirents.map(async (dirent) => {
-    const resolvedDirentPath = join(dirent.path, dirent.name)
+    const resolvedDirentPath = join(docsDir, dirent.name)
     const ext = extname(resolvedDirentPath)
     if (!dirent.isFile() || ext !== '.mdx') return
 

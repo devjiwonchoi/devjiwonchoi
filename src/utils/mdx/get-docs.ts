@@ -31,7 +31,7 @@ export async function getOnDemandDocsList(targetDir: string) {
   const postJobs = dirents.map(async (dirent) => {
     // We are looking for a .mdx file
     if (!dirent.isFile()) return
-    const resolvedDirentPath = join(dirent.path, dirent.name)
+    const resolvedDirentPath = join(targetDir, dirent.name)
     const ext = extname(resolvedDirentPath)
     if (ext !== '.mdx') return
 
