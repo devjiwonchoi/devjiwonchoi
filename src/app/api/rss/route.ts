@@ -1,18 +1,18 @@
 import { PROD_BASE_URL } from '@/utils/constants'
-import { getBlogPosts } from '@/blog/utils'
+import { getBlogPosts } from '@/app/blog/utils'
 
 export async function GET() {
   let allBlogs = await getBlogPosts()
 
   const itemsXml = allBlogs
-    .sort((a, b) => {
+    .sort((a: any, b: any) => {
       if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
         return -1
       }
       return 1
     })
     .map(
-      (post) =>
+      (post: any) =>
         `<item>
           <title>${post.metadata.title}</title>
           <link>${PROD_BASE_URL}/blog/${post.slug}</link>
