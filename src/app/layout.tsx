@@ -1,25 +1,23 @@
 import '@/app/globals.css'
 import type { Metadata } from 'next'
-import { headers } from 'next/headers'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
 import { Header, Footer, NavBar } from '@/components/layouts'
+
+const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  // Only add these when hosted on Vercel-
-  // since SpeedInsights throw 404 looking for _vercel/scripts,
-  // it affects lighthouse CI scores
-  // See https://vercel.com/docs/edge-network/headers#x-vercel-id-req
-  const isVercelHosted = headers().has('x-vercel-id')
   return (
     <html
-      className={`${GeistSans.variable} ${GeistMono.variable} bg-neutral-950`}
+      className={cx(
+        'bg-white text-black dark:bg-black dark:text-white',
+        GeistMono.variable,
+      )}
       lang="en"
     >
       <body className="container mx-auto flex h-screen max-w-4xl flex-col">
@@ -27,12 +25,8 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        {isVercelHosted && (
-          <>
-            <Analytics />
-            <SpeedInsights />
-          </>
-        )}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
@@ -72,6 +66,17 @@ export const metadata: Metadata = {
       },
     ],
     siteName: 'Jiwon Choi',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   twitter: {
     creator: '@devjiwonchoi',
