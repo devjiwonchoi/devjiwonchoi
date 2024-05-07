@@ -5,14 +5,20 @@ updates:
     schedule:
       interval: 'daily'
       timezone: 'Asia/Seoul'
-      time: '11:00'
+      time: '09:00'
     reviewers:
       - 'devjiwonchoi'
     allow:
       - dependency-name: '@vercel/*'
       - dependency-name: 'next'
       - dependency-name: 'eslint-config-next'
+      - dependency-name: 'react'
+      - dependency-name: 'react-dom'
       - dependency-name: 'geist'
+      - dependency-name: 'next-auth'
+      - dependency-name: 'sugar-high'
+      - dependency-name: 'typescript'
+      - dependency-name: '@types/*'
     groups:
       canary:
         patterns:
@@ -21,4 +27,14 @@ updates:
       dog-foods:
         patterns:
           - '@vercel/*'
+          - 'react'
+          - 'react-dom'
           - 'geist'
+      fellows:
+        patterns:
+          - 'next-auth'
+          - 'sugar-high'
+      typescript:
+        patterns:
+          - 'typescript'
+          - '@types/*'
