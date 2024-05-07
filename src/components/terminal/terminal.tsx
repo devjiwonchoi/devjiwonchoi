@@ -1,12 +1,13 @@
 'use client'
+import '@xterm/xterm/css/xterm.css'
 import type { Route } from 'next'
 import type { ITerminalInitOnlyOptions, ITerminalOptions } from '@xterm/xterm'
-import { useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { Terminal as XtermTerminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
+import { WebglAddon } from '@xterm/addon-webgl'
 import { WebLinksAddon } from '@xterm/addon-web-links'
-import '@xterm/xterm/css/xterm.css'
 
 const XtermTerminalOptions: ITerminalOptions & ITerminalInitOnlyOptions = {
   fontSize: 14,
@@ -252,8 +253,10 @@ export function Terminal() {
   useEffect(() => {
     const terminal = new XtermTerminal(XtermTerminalOptions)
     const fitAddon = new FitAddon()
+    const webglAddon = new WebglAddon()
     const webLinksAddon = new WebLinksAddon()
     terminal.loadAddon(fitAddon)
+    terminal.loadAddon(webglAddon)
     terminal.loadAddon(webLinksAddon)
     fitAddon.fit()
 
@@ -289,6 +292,11 @@ export function Terminal() {
         command,
       })
     }
+
+    // https://github.com/xtermjs/xterm.js/tree/master/addons/addon-webgl#handling-context-loss
+    webglAddon.onContextLoss(() => {
+      webglAddon.dispose()
+    })
 
     return () => {
       terminal.dispose()
