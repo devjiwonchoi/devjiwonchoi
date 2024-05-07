@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import githubLogo from 'public/images/github-mark-white.svg'
-import gmailLogo from 'public/images/gmail-2020.svg'
-import twitterLogo from 'public/images/x-logo.svg'
-import linkedinLogo from 'public/images/linkedin-logo.svg'
+import githubLogo from 'public/img/github-mark-white.svg'
+import gmailLogo from 'public/img/gmail-2020.svg'
+import twitterLogo from 'public/img/x-logo.svg'
+import linkedinLogo from 'public/img/linkedin-logo.svg'
 
 export function Footer() {
   const thisYear = new Date().getUTCFullYear()
