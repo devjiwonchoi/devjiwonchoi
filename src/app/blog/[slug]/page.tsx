@@ -1,81 +1,98 @@
-import { unstable_cache as cache } from 'next/cache'
-import { Suspense } from 'react'
+import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx/components'
-import { ViewCounter } from '@/components/mdx/view-counter'
-import { getDocs } from '@/utils/mdx/get-docs'
-import { incrementView, getViewsCount } from '@/utils/mdx/get-views'
-import { getIdFromSlug, isInvalidId } from '@/utils/mdx/utils'
-import type { BlogList, BlogPost } from '@/utils/types'
+import { formatDate, getBlogPosts } from '@/app/blog/utils'
+import { PROD_BASE_URL } from '@/utils/constants'
 
-export default async function BlogPost({
-  params: { slug },
-}: {
-  params: { slug: string }
-}) {
-  const id = getIdFromSlug(slug)
-  if (!id || isInvalidId(id)) {
-    throw new Error(`Invalid ID: "${id}"`)
-  }
+export async function generateStaticParams() {
+  let posts = getBlogPosts()
 
-  const { title, content, date, readTime } = (await getDocs({
-    type: 'blog',
-    slug,
-  })) as BlogPost
-
-  return (
-    <main className="mb-auto flex justify-center p-6">
-      <article>
-        <header>
-          <h1 className="title mb-2 text-2xl font-medium tracking-tighter md:text-3xl">
-            {title}
-          </h1>
-          <section className="mb-4 flex space-x-2">
-            <p className="text-sm text-neutral-400">{date}</p>
-            <span className="text-sm text-neutral-400">•</span>
-            <p className="text-sm text-neutral-400">{readTime} min read</p>
-            <span className="text-sm text-neutral-400">•</span>
-            <Suspense
-              fallback={<p className="text-sm text-neutral-400">0 views</p>}
-            >
-              <Views id={id} />
-            </Suspense>
-          </section>
-        </header>
-        <section className="prose prose-neutral prose-quoteless dark:prose-invert">
-          <CustomMDX source={content} />
-        </section>
-      </article>
-    </main>
-  )
+  return posts.map((post: any) => ({
+    slug: post.slug,
+  }))
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: { slug: string }
-}) {
-  const id = getIdFromSlug(slug)
-  if (!id || isInvalidId(id)) {
-    throw new Error('Invalid ID')
+export function generateMetadata({ params }: { params: { slug: string } }) {
+  let post = getBlogPosts().find((post: any) => post.slug === params.slug)
+  if (!post) {
+    return {}
   }
 
-  const { title, description, tags } = (await getDocs({
-    type: 'blog',
-    slug,
-  })) as BlogPost
+  let {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+  } = post.metadata
+  let ogImage = image
+    ? image
+    : `${PROD_BASE_URL}/og?title=${encodeURIComponent(title)}`
+
   return {
     title,
     description,
-    keywords: tags,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `${PROD_BASE_URL}/blog/${post.slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
   }
 }
 
-export const generateStaticParams = async () =>
-  ((await getDocs({ type: 'blog' })) as BlogList).map(({ slug }) => ({ slug }))
+export default function Blog({ params }: { params: { slug: string } }) {
+  let post = getBlogPosts().find((post: any) => post.slug === params.slug)
 
-const incrementViews = cache(incrementView)
-async function Views({ id }: { id: string }) {
-  const views = await getViewsCount()
-  incrementViews(id)
-  return <ViewCounter allViews={views} id={id} />
+  if (!post) {
+    notFound()
+  }
+
+  return (
+    <section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.metadata.title,
+            datePublished: post.metadata.publishedAt,
+            dateModified: post.metadata.publishedAt,
+            description: post.metadata.summary,
+            image: post.metadata.image
+              ? `${PROD_BASE_URL}${post.metadata.image}`
+              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            url: `${PROD_BASE_URL}/blog/${post.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'My Portfolio',
+            },
+          }),
+        }}
+      />
+      <h1 className="title text-2xl font-semibold tracking-tighter">
+        {post.metadata.title}
+      </h1>
+      <div className="mb-8 mt-2 flex items-center justify-between text-sm">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
+      </div>
+      <article className="prose">
+        <CustomMDX source={post.content} />
+      </article>
+    </section>
+  )
 }

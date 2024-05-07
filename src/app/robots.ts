@@ -1,11 +1,11 @@
 import type { MetadataRoute } from 'next'
+import { baseUrl } from '@/app/sitemap'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
     },
-    host: 'https://www.jiwonchoi.dev',
-    sitemap: 'https://www.jiwonchoi.dev/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }

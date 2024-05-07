@@ -1,37 +1,21 @@
-'use client'
-import dynamic from 'next/dynamic'
-import { useMediaQuery } from '@/utils/hooks/use-media-query'
+import { BlogPosts } from '@/components/mdx/posts'
 
-const Terminal = dynamic(
-  async () => (await import('@/components/terminal')).Terminal,
-  {
-    ssr: false,
-    loading: () => <LoadingTerminal />,
-  },
-)
-
-export default function Landing() {
-  // import terminal conditionally based on screen size
-  const isMd = useMediaQuery('(min-width: 768px)')
-  return <main className="mb-auto p-6">{isMd && <Terminal />}</main>
+export default function Page() {
+  return (
+    <main className="mb-auto p-6">
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+        My Portfolio
+      </h1>
+      <p className="mb-4">
+        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
+        Vim's keystroke commands and tabs' flexibility for personal viewing
+        preferences. This extends to my support for static typing, where its
+        early error detection ensures cleaner code, and my preference for dark
+        mode, which eases long coding sessions by reducing eye strain.`}
+      </p>
+      <div className="my-8">
+        <BlogPosts />
+      </div>
+    </main>
+  )
 }
-
-// TODO: Is this really unable to be in a separate file?
-const LoadingTerminal = () => (
-  <div className="hidden h-[496px] rounded bg-neutral-900 p-2 md:block">
-    <div
-      id="loading-terminal"
-      style={{
-        width: '674px',
-        height: '24px',
-        lineHeight: '24px',
-        overflow: 'hidden',
-        color: '#fafafa',
-        fontSize: '14px',
-        fontFamily: 'Geist Mono, monospace',
-      }}
-    >
-      <span>Initiating Terminal...</span>
-    </div>
-  </div>
-)

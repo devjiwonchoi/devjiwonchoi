@@ -1,24 +1,18 @@
 import type { MetadataRoute } from 'next'
+import { getBlogPosts } from '@/app/blog/utils'
+
+export const baseUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://www.jiwonchoi.dev',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.jiwonchoi.dev/blog',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.jiwonchoi.dev/projects',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
+  const blogs = getBlogPosts().map((post: any) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.metadata.publishedAt,
+  }))
+
+  const routes = ['', '/blog'].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString().split('T')[0],
+  }))
+
+  return [...routes, ...blogs]
 }
