@@ -1,5 +1,4 @@
-import type { Config } from 'tailwindcss'
-import typography from '@tailwindcss/typography'
+import type { Config as TailwindConfig } from 'tailwindcss'
 
 export default {
   content: ['./src/**/*.{ts,tsx}'],
@@ -9,18 +8,6 @@ export default {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
       },
-      typography: {
-        quoteless: {
-          css: {
-            'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
-          },
-        },
-      },
     },
   },
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-  plugins: [typography],
-} satisfies Config
+} satisfies TailwindConfig

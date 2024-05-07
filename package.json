@@ -24,7 +24,6 @@
     "sugar-high": "^0.6.1"
   },
   "devDependencies": {
-    "@swc-node/register": "^1.9.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.12.10",
@@ -36,7 +35,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5"
   },
   "prettier": {
