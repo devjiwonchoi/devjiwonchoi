@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 ::selection {
   background-color: #47a3f3;
@@ -33,15 +31,10 @@
 
 html {
   min-width: 360px;
-  font-family: var(--font-geist-mono);
-}
-
-article {
-  font-family: var(--font-geist-sans);
 }
 
 .prose .anchor {
-  @apply invisible absolute no-underline;
+  @apply absolute invisible no-underline;
 
   margin-left: -1em;
   padding-right: 0.5em;
@@ -55,7 +48,7 @@ article {
 }
 
 .prose a {
-  @apply decoration-neutral-400 decoration-[0.1em] underline-offset-2 transition-all dark:decoration-neutral-600;
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
 }
 
 .prose .anchor:after {
@@ -68,11 +61,11 @@ article {
 }
 
 .prose pre {
-  @apply overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 dark:border-neutral-900 dark:bg-neutral-900;
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
 }
 
 .prose code {
-  @apply rounded-lg px-1 py-0.5;
+  @apply px-1 py-0.5 rounded-lg;
 }
 
 .prose pre code {
@@ -90,14 +83,36 @@ article {
   @apply m-0;
 }
 
-.prose h2,
-h3,
-h4 {
-  @apply font-medium tracking-tighter !important;
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose strong {
   @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
 }
 
 .prose > :first-child {
@@ -123,20 +138,11 @@ input[type='email'] {
   appearance: none;
 }
 
-.prose .tweet a {
-  text-decoration: inherit;
-  font-weight: 500;
-}
-
 table {
   display: block;
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
-}
-
-.prose .callout > p {
-  margin: 0 !important;
 }
 
 .title {
