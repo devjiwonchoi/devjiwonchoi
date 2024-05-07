@@ -1,10 +1,11 @@
+import type { Route } from 'next'
+import type { MDXComponents } from 'mdx/types'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { GeistMono } from 'geist/font/mono'
 import { MDXRemote } from 'remote-mdx/rsc'
 import { highlight } from 'sugar-high'
-import type { MDXComponents } from 'mdx/types'
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   const headers = data.headers.map((header, index) => (
@@ -33,7 +34,7 @@ function CustomLink(props: { href: string; children: React.ReactNode }) {
 
   if (href.startsWith('/')) {
     return (
-      <Link {...props} href={href}>
+      <Link {...props} href={href as Route}>
         {props.children}
       </Link>
     )
