@@ -9,17 +9,15 @@ updates:
     reviewers:
       - 'devjiwonchoi'
     allow:
+      - dependency-name: '@vercel/*'
       - dependency-name: 'next'
       - dependency-name: 'eslint-config-next'
-      - dependency-name: '@vercel/*'
-      - dependency-name: 'turbo'
       - dependency-name: 'geist'
     groups:
       canary:
         patterns:
           - 'next'
           - 'eslint-config-next'
-          - 'turbo'
       dog-foods:
         patterns:
           - '@vercel/*'
