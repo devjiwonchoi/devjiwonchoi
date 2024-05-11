@@ -4,12 +4,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.10",
+    "@next/third-parties": "^14.2.3",
     "@vercel/analytics": "^1.2.2",
     "@vercel/postgres": "^0.8.0",
     "@vercel/speed-insights": "^1.0.10",
@@ -27,6 +29,7 @@
     "sugar-high": "^0.6.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@tailwindcss/postcss": "next",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.12.11",
