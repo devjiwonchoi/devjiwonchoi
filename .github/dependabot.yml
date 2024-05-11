@@ -12,6 +12,7 @@ updates:
       - dependency-name: '@vercel/*'
       - dependency-name: '@ai-sdk/*'
       - dependency-name: 'next'
+      - dependency-name: 'eslint-config-next'
       - dependency-name: 'ai'
       - dependency-name: 'turbo'
       - dependency-name: 'geist'
@@ -19,6 +20,7 @@ updates:
       canary:
         patterns:
           - 'next'
+          - 'eslint-config-next'
           - 'turbo'
       dog-food:
         patterns:
@@ -26,3 +28,17 @@ updates:
           - '@ai-sdk/*'
           - 'ai'
           - 'geist'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    # set target-branch to work around configure depbot on same directory '/'
+    # x-ref: https://github.com/dependabot/dependabot-core/issues/1778#issuecomment-1988140219
+    target-branch: main
+    schedule:
+      interval: 'monthly'
+    reviewers:
+      - 'devjiwonchoi'
+    groups:
+      prod-deps:
+        dependency-type: "production"
+      dev-deps:
+        dependency-type: "development"
