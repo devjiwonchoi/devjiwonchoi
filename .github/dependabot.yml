@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # Daily update for Dogfooding
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -10,6 +11,7 @@ updates:
       - 'devjiwonchoi'
     allow:
       - dependency-name: '@vercel/*'
+      - dependency-name: '@next/*'
       - dependency-name: '@ai-sdk/*'
       - dependency-name: 'next'
       - dependency-name: 'eslint-config-next'
@@ -19,6 +21,7 @@ updates:
     groups:
       canary:
         patterns:
+          - '@next/*'
           - 'next'
           - 'eslint-config-next'
           - 'turbo'
@@ -28,6 +31,8 @@ updates:
           - '@ai-sdk/*'
           - 'ai'
           - 'geist'
+
+  # Monthly update for all dependencies
   - package-ecosystem: 'npm'
     directory: '/'
     # set target-branch to work around configure depbot on same directory '/'

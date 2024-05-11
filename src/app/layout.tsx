@@ -2,6 +2,7 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { GeistMono } from 'geist/font/mono'
 import { Header, Footer, NavBar } from '@/components/layouts'
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-LN6X9NBPXX" />
       </body>
     </html>
   )
