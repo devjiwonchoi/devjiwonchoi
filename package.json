@@ -53,5 +53,13 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
+  },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
+  },
+  "postcss": {
+    "plugins": {
+      "@tailwindcss/postcss": {}
+    }
   }
 }
