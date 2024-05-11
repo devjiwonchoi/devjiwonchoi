@@ -83,12 +83,12 @@ function registerOnData({
 
         if (lastWord) {
           const matchingCommands = files.filter((command) =>
-            command.startsWith(lastWord),
+            command.startsWith(lastWord)
           )
 
           if (matchingCommands.length === 1) {
-            const completeCommand = matchingCommands[0].slice(lastWord.length)
-            terminal.write(completeCommand)
+            const completeCommand = matchingCommands[0]?.slice(lastWord.length)
+            terminal.write(completeCommand ?? '')
             command += completeCommand
           }
 
@@ -122,7 +122,7 @@ function registerOnData({
           terminal.write(`\r${promptStr}${' '.repeat(command.length)}`)
           // preserve current index, then decrement
           historyIndex--
-          command = history[historyIndex]
+          command = history[historyIndex] ?? ''
           terminal.write(`\r${promptStr}${command}`)
         }
         break
@@ -132,7 +132,7 @@ function registerOnData({
           // clear the current command first
           terminal.write(`\r${promptStr}${' '.repeat(command.length)}`)
           historyIndex++
-          command = history[historyIndex]
+          command = history[historyIndex] ?? ''
           terminal.write(`\r${promptStr}${command}`)
           break
         }
@@ -173,7 +173,7 @@ function runCommand({
   const command = args[0]
   const possiblyFile = args.slice(1)[0]
 
-  if (command.length) {
+  if (command?.length) {
     terminal.writeln('')
 
     if (command in commands) {
