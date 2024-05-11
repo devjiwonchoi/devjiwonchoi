@@ -92,7 +92,7 @@ devDependencies:
     specifier: ^3.4.3
     version: 3.4.3
   turbo:
-    specifier: 1.13.4-canary.3
+    specifier: canary
     version: 1.13.4-canary.3
   typescript:
     specifier: ^5.4.5
