@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --debug",
     "build:analyze": "ANALYZE=true next build",
+    "build:profile": "next build --profile",
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix"
