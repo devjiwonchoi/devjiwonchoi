@@ -10,13 +10,13 @@ dependencies:
     version: 0.0.10(zod@3.23.8)
   '@vercel/analytics':
     specifier: ^1.2.2
-    version: 1.2.2(next@14.3.0-canary.57)(react@18.3.1)
+    version: 1.2.2(next@14.3.0-canary.57)(react@19.0.0-beta-4508873393-20240430)
   '@vercel/postgres':
     specifier: ^0.8.0
     version: 0.8.0
   '@vercel/speed-insights':
     specifier: ^1.0.10
-    version: 1.0.10(next@14.3.0-canary.57)(react@18.3.1)(svelte@4.2.16)(vue@3.4.27)
+    version: 1.0.10(next@14.3.0-canary.57)(react@19.0.0-beta-4508873393-20240430)(svelte@4.2.16)(vue@3.4.27)
   '@xterm/addon-fit':
     specifier: ^0.9.0
     version: 0.9.0(@xterm/xterm@5.5.0)
@@ -31,25 +31,25 @@ dependencies:
     version: 5.5.0
   ai:
     specifier: ^3.1.5
-    version: 3.1.5(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8)
+    version: 3.1.5(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8)
   geist:
     specifier: ^1.3.0
     version: 1.3.0(next@14.3.0-canary.57)
   next:
     specifier: canary
-    version: 14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1)
+    version: 14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
   next-auth:
     specifier: ^4.24.7
-    version: 4.24.7(next@14.3.0-canary.57)(react-dom@18.3.1)(react@18.3.1)
+    version: 4.24.7(next@14.3.0-canary.57)(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
   react:
-    specifier: ^18.3.1
-    version: 18.3.1
+    specifier: 19.0.0-beta-4508873393-20240430
+    version: 19.0.0-beta-4508873393-20240430
   react-dom:
-    specifier: ^18.3.1
-    version: 18.3.1(react@18.3.1)
+    specifier: 19.0.0-beta-4508873393-20240430
+    version: 19.0.0-beta-4508873393-20240430(react@19.0.0-beta-4508873393-20240430)
   remote-mdx:
-    specifier: ^0.0.7
-    version: 0.0.7(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^0.0.8
+    version: 0.0.8(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
   sugar-high:
     specifier: ^0.6.1
     version: 0.6.1
@@ -497,14 +497,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/react@2.3.0(react@18.3.1):
+  /@mdx-js/react@2.3.0(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
     peerDependencies:
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.13
       '@types/react': 18.3.1
-      react: 18.3.1
+      react: 19.0.0-beta-4508873393-20240430
     dev: false
 
   /@neondatabase/serverless@0.7.2:
@@ -811,7 +811,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vercel/analytics@1.2.2(next@14.3.0-canary.57)(react@18.3.1):
+  /@vercel/analytics@1.2.2(next@14.3.0-canary.57)(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-X0rctVWkQV1e5Y300ehVNqpOfSOufo7ieA5PIdna8yX/U7Vjz0GFsGf4qvAhxV02uQ2CVt7GYcrFfddXXK2Y4A==}
     peerDependencies:
       next: '>= 13'
@@ -822,8 +822,8 @@ packages:
       react:
         optional: true
     dependencies:
-      next: 14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1)
-      react: 18.3.1
+      next: 14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
+      react: 19.0.0-beta-4508873393-20240430
       server-only: 0.0.1
     dev: false
 
@@ -837,7 +837,7 @@ packages:
       ws: 8.14.2(bufferutil@4.0.8)(utf-8-validate@6.0.3)
     dev: false
 
-  /@vercel/speed-insights@1.0.10(next@14.3.0-canary.57)(react@18.3.1)(svelte@4.2.16)(vue@3.4.27):
+  /@vercel/speed-insights@1.0.10(next@14.3.0-canary.57)(react@19.0.0-beta-4508873393-20240430)(svelte@4.2.16)(vue@3.4.27):
     resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
     requiresBuild: true
     peerDependencies:
@@ -861,8 +861,8 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      next: 14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1)
-      react: 18.3.1
+      next: 14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
+      react: 19.0.0-beta-4508873393-20240430
       svelte: 4.2.16
       vue: 3.4.27(typescript@5.4.5)
     dev: false
@@ -980,7 +980,7 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  /ai@3.1.5(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8):
+  /ai@3.1.5(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.16)(vue@3.4.27)(zod@3.23.8):
     resolution: {integrity: sha512-uE8EfcigIoep4NCqIOWsNUP/alyZ93XtsDsLjiop51y4lEtgJg0GzpbBRfYKaEK1O74HiQ2CmaeOOBlNVBBiIQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -1010,13 +1010,13 @@ packages:
       json-schema: 0.4.0
       jsondiffpatch: 0.6.0
       nanoid: 3.3.6
-      react: 18.3.1
+      react: 19.0.0-beta-4508873393-20240430
       secure-json-parse: 2.7.0
       solid-js: 1.8.17
       solid-swr-store: 0.10.7(solid-js@1.8.17)(swr-store@0.10.6)
       sswr: 2.0.0(svelte@4.2.16)
       svelte: 4.2.16
-      swr: 2.2.0(react@18.3.1)
+      swr: 2.2.0(react@19.0.0-beta-4508873393-20240430)
       swr-store: 0.10.6
       swrv: 1.0.4(vue@3.4.27)
       vue: 3.4.27(typescript@5.4.5)
@@ -2183,7 +2183,7 @@ packages:
     peerDependencies:
       next: '>=13.2.0 <15.0.0-0'
     dependencies:
-      next: 14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1)
+      next: 14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
     dev: false
 
   /get-intrinsic@1.2.4:
@@ -2665,6 +2665,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    dev: true
 
   /js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
@@ -2791,6 +2792,7 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: true
 
   /lru-cache@10.2.2:
     resolution: {integrity: sha512-9hp3Vp2/hFQUiIwKo8XCeFVnrg8Pk3TYNPIR7tJADKi5YfcF7vEaK7avFHTlSy3kOKYaJQaalfEo6YuXdceBOQ==}
@@ -3279,7 +3281,7 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-auth@4.24.7(next@14.3.0-canary.57)(react-dom@18.3.1)(react@18.3.1):
+  /next-auth@4.24.7(next@14.3.0-canary.57)(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-iChjE8ov/1K/z98gdKbn2Jw+2vLgJtVV39X+rCP5SGnVQuco7QOr19FRNGMIrD8d3LYhHWV9j9sKLzq1aDWWQQ==}
     peerDependencies:
       next: ^12.2.5 || ^13 || ^14
@@ -3294,17 +3296,17 @@ packages:
       '@panva/hkdf': 1.1.1
       cookie: 0.5.0
       jose: 4.15.5
-      next: 14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1)
+      next: 14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430)
       oauth: 0.9.15
       openid-client: 5.6.5
       preact: 10.21.0
       preact-render-to-string: 5.2.6(preact@10.21.0)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0-beta-4508873393-20240430
+      react-dom: 19.0.0-beta-4508873393-20240430(react@19.0.0-beta-4508873393-20240430)
       uuid: 8.3.2
     dev: false
 
-  /next@14.3.0-canary.57(react-dom@18.3.1)(react@18.3.1):
+  /next@14.3.0-canary.57(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-P912jiMQu1zE9iI+5n4gPjcjl+q8AO7lQmyx6NayKBJtLUjk/Om0tUVRP/2Z72XOaKLCdGw/VWhnmaWa7W0gEQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -3328,9 +3330,9 @@ packages:
       caniuse-lite: 1.0.30001617
       graceful-fs: 4.2.11
       postcss: 8.4.31
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      styled-jsx: 5.1.3(react@18.3.1)
+      react: 19.0.0-beta-4508873393-20240430
+      react-dom: 19.0.0-beta-4508873393-20240430(react@19.0.0-beta-4508873393-20240430)
+      styled-jsx: 5.1.3(react@19.0.0-beta-4508873393-20240430)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.3.0-canary.57
       '@next/swc-darwin-x64': 14.3.0-canary.57
@@ -3811,25 +3813,22 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-dom@18.3.1(react@18.3.1):
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  /react-dom@19.0.0-beta-4508873393-20240430(react@19.0.0-beta-4508873393-20240430):
+    resolution: {integrity: sha512-/j97ai1qF3c6O3XV0nVzzExPV/0U2v8M75Sq6ThXYxePCi33kAnm+xRsCDpZOZOrIjz6nurLU/FzzPZIzXVvKQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: 19.0.0-beta-4508873393-20240430
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.0.0-beta-4508873393-20240430
+      scheduler: 0.25.0-beta-4508873393-20240430
     dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  /react@19.0.0-beta-4508873393-20240430:
+    resolution: {integrity: sha512-//89udV7fhVq5pEzpNH7vlpmS5D4wDbPn0oif+G7vwDsuSks5yJGdqrE1uzn2CyFNL73FjV3/R3Pjyaxs+xnvg==}
     engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
     dev: false
 
   /read-cache@1.0.0:
@@ -3899,16 +3898,16 @@ packages:
       unified: 10.1.2
     dev: false
 
-  /remote-mdx@0.0.7(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-THL0MVnu1hIFx8VeyFRyRwrs0TdeDBm02Ka4ZFO6XIz0LMYQ00ZQePGwN4qgtGMBVjqyejbRH6fYMua6vVFedA==}
+  /remote-mdx@0.0.8(react-dom@19.0.0-beta-4508873393-20240430)(react@19.0.0-beta-4508873393-20240430):
+    resolution: {integrity: sha512-wQF6cDm+Ec6iBugWWsR1MQUVMTS8nRmEqeCwJZfSUGsPuvfRhbWjS2RksEF6rCWXYd9hGHRpoNXqCMfcmlzwxA==}
     peerDependencies:
-      react: '>=16.x <=18.x'
-      react-dom: '>=16.x <=18.x'
+      react: ^18.0.0 || ^19.0.0-0
+      react-dom: ^18.0.0 || ^19.0.0-0
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/react': 2.3.0(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      '@mdx-js/react': 2.3.0(react@19.0.0-beta-4508873393-20240430)
+      react: 19.0.0-beta-4508873393-20240430
+      react-dom: 19.0.0-beta-4508873393-20240430(react@19.0.0-beta-4508873393-20240430)
       vfile: 5.3.7
       vfile-matter: 3.0.1
     transitivePeerDependencies:
@@ -3986,10 +3985,8 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-    dependencies:
-      loose-envify: 1.4.0
+  /scheduler@0.25.0-beta-4508873393-20240430:
+    resolution: {integrity: sha512-gk9vDoDOjTys0DpLgFll+hYk5gLhLnTipi81Pl+XSRtWkQnqQdjxLO2RF726t0g0jQ5tvwjLfBCgsvusgB6Luw==}
     dev: false
 
   /secure-json-parse@2.7.0:
@@ -4263,7 +4260,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-jsx@5.1.3(react@18.3.1):
+  /styled-jsx@5.1.3(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-qLRShOWTE/Mf6Bvl72kFeKBl8N2Eq9WIFfoAuvbtP/6tqlnj1SCjv117n2MIjOPpa1jTorYqLJgsHKy5Y3ziww==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -4277,7 +4274,7 @@ packages:
         optional: true
     dependencies:
       client-only: 0.0.1
-      react: 18.3.1
+      react: 19.0.0-beta-4508873393-20240430
     dev: false
 
   /sucrase@3.35.0:
@@ -4337,13 +4334,13 @@ packages:
       dequal: 2.0.3
     dev: false
 
-  /swr@2.2.0(react@18.3.1):
+  /swr@2.2.0(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-AjqHOv2lAhkuUdIiBu9xbuettzAzWXmCEcLONNKJRba87WAefz8Ca9d6ds/SzrPc235n1IxWYdhJ2zF3MNUaoQ==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.3.1
-      use-sync-external-store: 1.2.2(react@18.3.1)
+      react: 19.0.0-beta-4508873393-20240430
+      use-sync-external-store: 1.2.2(react@19.0.0-beta-4508873393-20240430)
     dev: false
 
   /swrev@4.0.0:
@@ -4669,12 +4666,12 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /use-sync-external-store@1.2.2(react@18.3.1):
+  /use-sync-external-store@1.2.2(react@19.0.0-beta-4508873393-20240430):
     resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      react: 18.3.1
+      react: 19.0.0-beta-4508873393-20240430
     dev: false
 
   /utf-8-validate@6.0.3:
