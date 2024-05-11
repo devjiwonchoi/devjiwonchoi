@@ -2,7 +2,6 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Header, Footer, NavBar } from '@/components/layouts'
 
@@ -17,9 +16,7 @@ export default function RootLayout({
     <html
       className={cx(
         'bg-white text-black dark:bg-black dark:text-white',
-        // GeistSans.variable,
-        // GeistMono.variable,
-        GeistMono.className,
+        GeistMono.className
       )}
       lang="en"
     >

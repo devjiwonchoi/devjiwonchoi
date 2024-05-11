@@ -7,7 +7,7 @@ const Terminal = dynamic(
   {
     ssr: false,
     loading: () => <LoadingTerminal />,
-  },
+  }
 )
 
 export default function Landing() {

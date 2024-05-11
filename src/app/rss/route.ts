@@ -18,9 +18,9 @@ export async function GET() {
           <link>${PROD_BASE_URL}/blog/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
-            post.metadata.publishedAt,
+            post.metadata.publishedAt
           ).toUTCString()}</pubDate>
-        </item>`,
+        </item>`
     )
     .join('\n')
 
