@@ -1,7 +1,5 @@
 import NextBundleAnalyzer from '@next/bundle-analyzer'
 
-const isAnalyzeMode = Boolean(process.env.ANALYZE)
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -10,4 +8,11 @@ const nextConfig = {
   },
 }
 
-export default isAnalyzeMode ? NextBundleAnalyzer(nextConfig) : nextConfig
+export default Boolean(process.env.ANALYZE)
+  ? NextBundleAnalyzer({
+      enabled: true,
+      openAnalyzer: true,
+      analyzerMode: 'static',
+      logLevel: 'info',
+    })(nextConfig)
+  : nextConfig
