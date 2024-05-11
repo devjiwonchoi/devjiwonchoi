@@ -59,8 +59,8 @@ dependencies:
 
 devDependencies:
   '@next/bundle-analyzer':
-    specifier: ^14.2.3
-    version: 14.2.3
+    specifier: canary
+    version: 14.3.0-canary.57
   '@tailwindcss/postcss':
     specifier: next
     version: 4.0.0-alpha.15(postcss@8.4.38)
@@ -545,8 +545,8 @@ packages:
       '@types/pg': 8.6.6
     dev: false
 
-  /@next/bundle-analyzer@14.2.3:
-    resolution: {integrity: sha512-Z88hbbngMs7njZKI8kTJIlpdLKYfMSLwnsqYe54AP4aLmgL70/Ynx/J201DQ+q2Lr6FxFw1uCeLGImDrHOl2ZA==}
+  /@next/bundle-analyzer@14.3.0-canary.57:
+    resolution: {integrity: sha512-krsxAGZZR1IJukcGkBEdM9V2E6ix1N1TwM0XXMaE0gqOb1HXV9rFfYnGfUZtRO2R9S3G4OWCNesxXFG2IBkXrA==}
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
