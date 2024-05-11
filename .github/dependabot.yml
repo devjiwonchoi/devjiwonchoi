@@ -13,11 +13,13 @@ updates:
       - dependency-name: '@ai-sdk/*'
       - dependency-name: 'next'
       - dependency-name: 'ai'
+      - dependency-name: 'turbo'
       - dependency-name: 'geist'
     groups:
       canary:
         patterns:
           - 'next'
+          - 'turbo'
       dog-food:
         patterns:
           - '@vercel/*'
