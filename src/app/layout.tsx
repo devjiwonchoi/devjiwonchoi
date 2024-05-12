@@ -55,6 +55,7 @@ export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description,
   keywords,
+  metadataBase: new URL(PROD_BASE_URL),
   openGraph: {
     type: 'website',
     locale: 'en_US',
