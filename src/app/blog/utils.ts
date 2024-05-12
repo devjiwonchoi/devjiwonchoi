@@ -28,9 +28,20 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content }
 }
 
+// private files are prefixed with an underscore, e.g. _private-file.mdx
+// these files should not be visible in production
+function isPrivateFile(filename: string) {
+  return (
+    process.env.NODE_ENV === 'production' &&
+    path.basename(filename).startsWith('_')
+  )
+}
+
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) return []
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
+  return fs
+    .readdirSync(dir)
+    .filter((file) => path.extname(file) === '.mdx' && !isPrivateFile(file))
 }
 
 function readMDXFile(filePath: string) {
@@ -53,7 +64,7 @@ function getMDXData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'src', 'app', 'blog', 'posts'))
+  return getMDXData(path.join(process.cwd(), 'docs'))
 }
 
 export function formatDate(date: string, includeRelative = false) {
