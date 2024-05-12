@@ -1,16 +1,17 @@
 import type { MetadataRoute } from 'next'
 import { getBlogPosts } from '@/app/blog/utils'
-
-export const baseUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+import { PROD_BASE_URL } from '@/utils/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogs = getBlogPosts().map((post: any) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.metadata.dateModified,
-  }))
+  const blogs = getBlogPosts().map(
+    ({ slug, metadata: { datePublished, dateModified } }) => ({
+      url: `${PROD_BASE_URL}/blog/${slug}`,
+      lastModified: dateModified ?? datePublished,
+    })
+  )
 
   const routes = ['', '/blog'].map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${PROD_BASE_URL}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
