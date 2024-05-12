@@ -6,7 +6,7 @@ export const baseUrl = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogs = getBlogPosts().map((post: any) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
+    lastModified: post.metadata.dateModified,
   }))
 
   const routes = ['', '/blog'].map((route) => ({
