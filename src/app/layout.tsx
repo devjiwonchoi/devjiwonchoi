@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { GeistMono } from 'geist/font/mono'
 import { Header, Footer, NavBar } from '@/components/layouts'
+import { PROD_BASE_URL } from '@/utils/constants'
 
 const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
 
@@ -38,7 +39,7 @@ const description =
   'Jiwon Choi is a software engineer concentrating on web, cloud, and experience, an active contributor to Next.js, Vercel, and other open-source software.'
 
 const keywords = [
-  'Jiwon Choi',
+  'jiwon choi',
   'software',
   'engineer',
   'vercel',
@@ -54,31 +55,23 @@ export const metadata: Metadata = {
   title: 'Jiwon Choi',
   description,
   keywords,
-  metadataBase: new URL('https://www.jiwonchoi.dev'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.jiwonchoi.dev',
+    siteName: 'Jiwon Choi',
+    url: PROD_BASE_URL,
     images: [
       {
-        url: '/images/me-logo800x600.png',
+        url: '/img/me-logo800x600.png',
         width: 800,
         height: 600,
-        alt: 'Jiwon Choi Logo',
+        alt: 'devjiwonchoi logo',
       },
     ],
-    siteName: 'Jiwon Choi',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
   twitter: {
     creator: '@devjiwonchoi',
