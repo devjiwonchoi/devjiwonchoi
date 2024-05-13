@@ -7,8 +7,6 @@ import { GeistMono } from 'geist/font/mono'
 import { Header, Footer, NavBar } from '@/components/layouts'
 import { PROD_BASE_URL } from '@/utils/constants'
 
-const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
-
 export default function RootLayout({
   children,
 }: {
@@ -16,11 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html
-      className={cx(
-        'bg-white text-black dark:bg-black dark:text-white',
-        GeistMono.className
-      )}
       lang="en"
+      className={`bg-white text-black dark:bg-black dark:text-white ${GeistMono.className}`}
     >
       <body className="container mx-auto flex h-screen max-w-4xl flex-col">
         <Header />
@@ -40,14 +35,14 @@ const description =
 
 const keywords = [
   'jiwon choi',
-  'software',
-  'engineer',
+  'software engineer',
   'vercel',
   'nextjs',
   'open source',
   'web',
   'frontend',
   'cloud',
+  'developer',
   'experience',
 ]
 

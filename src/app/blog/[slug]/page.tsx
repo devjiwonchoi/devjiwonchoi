@@ -19,8 +19,8 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 
   let {
     title,
-    publishedAt: publishedTime,
-    summary: description,
+    datePublished: publishedTime,
+    description,
     image,
   } = post.metadata
   let ogImage = image
@@ -68,9 +68,9 @@ export default function Blog({ params }: { params: { slug: string } }) {
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
+            datePublished: post.metadata.datePublished,
+            dateModified: post.metadata.dateModified,
+            description: post.metadata.description,
             image: post.metadata.image
               ? `${PROD_BASE_URL}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
@@ -87,7 +87,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
       </h1>
       <div className="mt-2 mb-8 flex items-center justify-between text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+          {formatDate(post.metadata.datePublished)}
         </p>
       </div>
       <article className="prose">

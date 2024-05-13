@@ -1,11 +1,11 @@
 import type { MetadataRoute } from 'next'
-import { baseUrl } from '@/app/sitemap'
+import { PROD_BASE_URL } from '@/utils/constants'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${PROD_BASE_URL}/sitemap.xml`,
   }
 }

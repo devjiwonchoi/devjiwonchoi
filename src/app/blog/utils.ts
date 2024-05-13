@@ -3,9 +3,16 @@ import path from 'path'
 
 type Metadata = {
   title: string
-  publishedAt: string
-  summary: string
+  description: string
+  datePublished: string
+  dateModified?: string
   image?: string
+}
+
+type MDXData = {
+  metadata: Metadata
+  slug: string
+  content: string
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -28,9 +35,20 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content }
 }
 
+// private files are prefixed with an underscore, e.g. _private-file.mdx
+// these files should not be visible in production
+function isPrivateFile(filename: string) {
+  return (
+    process.env.NODE_ENV === 'production' &&
+    path.basename(filename).startsWith('_')
+  )
+}
+
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) return []
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
+  return fs
+    .readdirSync(dir)
+    .filter((file) => path.extname(file) === '.mdx' && !isPrivateFile(file))
 }
 
 function readMDXFile(filePath: string) {
@@ -38,7 +56,7 @@ function readMDXFile(filePath: string) {
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir: string) {
+function getMDXData(dir: string): MDXData[] {
   const mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file))
@@ -53,7 +71,7 @@ function getMDXData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'src', 'app', 'blog', 'posts'))
+  return getMDXData(path.join(process.cwd(), 'docs'))
 }
 
 export function formatDate(date: string, includeRelative = false) {
