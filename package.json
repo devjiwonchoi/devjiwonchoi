@@ -3,12 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --debug",
-    "build:analyze": "ANALYZE=true next build",
-    "build:profile": "next build --profile",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix"
+    "lint-fix": "prettier --write !pnpm-lock.yaml . && pnpm lint --fix",
+    "analyze": "ANALYZE=true pnpm build"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.10",
