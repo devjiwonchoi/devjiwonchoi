@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { IS_PROD } from '@/utils/constants'
 
 type Metadata = {
   title: string
@@ -38,10 +39,7 @@ function parseFrontmatter(fileContent: string) {
 // private files are prefixed with an underscore, e.g. _private-file.mdx
 // these files should not be visible in production
 function isPrivateFile(filename: string) {
-  return (
-    path.basename(filename).startsWith('_') &&
-    process.env.NODE_ENV === 'production'
-  )
+  return path.basename(filename).startsWith('_') && IS_PROD
 }
 
 function getMDXFiles(dir: string) {
