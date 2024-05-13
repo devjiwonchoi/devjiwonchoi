@@ -39,8 +39,8 @@ function parseFrontmatter(fileContent: string) {
 // these files should not be visible in production
 function isPrivateFile(filename: string) {
   return (
-    process.env.NODE_ENV === 'production' &&
-    path.basename(filename).startsWith('_')
+    path.basename(filename).startsWith('_') &&
+    process.env.NODE_ENV === 'production'
   )
 }
 
