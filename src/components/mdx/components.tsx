@@ -113,7 +113,10 @@ function createHeading(level: number) {
 }
 
 const components = {
-  h1: createHeading(1),
+  // h1: createHeading(1),
+  h1: () => {
+    throw new Error('Use the frontmatter title instead.')
+  },
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),

@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  background-color: #525252;
+  color: #ffffff;
 }
 
 :root {
@@ -30,6 +30,7 @@
 }
 
 html {
+  @apply bg-neutral-50 text-black dark:bg-black dark:text-neutral-50;
   min-width: 360px;
 }
 
@@ -84,15 +85,15 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4 text-neutral-800 dark:text-neutral-200 md:text-xl text-lg;
 }
 
-.prose h1 {
+/* .prose h1 {
   @apply mt-6 mb-2 text-4xl font-medium tracking-tight;
-}
+} */
 
 .prose h2 {
-  @apply mt-6 mb-2 text-xl font-medium tracking-tight;
+  @apply mt-6 mb-2 text-xl md:text-2xl font-medium tracking-tight;
 }
 
 .prose h3 {
@@ -104,7 +105,7 @@ html {
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-bold text-neutral-900 dark:text-neutral-50;
 }
 
 .prose ul {
@@ -113,6 +114,10 @@ html {
 
 .prose ol {
   @apply list-decimal pl-6;
+}
+
+.prose li {
+  @apply my-4 text-neutral-800 dark:text-neutral-200 md:text-xl text-lg;
 }
 
 .prose > :first-child {

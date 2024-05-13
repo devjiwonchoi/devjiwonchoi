@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
 import { Header, Footer, NavBar } from '@/components/layouts'
 import { PROD_BASE_URL } from '@/utils/constants'
 
@@ -13,11 +13,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`bg-white text-black dark:bg-black dark:text-white ${GeistMono.className}`}
-    >
-      <body className="container mx-auto flex h-screen max-w-4xl flex-col">
+    <html lang="en" className={GeistSans.className}>
+      <body className="container mx-auto flex h-screen max-w-2xl flex-col antialiased">
         <Header />
         <NavBar />
         {children}

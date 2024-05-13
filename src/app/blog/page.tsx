@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   keywords,
 }
 
-export default function Page() {
+export default function Blog() {
   return (
     <main className="mb-auto p-6">
       <BlogPosts />

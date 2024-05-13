@@ -39,8 +39,8 @@ function parseFrontmatter(fileContent: string) {
 // these files should not be visible in production
 function isPrivateFile(filename: string) {
   return (
-    process.env.NODE_ENV === 'production' &&
-    path.basename(filename).startsWith('_')
+    path.basename(filename).startsWith('_') &&
+    process.env.NODE_ENV === 'production'
   )
 }
 
@@ -71,7 +71,7 @@ function getMDXData(dir: string): MDXData[] {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'docs'))
+  return getMDXData(path.join(process.cwd(), 'public', 'docs'))
 }
 
 export function formatDate(date: string, includeRelative = false) {

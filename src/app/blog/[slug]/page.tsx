@@ -4,7 +4,7 @@ import { formatDate, getBlogPosts } from '@/app/blog/utils'
 import { PROD_BASE_URL } from '@/utils/constants'
 
 export async function generateStaticParams() {
-  let posts = getBlogPosts()
+  const posts = getBlogPosts()
 
   return posts.map((post: any) => ({
     slug: post.slug,
@@ -12,18 +12,18 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
-  let post = getBlogPosts().find((post: any) => post.slug === params.slug)
+  const post = getBlogPosts().find((post: any) => post.slug === params.slug)
   if (!post) {
     return {}
   }
 
-  let {
+  const {
     title,
     datePublished: publishedTime,
     description,
     image,
   } = post.metadata
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${PROD_BASE_URL}/og?title=${encodeURIComponent(title)}`
 
@@ -52,14 +52,14 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 }
 
 export default function Blog({ params }: { params: { slug: string } }) {
-  let post = getBlogPosts().find((post: any) => post.slug === params.slug)
+  const post = getBlogPosts().find((post: any) => post.slug === params.slug)
 
   if (!post) {
     notFound()
   }
 
   return (
-    <section>
+    <main className="mb-auto p-6">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,17 +82,17 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="title text-2xl font-semibold tracking-tighter">
+      <h1 className="title text-4xl font-semibold tracking-tighter md:text-5xl">
         {post.metadata.title}
       </h1>
-      <div className="mt-2 mb-8 flex items-center justify-between text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="mt-2 mb-8 flex items-center justify-between">
+        <p className="text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.datePublished)}
         </p>
       </div>
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
-    </section>
+    </main>
   )
 }
