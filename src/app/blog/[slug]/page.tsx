@@ -59,7 +59,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <main className="mb-auto p-6">
+    <main className="mb-auto">
       <script
         type="application/ld+json"
         suppressHydrationWarning

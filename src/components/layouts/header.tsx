@@ -1,21 +1,14 @@
-import Image from 'next/image'
-import meLogo from 'public/img/me-logo.svg'
+import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="flex flex-col items-center pt-12 md:pt-20">
-      <Image
-        src={meLogo}
-        alt="Jiwon Choi Logo"
-        className="h-20 w-20"
-        priority
-      />
-      <h1 className="mb-4 text-4xl font-bold text-neutral-50 sm:text-4xl">
-        Jiwon Choi
-      </h1>
-      <h2 className="text-lg uppercase tracking-widest text-neutral-50">
-        Software Engineer
-      </h2>
+    <header className="my-4 md:my-10">
+      <Link href="/" className="flex w-fit flex-col" title="link back to home">
+        <span className="text-2xl font-bold">Jiwon Choi</span>
+        <span className="text-neutral-200">software engineer</span>
+        <span className="text-black">{'// '}TODO: Uncomment below:</span>
+        <span className="text-black">{'// '}engineer ▲ Vercel</span>
+      </Link>
     </header>
   )
 }

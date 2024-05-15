@@ -14,9 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="container mx-auto flex h-screen max-w-2xl flex-col antialiased">
+      <body className="container mx-auto flex h-screen max-w-2xl flex-col p-6 antialiased">
         <Header />
-        <NavBar />
+        {/* <NavBar /> */}
         {children}
         <Footer />
         <Analytics />
