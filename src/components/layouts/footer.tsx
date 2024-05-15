@@ -8,7 +8,7 @@ import linkedinLogo from 'public/img/linkedin-logo.svg'
 export function Footer() {
   const thisYear = new Date().getUTCFullYear()
   return (
-    <footer className="flex items-center justify-between p-6">
+    <footer className="flex items-center justify-between">
       <div className="text-sm tracking-tight text-neutral-400">
         © {thisYear} devjiwonchoi
       </div>

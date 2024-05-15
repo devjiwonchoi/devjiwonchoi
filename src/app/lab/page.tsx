@@ -13,7 +13,7 @@ const Terminal = dynamic(
 export default function Landing() {
   // import terminal conditionally based on screen size
   const isMd = useMediaQuery('(min-width: 768px)')
-  return <main className="mb-auto p-6">{isMd && <Terminal />}</main>
+  return <main className="mb-auto">{isMd && <Terminal />}</main>
 }
 
 // TODO: Is this really unable to be in a separate file?

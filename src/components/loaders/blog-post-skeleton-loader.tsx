@@ -16,7 +16,7 @@ function BlogPostSkeleton() {
 
 export function BlogPostSkeletonLoader() {
   return (
-    <main className="mb-auto p-6">
+    <main className="mb-auto">
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-neutral-200 sm:text-3xl">
         Blog
       </h2>

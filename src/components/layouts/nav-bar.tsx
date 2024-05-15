@@ -9,7 +9,7 @@ const navItems = [
 
 export function NavBar() {
   return (
-    <nav className="p-6">
+    <nav className="">
       <ul className="flex justify-center space-x-6">
         {navItems.map(({ path, name }) => (
           <li key={path}>
