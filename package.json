@@ -1,6 +1,6 @@
 {
   "name": "jiwonchoi.dev",
-  "license": "MIT",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -52,7 +52,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": [
       "prettier --write",
-      "next lint --fix"
+      "eslint --no-ignore --max-warnings=0 --fix"
     ],
     "*.{md,json,yml,yaml}": [
       "prettier --write"
