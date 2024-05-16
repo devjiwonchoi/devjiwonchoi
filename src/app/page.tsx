@@ -7,7 +7,6 @@ export default function Page() {
       <div className="my-8">
         <BlogPosts />
       </div>
-      f u 3
     </main>
   )
 }
