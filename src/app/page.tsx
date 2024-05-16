@@ -8,6 +8,6 @@ export default function Page() {
         <BlogPosts />
       </div>
     
-    f u 2</main>
+    f u 3</main>
   )
 }
