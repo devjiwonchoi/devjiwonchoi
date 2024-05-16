@@ -1,5 +1,6 @@
 {
   "name": "jiwonchoi.dev",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
