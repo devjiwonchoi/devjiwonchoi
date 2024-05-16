@@ -79,6 +79,9 @@ devDependencies:
   eslint-config-next:
     specifier: canary
     version: 14.3.0-canary.63(eslint@8.57.0)(typescript@5.4.5)
+  husky:
+    specifier: ^9.0.11
+    version: 9.0.11
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -3222,6 +3225,12 @@ packages:
   /human-signals@1.1.1:
     resolution: {integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==}
     engines: {node: '>=8.12.0'}
+    dev: true
+
+  /husky@9.0.11:
+    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
+    engines: {node: '>=18'}
+    hasBin: true
     dev: true
 
   /iconv-lite@0.4.24:
