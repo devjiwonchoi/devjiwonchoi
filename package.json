@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write && pnpm lint --fix",
+    "lint-fix": "prettier --write . && pnpm lint --fix",
     "analyze": "ANALYZE=true pnpm build",
     "tb": "pnpm turbo build",
     "prepare": "husky install"
@@ -48,7 +48,13 @@
     "vercel": "^34.2.0"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx,md,mdx,json,yml,yaml}": "prettier --write ."
+    "**/*.{js,jsx,ts,tsx,mdx}": [
+      "prettier --write .",
+      "eslint --max-warnings=0 --fix"
+    ],
+    "**/*.{json,md,yml,yaml}": [
+      "prettier --write ."
+    ]
   },
   "prettier": {
     "semi": false,
