@@ -9,7 +9,7 @@
     "lint-fix": "prettier --write . && pnpm lint --fix",
     "analyze": "ANALYZE=true pnpm build",
     "tb": "pnpm turbo build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.13",
