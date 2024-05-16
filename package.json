@@ -44,22 +44,5 @@
     "turbo": "canary",
     "typescript": "^5.4.5",
     "vercel": "^34.2.0"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": false,
-    "trailingComma": "es5",
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "next/core-web-vitals"
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {}
-    }
   }
 }

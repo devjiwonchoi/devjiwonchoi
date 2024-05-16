@@ -46,3 +46,9 @@ test-results/
 
 # MDX output
 public/mdx/
+
+# .config
+/.prettierrc.json
+/.eslintrc.json
+/postcss.config.js
+/tailwind.config.ts
