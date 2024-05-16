@@ -4,8 +4,9 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { GeistSans } from 'geist/font/sans'
-import { Header, Footer, NavBar } from '@/components/layouts'
+import { Header, Footer } from '@/components/layouts'
 import { PROD_BASE_URL } from '@/utils/constants'
+import { Main } from '@/components/layouts/main'
 
 export default function RootLayout({
   children,
@@ -14,11 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="container mx-auto flex h-screen max-w-2xl flex-col p-6 antialiased">
+      <body className="container mx-auto flex min-h-screen max-w-2xl flex-col p-6 antialiased">
         <Header />
-        {/* <NavBar /> */}
-        {children}
+        <Main>{children}</Main>
         <Footer />
+
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics gaId="G-LN6X9NBPXX" />
