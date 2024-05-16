@@ -53,7 +53,7 @@ function RoundedImage(props: { alt: string; src: string }) {
 
 function Callout(props: { emoji: string; children: React.ReactNode }) {
   return (
-    <div className="mb-8 flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 py-3 px-4 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
+    <div className="mb-8 flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-4 py-3 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100">
       <div className="mr-4 flex w-4 items-center">{props.emoji}</div>
       <div className="callout w-full">{props.children}</div>
     </div>

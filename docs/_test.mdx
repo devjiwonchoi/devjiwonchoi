@@ -36,19 +36,19 @@ These solutions must be:
 Consider databases like Postgres. New solutions like Neon and Supabase abstract connection management, providing you with a simple way to query and mutate data. In the case of Supabase, there's a client library that uses an HTTP API [built on PostgREST](https://supabase.com/docs/guides/api):
 
 ```jsx
-import { createClient } from '@supabase/supabase-js';
-let supabase = createClient('https://<project>.supabase.co', '<your-anon-key>');
-let { data } = await supabase.from('countries').select();
+import { createClient } from '@supabase/supabase-js'
+let supabase = createClient('https://<project>.supabase.co', '<your-anon-key>')
+let { data } = await supabase.from('countries').select()
 ```
 
 And for Neon:
 
 ```jsx
-import { Client } from '@neondatabase/serverless';
-let client = new Client(env.DATABASE_URL);
+import { Client } from '@neondatabase/serverless'
+let client = new Client(env.DATABASE_URL)
 let {
   rows: [{ now }],
-} = await client.query('select now();');
+} = await client.query('select now();')
 ```
 
 Neon's solution is [particularly interesting](https://neon.tech/blog/serverless-driver-for-postgres/).
