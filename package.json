@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "prettier --write . && pnpm lint --fix",
+    "lint-fix": "prettier --write . && next lint --fix",
     "analyze": "ANALYZE=true pnpm build",
     "tb": "pnpm turbo build",
     "prepare": "husky"
@@ -50,8 +50,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,mdx}": [
-      "prettier --write .",
-      "eslint --max-warnings=0 --fix"
+      "pnpm lint-fix"
     ],
     "**/*.{json,md,yml,yaml}": [
       "prettier --write ."
