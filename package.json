@@ -49,12 +49,7 @@
     "vercel": "^34.2.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,mdx}": [
-      "pnpm lint-fix"
-    ],
-    "**/*.{json,md,yml,yaml}": [
-      "prettier --write ."
-    ]
+    "*.{js,jsx,ts,tsx,md,mdx,json,yml,yaml}": "prettier --write"
   },
   "prettier": {
     "semi": false,
