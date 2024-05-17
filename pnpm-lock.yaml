@@ -103,9 +103,6 @@ devDependencies:
   turbo:
     specifier: canary
     version: 1.13.4-canary.4
-  turbo-ignore:
-    specifier: canary
-    version: 1.13.4-canary.4
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
@@ -6002,11 +5999,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /turbo-ignore@1.13.4-canary.4:
-    resolution: {integrity: sha512-2pQgH9ycEuyOi4me742BGFGc7JPDm+O51Yz43eVFd3z5//QIvCnIXamECqDU9WKHpv7lWIMZnwKvtI5l2QoDTQ==}
-    hasBin: true
-    dev: true
 
   /turbo-linux-64@1.13.4-canary.4:
     resolution: {integrity: sha512-rQfc1vyv2xAoOq4865ato1elDvOaChrv14nZ1twl9GBOI71Kga2z0J6abETl3YPW5nj21nl4EOwJ1dd77/sa0Q==}
