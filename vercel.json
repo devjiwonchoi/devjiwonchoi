@@ -1,3 +1,5 @@
 {
-  "buildCommand": "pnpm turbo build"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm turbo build",
+  "ignoreCommand": "pnpm turbo-ignore"
 }
