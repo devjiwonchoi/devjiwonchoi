@@ -1,6 +1,5 @@
 {
   "name": "jiwonchoi.dev",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -37,6 +36,7 @@
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
+    "babel-plugin-react-compiler": "0.0.0-experimental-592953e-20240517",
     "eslint": "^8.57.0",
     "eslint-config-next": "canary",
     "eslint-config-prettier": "^9.1.0",
