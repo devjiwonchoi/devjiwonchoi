@@ -33,8 +33,8 @@ dependencies:
     specifier: ^5.5.0
     version: 5.5.0
   ai:
-    specifier: ^3.1.11
-    version: 3.1.11(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.17)(vue@3.4.27)(zod@3.23.8)
+    specifier: ^3.1.12
+    version: 3.1.12(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.17)(vue@3.4.27)(zod@3.23.8)
   geist:
     specifier: ^1.3.0
     version: 1.3.0(next@14.3.0-canary.70)
@@ -267,8 +267,8 @@ packages:
       '@edge-runtime/primitives': 4.1.0
     dev: true
 
-  /@emnapi/runtime@1.1.1:
-    resolution: {integrity: sha512-3bfqkzuR1KLx57nZfjr2NLnFOobvyS0aTszaEGCGqmYMVDRaGvgIZbjGSV/MHSSmLgQ/b9JFHQ5xm5WRZYd+XQ==}
+  /@emnapi/runtime@1.2.0:
+    resolution: {integrity: sha512-bV21/9LQmcQeCPEg3BDFtvwL6cwiTMksYNWQQ4KOxCZikEGalWtenoZ0wCiukJINlGCIi2KXx01g4FoH/LxpzQ==}
     requiresBuild: true
     dependencies:
       tslib: 2.6.2
@@ -503,7 +503,7 @@ packages:
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@emnapi/runtime': 1.1.1
+      '@emnapi/runtime': 1.2.0
     dev: false
     optional: true
 
@@ -1398,8 +1398,8 @@ packages:
       - supports-color
     dev: true
 
-  /ai@3.1.11(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.17)(vue@3.4.27)(zod@3.23.8):
-    resolution: {integrity: sha512-NDzGrVVJDGrTk2zI3j+2CemJHagKwQRr+2ymAncKAZrMcnPy19aAOlhp4X2Llb005zkMD1R19DY4O/a1JB0K+Q==}
+  /ai@3.1.12(react@19.0.0-beta-4508873393-20240430)(solid-js@1.8.17)(svelte@4.2.17)(vue@3.4.27)(zod@3.23.8):
+    resolution: {integrity: sha512-XlurBw1sdgQCFmCTPYjKjpm+fPS6iY+tLb/PYNUEjZn3bhqosAkcqUkGJTsFP49OMAWO1Lm2oPthCakKcn6Lzw==}
     engines: {node: '>=18'}
     peerDependencies:
       openai: ^4.42.0
