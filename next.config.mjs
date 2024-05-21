@@ -4,7 +4,6 @@ import NextBundleAnalyzer from '@next/bundle-analyzer'
 const nextConfig = {
   experimental: {
     ppr: true,
-    reactCompiler: true,
     typedRoutes: true,
   },
 }
