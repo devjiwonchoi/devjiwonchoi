@@ -50,7 +50,7 @@
     "vercel": "^34.2.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,mdx}": [
+    "*.{js,mjs,ts,tsx,mdx}": [
       "prettier --write",
       "eslint --no-ignore --max-warnings=0 --fix"
     ],
