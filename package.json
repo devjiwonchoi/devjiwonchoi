@@ -50,11 +50,11 @@
     "vercel": "^34.2.3"
   },
   "lint-staged": {
-    "*.{js,mjs,ts,tsx,mdx}": [
+    "*.{js,mjs,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --no-ignore --max-warnings=0 --fix"
+      "next lint --fix --file"
     ],
-    "*.{md,json,yml,yaml}": [
+    "*.{css,scss,json,jsonc,md,mdx,yml,yaml}": [
       "prettier --write"
     ]
   },
