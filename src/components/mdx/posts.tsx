@@ -6,6 +6,7 @@ export function BlogPosts() {
   return (
     <div>
       {blogPosts
+        .filter(({ isReady }) => isReady)
         .sort((a, b) => {
           if (
             new Date(a.metadata.datePublished) >
@@ -15,24 +16,27 @@ export function BlogPosts() {
           }
           return 1
         })
-        .map((post) => (
-          <Link
-            key={post.slug}
-            className="mb-4 flex flex-col space-y-1"
-            href={`/blog/${post.slug}`}
-          >
-            <div className="flex w-full flex-col space-x-0 md:flex-row md:space-x-2">
-              <div className="">
-                <p className="font-semibold tracking-tighter text-neutral-900 md:text-xl dark:text-neutral-100">
-                  {post.metadata.title}
-                </p>
-                <p className="text-sm tracking-tighter text-neutral-600 dark:text-neutral-400">
-                  {formatDate(post.metadata.datePublished, false)}
-                </p>
-              </div>
-            </div>
-          </Link>
-        ))}
+        .map(
+          (post) =>
+            post.isReady && (
+              <Link
+                key={post.slug}
+                className="mb-4 flex flex-col space-y-1"
+                href={`/blog/${post.slug}`}
+              >
+                <div className="flex w-full flex-col space-x-0 md:flex-row md:space-x-2">
+                  <div className="">
+                    <p className="font-semibold tracking-tighter text-neutral-900 md:text-xl dark:text-neutral-100">
+                      {post.metadata.title}
+                    </p>
+                    <p className="text-sm tracking-tighter text-neutral-600 dark:text-neutral-400">
+                      {formatDate(post.metadata.datePublished, false)}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            )
+        )}
     </div>
   )
 }

@@ -3,12 +3,12 @@ import { getBlogPosts } from '@/app/blog/utils'
 import { PROD_BASE_URL } from '@/utils/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogs = getBlogPosts().map(
-    ({ slug, metadata: { datePublished, dateModified } }) => ({
+  const blogs = getBlogPosts()
+    .filter(({ isReady }) => isReady)
+    .map(({ slug, metadata: { datePublished, dateModified } }) => ({
       url: `${PROD_BASE_URL}/blog/${slug}`,
       lastModified: dateModified ?? datePublished,
-    })
-  )
+    }))
 
   const routes = ['', '/blog'].map((route) => ({
     url: `${PROD_BASE_URL}${route}`,
