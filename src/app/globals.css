@@ -152,6 +152,7 @@ table {
   white-space: nowrap;
 }
 
-.title {
+/* I don't like the balance for title, prefer the line ends equivalently. */
+/* .title {
   text-wrap: balance;
-}
+} */

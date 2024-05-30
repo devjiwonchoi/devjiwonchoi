@@ -2,9 +2,9 @@ import { PROD_BASE_URL } from '@/utils/constants'
 import { getBlogPosts } from '@/app/blog/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
-
-  const itemsXml = allBlogs
+  const blogPosts = await getBlogPosts()
+  const itemsXml = blogPosts
+    .filter(({ isReady }) => isReady)
     .sort((a: any, b: any) => {
       if (
         new Date(a.metadata.datePublished) > new Date(b.metadata.datePublished)

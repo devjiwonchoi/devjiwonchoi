@@ -82,7 +82,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="title text-4xl font-semibold tracking-tighter md:text-5xl">
+      <h1 className="title text-3xl font-semibold tracking-tighter text-white md:text-4xl">
         {post.metadata.title}
       </h1>
       <div className="mb-8 mt-2 flex items-center justify-between">
@@ -90,7 +90,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           {formatDate(post.metadata.datePublished)}
         </p>
       </div>
-      <article className="prose">
+      <article className="prose dark:prose-invert">
         <CustomMDX source={post.content} />
       </article>
     </main>

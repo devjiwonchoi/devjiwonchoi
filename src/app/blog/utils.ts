@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { IS_PROD } from '@/utils/constants'
+import { IS_DEV } from '@/utils/constants'
 
 type Metadata = {
   title: string
@@ -11,6 +11,7 @@ type Metadata = {
 }
 
 type MDXData = {
+  isReady: boolean
   metadata: Metadata
   slug: string
   content: string
@@ -37,16 +38,14 @@ function parseFrontmatter(fileContent: string) {
 }
 
 // private files are prefixed with an underscore, e.g. _private-file.mdx
-// these files should not be visible in production
-function isPrivateFile(filename: string) {
-  return path.basename(filename).startsWith('_') && IS_PROD
+// these files are not ready for production
+function isReady(filename: string) {
+  return IS_DEV || !path.basename(filename).startsWith('_')
 }
 
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) return []
-  return fs
-    .readdirSync(dir)
-    .filter((file) => path.extname(file) === '.mdx' && !isPrivateFile(file))
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
 }
 
 function readMDXFile(filePath: string) {
@@ -64,12 +63,13 @@ function getMDXData(dir: string): MDXData[] {
       metadata,
       slug,
       content,
+      isReady: isReady(file),
     }
   })
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'docs'))
+  return getMDXData(path.join(process.cwd(), 'src/app/blog/posts'))
 }
 
 export function formatDate(date: string, includeRelative = false) {

@@ -20,6 +20,7 @@
     "@ai-sdk/openai": "^0.0.17",
     "@next/bundle-analyzer": "canary",
     "@next/third-parties": "^14.2.3",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
@@ -50,11 +51,11 @@
     "vercel": "^34.2.3"
   },
   "lint-staged": {
-    "*.{js,mjs,ts,tsx,mdx}": [
+    "*.{js,mjs,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --no-ignore --max-warnings=0 --fix"
+      "next lint --fix --file"
     ],
-    "*.{md,json,yml,yaml}": [
+    "*.{css,json,md,mdx,yml,yaml}": [
       "prettier --write"
     ]
   },
