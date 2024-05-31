@@ -42,7 +42,7 @@
     "next-auth": "beta",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14",
+    "prettier-plugin-tailwindcss": "^0.6.0",
     "remote-mdx": "^0.0.8",
     "sugar-high": "^0.6.1",
     "tailwindcss": "^3.4.3",
