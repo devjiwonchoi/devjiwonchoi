@@ -17,7 +17,7 @@
     "react-dom": "rc"
   },
   "devDependencies": {
-    "@ai-sdk/openai": "^0.0.18",
+    "@ai-sdk/openai": "^0.0.21",
     "@next/bundle-analyzer": "canary",
     "@next/third-parties": "^14.2.3",
     "@tailwindcss/typography": "^0.5.13",
@@ -32,7 +32,7 @@
     "@xterm/addon-web-links": "^0.11.0",
     "@xterm/addon-webgl": "^0.18.0",
     "@xterm/xterm": "^5.5.0",
-    "ai": "^3.1.26",
+    "ai": "^3.1.27",
     "eslint": "^8.57.0",
     "eslint-config-next": "canary",
     "eslint-config-prettier": "^9.1.0",
