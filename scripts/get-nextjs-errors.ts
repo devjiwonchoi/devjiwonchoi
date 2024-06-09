@@ -31,26 +31,9 @@ type NextDoc = {
   content: string
 }
 
-async function isValidURL(url: string) {
-  try {
-    new URL(url)
-    const response = await fetch(url, { method: 'HEAD' })
-    return response.ok
-  } catch (error) {
-    console.error(error)
-    return false
-  }
-}
-
 async function errorPathToProdURL(path: string) {
   const prodPath = path.replace('errors/', 'docs/messages/').replace('.mdx', '')
-  const prodUrl = `https://nextjs.org/${prodPath}`
-
-  if (await isValidURL(prodUrl)) {
-    return prodUrl
-  }
-
-  return ''
+  return `https://nextjs.org/${prodPath}`
 }
 
 async function getNextJSErrors(endpoint?: string): Promise<NextDoc[]> {
@@ -61,46 +44,53 @@ async function getNextJSErrors(endpoint?: string): Promise<NextDoc[]> {
     endpoint,
   })
 
-  const docs = []
-  for (const { type, name, url, path, sha, size } of response) {
-    console.log(`Fetched ${name}`)
-    if (type === 'file' && name.endsWith('.mdx')) {
-      const file = await fetchGitHubAPI({
-        url: url,
-      })
-      const content = Buffer.from(file.content, file.encoding).toString('utf-8')
-      const nextDoc: NextDoc = {
-        path,
-        docUrl: url,
-        prodUrl: await errorPathToProdURL(path),
-        sha,
-        size,
-        content,
+  const docs: NextDoc[] = []
+  const job = response.map(
+    async ({ type, name, url, html_url, path, sha, size }) => {
+      if (type === 'file' && name.endsWith('.mdx')) {
+        const file = await fetchGitHubAPI({
+          url,
+        })
+        const content = Buffer.from(file.content, file.encoding).toString(
+          'utf-8'
+        )
+        const nextDoc: NextDoc = {
+          path,
+          docUrl: html_url,
+          prodUrl: await errorPathToProdURL(path),
+          sha,
+          size,
+          content,
+        }
+        docs.push(nextDoc)
+      } else if (type === 'dir') {
+        docs.push(...(await getNextJSErrors(path)))
+      } else {
+        console.log(`Skipped ${name}`)
       }
-      docs.push(nextDoc)
-      continue
     }
-    if (type === 'dir') {
-      docs.push(...(await getNextJSErrors(path)))
-    }
-  }
+  )
 
+  await Promise.all(job)
   return docs
 }
 
 async function main() {
   console.log('Fetching Next.js error docs...')
 
-  const docs = await getNextJSErrors()
-  console.log(`Fetched ${docs.length} error docs.`)
+  let docs: NextDoc[] = []
+  const start = Date.now()
+  try {
+    docs = await getNextJSErrors()
+  } finally {
+    console.log(`Finished in ${Date.now() - start}ms`)
+    console.log(`Fetched ${docs.length} docs`)
 
-  console.log('Writing to nextjs-errors.json...')
-  await writeFile(
-    join(process.cwd(), 'nextjs-errors.json'),
-    JSON.stringify(docs)
-  )
-
-  console.log('Done!')
+    await writeFile(
+      join(process.cwd(), 'nextjs-errors.json'),
+      JSON.stringify(docs)
+    )
+  }
 }
 
 main().catch(console.error)
