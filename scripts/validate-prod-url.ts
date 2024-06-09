@@ -11,8 +11,13 @@ export async function isValidURL(url: string) {
   }
 }
 
-const nextjsDocsJSON = join(process.cwd(), 'nextjs-docs.json')
-const nextjsErrorsJSON = join(process.cwd(), 'nextjs-errors.json')
+const nextjsDocsJSON = join(process.cwd(), 'public', 'json', 'nextjs-docs.json')
+const nextjsErrorsJSON = join(
+  process.cwd(),
+  'public',
+  'json',
+  'nextjs-errors.json'
+)
 
 async function validateProdURL(jsonPath: string) {
   const json = require(jsonPath)

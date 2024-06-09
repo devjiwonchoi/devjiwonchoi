@@ -87,7 +87,7 @@ async function main() {
     console.log(`Fetched ${docs.length} docs`)
 
     await writeFile(
-      join(process.cwd(), 'nextjs-errors.json'),
+      join(process.cwd(), 'public', 'json', 'nextjs-errors.json'),
       JSON.stringify(docs)
     )
   }
