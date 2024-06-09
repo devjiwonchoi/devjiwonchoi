@@ -46,6 +46,8 @@ export async function commit(username: string) {
 
   const response = await createOrUpdateFile(username)
   if (response.content.name) {
-    return 'Successfully committed!'
+    return 'Success'
   }
+
+  return 'Failed'
 }

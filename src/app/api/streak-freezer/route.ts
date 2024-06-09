@@ -1,5 +1,6 @@
 import { commit } from './commit'
 import { hasActivityToday } from './has-activity-today'
+import { sendEmail } from './send-email'
 
 export async function GET(request: Request) {
   const username = process.env.GITHUB_USERNAME
@@ -21,5 +22,7 @@ export async function GET(request: Request) {
   }
 
   const response = await commit(username)
+  await sendEmail(response)
+
   return new Response(response, { status: 201 })
 }
