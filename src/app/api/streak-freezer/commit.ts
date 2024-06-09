@@ -1,7 +1,7 @@
-import { fetcher } from './fetcher'
+import { fetchGitHubAPI } from '@/utils/fetch-github-api'
 
 async function validateUsername(username: string) {
-  const user = await fetcher({
+  const user = await fetchGitHubAPI({
     endpoint: `/users/${username}`,
   })
 
@@ -9,7 +9,7 @@ async function validateUsername(username: string) {
 }
 
 async function getSha(username: string) {
-  const repo = await fetcher({
+  const repo = await fetchGitHubAPI({
     endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
   })
 
@@ -26,7 +26,7 @@ The latest streak freezed was: ${new Date().toISOString()}
 
 async function createOrUpdateFile(username: string) {
   const sha = await getSha(username)
-  const response = await fetcher({
+  const response = await fetchGitHubAPI({
     endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
     method: 'PUT',
     body: JSON.stringify({

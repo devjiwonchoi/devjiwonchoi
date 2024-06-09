@@ -1,7 +1,7 @@
-import { fetcher } from './fetcher'
+import { fetchGitHubAPI } from '@/utils/fetch-github-api'
 
 export async function hasActivityToday(username: string) {
-  const userEvents = await fetcher({
+  const userEvents = await fetchGitHubAPI({
     endpoint: `/users/${username}/events`,
   })
 

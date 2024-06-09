@@ -4,5 +4,5 @@
     "*.ts": "$(capture).test.ts, $(capture).test.tsx",
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx"
   },
-  "cSpell.words": ["jiwonchoi", "tailwindcss", "webgl"]
+  "cSpell.words": ["jiwonchoi", "nextjs", "tailwindcss", "webgl"]
 }
