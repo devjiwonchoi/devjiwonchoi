@@ -1,7 +1,9 @@
+import type { Embedding } from 'ai'
+import dotenv from 'dotenv'
 import { writeFile } from 'fs/promises'
 import { join } from 'path'
+import { generateEmbeddings } from './generate-embeddings'
 import { fetchGitHubAPI } from '../src/utils/fetch-github-api'
-import dotenv from 'dotenv'
 
 dotenv.config({ path: join(process.cwd(), '.env.local') })
 
@@ -28,7 +30,7 @@ type NextDoc = {
   prodUrl: string
   sha: string
   size: number
-  content: string
+  embeddings: Embedding[]
 }
 
 async function docPathToProdURL(path: string) {
@@ -60,13 +62,14 @@ async function getNextJSDocs(endpoint?: string): Promise<NextDoc[]> {
         const content = Buffer.from(file.content, file.encoding).toString(
           'utf-8'
         )
+        const embeddings = await generateEmbeddings(content)
         const nextDoc: NextDoc = {
           path,
           docUrl: html_url,
           prodUrl: await docPathToProdURL(path),
           sha,
           size,
-          content,
+          embeddings,
         }
         docs.push(nextDoc)
       } else if (type === 'dir') {
