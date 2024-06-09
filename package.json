@@ -9,6 +9,10 @@
     "lint-fix": "prettier --write . && next lint --fix",
     "analyze": "ANALYZE=true pnpm build",
     "tb": "pnpm turbo build",
+    "get-nextjs-docs": "npx tsx ./scripts/get-nextjs-docs.ts",
+    "get-nextjs-errors": "npx tsx ./scripts/get-nextjs-errors.ts",
+    "validate-prod-url": "npx tsx ./scripts/validate-prod-url.ts",
+    "get-nextjs-json": "pnpm get-nextjs-docs && pnpm get-nextjs-errors",
     "prepare": "husky"
   },
   "dependencies": {
