@@ -1,5 +1,5 @@
-import { hasActivityToday } from './has-activity-today'
 import { commit } from './commit'
+import { hasActivityToday } from './has-activity-today'
 
 export async function GET(request: Request) {
   const username = process.env.GITHUB_USERNAME

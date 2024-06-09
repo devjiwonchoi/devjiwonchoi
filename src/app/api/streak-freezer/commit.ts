@@ -1,19 +1,19 @@
 import { fetcher } from './fetcher'
 
 async function validateUsername(username: string) {
-  const response = await fetcher({
+  const user = await fetcher({
     endpoint: `/users/${username}`,
   })
 
-  return response.login === username
+  return user.login === username
 }
 
 async function getSha(username: string) {
-  const response = await fetcher({
+  const repo = await fetcher({
     endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
   })
 
-  return response.sha
+  return repo.sha
 }
 
 const content = `
@@ -26,9 +26,6 @@ The latest streak freezed was: ${new Date().toISOString()}
 
 async function createOrUpdateFile(username: string) {
   const sha = await getSha(username)
-  console.log(
-    `https://api.github.com/repos/${username}/${username}/contents/github-streak-freezer.md`
-  )
   const response = await fetcher({
     endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
     method: 'PUT',
@@ -38,8 +35,6 @@ async function createOrUpdateFile(username: string) {
       sha,
     }),
   })
-
-  console.log(response)
 
   return response
 }
