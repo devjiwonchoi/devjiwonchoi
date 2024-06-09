@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm turbo build"
+  "buildCommand": "pnpm turbo build",
+  "crons": [
+    {
+      "path": "/api/streak-freezer",
+      "schedule": "0 0 * * *"
+    }
+  ]
 }
