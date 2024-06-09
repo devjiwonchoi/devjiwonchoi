@@ -1,19 +1,19 @@
 import { fetcher } from './fetcher'
 
 export async function hasActivityToday(username: string) {
-  const userEvents: Record<string, string | number | boolean>[] = await fetcher(
-    {
-      endpoint: `/users/${username}/events`,
-    }
-  )
+  const userEvents = await fetcher({
+    endpoint: `/users/${username}/events`,
+  })
 
-  const today = new Date().toISOString().split('T')[0]
-  if (!today) {
-    throw new Error('Failed to get today.')
-  }
-  const hasActivity: boolean = userEvents.some(
-    (event) => event.public && (event.created_at as string).includes(today)
-  )
+  const today = new Date().toISOString().split('T')[0]! // YYYY-MM-DD
 
-  return hasActivity
+  return userEvents.some(
+    (event: { public: boolean; created_at: string; type: string }) =>
+      // is public
+      event.public &&
+      // is today
+      event.created_at.startsWith(today) &&
+      // is push
+      event.type === 'PushEvent'
+  ) as boolean
 }

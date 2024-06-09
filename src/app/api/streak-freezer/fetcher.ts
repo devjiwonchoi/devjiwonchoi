@@ -1,5 +1,3 @@
-export const GITHUB_API_URL = 'https://api.github.com'
-
 export async function fetcher({
   endpoint,
   method = 'GET',
@@ -9,7 +7,17 @@ export async function fetcher({
   method?: string
   body?: string
 }) {
+  if (!process.env.GITHUB_ACCESS_TOKEN) {
+    throw new Error('env.GITHUB_ACCESS_TOKEN is not set.')
+  }
+
+  if (!endpoint.startsWith('/')) {
+    endpoint = `/${endpoint}`
+  }
+
+  const GITHUB_API_URL = 'https://api.github.com'
   const url = `${GITHUB_API_URL}${endpoint}`
+
   try {
     const response = await fetch(url, {
       headers: {
@@ -20,7 +28,8 @@ export async function fetcher({
       body,
     })
 
-    return await response.json()
+    const data = await response.json()
+    return data
   } catch (error) {
     throw error
   }

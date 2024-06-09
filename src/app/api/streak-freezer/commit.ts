@@ -25,28 +25,32 @@ The latest streak freezed was: ${new Date().toISOString()}
 `
 
 async function createOrUpdateFile(username: string) {
+  const sha = await getSha(username)
+  console.log(
+    `https://api.github.com/repos/${username}/${username}/contents/github-streak-freezer.md`
+  )
   const response = await fetcher({
     endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
     method: 'PUT',
     body: JSON.stringify({
-      message: `chore: github streak freezed!`,
+      message: 'chore: github streak freezed!',
       content: Buffer.from(content).toString('base64'),
-      sha: await getSha(username),
+      sha,
     }),
   })
+
+  console.log(response)
 
   return response
 }
 
 export async function commit(username: string) {
-  if (!(await validateUsername(username))) {
+  if (!username || !(await validateUsername(username))) {
     throw new Error(`Invalid username: "${username}".`)
   }
 
   const response = await createOrUpdateFile(username)
-  if (!response.content.name) {
-    throw new Error('Failed to commit.')
+  if (response.content.name) {
+    return 'Successfully committed!'
   }
-
-  return 'Successfully committed!'
 }
