@@ -4,5 +4,14 @@
     "*.ts": "$(capture).test.ts, $(capture).test.tsx",
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx"
   },
-  "cSpell.words": ["jiwonchoi", "nextjs", "tailwindcss", "webgl"]
+  "cSpell.words": [
+    "depbot",
+    "devjiwonchoi",
+    "Dogfooding",
+    "jiwonchoi",
+    "nextjs",
+    "tailwindcss",
+    "vercel",
+    "webgl"
+  ]
 }
