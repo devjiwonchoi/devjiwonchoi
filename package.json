@@ -7,7 +7,6 @@
     "start": "next start",
     "lint": "next lint",
     "lint-fix": "prettier --write . && next lint --fix",
-    "analyze": "ANALYZE=true pnpm build",
     "tb": "pnpm turbo build",
     "prepare": "husky"
   },
@@ -29,7 +28,6 @@
     "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.14.2",
-    "@types/pg": "^8.11.6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "dotenv": "^16.4.5",
