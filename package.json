@@ -54,7 +54,7 @@
     "tailwindcss": "^3.4.3",
     "turbo": "canary",
     "typescript": "^5.4.5",
-    "vercel": "^34.2.5"
+    "vercel": "^34.2.6"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
