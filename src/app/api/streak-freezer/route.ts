@@ -18,6 +18,7 @@ export async function GET(request: Request) {
   }
 
   if (await hasActivityToday(username)) {
+    await sendEmail('Has Activity')
     return new Response('Activity found for today.', { status: 200 })
   }
 
