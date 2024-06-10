@@ -1,4 +1,3 @@
-import type { Embedding } from 'ai'
 import { openai } from '@ai-sdk/openai'
 import { embedMany } from 'ai'
 
@@ -15,11 +14,6 @@ function splitContentByHeadings(content: string): string[] {
   contents.push(content.slice(start))
   // OpenAI recommends replacing newlines with spaces for best results when generating embeddings
   return contents.map((section) => section.replace(/\n/g, ' ')).filter(Boolean)
-}
-
-type Section = {
-  content: string
-  embedding: Embedding
 }
 
 export async function generateEmbeddings(markdown: string) {
