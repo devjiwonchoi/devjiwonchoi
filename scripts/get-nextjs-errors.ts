@@ -3,9 +3,9 @@ import dotenv from 'dotenv'
 import { writeFile } from 'fs/promises'
 import { join } from 'path'
 import { fetchGitHubAPI } from '../src/utils/fetch-github-api'
-import { generateEmbedding } from './generate-embedding'
+import { generateEmbeddingFromMarkdown } from './generate-embedding-from-md'
 
-dotenv.config({ path: join(process.cwd(), '.env.local') })
+dotenv.config({ path: '.env.local' })
 
 type GitHubAPIResponse = {
   name: string
@@ -56,7 +56,7 @@ async function getNextJSErrors(endpoint?: string): Promise<NextDoc[]> {
         const content = Buffer.from(file.content, file.encoding).toString(
           'utf-8'
         )
-        const embedding = await generateEmbedding(content)
+        const embedding = await generateEmbeddingFromMarkdown(content)
         const nextDoc: NextDoc = {
           path,
           size,

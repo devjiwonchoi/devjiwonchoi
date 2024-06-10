@@ -17,8 +17,10 @@ function splitContentByHeadings(content: string): string[] {
   return sections.map((section) => section.replace(/\n/g, ' ')).filter(Boolean)
 }
 
-export async function generateEmbedding(content: string): Promise<Embedding> {
-  const splittedContents = splitContentByHeadings(content)
+export async function generateEmbeddingFromMarkdown(
+  markdown: string
+): Promise<Embedding> {
+  const splittedContents = splitContentByHeadings(markdown)
 
   const { embeddings } = await embedMany({
     model: openai.embedding('text-embedding-ada-002'),
