@@ -1,6 +1,7 @@
 import type { Embedding } from 'ai'
 import dotenv from 'dotenv'
-import { writeFile } from 'fs/promises'
+import { existsSync } from 'fs'
+import { mkdir, writeFile } from 'fs/promises'
 import { join } from 'path'
 import { fetchGitHubAPI } from '../src/utils/fetch-github-api'
 import { generateEmbeddings } from './generate-embeddings'
@@ -131,5 +132,13 @@ async function errors() {
   }
 }
 
-docs().catch(console.error)
-errors().catch(console.error)
+async function main() {
+  if (!existsSync(join(process.cwd(), 'public', 'json'))) {
+    await mkdir(join(process.cwd(), 'public', 'json'))
+  }
+
+  await docs()
+  await errors()
+}
+
+main().catch(console.error)
