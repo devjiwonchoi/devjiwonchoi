@@ -24,7 +24,7 @@ type GitHubAPIResponse = {
   }
 }
 
-type NextDoc = {
+export type NextDoc = {
   sha: string
   docUrl: string
   prodUrl: string
@@ -47,7 +47,13 @@ async function errorPathToProdURL(path: string) {
   return `https://nextjs.org/${prodPath}`
 }
 
-async function fetchNextDocs(endpoint: string): Promise<NextDoc[]> {
+async function fetchNextDocs({
+  endpoint,
+  docType,
+}: {
+  endpoint: string
+  docType: string
+}): Promise<NextDoc[]> {
   const response: GitHubAPIResponse[] = await fetchGitHubAPI({
     endpoint,
   })
@@ -63,14 +69,20 @@ async function fetchNextDocs(endpoint: string): Promise<NextDoc[]> {
       for (const embedding of embeddings) {
         docs.push({
           docUrl: html_url,
-          prodUrl: await errorPathToProdURL(path),
+          prodUrl:
+            docType === 'errors'
+              ? await errorPathToProdURL(path)
+              : await docPathToProdURL(path),
           sha,
           embedding,
         })
       }
     } else if (type === 'dir') {
       docs.push(
-        ...(await fetchNextDocs(`/repos/vercel/next.js/contents/${path}`))
+        ...(await fetchNextDocs({
+          endpoint: `/repos/vercel/next.js/contents/${path}`,
+          docType,
+        }))
       )
     } else {
       console.log(`Skipped ${name}`)
@@ -87,7 +99,10 @@ async function docs() {
   const start = Date.now()
   let docs: NextDoc[] = []
   try {
-    docs = await fetchNextDocs(`/repos/vercel/next.js/contents/docs`)
+    docs = await fetchNextDocs({
+      endpoint: '/repos/vercel/next.js/contents/docs',
+      docType: 'docs',
+    })
   } finally {
     console.log(`Finished fetching Next.js docs in ${Date.now() - start}ms`)
     await writeFile(
@@ -103,7 +118,10 @@ async function errors() {
   const start = Date.now()
   let docs: NextDoc[] = []
   try {
-    docs = await fetchNextDocs(`/repos/vercel/next.js/contents/errors`)
+    docs = await fetchNextDocs({
+      endpoint: '/repos/vercel/next.js/contents/errors',
+      docType: 'errors',
+    })
   } finally {
     console.log(`Finished fetching Next.js errors in ${Date.now() - start}ms`)
     await writeFile(

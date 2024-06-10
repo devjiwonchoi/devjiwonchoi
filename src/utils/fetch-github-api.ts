@@ -37,6 +37,12 @@ export async function fetchGitHubAPI({
     })
 
     const data = await response.json()
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch data from the GitHub API: ${data.message}`
+      )
+    }
     return data
   } catch (error) {
     throw error
