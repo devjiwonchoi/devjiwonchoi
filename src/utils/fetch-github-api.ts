@@ -1,13 +1,3 @@
-/**
- * Fetches data from the GitHub API.
- *
- * @param {object} options - The options for the API request.
- * @param {string} options.endpoint - The API endpoint to fetch data from.
- * @param {string} [options.method='GET'] - The HTTP method for the request.
- * @param {string} [options.body] - The request body.
- * @returns {Promise<any>} - The response data from the API.
- * @throws {Error} - If the GITHUB_ACCESS_TOKEN environment variable is not set or if there is an error during the API request.
- */
 export async function fetchGitHubAPI({
   endpoint,
   url,
