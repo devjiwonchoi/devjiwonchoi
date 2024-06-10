@@ -26,6 +26,8 @@ updates:
           - 'next'
           - 'eslint-config-next'
           - 'turbo'
+          - 'react'
+          - 'react-dom'
       dog-food:
         patterns:
           - '@vercel/*'
