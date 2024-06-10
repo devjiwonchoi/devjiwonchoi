@@ -5,11 +5,14 @@
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx"
   },
   "cSpell.words": [
+    "BIGSERIAL",
     "depbot",
     "devjiwonchoi",
     "Dogfooding",
+    "hnsw",
     "jiwonchoi",
     "nextjs",
+    "pgvector",
     "tailwindcss",
     "vercel",
     "webgl"
