@@ -11,21 +11,18 @@ export async function GET(request: Request) {
 
   // See https://vercel.com/docs/cron-jobs/manage-cron-jobs#securing-cron-jobs
   const authHeader = request.headers.get('authorization')
-  if (
-    process.env.NODE_ENV === 'production' &&
-    authHeader !== `Bearer ${process.env.CRON_SECRET}`
-  ) {
-    await sendEmail('Unauthorized')
-    return new Response('Unauthorized.', { status: 401 })
+  if (authHeader === `Bearer ${process.env.CRON_SECRET}`) {
+    if (await hasActivityToday(username)) {
+      await sendEmail('Has Activity')
+      return new Response('Activity found for today.', { status: 200 })
+    }
+
+    const response = await commit(username)
+    await sendEmail(response)
+
+    return new Response(response, { status: 201 })
   }
 
-  if (await hasActivityToday(username)) {
-    await sendEmail('Has Activity')
-    return new Response('Activity found for today.', { status: 200 })
-  }
-
-  const response = await commit(username)
-  await sendEmail(response)
-
-  return new Response(response, { status: 201 })
+  await sendEmail('Unauthorized')
+  return new Response('Unauthorized.', { status: 401 })
 }
