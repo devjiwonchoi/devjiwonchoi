@@ -4,7 +4,7 @@ import { existsSync } from 'fs'
 import { mkdir, writeFile } from 'fs/promises'
 import { join } from 'path'
 import { fetchGitHubAPI } from '../src/utils/fetch-github-api'
-import { generateEmbeddings } from './generate-embeddings'
+import { generateSections } from './generate-embeddings'
 
 dotenv.config({ path: '.env.local' })
 
@@ -27,7 +27,7 @@ type GitHubAPIResponse = {
 
 export type NextDoc = {
   sha: string
-  docUrl: string
+  content: string
   prodUrl: string
   embedding: Embedding
 }
@@ -65,11 +65,13 @@ async function fetchNextDocs({
       const file = await fetchGitHubAPI({
         url,
       })
-      const content = Buffer.from(file.content, file.encoding).toString('utf-8')
-      const embeddings = await generateEmbeddings(content)
-      for (const embedding of embeddings) {
+      const fileContent = Buffer.from(file.content, file.encoding).toString(
+        'utf-8'
+      )
+      const sections = await generateSections(fileContent)
+      for (const { content, embedding } of sections) {
         docs.push({
-          docUrl: html_url,
+          content,
           prodUrl:
             docType === 'errors'
               ? await errorPathToProdURL(path)

@@ -16,7 +16,13 @@ function splitContentByHeadings(content: string): string[] {
   return contents.map((section) => section.replace(/\n/g, ' ')).filter(Boolean)
 }
 
-export async function generateEmbeddings(markdown: string) {
+export type Section = {
+  content: string
+  embedding: number[]
+}
+
+export async function generateSections(markdown: string) {
+  const sections: Section[] = []
   const contents: string[] = splitContentByHeadings(markdown)
 
   const { embeddings } = await embedMany({
@@ -24,5 +30,18 @@ export async function generateEmbeddings(markdown: string) {
     values: contents,
   })
 
-  return embeddings
+  for (const content of contents) {
+    sections.push({
+      content,
+      embedding: [],
+    })
+  }
+
+  embeddings.forEach((embedding, i) => {
+    const section = sections[i]
+    if (!section) return
+    section.embedding = embedding
+  })
+
+  return sections
 }
