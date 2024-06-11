@@ -1,4 +1,4 @@
-import { SignIn } from '@/components/sing-in'
+import { SignIn } from '@/components/sign-in'
 import { auth } from '@/utils/auth'
 export default async function Layout({
   children,
