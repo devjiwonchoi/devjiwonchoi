@@ -16,7 +16,6 @@ export async function GET(request: Request) {
     authHeader !== `Bearer ${process.env.CRON_SECRET}`
   ) {
     await sendEmail('Unauthorized')
-    console.log(process.env.CRON_SECRET, authHeader)
     return new Response('Unauthorized.', { status: 401 })
   }
 
