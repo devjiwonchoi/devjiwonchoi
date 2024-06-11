@@ -5,6 +5,7 @@ import { sendEmail } from './send-email'
 export async function GET(request: Request) {
   const username = process.env.GITHUB_USERNAME
   if (!username) {
+    await sendEmail('env.GITHUB_USERNAME is not set.')
     return new Response('env.GITHUB_USERNAME is not set.', { status: 403 })
   }
 
@@ -14,6 +15,8 @@ export async function GET(request: Request) {
     process.env.NODE_ENV === 'production' &&
     authHeader !== `Bearer ${process.env.CRON_SECRET}`
   ) {
+    await sendEmail('Unauthorized')
+    console.log(process.env.CRON_SECRET, authHeader)
     return new Response('Unauthorized.', { status: 401 })
   }
 
