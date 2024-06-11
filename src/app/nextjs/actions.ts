@@ -1,8 +1,8 @@
 'use server'
-
-import { createStreamableValue } from 'ai/rsc'
-import { type CoreMessage, streamText } from 'ai'
+import type { CoreMessage } from 'ai'
 import { openai } from '@ai-sdk/openai'
+import { streamText } from 'ai'
+import { createStreamableValue } from 'ai/rsc'
 
 export async function continueConversation(messages: CoreMessage[]) {
   const result = await streamText({
