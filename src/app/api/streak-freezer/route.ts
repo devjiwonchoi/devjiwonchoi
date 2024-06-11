@@ -1,5 +1,5 @@
 import { commit } from './commit'
-import { hasActivityToday } from './has-activity-today'
+import { hasShipped } from './has-shipped'
 import { sendEmail } from './send-email'
 
 export async function GET(request: Request) {
@@ -12,9 +12,9 @@ export async function GET(request: Request) {
   // See https://vercel.com/docs/cron-jobs/manage-cron-jobs#securing-cron-jobs
   const authHeader = request.headers.get('authorization')
   if (authHeader === `Bearer ${process.env.CRON_SECRET}`) {
-    if (await hasActivityToday(username)) {
-      await sendEmail('Has Activity')
-      return new Response('Activity found for today.', { status: 200 })
+    if (await hasShipped(username)) {
+      await sendEmail('Has Shipped')
+      return new Response('Already shipped today.', { status: 200 })
     }
 
     const response = await commit(username)
