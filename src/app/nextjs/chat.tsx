@@ -4,9 +4,6 @@ import { useState } from 'react'
 import { readStreamableValue } from 'ai/rsc'
 import { continueConversation } from './actions'
 
-export const dynamic = 'force-dynamic'
-export const maxDuration = 30
-
 export function Chat() {
   const [messages, setMessages] = useState<CoreMessage[]>([])
   const [input, setInput] = useState('')
