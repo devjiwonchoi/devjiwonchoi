@@ -4,7 +4,7 @@ import { Chat } from './chat'
 
 export const maxDuration = 60
 
-export default async function Nextjs() {
+export default function Nextjs() {
   const { userId }: { userId: string | null } = auth()
   if (!userId)
     return (
