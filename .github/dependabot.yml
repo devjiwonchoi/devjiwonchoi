@@ -10,31 +10,31 @@ updates:
     reviewers:
       - 'devjiwonchoi'
     allow:
-      - dependency-name: '@vercel/*'
-      - dependency-name: '@next/*'
       - dependency-name: '@ai-sdk/*'
-      - dependency-name: 'vercel'
-      - dependency-name: 'next'
-      - dependency-name: 'eslint-config-next'
+      - dependency-name: '@next/*'
+      - dependency-name: '@vercel/*'
       - dependency-name: 'ai'
-      - dependency-name: 'turbo'
+      - dependency-name: 'eslint-config-next'
       - dependency-name: 'geist'
+      - dependency-name: 'next'
+      - dependency-name: 'react'
+      - dependency-name: 'react-dom'
+      - dependency-name: 'turbo'
+      - dependency-name: 'vercel'
     groups:
-      canary:
-        patterns:
-          - '@next/*'
-          - 'next'
-          - 'eslint-config-next'
-          - 'turbo'
-          - 'react'
-          - 'react-dom'
       dog-food:
         patterns:
-          - '@vercel/*'
           - '@ai-sdk/*'
-          - 'vercel'
+          - '@next/*'
+          - '@vercel/*'
           - 'ai'
+          - 'eslint-config-next'
           - 'geist'
+          - 'next'
+          - 'react'
+          - 'react-dom'
+          - 'turbo'
+          - 'vercel'
 
   # Monthly update for all dependencies
   - package-ecosystem: 'npm'
