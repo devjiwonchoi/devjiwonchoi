@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 
 export async function sendEmail(statusText: string) {
   if (!process.env.RESEND_API_KEY) {
-    throw new Error('env.RESEND_API_KEY is not set.')
+    return new Response('env.RESEND_API_KEY is not set.', { status: 403 })
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY)
@@ -14,6 +14,6 @@ export async function sendEmail(statusText: string) {
   })
 
   if (response.error) {
-    throw new Error(response.error.message)
+    return new Response(response.error.message, { status: 500 })
   }
 }
