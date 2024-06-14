@@ -19,8 +19,8 @@
     "eslint-config-next": "canary",
     "geist": "^1.3.0",
     "next": "canary",
-    "react": "rc",
-    "react-dom": "rc",
+    "react": "latest",
+    "react-dom": "latest",
     "turbo": "canary",
     "vercel": "^34.2.7"
   },
