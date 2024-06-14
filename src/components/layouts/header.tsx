@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 
 export function Header() {
   return (
@@ -9,6 +10,9 @@ export function Header() {
         <span className="text-neutral-200">software engineer</span>
       </Link>
       <div className="flex items-center space-x-4">
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         {/* GitHub */}
         <Link
           href="https://github.com/devjiwonchoi"
