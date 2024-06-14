@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="my-4 flex justify-between md:my-10">
+    <header className="my-4 flex justify-between md:my-8">
       <Link href="/" className="flex w-fit flex-col" title="link back to home">
         <span className="text-2xl font-bold">Jiwon Choi</span>
         <span className="text-neutral-200">software engineer</span>
