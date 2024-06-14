@@ -36,11 +36,12 @@ export async function continueConversation(messages: CoreMessage[]) {
     ${relevantDocs}
     """
 
-    References: """
+    Possible References: """
     ${references}
     """
 
-    List all references at the end of your response as follows: """
+    If the possible references are related to the question,
+    list all references at the end of your response as follows: """
     References:
     - [Possible Reference Title 1](url1)
     - [Possible Reference Title 2](url2)
