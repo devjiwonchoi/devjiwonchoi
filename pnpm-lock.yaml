@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.0.12
     version: 1.0.12(next@15.0.0-canary.28)(react@19.0.0-rc-34d0c5e357-20240607)(svelte@4.2.18)(vue@3.4.27)
   ai:
-    specifier: ^3.1.34
-    version: 3.1.34(react@19.0.0-rc-34d0c5e357-20240607)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27)(zod@3.23.8)
+    specifier: ^3.1.35
+    version: 3.1.35(react@19.0.0-rc-34d0c5e357-20240607)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27)(zod@3.23.8)
   eslint-config-next:
     specifier: canary
     version: 15.0.0-canary.28(eslint@8.57.0)(typescript@5.4.5)
@@ -1367,8 +1367,8 @@ packages:
       - supports-color
     dev: false
 
-  /ai@3.1.34(react@19.0.0-rc-34d0c5e357-20240607)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27)(zod@3.23.8):
-    resolution: {integrity: sha512-cFE33IvG3fcUwvVF932AuvFKbKsKi4YK42Vh95Nh0SpWowEumL99dHh7i3LAjS7yqvC+n8n30t+iVO66Ij5PHg==}
+  /ai@3.1.35(react@19.0.0-rc-34d0c5e357-20240607)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27)(zod@3.23.8):
+    resolution: {integrity: sha512-kr0GAKe3HrUqk0SSII8MrOyBC/Lsglh37ayYrGzzEo3QQ0igriBdVTQed+8UYljbnYikEglbLfwXAzg3qH6u4g==}
     engines: {node: '>=18'}
     peerDependencies:
       openai: ^4.42.0
