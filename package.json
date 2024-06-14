@@ -25,6 +25,7 @@
     "vercel": "^34.2.7"
   },
   "devDependencies": {
+    "@clerk/nextjs": "^5.1.5",
     "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.14.2",
@@ -35,7 +36,6 @@
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "next-auth": "beta",
     "pgvector": "^0.1.8",
     "postcss": "^8.4.38",
     "prettier": "^3.3.2",
