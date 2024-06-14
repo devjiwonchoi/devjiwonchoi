@@ -2,9 +2,6 @@ import { SignInButton, SignedOut } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 import { Chat } from './chat'
 
-export const dynamic = 'force-dynamic'
-export const maxDuration = 30
-
 export default async function Nextjs() {
   const { userId }: { userId: string | null } = auth()
   if (!userId)
