@@ -8,6 +8,16 @@ export const maxDuration = 30
 
 export default async function Nextjs() {
   const session = await auth()
-  if (!session || (session as any).message) return <SignIn />
-  return <Chat />
+  if (
+    process.env.NODE_ENV === 'production' &&
+    (!session || (session as any).message)
+  ) {
+    return <SignIn />
+  }
+
+  return (
+    <main className="mb-auto">
+      <Chat />
+    </main>
+  )
 }

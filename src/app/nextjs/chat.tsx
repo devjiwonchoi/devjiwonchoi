@@ -4,15 +4,11 @@ import { useState } from 'react'
 import { readStreamableValue } from 'ai/rsc'
 import { continueConversation } from './actions'
 
-// Force the page to be dynamic and allow streaming responses up to 30 seconds
-export const dynamic = 'force-dynamic'
-export const maxDuration = 30
-
 export function Chat() {
   const [messages, setMessages] = useState<CoreMessage[]>([])
   const [input, setInput] = useState('')
   return (
-    <div className="stretch mx-auto mb-auto flex w-full max-w-md flex-col py-24">
+    <div className="flex w-full max-w-md flex-col">
       {messages.map((m, i) => (
         <div key={i} className="whitespace-pre-wrap">
           {m.role === 'user' ? 'User: ' : 'AI: '}
@@ -33,22 +29,39 @@ export function Chat() {
           const result = await continueConversation(newMessages)
 
           for await (const content of readStreamableValue(result)) {
+            if (!content) {
+              setMessages([
+                ...newMessages,
+                {
+                  role: 'assistant',
+                  content: 'ERROR: NO_CONTENT',
+                },
+              ])
+              continue
+            }
+
             setMessages([
               ...newMessages,
               {
                 role: 'assistant',
-                content: content as string,
+                content,
               },
             ])
           }
         }}
       >
-        <input
-          className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
-          value={input}
-          placeholder="Say something..."
-          onChange={(e) => setInput(e.target.value)}
-        />
+        <div className="fixed inset-x-0 bottom-0 mb-16 flex w-full justify-center">
+          <textarea
+            className="border p-2"
+            value={input}
+            placeholder="Ask anything about Next.js!"
+            onChange={(e) => setInput(e.target.value)}
+            required
+          />
+          <button className="border p-2" type="submit">
+            Send
+          </button>
+        </div>
       </form>
     </div>
   )
