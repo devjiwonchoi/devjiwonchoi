@@ -3,6 +3,8 @@ import { auth } from '@clerk/nextjs/server'
 import { Chat } from './chat'
 
 export const maxDuration = 60
+export const dynamic = 'force-dynamic'
+export const runtime = 'edge'
 
 export default function Nextjs() {
   const { userId }: { userId: string | null } = auth()

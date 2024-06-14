@@ -21,7 +21,7 @@
     "next": "canary",
     "react": "rc",
     "react-dom": "rc",
-    "turbo": "latest",
+    "turbo": "canary",
     "vercel": "^34.2.7"
   },
   "devDependencies": {
