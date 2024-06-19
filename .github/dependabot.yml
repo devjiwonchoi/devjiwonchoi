@@ -10,31 +10,21 @@ updates:
     reviewers:
       - 'devjiwonchoi'
     allow:
-      - dependency-name: '@ai-sdk/*'
       - dependency-name: '@next/*'
       - dependency-name: '@vercel/*'
-      - dependency-name: 'ai'
       - dependency-name: 'eslint-config-next'
       - dependency-name: 'geist'
       - dependency-name: 'next'
-      - dependency-name: 'react'
-      - dependency-name: 'react-dom'
       - dependency-name: 'turbo'
-      - dependency-name: 'vercel'
     groups:
-      dog-food:
+      dog-foods:
         patterns:
-          - '@ai-sdk/*'
           - '@next/*'
           - '@vercel/*'
-          - 'ai'
           - 'eslint-config-next'
           - 'geist'
           - 'next'
-          - 'react'
-          - 'react-dom'
           - 'turbo'
-          - 'vercel'
 
   # Monthly update for all dependencies
   - package-ecosystem: 'npm'
