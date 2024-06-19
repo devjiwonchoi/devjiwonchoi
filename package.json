@@ -28,7 +28,9 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.4",
     "resend": "^3.3.0",
+    "tailwindcss": "^3.4.4",
     "turbo": "canary",
     "typescript": "^5.4.5",
     "vercel": "^34.2.7"
@@ -46,13 +48,21 @@
     "semi": false,
     "singleQuote": true,
     "jsxSingleQuote": false,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   },
   "eslintConfig": {
     "extends": [
       "next/core-web-vitals",
       "prettier"
     ]
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {}
+    }
   },
   "packageManager": "pnpm@8.15.7"
 }
