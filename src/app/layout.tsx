@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ClerkProvider } from '@clerk/nextjs'
 import { GeistSans } from 'geist/font/sans'
-import { Header, Footer, NavBar } from '@/components/layouts'
+import { Header, Footer } from '@/components'
 import { PROD_BASE_URL } from '@/utils/constants'
 import './globals.css'
 
@@ -13,18 +12,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={GeistSans.className}>
-        <body className="container mx-auto flex min-h-screen max-w-2xl flex-col p-6 antialiased">
-          <Header />
-          {/* <NavBar /> */}
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={GeistSans.className}>
+      <body className="container mx-auto flex min-h-screen max-w-2xl flex-col p-6 antialiased">
+        <Header />
+        {/* <NavBar /> */}
+        {children}
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
   )
 }
 
