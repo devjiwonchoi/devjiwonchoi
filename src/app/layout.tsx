@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="container mx-auto flex min-h-screen max-w-2xl flex-col p-6 antialiased">
+      <body className="container mx-auto flex min-h-dvh max-w-2xl flex-col p-6 antialiased">
         <Header />
         {/* <NavBar /> */}
         {children}
