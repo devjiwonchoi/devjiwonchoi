@@ -8,7 +8,7 @@ export function Chat() {
   const [messages, setMessages] = useState<CoreMessage[]>([])
   const [input, setInput] = useState('')
   return (
-    <div className="flex w-full max-w-md flex-col">
+    <div className="flex w-full flex-col">
       {messages.map((m, i) => (
         <div key={i} className="whitespace-pre-wrap">
           {m.role === 'user' ? 'User: ' : 'AI: '}
