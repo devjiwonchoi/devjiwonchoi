@@ -26,7 +26,7 @@ export default function RootLayout({
 }
 
 const description =
-  'Jiwon Choi is a software engineer concentrating on web, cloud, and experience, an active contributor to Next.js, Vercel, and other open-source software.'
+  'Jiwon Choi is a software engineer at Vercel, maintaining Next.js and other open source libraries.'
 
 const keywords = [
   'jiwon choi',
