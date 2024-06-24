@@ -26,7 +26,7 @@ export default function RootLayout({
 }
 
 const description =
-  'Jiwon Choi is a software engineer at Vercel, maintaining Next.js and other open source libraries.'
+  'Jiwon Choi is a software engineer spending time on time-saving at Vercel, maintaining Next.js and other open source libraries.'
 
 const keywords = [
   'jiwon choi',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: PROD_BASE_URL,
     images: [
       {
-        url: '/img/me-logo800x600.png',
+        url: '/me-logo800x600.png',
         width: 800,
         height: 600,
         alt: 'devjiwonchoi logo',
