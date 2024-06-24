@@ -20,5 +20,6 @@
     "tailwindcss",
     "vercel",
     "webgl"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
