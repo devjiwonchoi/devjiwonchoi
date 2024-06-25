@@ -30,22 +30,5 @@
     "turbo": "canary",
     "typescript": "^5.5.2"
   },
-  "lint-staged": {
-    "*.{js,mjs,jsx,ts,tsx}": [
-      "prettier --write"
-    ],
-    "*.{css,json,md,mdx,yml,yaml}": [
-      "prettier --write"
-    ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": false,
-    "trailingComma": "es5",
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
-  },
   "packageManager": "pnpm@8.15.4"
 }
