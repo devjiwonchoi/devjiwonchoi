@@ -4,10 +4,14 @@ import Link from 'next/link'
 export function Header() {
   return (
     <header className="my-4 flex justify-between">
-      <Link href="/" className="flex w-fit flex-col" title="link back to home">
-        <span className="text-2xl font-bold">Jiwon Choi</span>
-        <span className="text-neutral-200">Engineer ▲ Vercel</span>
-      </Link>
+      <div className="flex w-fit flex-col">
+        <Link href="/" title="home">
+          <span className="text-2xl font-bold">Jiwon Choi</span>
+        </Link>
+        <Link href="https://vercel.com/home" title="▲ Vercel">
+          <span className="text-neutral-200">Engineer ▲ Vercel</span>
+        </Link>
+      </div>
       <div className="flex items-center space-x-4">
         {/* GitHub */}
         <Link
