@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className="container mx-auto flex min-h-dvh max-w-2xl flex-col p-6 antialiased">
         <Header />
         {/* <NavBar /> */}
-        {children}
+        <main className="mb-auto">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />
@@ -51,14 +51,6 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Jiwon Choi',
     url: PROD_BASE_URL,
-    images: [
-      {
-        url: '/me-logo800x600.png',
-        width: 800,
-        height: 600,
-        alt: 'devjiwonchoi logo',
-      },
-    ],
   },
   robots: {
     index: true,
