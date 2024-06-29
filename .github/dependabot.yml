@@ -24,14 +24,14 @@ updates:
           - 'next'
           - 'turbo'
 
-  # Monthly update for all dependencies
+  # Weekly update for all dependencies
   - package-ecosystem: 'npm'
     directory: '/'
     # set target-branch to work around configure depbot on same directory '/'
     # x-ref: https://github.com/dependabot/dependabot-core/issues/1778#issuecomment-1988140219
     target-branch: main
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
     reviewers:
       - 'devjiwonchoi'
     groups:
