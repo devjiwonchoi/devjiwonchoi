@@ -64,7 +64,7 @@ importers:
         specifier: ^5.5.2
         version: 5.5.2
       vercel:
-        specifier: latest
+        specifier: canary
         version: 34.2.8
 
 packages:
@@ -2699,7 +2699,7 @@ snapshots:
 
   debug@4.1.1:
     dependencies:
-      ms: 2.1.1
+      ms: 2.1.2
 
   debug@4.3.5:
     dependencies:
