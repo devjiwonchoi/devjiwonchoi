@@ -29,7 +29,8 @@
     "resend": "^3.4.0",
     "tailwindcss": "next",
     "turbo": "canary",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.2",
+    "vercel": "canary"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
