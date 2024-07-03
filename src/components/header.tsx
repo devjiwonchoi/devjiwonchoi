@@ -15,13 +15,13 @@ export function Header() {
       <div className="flex items-center space-x-4">
         {/* GitHub */}
         <Link
-          href="https://github.com/devjiwonchoi"
+          href="https://jiw.one/git"
           target="_blank"
           aria-label="Jiwon Choi's GitHub Profile"
           className="inline-block"
         >
           <Image
-            src="/github-mark-white.svg"
+            src="/github.svg"
             width={24}
             height={24}
             alt="GitHub Logo"
@@ -30,13 +30,13 @@ export function Header() {
         </Link>
         {/* X */}
         <Link
-          href="https://x.com/devjiwonchoi"
+          href="https://jiw.one/x"
           target="_blank"
           aria-label="Jiwon Choi's X Profile"
           className="inline-block"
         >
           <Image
-            src="/x-logo.svg"
+            src="/x.svg"
             width={20}
             height={20}
             alt="X Logo"
