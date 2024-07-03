@@ -6,7 +6,7 @@ import { sendEmail } from './send-email'
 export async function GET(request: NextRequest) {
   const username = process.env.GITHUB_USERNAME
   if (!username) {
-    await sendEmail('env.GITHUB_USERNAME is not set.')
+    await sendEmail({ subject: 'env.GITHUB_USERNAME is not set.' })
     return new Response('env.GITHUB_USERNAME is not set.', { status: 403 })
   }
 
@@ -14,12 +14,12 @@ export async function GET(request: NextRequest) {
   const authHeader = request.headers.get('authorization')
   if (authHeader === `Bearer ${process.env.CRON_SECRET}`) {
     if (await hasShipped(username)) {
-      await sendEmail('Has Shipped')
+      await sendEmail({ subject: 'Has Shipped' })
       return new Response('Already shipped today.', { status: 200 })
     }
 
     const response = await commit(username)
-    await sendEmail(response)
+    await sendEmail({ subject: response })
 
     return new Response(response, { status: 201 })
   }
@@ -34,6 +34,9 @@ export async function GET(request: NextRequest) {
     userAgent: request.headers.get('user-agent'),
   }
 
-  await sendEmail(`Unauthorized: ${JSON.stringify(unauthorizedRequest)}`)
+  await sendEmail({
+    subject: 'Unauthorized',
+    text: `Unauthorized Request: ${JSON.stringify(unauthorizedRequest)}`,
+  })
   return new Response('Unauthorized.', { status: 401 })
 }
