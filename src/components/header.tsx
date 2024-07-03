@@ -15,7 +15,7 @@ export function Header() {
       <div className="flex items-center space-x-4">
         {/* GitHub */}
         <Link
-          href="https://github.com/devjiwonchoi"
+          href="https://jiw.one/git"
           target="_blank"
           aria-label="Jiwon Choi's GitHub Profile"
           className="inline-block"
@@ -30,7 +30,7 @@ export function Header() {
         </Link>
         {/* X */}
         <Link
-          href="https://x.com/devjiwonchoi"
+          href="https://jiw.one/x"
           target="_blank"
           aria-label="Jiwon Choi's X Profile"
           className="inline-block"
