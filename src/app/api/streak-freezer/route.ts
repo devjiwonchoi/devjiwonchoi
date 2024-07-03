@@ -1,8 +1,9 @@
+import type { NextRequest } from 'next/server'
 import { commit } from './commit'
 import { hasShipped } from './has-shipped'
 import { sendEmail } from './send-email'
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const username = process.env.GITHUB_USERNAME
   if (!username) {
     await sendEmail('env.GITHUB_USERNAME is not set.')
@@ -23,6 +24,16 @@ export async function GET(request: Request) {
     return new Response(response, { status: 201 })
   }
 
-  await sendEmail('Unauthorized')
+  const unauthorizedRequest = {
+    ip: request.ip,
+    country: request.geo?.country,
+    city: request.geo?.city,
+    region: request.geo?.region,
+    latitude: request.geo?.latitude,
+    longitude: request.geo?.longitude,
+    userAgent: request.headers.get('user-agent'),
+  }
+
+  await sendEmail(`Unauthorized: ${JSON.stringify(unauthorizedRequest)}`)
   return new Response('Unauthorized.', { status: 401 })
 }
