@@ -21,7 +21,7 @@ export function Header() {
           className="inline-block"
         >
           <Image
-            src="/github-mark-white.svg"
+            src="/github.svg"
             width={24}
             height={24}
             alt="GitHub Logo"
@@ -36,7 +36,7 @@ export function Header() {
           className="inline-block"
         >
           <Image
-            src="/x-logo.svg"
+            src="/x.svg"
             width={20}
             height={20}
             alt="X Logo"
