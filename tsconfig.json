@@ -10,7 +10,6 @@
     "resolveJsonModule": true,
     "noImplicitOverride": true,
     "verbatimModuleSyntax": true,
-    "noUncheckedIndexedAccess": true,
     "jsx": "preserve",
     "target": "esnext",
     "module": "preserve",
