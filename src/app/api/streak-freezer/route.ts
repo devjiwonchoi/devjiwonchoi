@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
 
   await sendEmail({
     subject: 'Unauthorized',
-    text: `Unauthorized Request: ${JSON.stringify(unauthorizedRequest)}`,
+    text: `Unauthorized Request: ${JSON.stringify(unauthorizedRequest, null, 2)}`,
   })
   return new Response('Unauthorized.', { status: 401 })
 }
