@@ -4,15 +4,11 @@ import { hasShipped } from './has-shipped'
 import { sendEmail } from './send-email'
 
 export async function GET(request: NextRequest) {
-  const username = process.env.GITHUB_USERNAME
-  if (!username) {
-    await sendEmail({ subject: 'env.GITHUB_USERNAME is not set.' })
-    return new Response('env.GITHUB_USERNAME is not set.', { status: 403 })
-  }
-
   // See https://vercel.com/docs/cron-jobs/manage-cron-jobs#securing-cron-jobs
   const authHeader = request.headers.get('authorization')
   if (authHeader === `Bearer ${process.env.CRON_SECRET}`) {
+    const username = 'devjiwonchoi'
+
     if (await hasShipped(username)) {
       await sendEmail({ subject: 'Has Shipped' })
       return new Response('Already shipped today.', { status: 200 })
