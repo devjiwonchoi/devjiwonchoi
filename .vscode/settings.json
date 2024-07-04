@@ -2,8 +2,13 @@
   "terminal.integrated.scrollback": 10000,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
-    "*.tsx": "$(capture).test.ts, $(capture).test.tsx"
+    "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx",
+    "*.tsx": "${capture}.ts, ${capture}.test.ts, ${capture}.test.tsx",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "Cargo.toml": "Cargo.lock"
   },
   "cSpell.words": [
     "BIGSERIAL",
@@ -21,5 +26,5 @@
     "vercel",
     "webgl"
   ],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

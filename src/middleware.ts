@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
   // ['', '<key>']
   const key = await get(paths[1])
   if (typeof key === 'string') {
-    return NextResponse.redirect(key)
+    return NextResponse.redirect(key, { status: 307 })
   }
 
   return NextResponse.next()
