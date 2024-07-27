@@ -38,6 +38,13 @@ updates:
       time: '09:00'
     reviewers:
       - 'devjiwonchoi'
+    ignore:
+      - dependency-name: '@next/*'
+      - dependency-name: '@vercel/*'
+      - dependency-name: 'geist'
+      - dependency-name: 'next'
+      - dependency-name: 'turbo'
+      - dependency-name: 'vercel'
     groups:
       prod-deps:
         dependency-type: 'production'
