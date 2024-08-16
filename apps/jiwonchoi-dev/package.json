@@ -1,13 +1,11 @@
 {
-  "name": "jiwonchoi.dev",
+  "name": "jiwonchoi-dev",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write .",
-    "tb": "pnpm turbo build",
-    "prepare": "husky"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "next": "canary",
@@ -23,7 +21,6 @@
     "@vercel/edge-config": "^1.2.1",
     "@vercel/speed-insights": "^1.0.12",
     "geist": "^1.3.1",
-    "resend": "^3.5.0",
     "tailwindcss": "next",
     "typescript": "^5.5.4"
   },

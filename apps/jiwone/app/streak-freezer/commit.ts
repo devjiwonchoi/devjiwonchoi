@@ -10,7 +10,7 @@ async function validateUsername(username: string) {
 
 async function getSha(username: string) {
   const repo = await fetchGitHubAPI({
-    endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
+    endpoint: `/repos/${username}/${username}-legacy/contents/github-streak-freezer.md`,
   })
 
   return repo.sha
@@ -19,7 +19,7 @@ async function getSha(username: string) {
 const content = `
 ### What is this?
 
-See https://github.com/devjiwonchoi/vercel-cron-github-streak-freezer
+See https://github.com/devjiwonchoi/jiw-one
 
 The latest streak freezed was: ${new Date().toISOString()}
 `
@@ -27,7 +27,7 @@ The latest streak freezed was: ${new Date().toISOString()}
 async function createOrUpdateFile(username: string) {
   const sha = await getSha(username)
   const response = await fetchGitHubAPI({
-    endpoint: `/repos/${username}/${username}/contents/github-streak-freezer.md`,
+    endpoint: `/repos/${username}/${username}-legacy/contents/github-streak-freezer.md`,
     method: 'PUT',
     body: JSON.stringify({
       message: 'chore: github streak freezed!',
