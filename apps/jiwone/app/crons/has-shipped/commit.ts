@@ -19,7 +19,7 @@ async function getSha(username: string) {
 const content = `
 ### What is this?
 
-See https://github.com/devjiwonchoi/jiw-one
+See https://github.com/devjiwonchoi/devjiwonchoi
 
 The latest streak freezed was: ${new Date().toISOString()}
 `
