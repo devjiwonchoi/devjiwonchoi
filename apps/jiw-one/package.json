@@ -1,5 +1,5 @@
 {
-  "name": "jiw.one",
+  "name": "jiw-one",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -16,6 +16,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vercel/edge-config": "^1.2.1",
+    "resend": "^3.5.0",
     "typescript": "^5.5.4"
   }
 }

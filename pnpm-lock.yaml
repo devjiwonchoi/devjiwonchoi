@@ -54,6 +54,9 @@ importers:
       '@vercel/edge-config':
         specifier: ^1.2.1
         version: 1.2.1
+      resend:
+        specifier: ^3.5.0
+        version: 3.5.0(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4

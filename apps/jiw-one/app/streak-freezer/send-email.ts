@@ -4,7 +4,7 @@ export async function sendEmail({
   from = 'no-reply@jiwonchoi.dev',
   to = 'devjiwonchoi@gmail.com',
   subject,
-  text = 'Check out: https://vercel.com/jiwonchoi/jiwonchoi-dev/logs',
+  text = 'Check out: https://vercel.com/jiwonchoi/jiw-one/logs',
 }: {
   from?: string
   to?: string
