@@ -30,38 +30,7 @@ importers:
         specifier: canary
         version: 36.0.0
 
-  apps/jiw.one:
-    dependencies:
-      next:
-        specifier: canary
-        version: 15.0.0-canary.117(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
-      react:
-        specifier: 19.0.0-rc.0
-        version: 19.0.0-rc.0
-      react-dom:
-        specifier: 19.0.0-rc.0
-        version: 19.0.0-rc.0(react@19.0.0-rc.0)
-    devDependencies:
-      '@types/node':
-        specifier: ^20.14.15
-        version: 20.14.15
-      '@types/react':
-        specifier: ^18.3.3
-        version: 18.3.3
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.0
-      '@vercel/edge-config':
-        specifier: ^1.2.1
-        version: 1.2.1
-      resend:
-        specifier: ^3.5.0
-        version: 3.5.0(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
-      typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
-
-  apps/jiwonchoi.dev:
+  apps/jiwonchoi-dev:
     dependencies:
       next:
         specifier: canary
@@ -97,12 +66,40 @@ importers:
       geist:
         specifier: ^1.3.1
         version: 1.3.1(next@15.0.0-canary.117(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0))
-      resend:
-        specifier: ^3.5.0
-        version: 3.5.0(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
       tailwindcss:
         specifier: next
         version: 4.0.0-alpha.19
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
+
+  apps/jiwone:
+    dependencies:
+      next:
+        specifier: canary
+        version: 15.0.0-canary.117(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
+      react:
+        specifier: 19.0.0-rc.0
+        version: 19.0.0-rc.0
+      react-dom:
+        specifier: 19.0.0-rc.0
+        version: 19.0.0-rc.0(react@19.0.0-rc.0)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.14.15
+        version: 20.14.15
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.3
+      '@types/react-dom':
+        specifier: ^18.3.0
+        version: 18.3.0
+      '@vercel/edge-config':
+        specifier: ^1.2.1
+        version: 1.2.1
+      resend:
+        specifier: ^3.5.0
+        version: 3.5.0(react-dom@19.0.0-rc.0(react@19.0.0-rc.0))(react@19.0.0-rc.0)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
