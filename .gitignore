@@ -21,3 +21,6 @@ node_modules/
 # misc
 .DS_Store
 *.pem
+
+# Turborepo
+.turbo
