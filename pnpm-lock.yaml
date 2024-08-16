@@ -30,7 +30,7 @@ importers:
         specifier: canary
         version: 36.0.0
 
-  apps/jiwonchoi-dev:
+  apps/dev:
     dependencies:
       next:
         specifier: canary
@@ -73,7 +73,7 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
 
-  apps/jiwone:
+  apps/one:
     dependencies:
       next:
         specifier: canary
