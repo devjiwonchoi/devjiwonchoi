@@ -1,8 +1,8 @@
 import { Resend } from 'resend'
 
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('env.RESEND_API_KEY is not set.')
-}
+// if (!process.env.RESEND_API_KEY) {
+//   throw new Error('env.RESEND_API_KEY is not set.')
+// }
 
 export async function sendEmail({
   from = 'no-reply@jiwonchoi.dev',
