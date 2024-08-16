@@ -1,5 +1,9 @@
 import { Resend } from 'resend'
 
+if (!process.env.RESEND_API_KEY) {
+  throw new Error('env.RESEND_API_KEY is not set.')
+}
+
 export async function sendEmail({
   from = 'no-reply@jiwonchoi.dev',
   to = 'devjiwonchoi@gmail.com',
@@ -11,10 +15,6 @@ export async function sendEmail({
   subject: string
   text?: string
 }) {
-  if (!process.env.RESEND_API_KEY) {
-    return new Response('env.RESEND_API_KEY is not set.', { status: 403 })
-  }
-
   const resend = new Resend(process.env.RESEND_API_KEY)
   const response = await resend.emails.send({
     from,

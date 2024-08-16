@@ -1,3 +1,7 @@
+if (!process.env.GITHUB_ACCESS_TOKEN) {
+  throw new Error('env.GITHUB_ACCESS_TOKEN is not set.')
+}
+
 export async function fetchGitHubAPI({
   endpoint,
   url,
@@ -9,10 +13,6 @@ export async function fetchGitHubAPI({
   method?: string
   body?: string
 }) {
-  if (!process.env.GITHUB_ACCESS_TOKEN) {
-    throw new Error('env.GITHUB_ACCESS_TOKEN is not set.')
-  }
-
   const GITHUB_API_URL = 'https://api.github.com'
   url ??= `${GITHUB_API_URL}${endpoint}`
 
