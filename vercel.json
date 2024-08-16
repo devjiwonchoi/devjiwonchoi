@@ -3,7 +3,7 @@
   "buildCommand": "pnpm turbo build",
   "crons": [
     {
-      "path": "/api/streak-freezer",
+      "path": "/crons/has-shipped",
       "schedule": "00 13 * * *"
     }
   ]
