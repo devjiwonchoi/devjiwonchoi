@@ -2,7 +2,8 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { get } from '@vercel/edge-config'
 
 export async function middleware(request: NextRequest) {
-  if (request.headers.has('x-vercel-signature')) {
+  // See https://vercel.com/docs/edge-network/headers#x-vercel-id-req
+  if (request.headers.has('x-vercel-id')) {
     if (request.nextUrl.pathname === '/') {
       return NextResponse.redirect('https://jiwonchoi.dev', { status: 301 })
     }
