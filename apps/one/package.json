@@ -1,6 +1,5 @@
 {
   "name": "jiwone",
-  "description": "Playground for Vercel Products",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",

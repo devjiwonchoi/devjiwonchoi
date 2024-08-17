@@ -1,6 +1,5 @@
 {
   "name": "devjiwonchoi",
-  "description": "Welcome to my dogfooding playground.",
   "private": true,
   "scripts": {
     "dev": "turbo dev",
