@@ -10,8 +10,6 @@ updates:
       interval: 'daily'
       timezone: 'Asia/Seoul'
       time: '09:00'
-    reviewers:
-      - 'devjiwonchoi'
     allow:
       - dependency-name: '@next/*'
       - dependency-name: '@vercel/*'
@@ -38,8 +36,6 @@ updates:
       interval: 'weekly'
       timezone: 'Asia/Seoul'
       time: '09:00'
-    reviewers:
-      - 'devjiwonchoi'
     ignore:
       - dependency-name: '@next/*'
       - dependency-name: '@vercel/*'
