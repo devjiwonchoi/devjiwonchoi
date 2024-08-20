@@ -5,6 +5,10 @@ import { sendEmail } from './send-email'
 
 const username = 'devjiwonchoi'
 
+if (!process.env.CRON_SECRET) {
+  throw new Error('CRON_SECRET is not set')
+}
+
 export async function GET(request: NextRequest) {
   // See https://vercel.com/docs/cron-jobs/manage-cron-jobs#securing-cron-jobs
   const authHeader = request.headers.get('authorization')
