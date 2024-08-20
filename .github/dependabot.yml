@@ -1,0 +1,47 @@
+version: 2
+updates:
+  # Daily update for ▲ Vercel dogfooding
+  - package-ecosystem: 'npm'
+    directories:
+      - '/'
+      - 'apps/dev'
+      - 'apps/one'
+    schedule:
+      interval: 'daily'
+      timezone: 'Asia/Seoul'
+      time: '09:00'
+    reviewers:
+      - 'devjiwonchoi'
+    allow:
+      - dependency-name: '@next/*'
+      - dependency-name: '@vercel/*'
+      - dependency-name: 'geist'
+      - dependency-name: 'next'
+      - dependency-name: 'turbo'
+      - dependency-name: 'vercel'
+    groups:
+      dogfooding:
+        patterns:
+          - '@next/*'
+          - '@vercel/*'
+          - 'geist'
+          - 'next'
+          - 'turbo'
+          - 'vercel'
+
+  # Weekly update for all dependencies
+  - package-ecosystem: 'npm'
+    directories:
+      - '**/*'
+    target-branch: main
+    schedule:
+      interval: 'weekly'
+      timezone: 'Asia/Seoul'
+      time: '09:00'
+    reviewers:
+      - 'devjiwonchoi'
+    groups:
+      prod:
+        dependency-type: 'production'
+      dev:
+        dependency-type: 'development'
