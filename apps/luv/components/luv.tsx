@@ -142,7 +142,7 @@ export function Luv(): JSX.Element {
 
   return (
     <div className="bg-background flex min-h-screen items-center justify-center p-4">
-      <div className="absolute right-4 top-4">
+      <div className="absolute top-4 right-4">
         <ModeToggle />
       </div>
       <div className="text-foreground bg-background w-full max-w-md rounded-lg p-6 shadow-lg">
@@ -171,8 +171,8 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={startDate}
-                  onSelect={(date: React.SetStateAction<Date>) =>
-                    setStartDate(date)
+                  onSelect={(date: Date | undefined) =>
+                    date && setStartDate(date)
                   }
                 />
               </PopoverContent>
@@ -199,8 +199,8 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={partner1Birthday}
-                  onSelect={(date: React.SetStateAction<Date>) =>
-                    setPartner1Birthday(date)
+                  onSelect={(date: Date | undefined) =>
+                    date && setPartner1Birthday(date)
                   }
                 />
               </PopoverContent>
@@ -241,8 +241,8 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={partner2Birthday}
-                  onSelect={(date: React.SetStateAction<Date>) =>
-                    setPartner2Birthday(date)
+                  onSelect={(date: Date | undefined) =>
+                    date && setPartner2Birthday(date)
                   }
                 />
               </PopoverContent>
