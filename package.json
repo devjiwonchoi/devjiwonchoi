@@ -15,7 +15,7 @@
     "prettier-plugin-tailwindcss": "^0.6.6",
     "turbo": "canary",
     "typescript": "^5.5.4",
-    "vercel": "^35.0.0"
+    "vercel": "^36.0.0"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
