@@ -171,7 +171,9 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={startDate}
-                  onSelect={(date) => setStartDate(date)}
+                  onSelect={(date: React.SetStateAction<Date>) =>
+                    setStartDate(date)
+                  }
                 />
               </PopoverContent>
             </Popover>
@@ -197,7 +199,9 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={partner1Birthday}
-                  onSelect={(date) => setPartner1Birthday(date)}
+                  onSelect={(date: React.SetStateAction<Date>) =>
+                    setPartner1Birthday(date)
+                  }
                 />
               </PopoverContent>
             </Popover>
@@ -237,7 +241,9 @@ export function Luv(): JSX.Element {
                 <Calendar
                   mode="single"
                   selected={partner2Birthday}
-                  onSelect={(date) => setPartner2Birthday(date)}
+                  onSelect={(date: React.SetStateAction<Date>) =>
+                    setPartner2Birthday(date)
+                  }
                 />
               </PopoverContent>
             </Popover>
