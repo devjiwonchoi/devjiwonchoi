@@ -19,7 +19,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "lucide-react": "^0.428.0",
-    "next": "14.2.5",
+    "next": "15.0.0-canary.122",
     "next-themes": "^0.3.0",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
