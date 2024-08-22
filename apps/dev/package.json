@@ -1,5 +1,5 @@
 {
-  "name": "jiwonchoi-dev",
+  "name": "dev",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
