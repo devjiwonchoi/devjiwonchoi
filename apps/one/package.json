@@ -12,8 +12,8 @@
     "react-dom": "19.0.0-rc.0"
   },
   "devDependencies": {
-    "@types/node": "^22.4.1",
-    "@types/react": "^18.3.3",
+    "@types/node": "^22.5.0",
+    "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "@vercel/edge-config": "^1.2.1",
     "resend": "^4.0.0",
