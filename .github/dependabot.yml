@@ -2,7 +2,8 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     directories:
-      - '**/*'
+      - '/'
+      - 'apps/*'
     target-branch: main
     schedule:
       interval: 'daily'
