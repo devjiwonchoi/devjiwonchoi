@@ -2,22 +2,13 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     directories:
-      - '/'
-      - 'apps/*'
+      - '**/*'
     target-branch: main
     schedule:
       interval: 'daily'
       timezone: 'Asia/Seoul'
       time: '09:00'
     groups:
-      vercel:
-        patterns:
-          - '@next/*'
-          - '@vercel/*'
-          - 'geist'
-          - 'next'
-          - 'turbo'
-          - 'vercel'
       prod:
         dependency-type: 'production'
       dev:
