@@ -9,7 +9,6 @@ updates:
       timezone: 'Asia/Seoul'
       time: '09:00'
     groups:
-      prod:
-        dependency-type: 'production'
-      dev:
-        dependency-type: 'development'
+      all:
+        patterns:
+          - '*'
