@@ -1,11 +1,13 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { get } from '@vercel/edge-config'
 
+const baseUrl = 'https://jiwonchoi.dev'
+
 export async function middleware(request: NextRequest) {
   // See https://vercel.com/docs/edge-network/headers#x-vercel-id-req
   if (request.headers.has('x-vercel-id')) {
     if (request.nextUrl.pathname === '/') {
-      return NextResponse.redirect('https://jiwonchoi.dev', { status: 301 })
+      return NextResponse.redirect(baseUrl, { status: 301 })
     }
 
     const paths = request.nextUrl.pathname.split('/')
@@ -17,7 +19,9 @@ export async function middleware(request: NextRequest) {
     // ['', '<key>']
     const key = await get(paths[1])
     if (typeof key === 'string') {
-      return NextResponse.redirect(key, { status: 307 })
+      return NextResponse.redirect(`${baseUrl}/one/${key}`, {
+        status: 307,
+      })
     }
   }
 
