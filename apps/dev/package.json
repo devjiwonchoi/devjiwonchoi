@@ -4,13 +4,12 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
-    "format": "prettier --write ."
+    "start": "next start"
   },
   "dependencies": {
     "next": "canary",
-    "react": "19.0.0-rc.0",
-    "react-dom": "19.0.0-rc.0"
+    "react": "19.0.0-rc-7771d3a7-20240827",
+    "react-dom": "19.0.0-rc-7771d3a7-20240827"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "next",
