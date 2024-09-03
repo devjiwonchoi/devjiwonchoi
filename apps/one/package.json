@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "next": "canary",
-    "react": "19.0.0-rc-7771d3a7-20240827",
-    "react-dom": "19.0.0-rc-7771d3a7-20240827"
+    "react": "19.0.0-rc.0",
+    "react-dom": "19.0.0-rc.0"
   },
   "devDependencies": {
-    "@types/node": "^22.5.1",
-    "@types/react": "^18.3.4",
+    "@types/node": "^22.5.2",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vercel/edge-config": "^1.2.1",
     "resend": "^4.0.0",
