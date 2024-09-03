@@ -13,7 +13,7 @@
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "turbo": "^2.1.1-canary.0",
+    "turbo": "canary",
     "typescript": "^5.5.4",
     "vercel": "^37.2.1"
   },
