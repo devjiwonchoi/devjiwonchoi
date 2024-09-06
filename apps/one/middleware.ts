@@ -1,6 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { get } from '@vercel/edge-config'
-import { PROD_BASE_URL } from '@/utils/constants'
 
 export async function middleware(request: NextRequest) {
   const isVercelDeployed = request.headers.has('x-vercel-id')
@@ -8,7 +7,7 @@ export async function middleware(request: NextRequest) {
   // See https://vercel.com/docs/edge-network/headers#x-vercel-id-req
   if (isVercelDeployed) {
     if (request.nextUrl.pathname === '/') {
-      return NextResponse.redirect(PROD_BASE_URL, { status: 301 })
+      return NextResponse.redirect('https://jiwonchoi.dev', { status: 301 })
     }
 
     const paths = request.nextUrl.pathname.split('/')
