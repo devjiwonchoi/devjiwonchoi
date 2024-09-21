@@ -52,6 +52,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Jiwon Choi',
     url: PROD_BASE_URL,
+    images: [
+      {
+        url: '/me.png',
+        width: 800,
+        height: 600,
+        alt: 'Jiwon Choi',
+      },
+    ],
   },
   robots: {
     index: true,
