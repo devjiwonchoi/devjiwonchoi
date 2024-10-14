@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     ppr: true,
     typedEnv: true,
-    dynamicIO: true,
   },
 }
 
