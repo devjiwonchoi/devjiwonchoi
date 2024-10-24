@@ -5,7 +5,7 @@ if (!process.env.RESEND_API_KEY) {
 }
 
 export async function sendEmail({
-  from = 'no-reply@jiwonchoi.dev',
+  from = 'no-reply@devjiwonchoi.com',
   to = 'devjiwonchoi@gmail.com',
   subject,
   text = 'Check out: https://vercel.com/jiwonchoi/one/logs',
