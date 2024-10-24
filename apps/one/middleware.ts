@@ -1,5 +1,4 @@
 import { type NextRequest, NextResponse } from 'next/server'
-import { get } from '@vercel/edge-config'
 
 export async function middleware(request: NextRequest) {
   const isVercelDeployed = request.headers.has('x-vercel-id')
@@ -7,26 +6,33 @@ export async function middleware(request: NextRequest) {
   // See https://vercel.com/docs/edge-network/headers#x-vercel-id-req
   if (isVercelDeployed) {
     if (request.nextUrl.pathname === '/') {
-      return NextResponse.redirect('https://jiwonchoi.dev', { status: 301 })
+      return NextResponse.redirect('https://devjiwonchoi.com', { status: 308 })
     }
 
     const paths = request.nextUrl.pathname.split('/')
-    // if the path is not /<key>, we don't need to check the Edge Config
+    // If the path is not /<key>, we don't need to redirect.
     if (paths.length !== 2) {
       return NextResponse.next()
     }
 
-    console.log(paths[1])
-
     // ['', '<key>']
-    const key = await get(paths[1])
-    if (typeof key === 'string') {
-      return NextResponse.redirect(key, { status: 307 })
+    const key = paths[1]
+    if (key in redirectMap) {
+      return NextResponse.redirect(
+        redirectMap[key as keyof typeof redirectMap],
+        { status: 307 }
+      )
     }
   }
 
   return NextResponse.next()
 }
+
+const redirectMap = {
+  git: 'https://github.com/devjiwonchoi',
+  in: 'https://linkedin.com/in/devjiwonchoi',
+  x: 'https://x.com/devjiwonchoi',
+} as const
 
 export const config = {
   matcher: ['/', '/:path*'],
