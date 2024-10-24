@@ -1,4 +1,5 @@
-export function Footer() {
+export async function Footer() {
+  'use cache'
   const thisYear = new Date().getUTCFullYear()
   return (
     <footer className="flex items-center justify-between">
