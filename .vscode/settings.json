@@ -25,6 +25,7 @@
     "postcss",
     "Streamable",
     "tailwindcss",
+    "turbopack",
     "vercel",
     "webgl"
   ],
