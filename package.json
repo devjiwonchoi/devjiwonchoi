@@ -11,11 +11,11 @@
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "turbo": "canary",
     "typescript": "^5.7.2",
-    "vercel": "^39.1.1"
+    "vercel": "^39.1.2"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
