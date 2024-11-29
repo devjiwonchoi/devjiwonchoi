@@ -1,6 +1,7 @@
 {
   "terminal.integrated.scrollback": 10000,
   "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js, ${capture}.test.ts, ${capture}.test.tsx",
     "*.tsx": "${capture}.ts, ${capture}.test.ts, ${capture}.test.tsx",
