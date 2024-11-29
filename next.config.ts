@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     dynamicIO: true,
     ppr: true,
     typedEnv: true,
+    turbo: {
+      unstablePersistentCaching: true,
+    },
   },
 }
 
