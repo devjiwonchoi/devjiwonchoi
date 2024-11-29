@@ -2,11 +2,30 @@
   "name": "devjiwonchoi",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "start": "turbo start",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tb": "turbo build",
     "format": "prettier --write .",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/edge-config": "^1.4.0",
+    "@vercel/speed-insights": "^1.1.0",
+    "eslint": "^9.15.0",
+    "eslint-config-next": "15.0.3",
+    "next": "canary",
+    "postcss": "^8.4.49",
+    "react": "rc",
+    "react-dom": "rc",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -14,12 +33,12 @@
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "turbo": "canary",
-    "typescript": "^5.7.2",
-    "vercel": "^39.1.2"
+    "vercel": "^39.1.1"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
-      "prettier --write"
+      "prettier --write",
+      "next lint --max-warnings=0 --fix --file"
     ],
     "*.{css,json,md,mdx,yml,yaml}": [
       "prettier --write"
@@ -33,6 +52,15 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {}
+    }
+  },
+  "engines": {
+    "node": "18.18.0",
+    "pnpm": "9.6.0"
   },
   "packageManager": "pnpm@9.6.0"
 }

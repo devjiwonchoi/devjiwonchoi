@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistSans } from 'geist/font/sans'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { PROD_BASE_URL } from '@/utils/constants'
 import './globals.css'
+
+const GeistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -13,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={GeistSans.variable}>
       <body className="container mx-auto flex min-h-dvh max-w-2xl flex-col p-6 antialiased">
         <Header />
         {/* <NavBar /> */}
