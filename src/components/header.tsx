@@ -15,7 +15,7 @@ export function Header() {
       <div className="flex items-center space-x-4">
         {/* GitHub */}
         <Link
-          href="https://jiw.one/git"
+          href="https://github.com/devjiwonchoi"
           target="_blank"
           aria-label="Jiwon Choi's GitHub Profile"
           className="inline-block"
@@ -28,18 +28,18 @@ export function Header() {
             className=""
           />
         </Link>
-        {/* X */}
+        {/* Vercel Community */}
         <Link
-          href="https://jiw.one/x"
+          href="https://vercel.community/u/devjiwonchoi/summary"
           target="_blank"
-          aria-label="Jiwon Choi's X Profile"
+          aria-label="Jiwon Choi's Vercel Community Profile"
           className="inline-block"
         >
           <Image
-            src="/x.svg"
-            width={20}
-            height={20}
-            alt="X Logo"
+            src="/vercel.svg"
+            width={25}
+            height={25}
+            alt="Vercel Logo"
             className="invert"
           />
         </Link>

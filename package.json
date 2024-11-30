@@ -38,8 +38,8 @@
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
-      "prettier --write",
-      "next lint --max-warnings=0 --fix --file"
+      "next lint --max-warnings=0 --fix --file",
+      "prettier --write"
     ],
     "*.{css,json,md,mdx,yml,yaml}": [
       "prettier --write"
