@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   // See https://vercel.com/docs/cron-jobs/manage-cron-jobs#securing-cron-jobs
   const authHeader = request.headers.get('authorization')
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    await sendEmail({ subject: 'Unauthorized' })
     return new Response('Unauthorized.', { status: 401 })
   }
 
