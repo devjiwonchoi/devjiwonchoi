@@ -28,21 +28,6 @@ export function Header() {
             className=""
           />
         </Link>
-        {/* Vercel Community */}
-        <Link
-          href="https://vercel.community/u/devjiwonchoi/summary"
-          target="_blank"
-          aria-label="Jiwon Choi's Vercel Community Profile"
-          className="inline-block"
-        >
-          <Image
-            src="/vercel.svg"
-            width={25}
-            height={25}
-            alt="Vercel Logo"
-            className="invert"
-          />
-        </Link>
       </div>
     </header>
   )
