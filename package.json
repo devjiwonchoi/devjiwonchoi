@@ -13,7 +13,7 @@
   "dependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@types/node": "^22.10.6",
-    "@types/react": "^19.0.6",
+    "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@vercel/analytics": "^1.4.1",
     "@vercel/edge-config": "^1.4.0",
@@ -21,10 +21,10 @@
     "eslint": "^9.18.0",
     "eslint-config-next": "canary",
     "next": "canary",
-    "postcss": "^8.5.0",
+    "postcss": "^8.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^4.0.1",
+    "resend": "^4.1.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
   },
@@ -32,7 +32,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
+    "prettier-plugin-tailwindcss": "^0.6.10",
     "turbo": "^2.3.3",
     "vercel": "^39.3.0"
   },
