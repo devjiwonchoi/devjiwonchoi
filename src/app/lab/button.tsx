@@ -10,7 +10,7 @@ export function Button() {
         console.log(result)
       }}
     >
-      Click me
+      Click me 2
     </button>
   )
 }
