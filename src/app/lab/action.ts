@@ -1,5 +1,5 @@
 'use server'
 
 export async function action() {
-  return 'action invoked'
+  return 'action invoked 2'
 }
