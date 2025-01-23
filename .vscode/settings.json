@@ -11,24 +11,5 @@
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
     "Cargo.toml": "Cargo.lock"
   },
-  "cSpell.words": [
-    "BIGSERIAL",
-    "choi",
-    "depbot",
-    "devjiwonchoi",
-    "Dogfooding",
-    "hnsw",
-    "Jiwon",
-    "jiwonchoi",
-    "jiwone",
-    "nextjs",
-    "pgvector",
-    "postcss",
-    "Streamable",
-    "tailwindcss",
-    "turbopack",
-    "vercel",
-    "webgl"
-  ],
   "typescript.tsdk": "./node_modules/typescript/lib"
 }
