@@ -13,8 +13,8 @@
   "dependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/postcss": "^4.0.0",
-    "@types/node": "^22.10.7",
-    "@types/react": "^19.0.7",
+    "@types/node": "^22.10.10",
+    "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vercel/analytics": "^1.4.1",
     "@vercel/edge-config": "^1.4.0",
@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.1",
+    "lint-staged": "^15.4.2",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.10",
-    "turbo": "^2.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.3.4",
     "vercel": "^39.3.0"
   },
   "lint-staged": {
