@@ -19,7 +19,7 @@
     "@vercel/analytics": "^1.4.1",
     "@vercel/edge-config": "^1.4.0",
     "@vercel/speed-insights": "^1.1.0",
-    "eslint": "^9.18.0",
+    "eslint": "^9.19.0",
     "eslint-config-next": "canary",
     "next": "canary",
     "react": "^19.0.0",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.2",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.3.4",
