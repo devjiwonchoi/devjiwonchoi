@@ -13,7 +13,7 @@
   "dependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/postcss": "^4.0.3",
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vercel/analytics": "^1.4.1",
@@ -24,7 +24,7 @@
     "next": "canary",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^4.1.1",
+    "resend": "^4.1.2",
     "tailwindcss": "^4.0.3",
     "typescript": "^5.7.3"
   },
