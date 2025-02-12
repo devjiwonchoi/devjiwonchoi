@@ -18,7 +18,7 @@
     "@types/react-dom": "^19.0.3",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "eslint-config-next": "canary",
     "next": "canary",
     "react": "^19.0.0",
@@ -33,7 +33,7 @@
     "prettier": "^3.5.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.1",
-    "vercel": "^41.0.3"
+    "vercel": "^41.1.0"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
