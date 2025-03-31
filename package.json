@@ -21,8 +21,8 @@
     "eslint": "^9.23.0",
     "eslint-config-next": "canary",
     "next": "canary",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "resend": "^4.2.0",
     "tailwindcss": "^4.0.17",
     "typescript": "^5.8.2"
