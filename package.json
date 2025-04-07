@@ -12,20 +12,20 @@
   },
   "dependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/postcss": "^4.1.2",
+    "@tailwindcss/postcss": "^4.1.3",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-next": "canary",
     "next": "canary",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "resend": "^4.2.0",
-    "tailwindcss": "^4.1.2",
-    "typescript": "^5.8.2"
+    "tailwindcss": "^4.1.3",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "husky": "^9.1.7",
