@@ -18,7 +18,7 @@
     "@types/react-dom": "^19.1.2",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "eslint": "^9.25.0",
+    "eslint": "^9.25.1",
     "eslint-config-next": "canary",
     "next": "canary",
     "react": "^19.1.0",
