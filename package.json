@@ -23,7 +23,7 @@
     "next": "canary",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "resend": "^4.3.0",
+    "resend": "^4.4.0",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3"
   },
@@ -33,7 +33,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.5.0",
-    "vercel": "^41.6.1"
+    "vercel": "^41.6.2"
   },
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
