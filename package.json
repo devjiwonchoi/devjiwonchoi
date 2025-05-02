@@ -23,7 +23,7 @@
     "next": "canary",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "resend": "^4.4.1",
+    "resend": "^4.5.0",
     "tailwindcss": "^4.1.5",
     "typescript": "^5.8.3"
   },
