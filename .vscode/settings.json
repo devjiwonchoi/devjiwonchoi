@@ -8,8 +8,7 @@
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
     "*.jsx": "${capture}.js",
     "tsconfig.json": "tsconfig.*.json",
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-    "Cargo.toml": "Cargo.lock"
+    "package.json": "pnpm-lock.yaml"
   },
   "typescript.tsdk": "./node_modules/typescript/lib"
 }
