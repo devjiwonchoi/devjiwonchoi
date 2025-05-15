@@ -34,17 +34,5 @@
     "turbo": "^2.5.3",
     "vercel": "^41.7.6"
   },
-  "lint-staged": {
-    "*.{js,mjs,jsx,ts,tsx}": [
-      "next lint --max-warnings=0 --fix --file",
-      "biome format --write --no-errors-on-unmatched"
-    ],
-    "*.{css,json,md,mdx,yml,yaml}": [
-      "biome format --write --no-errors-on-unmatched"
-    ]
-  },
-  "postcss": {
-    "plugins": ["@tailwindcss/postcss"]
-  },
   "packageManager": "pnpm@9.6.0"
 }
