@@ -4,7 +4,12 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["CRON_SECRET", "GITHUB_ACCESS_TOKEN", "RESEND_API_KEY", "VERCEL_ENV"]
+      "env": [
+        "CRON_SECRET",
+        "GITHUB_ACCESS_TOKEN",
+        "RESEND_API_KEY",
+        "VERCEL_ENV"
+      ]
     }
   },
   "ui": "tui"
