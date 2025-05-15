@@ -17,6 +17,7 @@
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
+    "ignore": [".next/"],
     "rules": {
       "recommended": false,
       "nursery": { "useSortedClasses": "error" }
