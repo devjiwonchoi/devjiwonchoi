@@ -6,7 +6,7 @@ export function Header() {
     <header className="my-4 flex justify-between">
       <div className="flex w-fit flex-col">
         <Link href="/" title="home">
-          <span className="text-2xl font-bold">Jiwon Choi</span>
+          <span className="font-bold text-2xl">Jiwon Choi</span>
         </Link>
         <Link href="https://vercel.com/home" title="▲ Vercel">
           <span className="text-neutral-200">Engineer ▲ Vercel</span>
