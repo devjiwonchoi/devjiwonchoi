@@ -1,1 +1,1 @@
-export const PROD_BASE_URL = 'https://devjiwonchoi.com'
+export const PROD_BASE_URL = "https://devjiwonchoi.com";

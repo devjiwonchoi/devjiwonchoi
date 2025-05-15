@@ -1,11 +1,11 @@
-import type { Route } from 'next'
-import Link from 'next/link'
+import type { Route } from "next";
+import Link from "next/link";
 
 const navItems = [
-  { path: '/', name: '::1' },
-  { path: '/blog', name: 'blog' },
-  { path: '/lab', name: 'lab' },
-]
+  { path: "/", name: "::1" },
+  { path: "/blog", name: "blog" },
+  { path: "/lab", name: "lab" },
+];
 
 export function NavBar() {
   return (
@@ -23,5 +23,5 @@ export function NavBar() {
         ))}
       </ul>
     </nav>
-  )
+  );
 }

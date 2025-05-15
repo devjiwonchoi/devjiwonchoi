@@ -1,26 +1,26 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-import { PROD_BASE_URL } from '@/utils/constants'
-import './globals.css'
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { PROD_BASE_URL } from "@/utils/constants";
+import "./globals.css";
 
 const GeistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
 const GeistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
@@ -33,41 +33,41 @@ export default function RootLayout({
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
 
 const description =
-  'Jiwon Choi is a software engineer spending time on time-saving at Vercel, maintaining Next.js and other open source libraries.'
+  "Jiwon Choi is a software engineer spending time on time-saving at Vercel, maintaining Next.js and other open source libraries.";
 
 const keywords = [
-  'jiwon choi',
-  'software engineer',
-  'vercel',
-  'nextjs',
-  'open source',
-  'web',
-  'frontend',
-  'cloud',
-  'developer',
-  'experience',
-]
+  "jiwon choi",
+  "software engineer",
+  "vercel",
+  "nextjs",
+  "open source",
+  "web",
+  "frontend",
+  "cloud",
+  "developer",
+  "experience",
+];
 
 export const metadata: Metadata = {
-  title: 'Jiwon Choi',
+  title: "Jiwon Choi",
   description,
   keywords,
   metadataBase: new URL(PROD_BASE_URL),
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    siteName: 'Jiwon Choi',
+    type: "website",
+    locale: "en_US",
+    siteName: "Jiwon Choi",
     url: PROD_BASE_URL,
     images: [
       {
-        url: '/me.png',
+        url: "/me.png",
         width: 800,
         height: 600,
-        alt: 'Jiwon Choi',
+        alt: "Jiwon Choi",
       },
     ],
   },
@@ -76,6 +76,6 @@ export const metadata: Metadata = {
     follow: true,
   },
   twitter: {
-    creator: '@devjiwonchoi',
+    creator: "@devjiwonchoi",
   },
-}
+};
