@@ -36,8 +36,8 @@ importers:
         specifier: canary
         version: 15.4.0-canary.34(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
       ezmdx:
-        specifier: ^0.0.2
-        version: 0.0.2(acorn@8.14.1)(react@19.1.0)
+        specifier: ^0.0.4
+        version: 0.0.4(acorn@8.14.1)(react@19.1.0)
       next:
         specifier: canary
         version: 15.4.0-canary.34(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1681,8 +1681,8 @@ packages:
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
-  ezmdx@0.0.2:
-    resolution: {integrity: sha512-agWcl45K4i4bz33mmzl5fm4HzwqXd9rxA55l8JUNtZ4OjXnVucDE0fXzsT+wH466aGLDxLexaCRQfEabUMEIHg==}
+  ezmdx@0.0.4:
+    resolution: {integrity: sha512-gMuxUkKzB3w1bmLgzOOZtX7c0raG24c9hjn3EWVI/iK24dQBzWmNUfdcT3BNSC9tOuJFK+mHRkF7pZsQSAe6nQ==}
     peerDependencies:
       react: ^19
 
@@ -5113,7 +5113,7 @@ snapshots:
 
   extend@3.0.2: {}
 
-  ezmdx@0.0.2(acorn@8.14.1)(react@19.1.0):
+  ezmdx@0.0.4(acorn@8.14.1)(react@19.1.0):
     dependencies:
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       gray-matter: 4.0.3
@@ -6047,7 +6047,7 @@ snapshots:
   micromark@4.0.2:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.0
+      debug: 4.4.1
       decode-named-character-reference: 1.1.0
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.3

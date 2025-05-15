@@ -8,9 +8,6 @@ export function Header() {
         <Link href="/" title="home">
           <span className="font-bold text-2xl">Jiwon Choi</span>
         </Link>
-        <Link href="https://vercel.com/home" title="▲ Vercel">
-          <span className="text-neutral-200">Engineer ▲ Vercel</span>
-        </Link>
       </div>
       <div className="flex items-center space-x-4">
         {/* GitHub */}
