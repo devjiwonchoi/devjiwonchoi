@@ -37,9 +37,11 @@
   "lint-staged": {
     "*.{js,mjs,jsx,ts,tsx}": [
       "next lint --max-warnings=0 --fix --file",
-      "biome format --write"
+      "biome format --write --no-errors-on-unmatched"
     ],
-    "*.{css,json,md,mdx,yml,yaml}": ["biome format --write"]
+    "*.{css,json,md,mdx,yml,yaml}": [
+      "biome format --write --no-errors-on-unmatched"
+    ]
   },
   "postcss": {
     "plugins": ["@tailwindcss/postcss"]

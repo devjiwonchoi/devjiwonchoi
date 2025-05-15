@@ -12,7 +12,7 @@
     "lineWidth": 80,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": ["pnpm-lock.yaml", ".next/"]
+    "ignore": [".next/"]
   },
   "organizeImports": { "enabled": true },
   "linter": {
