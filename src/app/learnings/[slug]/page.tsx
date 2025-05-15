@@ -6,8 +6,9 @@ import {
   unstable_cacheTag as cacheTag,
 } from "next/cache";
 import { Suspense } from "react";
-import { MDX, parse } from "ezmdx";
+import { compile, parse } from "ezmdx";
 import { getSlugs } from "../get-slugs";
+import { mdxComponents } from "./components";
 
 type PropsType = {
   params: Promise<{ slug: string }>;
@@ -32,8 +33,20 @@ async function LearningsPost({
 }) {
   const { slug } = await params;
   const source = await getPost(slug);
+  const { frontmatter, content } = compile({
+    source,
+    options: { components: mdxComponents },
+  });
 
-  return <MDX source={source} />;
+  const { title } = frontmatter;
+
+  return (
+    <article>
+      <h1 className="text-2xl font-bold">{title}</h1>
+      <p className="text-sm text-gray-500">{frontmatter.createdAt}</p>
+      {content}
+    </article>
+  );
 }
 
 export default async function LearningsPostPage({ params }: PropsType) {

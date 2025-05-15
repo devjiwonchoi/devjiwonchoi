@@ -25,6 +25,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.7",
+    "sugar-high": "^0.9.3",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
