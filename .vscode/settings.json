@@ -1,4 +1,5 @@
 {
+  "editor.defaultFormatter": "biomejs.biome",
   "terminal.integrated.scrollback": 10000,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
