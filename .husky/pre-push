@@ -1,6 +1,6 @@
 #!/bin/sh
 
-protected_branch='canary'
+protected_branch='main'
 
 # github blocks password-based auth, but still usable via API token
 protected_remote_urls="\
@@ -15,7 +15,7 @@ remote_url="$2"
 
 
 
-# if we're pushing to a fork, we don't need to protect canary.
+# if we're pushing to a fork, we don't need to protect main.
 # check if the remote is one of the protected ones.
 is_remote_protected=0
 for protected_remote_url in $protected_remote_urls; do
@@ -31,7 +31,7 @@ fi
 
 
 
-# check if the push is targeting canary on the remote
+# check if the push is targeting main on the remote
 # https://stackoverflow.com/a/44156933
 push_targets_protected_branch=0
 protected_ref="refs/heads/$protected_branch"
