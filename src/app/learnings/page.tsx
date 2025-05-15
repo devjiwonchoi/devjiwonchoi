@@ -1,25 +1,9 @@
 import Link from "next/link";
-
-import { readdir } from "fs/promises";
 import { Suspense } from "react";
-import {
-  unstable_cacheLife as cacheLife,
-  unstable_cacheTag as cacheTag,
-} from "next/cache";
-
-async function getPostSlugs() {
-  "use cache";
-  const dir = "public/md/learnings";
-  const postSlugs = (await readdir(dir)).map((file) => file.replace(".md", ""));
-
-  cacheTag("learnings");
-  cacheLife("hours");
-
-  return postSlugs;
-}
+import { getSlugs } from "./get-slugs";
 
 async function LearningsList() {
-  const postSlugs = await getPostSlugs();
+  const postSlugs = await getSlugs();
   return (
     <>
       {postSlugs.map((slug) => (

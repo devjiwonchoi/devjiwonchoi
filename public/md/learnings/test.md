@@ -1,6 +1,7 @@
 ---
 title: 'Test'
 description: 'This is a test learning page.'
+keywords: ['test', 'learning', 'page']
 createdAt: 'April 7, 2025'
 ---
 
