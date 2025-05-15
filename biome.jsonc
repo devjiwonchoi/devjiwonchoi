@@ -15,7 +15,13 @@
     "ignore": ["pnpm-lock.yaml", ".next/"]
   },
   "organizeImports": { "enabled": true },
-  "linter": { "enabled": true, "rules": { "recommended": true } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "nursery": { "useSortedClasses": "error" }
+    }
+  },
   "javascript": {
     "formatter": {
       "jsxQuoteStyle": "double",
