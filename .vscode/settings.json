@@ -1,5 +1,4 @@
 {
-  "editor.defaultFormatter": "biomejs.biome",
   "terminal.integrated.scrollback": 10000,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -11,11 +10,5 @@
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "pnpm-lock.yaml"
   },
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  }
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

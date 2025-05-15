@@ -1,14 +1,14 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
+  - package-ecosystem: "npm"
     directories:
-      - '/'
+      - "/"
     target-branch: main
     schedule:
-      interval: 'daily'
-      timezone: 'Asia/Seoul'
-      time: '09:00'
+      interval: "daily"
+      timezone: "Asia/Seoul"
+      time: "09:00"
     groups:
       all:
         patterns:
-          - '*'
+          - "*"
