@@ -27,7 +27,9 @@ async function getPost(slug: string) {
 
 async function LearningsPost({
   params,
-}: { params: Promise<{ slug: string }> }) {
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const source = await getPost(slug);
 

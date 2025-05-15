@@ -6,7 +6,7 @@ export function Header() {
     <header className="my-4 flex justify-between">
       <div className="flex w-fit flex-col">
         <Link href="/" title="home">
-          <span className="font-bold text-2xl">Jiwon Choi</span>
+          <span className="text-2xl font-bold">Jiwon Choi</span>
         </Link>
       </div>
       <div className="flex items-center space-x-4">
