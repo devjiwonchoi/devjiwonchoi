@@ -18,15 +18,23 @@ async function getPostSlugs() {
   return postSlugs;
 }
 
-export default async function Learnings() {
-  const postSlugs = await getPostSlugs();
+async function LearningsList() {
+  const postSlugs = await getPostSlugs()
   return (
-    <Suspense fallback={<div>Loading Learnings...</div>}>
+    <>
       {postSlugs.map((slug) => (
         <div key={slug}>
           <Link href={`/learnings/${slug}`}>{slug}</Link>
         </div>
       ))}
+    </>
+  )
+}
+
+export default async function LearningsListPage() {
+  return (
+    <Suspense fallback={<div>Loading Learnings...</div>}>
+      <LearningsList />
     </Suspense>
   );
 }
