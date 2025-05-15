@@ -59,5 +59,14 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
-  return slugs.map((slug) => ({ slug }));
+
+  const readyPosts = await Promise.all(
+    slugs.filter(async (slug) => {
+      const source = await getPost(slug);
+      const { frontmatter } = parse({ source });
+      return !frontmatter.draft;
+    })
+  );
+
+  return readyPosts.map((slug) => ({ slug }));
 }
