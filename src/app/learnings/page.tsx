@@ -19,7 +19,7 @@ async function getPostSlugs() {
 }
 
 async function LearningsList() {
-  const postSlugs = await getPostSlugs()
+  const postSlugs = await getPostSlugs();
   return (
     <>
       {postSlugs.map((slug) => (
@@ -28,7 +28,7 @@ async function LearningsList() {
         </div>
       ))}
     </>
-  )
+  );
 }
 
 export default async function LearningsListPage() {

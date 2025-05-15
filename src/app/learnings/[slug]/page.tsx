@@ -1,10 +1,10 @@
-import { readFile } from 'fs/promises'
+import { readFile } from "fs/promises";
 // import {
 //   unstable_cacheLife as cacheLife,
 //   unstable_cacheTag as cacheTag,
 // } from 'next/cache'
-import { MDX } from 'ezmdx'
-import { Suspense } from 'react'
+import { MDX } from "ezmdx";
+import { Suspense } from "react";
 
 async function getPost(slug: string) {
   "use cache";
@@ -20,12 +20,12 @@ async function getPost(slug: string) {
 async function LearningsPost({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
-  const source = await getPost(slug)
+  const { slug } = await params;
+  const source = await getPost(slug);
 
-  return <MDX source={source} />
+  return <MDX source={source} />;
 }
 
 export default async function LearningsPostPage({
