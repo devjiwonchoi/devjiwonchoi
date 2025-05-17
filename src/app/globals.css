@@ -11,6 +11,7 @@
 }
 
 html {
-  @apply bg-black text-neutral-50;
+  @apply bg-stone-100 text-stone-900 dark:bg-stone-900 dark:text-stone-100;
   min-width: 360px;
+  font-family: var(--font-mono);
 }
