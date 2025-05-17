@@ -22,7 +22,7 @@ export function Header() {
             width={24}
             height={24}
             alt="GitHub Logo"
-            className=""
+            className="invert-100 dark:invert-0"
           />
         </Link>
       </div>
