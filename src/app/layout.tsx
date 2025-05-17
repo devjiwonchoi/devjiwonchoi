@@ -9,6 +9,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PROD_BASE_URL } from "@/utils/constants";
+import { SandPackCSS } from "@/components/sandpack/sandpack-style";
 
 const GeistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <head>
+        <SandPackCSS />
+      </head>
       <body className="container mx-auto flex min-h-dvh max-w-2xl flex-col p-6 antialiased">
         <Header />
         {/* <NavBar /> */}
