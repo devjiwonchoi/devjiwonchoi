@@ -14,7 +14,7 @@
     "@codesandbox/sandpack-react": "^2.20.0",
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.7",
-    "@types/node": "^22.15.19",
+    "@types/node": "^22.15.21",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
     "@vercel/analytics": "^1.5.0",
@@ -34,7 +34,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.5.3",
-    "vercel": "^41.7.8"
+    "vercel": "^42.1.1"
   },
   "packageManager": "pnpm@9.6.0"
 }
