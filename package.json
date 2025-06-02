@@ -14,12 +14,12 @@
     "@codesandbox/sandpack-react": "^2.20.0",
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.8",
-    "@types/node": "^22.15.26",
+    "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "eslint-config-next": "canary",
     "ezmdx": "^0.0.4",
     "next": "canary",
@@ -32,9 +32,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "turbo": "^2.5.3",
-    "vercel": "^42.2.0"
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "turbo": "^2.5.4",
+    "vercel": "^42.3.0"
   },
   "packageManager": "pnpm@9.6.0"
 }
