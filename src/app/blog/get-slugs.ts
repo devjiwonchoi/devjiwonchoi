@@ -11,8 +11,11 @@ export type BlogFrontmatter = {
   title: string;
   description: string;
   keywords: string[];
+  author: string;
+  read_time: number;
   preview_image: string;
   created_at: string;
+  status: "published" | "draft";
 };
 
 export async function getBlogSlugs() {

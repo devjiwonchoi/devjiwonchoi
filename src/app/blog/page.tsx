@@ -1,8 +1,10 @@
+import type { BlogFrontmatter } from "./get-slugs";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
 import { parse } from "ezmdx";
-import { getBlog, getBlogSlugs, type BlogFrontmatter } from "./get-slugs";
+import { getBlog, getBlogSlugs } from "./get-slugs";
 
 async function BlogList() {
   const slugs = await getBlogSlugs();
@@ -50,11 +52,15 @@ async function BlogList() {
                       )}
                     </time>
                     <span>•</span>
+                    <span className="font-medium">
+                      {frontmatter.read_time} read
+                    </span>
+                    <span>•</span>
                     <div className="flex flex-wrap gap-2">
                       {frontmatter.keywords.slice(0, 3).map((keyword) => (
                         <span
                           key={keyword}
-                          className="rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                          className="rounded-lg bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-300"
                         >
                           {keyword}
                         </span>
