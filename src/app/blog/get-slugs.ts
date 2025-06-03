@@ -1,17 +1,49 @@
 "use cache";
 
-import { readdir } from "fs/promises";
+import { readdir, readFile } from "fs/promises";
 import {
   unstable_cacheLife as cacheLife,
   unstable_cacheTag as cacheTag,
 } from "next/cache";
+import { parse } from "ezmdx";
 
-export async function getSlugs() {
+export type BlogFrontmatter = {
+  title: string;
+  description: string;
+  keywords: string[];
+  preview_image: string;
+  created_at: string;
+};
+
+export async function getBlogSlugs() {
   const dir = "public/blog";
   const slugs = await readdir(dir);
 
-  cacheTag("blog");
-  cacheLife("hours");
-
   return slugs;
+}
+
+export async function getBlog(slug: string) {
+  const filename = `public/blog/${slug}/index.md`;
+  const source = await readFile(filename, "utf-8");
+
+  cacheTag(`blog-${slug}`);
+  cacheLife("minutes");
+
+  return source;
+}
+
+export async function getReadyBlogSlugs() {
+  const slugs = await getBlogSlugs();
+  const readyBlogSlugs = await Promise.all(
+    slugs.filter(async (slug) => {
+      const source = await getBlog(slug);
+      const { frontmatter } = parse({ source });
+      return frontmatter.status === "published";
+    })
+  );
+
+  cacheTag("get-ready-post-slugs");
+  cacheLife("minutes");
+
+  return readyBlogSlugs;
 }
