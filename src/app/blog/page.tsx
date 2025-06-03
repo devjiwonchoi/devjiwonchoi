@@ -19,10 +19,10 @@ async function getBlogData() {
       slugs.map(async (slug) => {
         const source = await getBlog(slug);
         const { frontmatter } = parse({ source });
-        if (frontmatter.status === "draft") {
-          return null;
+        if (frontmatter.status === "published") {
+          return { slug, frontmatter };
         }
-        return { slug, frontmatter };
+        return null;
       })
     )
   ).filter((item): item is { slug: string; frontmatter: BlogFrontmatter } => {
