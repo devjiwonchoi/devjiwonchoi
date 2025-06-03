@@ -8,9 +8,9 @@ import {
 
 export async function getSlugs() {
   const dir = "public/blog";
-  const slugs = (await readdir(dir)).map((file) => file.replace(".md", ""));
+  const slugs = await readdir(dir);
 
-  cacheTag("learnings");
+  cacheTag("blog");
   cacheLife("hours");
 
   return slugs;

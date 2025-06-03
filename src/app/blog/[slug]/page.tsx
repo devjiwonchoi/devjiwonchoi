@@ -16,10 +16,10 @@ type PropsType = {
 
 async function getPost(slug: string) {
   "use cache";
-  const filename = `public/blog/${slug}.md`;
+  const filename = `public/blog/${slug}/index.md`;
   const source = await readFile(filename, "utf-8");
 
-  cacheTag(`learnings-${slug}`);
+  cacheTag(`blog-${slug}`);
   cacheLife("hours");
 
   return source;
@@ -66,7 +66,7 @@ export async function generateStaticParams() {
     slugs.filter(async (slug) => {
       const source = await getPost(slug);
       const { frontmatter } = parse({ source });
-      return !frontmatter.draft;
+      return frontmatter.status === "published";
     })
   );
 

@@ -2,8 +2,9 @@
 title: "Test"
 description: "This is a test learning page."
 keywords: ["test", "learning", "page"]
-draft: true
-createdAt: "April 7, 2025"
+preview_image: "/blog/test.png"
+created_at: "April 7, 2025"
+status: "draft"
 ---
 
 This is a test learning page.
