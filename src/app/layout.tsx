@@ -10,6 +10,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { PROD_BASE_URL } from "@/utils/constants";
 import { SandPackCSS } from "@/components/sandpack/sandpack-style";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const GeistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,15 +28,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <SandPackCSS />
       </head>
       <body className="container mx-auto flex min-h-dvh max-w-2xl flex-col p-6 antialiased">
-        <Header />
-        {/* <NavBar /> */}
-        <main className="mb-auto">{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {/* <NavBar /> */}
+          <main className="mb-auto">{children}</main>
+          <Footer />
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
