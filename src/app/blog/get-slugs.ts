@@ -5,7 +5,6 @@ import {
   unstable_cacheLife as cacheLife,
   unstable_cacheTag as cacheTag,
 } from "next/cache";
-import { parse } from "ezmdx";
 
 export type BlogFrontmatter = {
   title: string;
@@ -22,6 +21,9 @@ export async function getBlogSlugs() {
   const dir = "public/blog";
   const slugs = await readdir(dir);
 
+  cacheTag("get-blog-slugs");
+  cacheLife("hours");
+
   return slugs;
 }
 
@@ -29,24 +31,8 @@ export async function getBlog(slug: string) {
   const filename = `public/blog/${slug}/index.md`;
   const source = await readFile(filename, "utf-8");
 
-  cacheTag(`blog-${slug}`);
-  cacheLife("minutes");
+  cacheTag(`get-blog-${slug}`);
+  cacheLife("hours");
 
   return source;
-}
-
-export async function getReadyBlogSlugs() {
-  const slugs = await getBlogSlugs();
-  const readyBlogSlugs = await Promise.all(
-    slugs.filter(async (slug) => {
-      const source = await getBlog(slug);
-      const { frontmatter } = parse({ source });
-      return frontmatter.status === "published";
-    })
-  );
-
-  cacheTag("get-ready-post-slugs");
-  cacheLife("minutes");
-
-  return readyBlogSlugs;
 }

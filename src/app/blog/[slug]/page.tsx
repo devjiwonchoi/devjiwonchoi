@@ -1,13 +1,35 @@
 import type { Metadata } from "next";
 
 import { Suspense } from "react";
+import {
+  unstable_cacheLife as cacheLife,
+  unstable_cacheTag as cacheTag,
+} from "next/cache";
 import { MDX, parse } from "ezmdx";
-import { getBlog, getReadyBlogSlugs } from "../get-slugs";
+import { getBlog, getBlogSlugs } from "../get-slugs";
 
 type PropsType = {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+async function getReadyBlogSlugs() {
+  "use cache";
+
+  const slugs = await getBlogSlugs();
+  const readyBlogSlugs = await Promise.all(
+    slugs.filter(async (slug) => {
+      const source = await getBlog(slug);
+      const { frontmatter } = parse({ source });
+      return frontmatter.status === "published";
+    })
+  );
+
+  cacheTag("get-ready-blog-slugs");
+  cacheLife("hours");
+
+  return readyBlogSlugs;
+}
 
 async function Blog({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

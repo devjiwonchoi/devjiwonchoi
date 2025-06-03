@@ -3,10 +3,16 @@ import type { BlogFrontmatter } from "./get-slugs";
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
+import {
+  unstable_cacheLife as cacheLife,
+  unstable_cacheTag as cacheTag,
+} from "next/cache";
 import { parse } from "ezmdx";
 import { getBlog, getBlogSlugs } from "./get-slugs";
 
-async function BlogList() {
+async function getBlogData() {
+  "use cache";
+
   const slugs = await getBlogSlugs();
   const blogData = (
     await Promise.all(
@@ -22,6 +28,15 @@ async function BlogList() {
   ).filter((item): item is { slug: string; frontmatter: BlogFrontmatter } => {
     return item !== null;
   });
+
+  cacheTag("get-blog-data");
+  cacheLife("hours");
+
+  return blogData;
+}
+
+async function BlogList() {
+  const blogData = await getBlogData();
 
   return (
     <div className="py-8">
@@ -91,7 +106,9 @@ export default async function BlogListPage() {
   return (
     <Suspense
       fallback={
-        <div className="text-gray-600 dark:text-gray-400">Loading Posts...</div>
+        <div className="text-gray-600 dark:text-gray-400">
+          Loading Blog List...
+        </div>
       }
     >
       <BlogList />
