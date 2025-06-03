@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggleDropdown } from "./theme-toggle-dropdown";
 
 export function Header() {
   return (
@@ -25,6 +26,7 @@ export function Header() {
             className="invert-100 dark:invert-0"
           />
         </Link>
+        <ThemeToggleDropdown />
       </div>
     </header>
   );
