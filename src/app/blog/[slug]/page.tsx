@@ -16,7 +16,7 @@ type PropsType = {
 
 async function getPost(slug: string) {
   "use cache";
-  const filename = `public/md/learnings/${slug}.md`;
+  const filename = `public/blog/${slug}.md`;
   const source = await readFile(filename, "utf-8");
 
   cacheTag(`learnings-${slug}`);

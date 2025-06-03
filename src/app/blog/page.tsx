@@ -8,7 +8,7 @@ async function LearningsList() {
     <>
       {postSlugs.map((slug) => (
         <div key={slug}>
-          <Link href={`/learnings/${slug}`}>{slug}</Link>
+          <Link href={`/blog/${slug}`}>{slug}</Link>
         </div>
       ))}
     </>

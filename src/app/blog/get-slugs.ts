@@ -7,7 +7,7 @@ import {
 } from "next/cache";
 
 export async function getSlugs() {
-  const dir = "public/md/learnings";
+  const dir = "public/blog";
   const slugs = (await readdir(dir)).map((file) => file.replace(".md", ""));
 
   cacheTag("learnings");
