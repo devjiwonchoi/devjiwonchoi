@@ -8,6 +8,9 @@
         "CRON_SECRET",
         "GITHUB_ACCESS_TOKEN",
         "RESEND_API_KEY",
+        "AUTH_SECRET",
+        "AUTH_GITHUB_ID",
+        "AUTH_GITHUB_SECRET",
         "VERCEL_ENV"
       ]
     }
