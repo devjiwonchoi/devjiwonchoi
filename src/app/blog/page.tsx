@@ -3,15 +3,13 @@ import type { BlogFrontmatter } from "./get-slugs";
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
-import {
-  unstable_cacheLife as cacheLife,
-  unstable_cacheTag as cacheTag,
-} from "next/cache";
 import { parse } from "ezmdx";
 import { getBlog, getBlogSlugs } from "./get-slugs";
+import { auth } from "@/lib/auth";
 
 async function getBlogData() {
-  "use cache";
+  const session = await auth();
+  const isAdmin = session?.user?.email === "devjiwonchoi@gmail.com";
 
   const slugs = await getBlogSlugs();
   const blogData = (
@@ -19,18 +17,17 @@ async function getBlogData() {
       slugs.map(async (slug) => {
         const source = await getBlog(slug);
         const { frontmatter } = parse({ source });
-        if (frontmatter.status === "published") {
+
+        if (isAdmin || frontmatter.status === "published") {
           return { slug, frontmatter };
         }
+
         return null;
       })
     )
   ).filter((item): item is { slug: string; frontmatter: BlogFrontmatter } => {
     return item !== null;
   });
-
-  cacheTag("get-blog-data");
-  cacheLife("hours");
 
   return blogData;
 }
