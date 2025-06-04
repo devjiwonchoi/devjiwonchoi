@@ -18,7 +18,7 @@ export type BlogFrontmatter = {
 };
 
 export async function getBlogSlugs() {
-  const dir = "public/blog";
+  const dir = "./public/blog";
   const slugs = await readdir(dir);
 
   cacheTag("get-blog-slugs");
@@ -28,7 +28,7 @@ export async function getBlogSlugs() {
 }
 
 export async function getBlog(slug: string) {
-  const filename = `public/blog/${slug}/index.md`;
+  const filename = `./public/blog/${slug}/index.md`;
   const source = await readFile(filename, "utf-8");
 
   cacheTag(`get-blog-${slug}`);
