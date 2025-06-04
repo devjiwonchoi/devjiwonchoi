@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProfileDropdown } from "./profile-dropdown";
 import { ThemeToggleDropdown } from "./theme-toggle-dropdown";
 import { Button } from "./ui/button";
 import { GithubIcon } from "./icons/github";
@@ -11,7 +12,7 @@ export function Header() {
           <span className="text-2xl font-bold">Jiwon Choi</span>
         </Link>
       </div>
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center">
         {/* GitHub */}
         <Button variant="ghost" size="icon" className="cursor-pointer">
           <Link
@@ -19,10 +20,11 @@ export function Header() {
             target="_blank"
             aria-label="Jiwon Choi's GitHub Profile"
           >
-            <GithubIcon className="h-4 w-4" fill="currentColor" />
+            <GithubIcon fill="currentColor" />
           </Link>
         </Button>
         <ThemeToggleDropdown />
+        <ProfileDropdown />
       </div>
     </header>
   );

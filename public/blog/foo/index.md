@@ -6,7 +6,7 @@ author: "Jiwon Choi"
 read_time: "5 min"
 preview_image: "/me.png"
 created_at: "April 7, 2025"
-status: "draft"
+status: "published"
 ---
 
 This is a test learning page.
