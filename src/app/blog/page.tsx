@@ -36,39 +36,41 @@ async function BlogList() {
   const blogData = await getBlogData();
 
   return (
-    <div className="py-8">
-      <div className="space-y-8">
+    <div className="py-4 sm:py-8">
+      <div className="space-y-4 sm:space-y-8">
         {blogData.map(({ slug, frontmatter }) => (
           <article key={slug} className="group">
             <Link href={`/blog/${slug}`} className="block">
-              <div className="flex gap-6 rounded-lg p-6 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-900">
-                <div className="flex-1">
+              <div className="flex flex-col gap-4 rounded-lg p-4 transition-colors duration-200 hover:bg-gray-100 sm:flex-row sm:gap-6 sm:p-6 dark:hover:bg-gray-900">
+                <div className="order-2 flex-1 sm:order-1">
                   <div className="mb-3">
-                    <h2 className="mb-2 line-clamp-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+                    <h2 className="mb-2 line-clamp-2 text-lg font-bold text-gray-900 sm:text-xl dark:text-gray-100">
                       {frontmatter.title}
                     </h2>
-                    <p className="line-clamp-3 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                    <p className="line-clamp-2 text-sm leading-relaxed text-gray-600 sm:line-clamp-3 sm:text-base dark:text-gray-400">
                       {frontmatter.description}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                    <time className="font-medium">
-                      {new Date(frontmatter.created_at).toLocaleDateString(
-                        "en-US",
-                        {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        }
-                      )}
-                    </time>
-                    <span>•</span>
-                    <span className="font-medium">
-                      {frontmatter.read_time} read
-                    </span>
-                    <span>•</span>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-col gap-2 text-xs text-gray-500 sm:flex-row sm:items-center sm:gap-4 sm:text-sm dark:text-gray-400">
+                    <div className="flex items-center gap-2 sm:gap-4">
+                      <time className="font-medium">
+                        {new Date(frontmatter.created_at).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                          }
+                        )}
+                      </time>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="font-medium">
+                        {frontmatter.read_time} read
+                      </span>
+                    </div>
+                    <span className="hidden sm:inline">•</span>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {frontmatter.keywords.slice(0, 3).map((keyword) => (
                         <span
                           key={keyword}
@@ -81,13 +83,13 @@ async function BlogList() {
                   </div>
                 </div>
 
-                <div className="flex-shrink-0">
+                <div className="order-1 flex-shrink-0 sm:order-2">
                   <Image
                     src={frontmatter.preview_image}
                     alt={frontmatter.title}
                     width={160}
                     height={100}
-                    className="h-[100px] w-[160px] rounded-lg object-cover"
+                    className="h-[120px] w-full rounded-lg object-cover sm:h-[100px] sm:w-[160px]"
                   />
                 </div>
               </div>
