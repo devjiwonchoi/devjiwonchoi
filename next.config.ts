@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     ppr: true,
     typedEnv: true,
     turbopackPersistentCaching: true,
+    devtoolSegmentExplorer: true,
   },
 };
 
