@@ -5,6 +5,7 @@ import {
   unstable_cacheLife as cacheLife,
   unstable_cacheTag as cacheTag,
 } from "next/cache";
+import { join } from "path";
 
 export type BlogFrontmatter = {
   title: string;
@@ -18,7 +19,7 @@ export type BlogFrontmatter = {
 };
 
 export async function getBlogSlugs() {
-  const dir = "./public/blog";
+  const dir = join(process.cwd(), "public/blog");
   const slugs = await readdir(dir);
 
   cacheTag("get-blog-slugs");
@@ -28,7 +29,7 @@ export async function getBlogSlugs() {
 }
 
 export async function getBlog(slug: string) {
-  const filename = `./public/blog/${slug}/index.md`;
+  const filename = join(process.cwd(), `public/blog/${slug}/index.md`);
   const source = await readFile(filename, "utf-8");
 
   cacheTag(`get-blog-${slug}`);
