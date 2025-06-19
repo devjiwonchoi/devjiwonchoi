@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     typedEnv: true,
     turbopackPersistentCaching: true,
     devtoolSegmentExplorer: true,
+    devtoolNewPanelUI: true,
   },
 };
 
