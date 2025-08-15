@@ -2,8 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   experimental: {
-    dynamicIO: true,
+    cacheComponents: true,
+    ppr: true,
     typedEnv: true,
+    typedRoutes: true,
     turbopackPersistentCaching: true,
     devtoolSegmentExplorer: true,
     browserDebugInfoInTerminal: true,
