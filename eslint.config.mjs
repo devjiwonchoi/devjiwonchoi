@@ -5,6 +5,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  { ignores: [".next/**", ".vercel/**", ".turbo/**"] },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
