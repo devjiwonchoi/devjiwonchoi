@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
     typedRoutes: true,
     turbopackPersistentCaching: true,
     devtoolSegmentExplorer: true,
-    browserDebugInfoInTerminal: true,
     clientSegmentCache: true,
   },
 };
