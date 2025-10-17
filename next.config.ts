@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     cacheComponents: true,
     typedEnv: true,
     typedRoutes: true,
-    turbopackPersistentCaching: true,
+    turbopackFileSystemCacheForDev: true,
     clientSegmentCache: true,
   },
 };
