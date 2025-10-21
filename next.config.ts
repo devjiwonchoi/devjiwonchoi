@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  typedRoutes: true,
+  cacheComponents: true,
   experimental: {
-    cacheComponents: true,
     typedEnv: true,
-    typedRoutes: true,
     turbopackFileSystemCacheForDev: true,
     clientSegmentCache: true,
   },
