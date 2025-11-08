@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   experimental: {
     typedEnv: true,
     turbopackFileSystemCacheForDev: true,
-    clientSegmentCache: true,
   },
 };
 
