@@ -1,7 +1,7 @@
 import { start } from "workflow/api";
 import { handleUserSignup } from "@/lib/workflow";
 import { NextResponse } from "next/server";
-export async function POST() {
+export async function GET() {
   // Executes asynchronously and doesn't block your app
   await start(handleUserSignup);
   return NextResponse.json({
