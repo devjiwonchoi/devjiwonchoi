@@ -30,8 +30,8 @@
     "next": "canary",
     "next-auth": "5.0.0-beta.30",
     "next-themes": "^0.4.6",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "turbo": "^2.7.6",
@@ -44,7 +44,7 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "vercel": "^50.5.0"
+    "vercel": "^50.6.0"
   },
   "packageManager": "pnpm@9.6.0"
 }
