@@ -24,8 +24,8 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18
       '@types/node':
-        specifier: ^25.0.10
-        version: 25.0.10
+        specifier: ^25.1.0
+        version: 25.1.0
       '@types/react':
         specifier: ^19.2.10
         version: 19.2.10
@@ -78,8 +78,8 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18
       turbo:
-        specifier: ^2.7.6
-        version: 2.7.6
+        specifier: ^2.8.0
+        version: 2.8.0
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
@@ -103,8 +103,8 @@ importers:
         specifier: ^0.7.2
         version: 0.7.2(prettier@3.8.1)
       vercel:
-        specifier: ^50.7.1
-        version: 50.7.1(@swc/core@1.15.3)(rollup@4.53.3)(typescript@5.9.3)
+        specifier: ^50.9.1
+        version: 50.9.1(@swc/core@1.15.3)(rollup@4.53.3)(typescript@5.9.3)
 
 packages:
 
@@ -2072,8 +2072,8 @@ packages:
   '@types/node@20.11.0':
     resolution: {integrity: sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==}
 
-  '@types/node@25.0.10':
-    resolution: {integrity: sha512-zWW5KPngR/yvakJgGOmZ5vTBemDoSqF3AcV/LrO5u5wTWyEAVVh+IT39G4gtyAkh3CtTZs8aX/yRM82OfzHJRg==}
+  '@types/node@25.1.0':
+    resolution: {integrity: sha512-t7frlewr6+cbx+9Ohpl0NOTKXZNV9xHRmNOvql47BFJKcEG1CxtxlPEEe+gR9uhVWM4DwhnvTF110mIL4yP9RA==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -2344,8 +2344,8 @@ packages:
   '@vercel/nestjs@0.2.31':
     resolution: {integrity: sha512-OGcUy8rrGKnrQO/izSfwEG01wcJBQCv2IXR1jTlPjAd6ijEfss9qBPGC/Rmp6yaYeg8IFZl9J0479gyZ+l3qUA==}
 
-  '@vercel/next@4.15.17':
-    resolution: {integrity: sha512-ZFdv6Hh7pNp7szRWfgav1YHOe2UDikY+hZXP5hLX7SRc7a3RbU/Thrhqg+xtPC6bL+rBY0KXiFfNVNInzP1lKw==}
+  '@vercel/next@4.15.18':
+    resolution: {integrity: sha512-BUZ2hZgK12u0vAE8fPqINP/8Hjaw+Ck3Rf+J7lXRpzs91UCSUgxrUWRFqwjNKi4QW/24fihryZ6Q7wswAgkU4Q==}
 
   '@vercel/nft@1.1.1':
     resolution: {integrity: sha512-mKMGa7CEUcXU75474kOeqHbtvK1kAcu4wiahhmlUenB5JbTQB8wVlDI8CyHR3rpGo0qlzoRWqcDzI41FUoBJCA==}
@@ -2377,8 +2377,8 @@ packages:
   '@vercel/remix-builder@5.5.9':
     resolution: {integrity: sha512-uVscM3Hx+2AqCnwUpksIZG2ADC3+mPnjyKtsvjHUWEgnxVgADp5MStSoVuQT6AKWwSEnBtxMfNi13I20MwUeeg==}
 
-  '@vercel/ruby@2.2.4':
-    resolution: {integrity: sha512-E7V8kUk/pgLT7ZmqyrZWShxaCHc73Cga4pwcW+jcvMAS4kj5niAaz1HquT5sIbq4onKvmHmB1dDEXE7IKAWsjA==}
+  '@vercel/ruby@2.2.5':
+    resolution: {integrity: sha512-DeSHZDEU1BvxzomHeBDsFyZ9VL2U/rUC15Ce4Asaw6LadYPyQ9HEvREJC7Vz4f2iHHD0iamJG9znaC3/UgvQDg==}
 
   '@vercel/rust@1.0.5':
     resolution: {integrity: sha512-Y03g59nv1uT6Da+PvB/50WqJSHlaFZ9MSkG00R82dUcTySslMbQdOeaXymZtabrmU8zQYhWDb1/CwBki8sWnaQ==}
@@ -5293,38 +5293,38 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  turbo-darwin-64@2.7.6:
-    resolution: {integrity: sha512-bYu0qnWju2Ha3EbIkPCk1SMLT3sltKh1P/Jy5FER6BmH++H5z+T5MHh3W1Xoers9rk4N1VdKvog9FO1pxQyjhw==}
+  turbo-darwin-64@2.8.0:
+    resolution: {integrity: sha512-N7f4PYqz25yk8c5kituk09bJ89tE4wPPqKXgYccT6nbEQnGnrdvlyCHLyqViNObTgjjrddqjb1hmDkv7VcxE0g==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.7.6:
-    resolution: {integrity: sha512-KCxTf3Y1hgNLYIWRLw8bwH8Zie9RyCGoxAlXYsCBI/YNqBSR+ZZK9KYzFxAqDaVaNvTwLFv3rJRGsXOFWg4+Uw==}
+  turbo-darwin-arm64@2.8.0:
+    resolution: {integrity: sha512-eVzejaP5fn51gmJAPW68U6mSjFaAZ26rPiE36mMdk+tMC4XBGmJHT/fIgrhcrXMvINCl27RF8VmguRe+MBlSuQ==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.7.6:
-    resolution: {integrity: sha512-vjoU8zIfNgvJR3cMitgw7inEoi6bmuVuFawDl5yKtxjAEhDktFdRBpGS3WojD4l3BklBbIK689ssXcGf21LxRA==}
+  turbo-linux-64@2.8.0:
+    resolution: {integrity: sha512-ILR45zviYae3icf4cmUISdj8X17ybNcMh3Ms4cRdJF5sS50qDDTv8qeWqO/lPeHsu6r43gVWDofbDZYVuXYL7Q==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.7.6:
-    resolution: {integrity: sha512-TcMpBvTqZf+1DptrVYLbZls7WY1UVNDTGaf0bo7/GCgWYv5eZHCVo4Td7kCJeDU4glbXg67REX0md0S0V6ghMg==}
+  turbo-linux-arm64@2.8.0:
+    resolution: {integrity: sha512-z9pUa8ENFuHmadPfjEYMRWlXO82t1F/XBDx2XTg+cWWRZHf85FnEB6D4ForJn/GoKEEvwdPhFLzvvhOssom2ug==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.7.6:
-    resolution: {integrity: sha512-1/MhkYldiihjneY8QnnDMbAkHXn/udTWSVYS94EMlkE9AShozsLTTOT1gDOpX06EfEW5njP09suhMvxbvwuwpQ==}
+  turbo-windows-64@2.8.0:
+    resolution: {integrity: sha512-J6juRSRjmSErEqJCv7nVIq2DgZ2NHXqyeV8NQTFSyIvrThKiWe7FDOO6oYpuR06+C1NW82aoN4qQt4/gYvz25w==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.7.6:
-    resolution: {integrity: sha512-0wDVnUJLFAWm4ZzOQFDkbyyUqaszorTGf3Rdc22IRIyJTTLd6ajqdb+cWD89UZ1RKr953+PZR1gqgWQY4PDuhA==}
+  turbo-windows-arm64@2.8.0:
+    resolution: {integrity: sha512-qarBZvCu6uka35739TS+y/3CBU3zScrVAfohAkKHG+So+93Wn+5tKArs8HrO2fuTaGou8fMIeTV7V5NgzCVkSQ==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.7.6:
-    resolution: {integrity: sha512-PO9AvJLEsNLO+EYhF4zB+v10hOjsJe5kJW+S6tTbRv+TW7gf1Qer4mfjP9h3/y9h8ZiPvOrenxnEgDtFgaM5zw==}
+  turbo@2.8.0:
+    resolution: {integrity: sha512-hYbxnLEdvJF+DLALS+Ia+PbfNtn0sDP0hH2u9AFoskSUDmcVHSrtwHpzdX94MrRJKo9D9tYxY3MyP20gnlrWyA==}
     hasBin: true
 
   tw-animate-css@1.4.0:
@@ -5494,8 +5494,8 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  vercel@50.7.1:
-    resolution: {integrity: sha512-lEna+0MQw1OUwCW3hq5+LNRjKGCS0hHoogJMVbxeR0169hIhwMBMCHNXvpSyivJTUubCLujf3vXZPc+cxskqyw==}
+  vercel@50.9.1:
+    resolution: {integrity: sha512-ZohNx0olOCMYUH9qdVeubvPhcCDhXSE0I+d0B80ul6UxrP4uWQj5PM1rzGAP7L0qzWUH1fSShS8doOv8i/X6KA==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -7763,7 +7763,7 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@25.0.10':
+  '@types/node@25.1.0':
     dependencies:
       undici-types: 7.16.0
 
@@ -8116,7 +8116,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/next@4.15.17(rollup@4.53.3)':
+  '@vercel/next@4.15.18(rollup@4.53.3)':
     dependencies:
       '@vercel/nft': 1.1.1(rollup@4.53.3)
     transitivePeerDependencies:
@@ -8210,7 +8210,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/ruby@2.2.4': {}
+  '@vercel/ruby@2.2.5': {}
 
   '@vercel/rust@1.0.5':
     dependencies:
@@ -11719,32 +11719,32 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  turbo-darwin-64@2.7.6:
+  turbo-darwin-64@2.8.0:
     optional: true
 
-  turbo-darwin-arm64@2.7.6:
+  turbo-darwin-arm64@2.8.0:
     optional: true
 
-  turbo-linux-64@2.7.6:
+  turbo-linux-64@2.8.0:
     optional: true
 
-  turbo-linux-arm64@2.7.6:
+  turbo-linux-arm64@2.8.0:
     optional: true
 
-  turbo-windows-64@2.7.6:
+  turbo-windows-64@2.8.0:
     optional: true
 
-  turbo-windows-arm64@2.7.6:
+  turbo-windows-arm64@2.8.0:
     optional: true
 
-  turbo@2.7.6:
+  turbo@2.8.0:
     optionalDependencies:
-      turbo-darwin-64: 2.7.6
-      turbo-darwin-arm64: 2.7.6
-      turbo-linux-64: 2.7.6
-      turbo-linux-arm64: 2.7.6
-      turbo-windows-64: 2.7.6
-      turbo-windows-arm64: 2.7.6
+      turbo-darwin-64: 2.8.0
+      turbo-darwin-arm64: 2.8.0
+      turbo-linux-64: 2.8.0
+      turbo-linux-arm64: 2.8.0
+      turbo-windows-64: 2.8.0
+      turbo-windows-arm64: 2.8.0
 
   tw-animate-css@1.4.0: {}
 
@@ -11953,7 +11953,7 @@ snapshots:
 
   v8-compile-cache-lib@3.0.1: {}
 
-  vercel@50.7.1(@swc/core@1.15.3)(rollup@4.53.3)(typescript@5.9.3):
+  vercel@50.9.1(@swc/core@1.15.3)(rollup@4.53.3)(typescript@5.9.3):
     dependencies:
       '@vercel/backends': 0.0.23(rollup@4.53.3)(typescript@5.9.3)
       '@vercel/blob': 1.0.2
@@ -11969,12 +11969,12 @@ snapshots:
       '@vercel/hydrogen': 1.3.5
       '@vercel/koa': 0.1.10(@swc/core@1.15.3)(rollup@4.53.3)
       '@vercel/nestjs': 0.2.31(@swc/core@1.15.3)(rollup@4.53.3)
-      '@vercel/next': 4.15.17(rollup@4.53.3)
+      '@vercel/next': 4.15.18(rollup@4.53.3)
       '@vercel/node': 5.5.28(@swc/core@1.15.3)(rollup@4.53.3)
       '@vercel/python': 6.3.2
       '@vercel/redwood': 2.4.9(rollup@4.53.3)
       '@vercel/remix-builder': 5.5.9(rollup@4.53.3)
-      '@vercel/ruby': 2.2.4
+      '@vercel/ruby': 2.2.5
       '@vercel/rust': 1.0.5
       '@vercel/static-build': 2.8.28
       chokidar: 4.0.0
