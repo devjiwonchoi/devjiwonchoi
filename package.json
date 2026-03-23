@@ -23,7 +23,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "eslint": "^10.0.3",
+    "eslint": "^10.1.0",
     "eslint-config-next": "canary",
     "ezmdx": "^0.0.4",
     "lucide-react": "^0.577.0",
@@ -44,7 +44,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "vercel": "^50.34.2"
+    "vercel": "^50.35.0"
   },
   "packageManager": "pnpm@9.6.0"
 }
