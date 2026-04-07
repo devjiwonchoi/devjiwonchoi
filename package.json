@@ -44,7 +44,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "vercel": "^50.39.0"
+    "vercel": "^50.40.0"
   },
   "packageManager": "pnpm@9.6.0"
 }
